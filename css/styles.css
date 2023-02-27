@@ -1,0 +1,12 @@
+html body{
+    background-color: white;
+
+}
+#st_canvas{
+    position: absolute;
+    border: 2px solid black;
+}
+#canvas{
+    position: absolute;
+    border: 2px solid black;
+}
