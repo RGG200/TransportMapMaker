@@ -42,9 +42,3 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY){
     ctx.lineTo(endX+5, endY+5);
     ctx.stroke();
 };
-  let mosX;
-  let mosY;
-  export function updateDisplay(event) {
-    mosX = Math.round((event.pageX-10)/25)*25;
-    mosY = Math.round((event.pageY-10)/25)*25;
-  };
