@@ -26,7 +26,7 @@ canvas.addEventListener('click', function(){
         drawStation(net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances].fName + '\n' + net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances].sName, net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances].style, net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances].type, mosX, mosY, net.lines[instancesLine].color);
         net.lines[instancesLine].stationInstances++;
     }else{
-      if(mosX > net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].xPos || mosY <= net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].yPos){
+      if(mosX >= net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].xPos || mosY <= net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].yPos){
         context.clearRect(0, 0, canvas.width, canvas.height);
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 5)],default_sNames[getRandomIntInclusive(0, 5)], 'common', 'circle', mosX, mosY);
         for(let i = 0; i <= net.lines[instancesLine].stationInstances; i++){
