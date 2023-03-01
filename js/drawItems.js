@@ -5,6 +5,7 @@ export function Station(fName, sName, type, style, xPos, yPos){
     this.type = type;
     this.xPos = xPos;
     this.yPos = yPos;
+    this.selected = false;
 };
 export function Network(lines){
     this.lines = lines;
@@ -16,6 +17,7 @@ export function Line(id, name, lineThicness, color, stations){
     this.color = color;
     this.stations = stations;
     this.stationInstances = 0;
+    this.selected = false;
 };
 export function drawStation(name, style, type, posX, posY, lineColor) {
     const canvas = document.getElementById('canvas');
