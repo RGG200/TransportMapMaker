@@ -37,7 +37,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
 
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
-                first_name.innerHTML = fName+'-'+sName;
+                first_name.innerHTML = fName+''+sName;
                 first_name.setAttributeNS(null, 'x', posX);
                 first_name.setAttributeNS(null, 'y', posY-30);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
@@ -66,7 +66,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
-                first_name.innerHTML = fName+'-'+sName;
+                first_name.innerHTML = fName+''+sName;
                 first_name.setAttributeNS(null, 'x', posX);
                 first_name.setAttributeNS(null, 'y', posY-30);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
@@ -102,7 +102,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
 
             var first_name = document.createElementNS(svgns, 'text');
             var second_name = document.createElementNS(svgns, 'text');
-            first_name.innerHTML = fName+'-'+sName;
+            first_name.innerHTML = fName+''+sName;
             first_name.setAttributeNS(null, 'x', posX);
             first_name.setAttributeNS(null, 'y', posY-30);
             first_name.setAttributeNS(null, 'class', 'stationNames');
@@ -133,7 +133,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
 
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
-                first_name.innerHTML = fName+'-'+sName;
+                first_name.innerHTML = fName+''+sName;
                 first_name.setAttributeNS(null, 'x', posX);
                 first_name.setAttributeNS(null, 'y', posY-30);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
@@ -160,7 +160,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
 
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
-                first_name.innerHTML = fName+'-'+sName;
+                first_name.innerHTML = fName+''+sName;
                 first_name.setAttributeNS(null, 'x', posX);
                 first_name.setAttributeNS(null, 'y', posY-30);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
