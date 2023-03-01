@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Roboto:wght@500&display=swap');
 html body{
     background-color: white;
 
 }
-#st_canvas{
-    position: absolute;
-    border: 2px solid black;
-}
 #canvas{
     position: absolute;
     border: 2px solid black;
+}
+.stationNames{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-anchor: middle;
+    width: 100%;
 }
