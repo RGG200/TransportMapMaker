@@ -14,3 +14,17 @@ html body{
     width: 100%;
     text-transform: uppercase;
 }
+.exportsvg{
+    position: relative;
+}
+.btn-overlay {
+    position: absolute;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    opacity: 0.5;
+    transition: opacity .5s;
+}
