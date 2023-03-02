@@ -12,4 +12,5 @@ html body{
     font-family: 'Noto Sans JP', sans-serif;
     text-anchor: middle;
     width: 100%;
+    text-transform: uppercase;
 }
