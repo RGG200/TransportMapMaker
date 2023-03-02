@@ -10,9 +10,9 @@ import { Station, Network, Line, drawLine, drawStation} from './drawItems.js';
     mosX = Math.round((event.pageX-15)/40)*40;
     mosY = Math.round((event.pageY-15)/40)*40;
   };
-  let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy']
-  let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture']
-  let colors = ['aqua', 'red', "blue", 'purple', 'orangered', 'red', 'yellow', 'green', 'dark_green']
+  let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy'];
+  let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture'];
+  let colors = ['aqua', 'red', "blue", 'purple', 'orangered', 'red', 'yellow', 'green'];
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -22,7 +22,7 @@ canvas.addEventListener('mouseenter', updateDisplay, false);
 canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
   if(stationInstances == 0 && net.lines[instancesLine] == undefined){
-    net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 8)], [new Station(prompt('entrer le nom de la station'), '', 'destination', 'rect', mosX, mosY)]);
+    net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 7)], [new Station(prompt('entrer le nom de la station'), '', 'destination', 'rect', mosX, mosY)]);
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color);
     stationInstances++;
   }else{
@@ -30,7 +30,7 @@ canvas.addEventListener('click', function(){
     const canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
     for(let i = 1; i <= stationInstances; i++){
-      drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos);  
+      drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos);
     }
     for(const element of net.lines[instancesLine].stations){
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
