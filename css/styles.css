@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Roboto:wght@500&display=swap');
 html body{
     background-color: white;
-
 }
 #canvas{
     position: absolute;
@@ -16,15 +15,6 @@ html body{
 }
 .exportsvg{
     position: relative;
-}
-.btn-overlay {
-    position: absolute;
-    padding: 0;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    opacity: 0.5;
-    transition: opacity .5s;
+    right: 0;
+    bottom: 0;
 }
