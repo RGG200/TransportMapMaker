@@ -13,8 +13,14 @@ html body{
     width: 100%;
     text-transform: uppercase;
 }
-.exportsvg{
-    position: relative;
-    right: 0;
-    bottom: 0;
+.download{
+  position: relative;
+  right: 0;
+  bottom: 0;
+  background: #333; 
+  color: #FFF; 
+  font-weight: 900; 
+  border: 2px solid #B10000; 
+  padding: 4px; 
+  margin:4px;
 }
