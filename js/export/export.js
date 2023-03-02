@@ -21,6 +21,6 @@ export function saveMap(){
   var url = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
 
   //set url value to a element's href attribute.
-  document.getElementById("export as svg").href = url;
+  document.getElementById("exportsvg").href = url;
   //you can download svg file by right click menu.
 }
