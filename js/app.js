@@ -39,6 +39,3 @@ canvas.addEventListener('click', function(){
     stationInstances++;
     }
 }, false);
-
-const exportsvg = document.getElementById('exportsvg')
-exportsvg.addEventListener('click', function(){saveMap();});
