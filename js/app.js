@@ -1,6 +1,7 @@
 let instancesLine = 0;
 let stationInstances = 0;
 import { Station, Network, Line, drawLine, drawStation} from './drawItems.js';
+import { saveMap } from './export/export.js'
 
   let net = new Network([]);
 
@@ -38,3 +39,6 @@ canvas.addEventListener('click', function(){
     stationInstances++;
     }
 }, false);
+
+const exportsvg = document.getElementById('exportsvg')
+exportsvg.addEventListener('click', function(){saveMap();});
