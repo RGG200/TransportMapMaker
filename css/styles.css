@@ -18,8 +18,8 @@ html body{
 #exportmap{
     position: fixed;
     z-index: 2;
-    top: 92%;
-    left: 87%;
+    bottom: 0px;
+    right: 0px;
     text-decoration: none;
     background-color: white;
     border: 2px solid crimson;
