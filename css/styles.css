@@ -24,7 +24,7 @@ html body{
     background-color: white;
     border: 2px solid crimson;
     color: crimson; 
-    padding: 15px;
+    padding: 60px;
     font-family: 'Noto Sans JP', sans-serif;
     transition: 300ms;
 }
