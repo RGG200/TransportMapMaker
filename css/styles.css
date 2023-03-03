@@ -6,22 +6,33 @@ html body{
 #canvas{
     position: absolute;
     border: 2px solid black;
-    background-image: url('../img/grid.png');
+    background-image: url('../img/grid.svg');
 }
 .stationNames{
-    font-family: 'Noto Sans JP', sans-serif;
+    font-family
+    : 'Noto Sans JP', sans-serif;
     text-anchor: middle;
     width: 100%;
     text-transform: uppercase;
 }
-.download{
-  position: relative;
-  right: 0;
-  bottom: 0;
-  background: #333; 
-  color: #FFF; 
-  font-weight: 900; 
-  border: 2px solid #B10000; 
-  padding: 4px; 
-  margin:4px;
+#exportmap{
+    position: fixed;
+    z-index: 2;
+    top: 92%;
+    left: 87%;
+    text-decoration: none;
+    background-color: white;
+    border: 2px solid crimson;
+    color: crimson; 
+    padding: 15px;
+    font-family: 'Noto Sans JP', sans-serif;
+    transition: 300ms;
 }
+#exportmap:hover{
+    text-decoration: none;
+    background-color: crimson;
+    color: white; 
+    transition: 300ms;
+}
+  
+
