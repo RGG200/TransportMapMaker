@@ -1,15 +1,14 @@
 let instancesLine = 0;
 let stationInstances = 0;
 import { Station, Network, Line, drawLine, drawStation} from './drawItems.js';
-import { saveMap } from './export/export.js'
 
   let net = new Network([]);
 
   let mosX;
   let mosY;
   export function updateDisplay(event) {
-    mosX = Math.round((event.pageX-15)/50)*50;
-    mosY = Math.round((event.pageY-15)/50)*50;
+    mosX = Math.round((event.pageX-15)/56)*56;
+    mosY = Math.round((event.pageY-15)/56)*56;
   };
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy'];
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture'];
