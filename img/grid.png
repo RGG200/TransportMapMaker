@@ -1,0 +1,62 @@
+
+
+<html>
+<head>
+<title>Graph Paper/Grids Generator</title>
+</head>
+<body bgcolor=FFFFFF>
+
+<center>
+<h1>Graph Paper/Grid Generator</h1>
+<FORM method=post target=new>
+
+<table border=1>
+<tr><td align=center bgcolor=DDDDFF>
+  <table>
+  <tr><td colspan=4 align=center><b>Select type of graph grid</b></td></tr>
+  <tr>
+  <td align=center><img src=i/15.png width=151 height=151><br><input type=radio name=m value=15></td>
+  <td align=center><img src=i/30.png width=151 height=151><br><input type=radio name=m value=30 selected></td>
+  <td align=center><img src=i/20.png width=151 height=151><br><input type=radio name=m value=20></td>
+  <td align=center><img src=i/40.png width=151 height=151><br><input type=radio name=m value=40></td>
+  </tr>
+  <tr>
+  <td align=center><img src=i/101.png width=151 height=151><br><font size=-1>Line: <input type=radio name=m value=101> Black <input type=radio name=m value=1010> Grey </font></td>
+  <td align=center><img src=i/151.png width=151 height=151><br><font size=-1>Line: <input type=radio name=m value=151> Black <input type=radio name=m value=1510> Grey </font></td>
+  <td align=center><img src=i/201.png width=151 height=151><br><font size=-1>Line: <input type=radio name=m value=201> Black <input type=radio name=m value=2010> Grey </font></td>
+  <td align=center><img src=i/301.png width=151 height=151><br><font size=-1>Line: <input type=radio name=m value=301> Black <input type=radio name=m value=3010> Grey </font></td>
+  </tr>
+  </table>
+</td></tr>
+<tr><td align=center bgcolor=FFDDDD>
+  <b>Select dimensions (pixels)</b>: Width <select name=w>
+  <option>100<option>150<option>200<option>250<option>300<option>350
+  <option>400<option>450<option>500<option>550<option selected>600<option>650
+  <option>700<option>750<option>800<option>850<option>900<option>950
+  <option>1000
+  </select>
+  &nbsp;&nbsp;&nbsp;
+  Height <select name=h>
+  <option>100<option>150<option>200<option>250<option>300<option>350
+  <option>400<option>450<option>500<option>550<option>600<option>650
+  <option>700<option>750<option>800<option>850<option selected>900<option>950
+  <option>1000
+  </select>
+</td></tr>
+</table>
+
+
+<p><input type=submit value="Create New Graph Grid">
+<BR>An image (.png) containing the desired graph grid will be created.
+<br>Print the image or save it to your computer.
+<p>Powered by <a href=http://www.phptutorial.info>PHPtutorial.info</a>
+
+
+</form>
+<center>
+<p>
+
+</body>
+</html>
+
+
