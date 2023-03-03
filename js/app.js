@@ -7,8 +7,8 @@ import { Station, Network, Line, drawLine, drawStation} from './drawItems.js';
   let mosX;
   let mosY;
   export function updateDisplay(event) {
-    mosX = Math.round((event.pageX-15)/56)*56;
-    mosY = Math.round((event.pageY-15)/56)*56;
+    mosX = Math.round((event.pageX-15)/35)*35;
+    mosY = Math.round((event.pageY-15)/35)*35;
   };
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy'];
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture'];
