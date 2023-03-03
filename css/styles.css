@@ -6,6 +6,7 @@ html body{
 #canvas{
     position: absolute;
     border: 2px solid black;
+    background-image: url('../img/grid.png');
 }
 .stationNames{
     font-family: 'Noto Sans JP', sans-serif;
