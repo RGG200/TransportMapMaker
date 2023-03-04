@@ -1,6 +1,6 @@
 function downloadSVGasTextFile() {
   const base64doc = btoa(unescape(encodeURIComponent(document.querySelector('svg').outerHTML)));
-  const a = document.createElement('a');
+  const a = document.getElementById('export');
   const e = new MouseEvent('click');
 
   a.download = 'download.svg';
