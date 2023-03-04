@@ -39,3 +39,22 @@ canvas.addEventListener('click', function(){
     stationInstances++;
     }
 }, false);
+
+st_list = document.getElementById('st-list');
+for(let i = 0; i < instancesLine; i++){
+  for(let i = 0; i < stationInstances; i++){
+    var station = document.createElement('button');
+    station.setAttributeNS(nulll, 'class', 'title_station');
+    station.innerHTML = net.lines[j].stations[i].fName + ' ' + net.lines[j].stations[i].sName;
+    st_list.appendChild(station);
+  }
+}
+
+csb = document.getElementById('csb');
+csa = document.getElementById('csa');
+csa.addEventListener('click', function(){
+  net.lines[selectedLine].stations[selected].line_style = 'a';
+})
+csb.addEventListener('click', function(){
+  net.lines[selectedLine].stations[selected].line_style = 'a';
+})

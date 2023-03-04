@@ -10,22 +10,32 @@
 <body>
     <script src="./js/app.js" type="module"></script>
     <script src="./js/export/export.js" type="module"></script>
+    <script src="./js/options.js"></script>
     <svg id="canvas" height="4000" width="4000" xmlns="http://www.w3.org/2000/svg">
     </svg>
-    <div id="options">
+    <button id="" class="main" onclick="showOptions('options');">Show Options</button>
+    <div id="options" onmouseleave="hideOptions('options');">  
         <button id="exportmap" class="button" href="" onclick="saveMap();">Export map as SVG</button>
-        <button id="" class="button" href="">Edit Stations</button>
-        <button id="" class="button" href="">Edit Lines</button>
+        <button id="" class="button" href="">Editer une Stations</button>
+        <button id="" class="button" href="">Editer une Lines</button>
         <button id="" class="button" href="">Preferences</button>
         <button id="" class="button" href="">Exit</button>
     </div>
-    <div id="editor">
-        <div>
-            
-        </div>
-        <div>
-
-        </div>
-    </div>
+    <section id="st-list">
+        <h1 class="main-title">Liste des station</h1>
+    </section>
+    <section class="st-editor">
+        <h1 class="main-title">éditer une station</h1>
+        <input class="stname" type="text" placeholder="Nom principal">
+        <input class="stname" type="text" placeholder="Nom secondaire">
+        <div class="connexion-type">
+            <p>Type de connexion</p>
+            <button id="cx-btn" onclick="showOptions('myDropdown');" ondblclick="hideOptions('myDropdown');" class="dropbtn">Type de connexion</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a id="csa" onclick="document.getElementById('cx-btn').innerHTML = 'A'">A</a>
+              <a id="csb" onclick="document.getElementById('cx-btn').innerHTML = 'B'">B</a>
+            </div>
+          </div> 
+    </section>
 </body>
 </html>
