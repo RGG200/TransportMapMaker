@@ -15,24 +15,38 @@ html body{
     width: 100%;
     text-transform: uppercase;
 }
-.download-button{
-    text-decoration: none;
-    position: fixed;
-    right: 0px;
-    bottom: 0px;
-    font-size: 2em;
+.button{
     padding: 5px;
-    text-align: center;
-    z-index: 2;
     color: crimson;
     background: white;
     border: 2px solid crimson;
     transition: 300ms;
+    display: flex;
+    text-decoration: none;
     font-family
     : 'Noto Sans JP', sans-serif;
 }
-.download-button:hover{
+.button:hover{
+    padding: 5px;
     color: white;
     background: crimson;
+    border: 2px solid crimson;
     transition: 300ms;
+    text-align: center;
+    display: flex;
+}
+#options{
+    text-decoration: none;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    width: 15%;
+    height: auto;
+    font-size: 1.5em;
+    text-align: center;
+    z-index: 2;
+    border: 2px solid crimson;
+    transition: 300ms;
+    font-family
+    : 'Noto Sans JP', sans-serif;
 }
