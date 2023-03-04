@@ -1,6 +1,6 @@
 export function saveMap(){
 //get svg element.
-var svg = document.getElementById("svg");
+var svg = document.getElementById("canvas");
 
 //get svg source.
 var serializer = new XMLSerializer();
