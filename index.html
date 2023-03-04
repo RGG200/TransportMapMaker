@@ -11,7 +11,30 @@
 <body>
     <script src="./js/app.js" type="module"></script>
     <script src="./js/export/export.js" type="module"></script>
-    <a id="exportmap" href="" onclick="saveMap();"> Export Map to image</a>
+    <script>
+
+      // This SVG data is copied from
+      // http://stackoverflow.com/questions/5433806/convert-embedded-svg-to-png-in-place
+      var dataURL = "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%22-350%20-250%20700%20500%22%3E%0A%20%20%20%20%20%20%3Cstyle%20type%3D%22text%2Fcss%22%20media%3D%22screen%22%3E%0A%20%20%20%20%20%20%20%20svg%20%7B%20background%3A%23fff%3B%20%7D%0A%20%20%20%20%20%20%20%20.face%20%7B%20stroke%3A%23000%3B%20stroke-width%3A20px%3B%20stroke-linecap%3Around%20%7D%0A%20%20%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%20%20%3Ccircle%20r%3D%22200%22%20class%3D%22face%22%20fill%3D%22red%22%2F%3E%0A%20%20%20%20%20%20%3Cpath%20fill%3D%22none%22%20class%3D%22face%22%20transform%3D%22translate(-396%2C-230)%22%20d%3D%22M487%2C282c-15%2C36-51%2C62-92%2C62%20c-41%2C0-77-25-92-61%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%22-60%22%20cy%3D%22-50%22%20r%3D%2220%22%20fill%3D%22%23000%22%2F%3E%0A%20%20%20%20%20%20%3Ccircle%20cx%3D%2260%22%20cy%3D%22-50%22%20r%3D%2220%22%20fill%3D%22%23000%22%2F%3E%0A%20%20%20%20%3C%2Fsvg%3E";
+
+      // A data URL can also be generated from an existing SVG element.
+      // function svgDataURL(svg) {
+      //   var svgAsXML = (new XMLSerializer).serializeToString(svg);
+      //   return "data:image/svg+xml," + encodeURIComponent(svgAsXML);
+      // }
+
+      function download(){
+        var dl = document.createElement("a");
+        document.body.appendChild(dl); // This line makes it work in Firefox.
+        dl.setAttribute("href", dataURL);
+        dl.setAttribute("download", "test.svg");
+        dl.click();
+      }
+
+    </script>
+    <div class="download-button" onclick="download()" title="Download as SVG file.">
+      <i class="fa fa-download"></i>
+    </div>
     <svg id="canvas" height="4000" width="4000" xmlns="http://www.w3.org/2000/svg">
     </svg>
 </body>
