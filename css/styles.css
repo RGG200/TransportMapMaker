@@ -20,6 +20,17 @@ html body{
 .download-button{
     font-size: 32em;
     text-align: center;
+    color: crimson;
+    background: white;
+    transition: 300ms;
+    font-family
+    : 'Noto Sans JP', sans-serif;
+}
+.download-button{
+    color: white;
+    background: crimson;
+    border: 2px solid crimson;
+    transition: 300ms;
 }
 
 /* Make the download icon look clickable when you hover over it. */
