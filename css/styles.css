@@ -18,7 +18,10 @@ html body{
 }
 /* Make the download icon big. */
 .download-button{
-    font-size: 32em;
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    font-size: 4em;
     text-align: center;
     z-index: 2;
     color: crimson;
@@ -27,10 +30,7 @@ html body{
     font-family
     : 'Noto Sans JP', sans-serif;
 }
-.download-button{
-    position: fixed;
-    right: 0px;
-    bottom: 0px;
+.download-button:hover{
     color: white;
     background: crimson;
     border: 2px solid crimson;
