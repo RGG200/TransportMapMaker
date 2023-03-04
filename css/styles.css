@@ -27,6 +27,9 @@ html body{
     : 'Noto Sans JP', sans-serif;
 }
 .download-button{
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
     color: white;
     background: crimson;
     border: 2px solid crimson;
