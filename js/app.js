@@ -8,8 +8,8 @@ import { saveMap } from './export/export.js'
   let mosX;
   let mosY;
   export function updateDisplay(event) {
-    mosX = Math.round((event.pageX-15)/25)*25;
-    mosY = Math.round((event.pageY-15)/25)*25;
+    mosX = Math.round((event.pageX-15)/40)*40;
+    mosY = Math.round((event.pageY-15)/40)*40;
   };
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy'];
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture'];
@@ -27,7 +27,7 @@ canvas.addEventListener('click', function(){
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color);
     stationInstances++;
   }else{
-    net.lines[instancesLine].stations[stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'common', 'a', 'circle', mosX, mosY);
+    net.lines[instancesLine].stations[stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'common', prompt('indiquez le type connexion de la station: (a ou b):'), 'circle', mosX, mosY);
     const canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
     for(let i = 1; i <= stationInstances; i++){

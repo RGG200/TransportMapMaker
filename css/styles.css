@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&family=Roboto:wght@500&display=swap');
 html body{
     background-color: white;
-    position: relative;
 }
 #canvas{
     position: absolute;
@@ -16,16 +15,18 @@ html body{
     width: 100%;
     text-transform: uppercase;
 }
-/* Make the download icon big. */
 .download-button{
+    text-decoration: none;
     position: fixed;
     right: 0px;
     bottom: 0px;
-    font-size: 4em;
+    font-size: 1.5em;
+    padding: 1.5%;
     text-align: center;
     z-index: 2;
     color: crimson;
     background: white;
+    border: 2px solid crimson;
     transition: 300ms;
     font-family
     : 'Noto Sans JP', sans-serif;
@@ -33,6 +34,5 @@ html body{
 .download-button:hover{
     color: white;
     background: crimson;
-    border: 2px solid crimson;
     transition: 300ms;
 }
