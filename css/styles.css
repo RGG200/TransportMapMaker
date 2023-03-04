@@ -20,6 +20,7 @@ html body{
 .download-button{
     font-size: 32em;
     text-align: center;
+    z-index: 2;
     color: crimson;
     background: white;
     transition: 300ms;
