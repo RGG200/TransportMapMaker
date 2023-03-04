@@ -19,7 +19,6 @@ html body{
     padding: 5px;
     color: crimson;
     background: white;
-    border: 2px solid crimson;
     transition: 300ms;
     display: flex;
     text-decoration: none;
@@ -30,7 +29,6 @@ html body{
     padding: 5px;
     color: white;
     background: crimson;
-    border: 2px solid crimson;
     transition: 300ms;
     text-align: center;
     display: flex;
