@@ -27,8 +27,8 @@ html body{
 }
 .button:hover{
     padding: 5px;
-    color: white;
-    background: crimson;
+    color: forest;
+    background: white;
     transition: 300ms;
     text-align: center;
     display: flex;
@@ -36,7 +36,7 @@ html body{
 #options{
     text-decoration: none;
     position: fixed;
-    right: 0px;
+    right: 10px;
     bottom: 0px;
     width: 15%;
     height: auto;
