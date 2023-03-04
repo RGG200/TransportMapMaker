@@ -8,4 +8,3 @@ function downloadSVGasTextFile() {
   a.dispatchEvent(e);
 }
 
-downloadSVGasTextFile();
