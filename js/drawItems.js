@@ -18,6 +18,7 @@ export function Line(id, name, lineThicness, color, stations){
     this.color = color;
     this.stations = stations;
     this.selected = false;
+    this.stationInstances = 0;
 };
 let instances = 0;
 let line_instances = 0;
