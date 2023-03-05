@@ -1,7 +1,6 @@
 export let instancesLine = 0;
 export let stationInstances = 0;
 import { Station, Network, Line, drawLine, drawStation} from './drawItems.js';
-import { saveMap } from './export/export.js'
 
   export let net = new Network([]);
 
@@ -22,7 +21,7 @@ import { saveMap } from './export/export.js'
 canvas.addEventListener('mouseenter', updateDisplay, false);
 canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
-  if(net.lines[instancesLine].stationInstances == 0 || net.lines[instancesLine] == undefined){
+  if(net.lines[instancesLine] == undefined){
     net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 7)], [new Station(prompt('entrer le nom de la station'), '', 'destination', prompt('indiquez le type connexion de la station: (a ou b):') , 'rect', mosX, mosY)]);
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color);
     net.lines[instancesLine].stationInstances++;
@@ -39,12 +38,3 @@ canvas.addEventListener('click', function(){
     net.lines[instancesLine].stationInstances++;
     }
 }, false);
-
-csb = document.getElementById('csb');
-csa = document.getElementById('csa');
-csa.addEventListener('click', function(){
-  net.lines[selectedLine].stations[1].line_style = 'a';
-})
-csb.addEventListener('click', function(){
-  net.lines[selectedLine].stations[1].line_style = 'a';
-})
