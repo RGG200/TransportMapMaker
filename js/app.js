@@ -54,24 +54,24 @@ canvas.addEventListener('click', function(){
   //     }
   // }
 }, false);
-let selectedStation = 0;
-for(let i = 0; i < net.lines[instancesLine].stationInstances; i++){
-  const stations = document.getElementsByClassName('title_station');
-  stations[i].addEventListener('click', function(){
-    stations[i].setAttributeNS(null, 'clicked', true);
-  }, false);
-  if(stations[i].getAttributeNS(null, 'clicked') == true){
-    selectedStation = i;
-  }
-}
+// let selectedStation = 0;
+// for(let i = 0; i < net.lines[instancesLine].stationInstances; i++){
+//   const stations = document.getElementsByClassName('title_station');
+//   stations[i].addEventListener('click', function(){
+//     stations[i].setAttributeNS(null, 'clicked', true);
+//   }, false);
+//   if(stations[i].getAttributeNS(null, 'clicked') == true){
+//     selectedStation = i;
+//   }
+// }
 
 
-//csa = Connection style A
-csb = document.getElementById('csb');
-csa = document.getElementById('csa');
-csa.addEventListener('click', function(){
-  net.lines[instancesLine].stations[selectedStation].line_style = 'a';
-}, false);
-csb.addEventListener('click', function(){
-  net.lines[instancesLine].stations[selectedStation].line_style = 'b';
-}, false);
+// //csa = Connection style A
+// csb = document.getElementById('csb');
+// csa = document.getElementById('csa');
+// csa.addEventListener('click', function(){
+//   net.lines[instancesLine].stations[selectedStation].line_style = 'a';
+// }, false);
+// csb.addEventListener('click', function(){
+//   net.lines[instancesLine].stations[selectedStation].line_style = 'b';
+// }, false);
