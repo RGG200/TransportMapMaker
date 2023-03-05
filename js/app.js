@@ -1,6 +1,6 @@
 export let instancesLine = 0;
 export let stationInstances = 0;
-import { Station, Network, Line, drawLine, drawStation} from './drawItems.js';
+import { Station, Network, Line, drawLine, drawStation, drawStationsList} from './drawItems.js';
 
   export let net = new Network([]);
 
@@ -37,4 +37,10 @@ canvas.addEventListener('click', function(){
     }
     net.lines[instancesLine].stationInstances++;
     }
+}, false);
+
+const st_list = document.getElementById('st-list');
+
+st_list.addEventListener('mouseenter', function(){
+  drawStationsList(net);
 }, false);

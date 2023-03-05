@@ -318,3 +318,14 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style){
     document.getElementById( 'canvas' ).appendChild( line3 );
     line_instances++;
 };
+
+export function drawStationsList(network){
+    var st_list = document.getElementById('st-list');
+    for(station of network.lines[instancesLine].stations){
+        let stationButton = document.createElement('a');
+        stationButton.innerText = station.fName;
+        stationButton.setAttributeNS(null, 'id', network.lines[instancesLine].stations.indexOf(station));
+        stationButton.setAttributeNS(null, 'class', 'station_instance');
+        st_list.appendChild(stationButton);
+    }
+}
