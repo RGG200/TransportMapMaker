@@ -4,6 +4,7 @@ function showOptions(classname){
 function hideOptions(classname){
     document.getElementById(classname).style.display = 'none';
 }
-function setConnexionStyle(style){
-
+function showEditor(hidden, showed){
+    document.getElementById(hidden).style.display = 'none';
+    document.getElementById(showed).style.display = 'block';
 }
