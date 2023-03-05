@@ -8,8 +8,8 @@ import { saveMap } from './export/export.js'
   let mosX;
   let mosY;
   export function updateDisplay(event) {
-    mosX = Math.round((event.pageX-15)/40)*40;
-    mosY = Math.round((event.pageY-15)/40)*40;
+    mosX = Math.round((event.pageX-15)/20)*20;
+    mosY = Math.round((event.pageY-15)/20)*20;
   };
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy'];
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture'];
@@ -43,8 +43,8 @@ canvas.addEventListener('click', function(){
 csb = document.getElementById('csb');
 csa = document.getElementById('csa');
 csa.addEventListener('click', function(){
-  net.lines[selectedLine].stations[selected].line_style = 'a';
+  net.lines[selectedLine].stations[1].line_style = 'a';
 })
 csb.addEventListener('click', function(){
-  net.lines[selectedLine].stations[selected].line_style = 'a';
+  net.lines[selectedLine].stations[1].line_style = 'a';
 })
