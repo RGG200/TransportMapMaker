@@ -150,21 +150,6 @@ html body{
     outline: none;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
- /* Dropdown Button */
- .dropbtn {
-    background-color: white;
-    color: gray;
-    padding: 16px;
-    width: 200px;
-    text-align: center;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* Dropdown button on hover & focus */
-  .dropbtn:hover, .dropbtn:focus {
-  }
   
   /* The container <div> - needed to position the dropdown content */
   .connexion-type {
