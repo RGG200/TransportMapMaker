@@ -40,19 +40,19 @@ canvas.addEventListener('click', function(){
     net.lines[instancesLine].stationInstances++;
     stationInstances++;
     }
-      //as in st = station
-    const st_list = document.getElementById('st-list');
-    for(let i = 0; i < instancesLine; i++){
-      for(let j = 0; j < net.lines[instancesLine].stationInstances; j++){
-        var station = document.createElement('button');
-        station.setAttributeNS(null, 'class', 'title_station');
-        station.setAttributeNS(null, 'id', j);
-        station.setAttributeNS(null, 'onclick', 'showOptions("st-editor")');
-        station.setAttributeNS(null, 'clicked', 'false');
-        station.innerHTML = net.lines[j].stations[i].fName + ' ' + net.lines[j].stations[i].sName;
-        st_list.appendChild(station);
-      }
-  }
+  //     //as in st = station
+  //   const st_list = document.getElementById('st-list');
+  //   for(let i = 0; i < instancesLine; i++){
+  //     for(let j = 0; j < net.lines[instancesLine].stationInstances; j++){
+  //       var station = document.createElement('button');
+  //       station.setAttributeNS(null, 'class', 'title_station');
+  //       station.setAttributeNS(null, 'id', j);
+  //       station.setAttributeNS(null, 'onclick', 'showOptions("st-editor")');
+  //       station.setAttributeNS(null, 'clicked', 'false');
+  //       station.innerText = net.lines[j].stations[i].fName + ' ' + net.lines[j].stations[i].sName;
+  //       st_list.appendChild(station);
+  //     }
+  // }
 }, false);
 let selectedStation = 0;
 for(let i = 0; i < net.lines[instancesLine].stationInstances; i++){
