@@ -1,9 +1,9 @@
-let instancesLine = 0;
-let stationInstances = 0;
+export let instancesLine = 0;
+export let stationInstances = 0;
 import { Station, Network, Line, drawLine, drawStation} from './drawItems.js';
 import { saveMap } from './export/export.js'
 
-  let net = new Network([]);
+  export let net = new Network([]);
 
   let mosX;
   let mosY;
@@ -22,21 +22,21 @@ import { saveMap } from './export/export.js'
 canvas.addEventListener('mouseenter', updateDisplay, false);
 canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
-  if(stationInstances == 0 && net.lines[instancesLine] == undefined){
+  if(net.lines[instancesLine].stationInstances == 0 && net.lines[instancesLine] == undefined){
     net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 7)], [new Station(prompt('entrer le nom de la station'), '', 'destination', prompt('indiquez le type connexion de la station: (a ou b):') , 'rect', mosX, mosY)]);
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color);
-    stationInstances++;
+    net.lines[instancesLine].stationInstances++;
   }else{
-    net.lines[instancesLine].stations[stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'common', prompt('indiquez le type connexion de la station: (a ou b):'), 'circle', mosX, mosY);
+    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'common', prompt('indiquez le type connexion de la station: (a ou b):'), 'circle', mosX, mosY);
     const canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
-    for(let i = 1; i <= stationInstances; i++){
+    for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
       drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style);
     }
     for(const element of net.lines[instancesLine].stations){
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
     }
-    stationInstances++;
+    net.lines[instancesLine].stationInstances++;
     }
 }, false);
 
