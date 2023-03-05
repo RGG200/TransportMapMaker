@@ -23,7 +23,7 @@ canvas.addEventListener('mouseenter', updateDisplay, false);
 canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
   //as in st = station
-  st_list = document.getElementById('st-list');
+  const st_list = document.getElementById('st-list');
   for(let i = 0; i < instancesLine; i++){
     for(let j = 0; j < stationInstances; j++){
       var station = document.createElement('button');
@@ -53,7 +53,7 @@ canvas.addEventListener('click', function(){
 }, false);
 
 let selectedStation = 0;
-const station = document.getElementByClassName('title_station');
+const station = document.getElementsByClassName('title_station');
 station.addEventListener('click', function(){
   selectedStation = station.getAttribute("id");
 });
