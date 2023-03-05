@@ -10,7 +10,7 @@
 <body>
     <script src="./js/app.js" type="module"></script>
     <script src="./js/export/export.js" type="module"></script>
-    <script src="./js/options.js"></script>
+    <script src="./js/options.js"n* type="module"></script>
     <svg id="canvas" height="4000" width="4000" xmlns="http://www.w3.org/2000/svg">
     </svg>
     <button id="" class="main" onclick="showOptions('options');">Show Options</button>
@@ -21,7 +21,7 @@
         <button id="" onclick="hideOptions('options');" class="button" href="">Paramètres</button>
         <button id="" onclick="hideOptions('options');" class="button" href="">Quitter</button>
     </div>
-    <section id="st-list">
+    <section id="st-list" onmouseenter="stationsList(net);">
         <h1 class="main-title">Liste des station</h1>
         <button class="return" onclick="hideOptions('st-list');"> <span class="return-obj"> < </span> Retour </button>
     </section>
