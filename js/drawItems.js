@@ -224,9 +224,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
             y = beginY;
         }
         if(endX > beginX){
-            x = endX-23.5;
+            x = endX-22.5;
         }else if(endX < beginX){
-            x = endX+23.5;
+            x = endX+22.5;
         }else if(endX == beginX){
             x = endX;
         }
@@ -275,9 +275,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
             x = beginX;
         }
         if(endY > beginY){
-            y = endY-23.5;
+            y = endY-22.5;
         }else if(endY < beginY){
-            y = endY+23.5;
+            y = endY+22.5;
         }else if(endY == beginY){
             y = endY;
         }
