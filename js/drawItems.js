@@ -203,9 +203,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     if(style == 'a'){
         d += beginX + ' ' + beginY + ' ';
         if(endX > beginX){
-            x = endX-25;
-        }else if(endX < beginX){
             x = endX+25;
+        }else if(endX < beginX){
+            x = endX-25;
         }else if(endX == beginX){
             x = endX;
         }
