@@ -356,10 +356,10 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         line3.setAttributeNS( null,'fill', color);
         line3.setAttributeNS( null,'stroke-width', thicness);
         line3.setAttributeNS( null,'stroke', color);
+        document.getElementById( 'canvas' ).appendChild( line );
+        document.getElementById( 'canvas' ).appendChild( line2 );
+        document.getElementById( 'canvas' ).appendChild( line3 );
     }
-    document.getElementById( 'canvas' ).appendChild( line );
-    document.getElementById( 'canvas' ).appendChild( line2 );
-    document.getElementById( 'canvas' ).appendChild( line3 );
     document.getElementById( 'canvas' ).appendChild( path );
     line_instances++;
 };
