@@ -217,30 +217,30 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
         if(endY > beginY){
-            y = beginY+22.5;
-        }else if(endY < beginY){
-            y = beginY-22.5;
-        }else if(endY == beginY){
-            y = beginY;
-        }
-        if(endX > beginX){
-            x = endX-22.5;
-        }else if(endX < beginX){
-            x = endX+22.5;
-        }else if(endX == beginX){
-            x = endX;
-        }
-        d += 'L' + x + ' ' + y + ' ';
-        x = endX;
-        if(endY > beginY){
             y = beginY+25;
         }else if(endY < beginY){
             y = beginY-25;
         }else if(endY == beginY){
             y = beginY;
         }
+        if(endX > beginX){
+            x = endX-26.5;
+        }else if(endX < beginX){
+            x = endX+26.5;
+        }else if(endX == beginX){
+            x = endX;
+        }
+        d += 'L' + x + ' ' + y + ' ';
+        if(endY > beginY){
+            y = beginY+26.5;
+        }else if(endY < beginY){
+            y = beginY-26.5;
+        }else if(endY == beginY){
+            y = beginY;
+        }
         d += 'M' + x + ' ' + y + ' ';
         y = endY;
+        x = endX;
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
 
@@ -268,30 +268,30 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
         if(endX > beginX){
-            x = beginX+22.5;
-        }else if(endX < beginX){
-            x = beginX-22.5;
-        }else if(endX == beginX){
-            x = beginX;
-        }
-        if(endY > beginY){
-            y = endY-22.5;
-        }else if(endY < beginY){
-            y = endY+22.5;
-        }else if(endY == beginY){
-            y = endY;
-        }
-        y = endY;
-        d += 'L' + x + ' ' + y + ' ';
-        if(endX > beginX){
             x = beginX+25;
         }else if(endX < beginX){
             x = beginX-25;
         }else if(endX == beginX){
             x = beginX;
         }
+        if(endY > beginY){
+            y = endY-26.5;
+        }else if(endY < beginY){
+            y = endY+26.5;
+        }else if(endY == beginY){
+            y = endY;
+        }
+        d += 'L' + x + ' ' + y + ' ';
+        if(endX > beginX){
+            x = beginX+26.5;
+        }else if(endX < beginX){
+            x = beginX-26.5;
+        }else if(endX == beginX){
+            x = beginX;
+        }
         d += 'M' + x + ' ' + y + ' ';
         x = endX;
+        y = endY;
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
 
