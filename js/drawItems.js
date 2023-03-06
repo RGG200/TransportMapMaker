@@ -187,7 +187,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
   };
 export function drawLine(color, thicness, beginX, beginY, endX, endY, style, line_instance){
     var svgns = "http://www.w3.org/2000/svg";
-    var path = document.createElementNS('path');
+    var path = document.createElementNS(svgns, 'path');
     var d = '';
     var line = document.createElementNS( svgns, 'line');
     var line2 = document.createElementNS( svgns, 'line');
