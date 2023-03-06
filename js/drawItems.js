@@ -193,13 +193,42 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     else{
         var path = document.getElementById('line_' + line_instance);
     }
-    var d = '';
+    var d = path.getAttributeNS(null, 'd');
     var line = document.createElementNS( svgns, 'line');
     var line2 = document.createElementNS( svgns, 'line');
     var line3 = document.createElementNS( svgns, 'line');
+    var x = 0;
+    var y = 0;
     if(style == 'a'){
         d += 'M' + beginX + ' ' + beginY + ' ';
-        d += 'L' + endX + ' ' + endY;
+        if(endX > beginX){
+            x = endX-25;
+        }else if(endX < beginX){
+            x = endX+25;
+        }else if(endX == beginX){
+            x = endX;
+        }
+        if(endY != beginY){
+            y = beginY;
+        }else{
+            y = endY;
+        }
+        d += 'L' + x + ' ' + y + ' ';
+        d += 'M' + x + ' ' + y + ' ';
+        if(endY > beginY){
+            y = beginY+25;
+        }else if(endY < beginY){
+            y = beginY-25;
+        }else if(endY == beginY){
+            y = beginY;
+        }
+        x = endX;
+        d += 'L' + x + ' ' + y + ' ';
+        d += 'M' + x + ' ' + y + ' ';
+        y = endY;
+        d += 'L' + x + ' ' + y + ' ';
+        d += 'M' + x + ' ' + y + ' ';
+        
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
