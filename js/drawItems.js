@@ -204,10 +204,10 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += beginX + ' ' + beginY + ' ';
         if(endX > beginX){
             x = endX-25;
-            Sx = -2;
+            Sx = -1.5;
         }else if(endX < beginX){
             x = endX+25;
-            Sx = 2;
+            Sx = 1.5;
         }else if(endX == beginX){
             x = endX;
         }
@@ -220,15 +220,15 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'M' + x + ' ' + y + ' ';
         if(endY > beginY){
             y = beginY+25;
-            Sy = 2;
+            Sy = 1.5;
         }else if(endY < beginY){
             y = beginY-25;
-            Sy = -2;
+            Sy = -1.5;
         }else if(endY == beginY){
             y = beginY;
         }
         x = endX;
-        d += 'L' + (x+Sx) + ' ' + (y-Sy) + ' ';
+        d += 'L' + (x+Sx) + ' ' + (y+Sy) + ' ';
         d += 'M' + x + ' ' + y + ' ';
         y = endY;
         d += 'L' + x + ' ' + y + ' ';
@@ -269,7 +269,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
             x = beginX;
         }
         y = endY;
-        d += 'L' + (x+Sx) + ' ' + (y-Sy) + ' ';
+        d += 'L' + (x+Sx) + ' ' + (y+Sy) + ' ';
         d += 'M' + x + ' ' + y + ' ';
         x = endX;
         d += 'L' + x + ' ' + y + ' ';
