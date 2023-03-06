@@ -189,11 +189,11 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     var svgns = "http://www.w3.org/2000/svg";
     if(document.getElementById('line_' + line_instance) == null){
         var path = document.createElementNS(svgns, 'path');
+        path.setAttributeNS(null, 'd', 'M');
     }
     else{
         var path = document.getElementById('line_' + line_instance);
     }
-    path.setAttributeNS(null, 'd', 'M');
     var d = path.getAttributeNS(null, 'd');
     var line = document.createElementNS( svgns, 'line');
     var line2 = document.createElementNS( svgns, 'line');

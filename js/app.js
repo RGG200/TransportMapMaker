@@ -28,6 +28,7 @@ canvas.addEventListener('click', function(){
   }else{
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'common', prompt('indiquez le type connexion de la station: (a ou b):'), 'circle', mosX, mosY);
     const canvas = document.getElementById('canvas');
+    canvas.innerHTML = "";
     for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
       drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
     }
