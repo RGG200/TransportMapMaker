@@ -23,10 +23,6 @@ canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
   if(net.lines[instancesLine] == undefined){
     net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 7)], [new Station(prompt('entrer le nom de la station'), '', 'destination', prompt('indiquez le type connexion de la station: (a ou b):') , 'rect', mosX, mosY)]);
-    var svgns = "http://www.w3.org/2000/svg";
-    var line = document.createElementNS(svgns, 'path');
-    line.setAttributeNS(null, 'id', 'line_' + instancesLine);
-    canvas.appendChild(line);
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color);
     net.lines[instancesLine].stationInstances++;
   }else{
