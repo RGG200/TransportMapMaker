@@ -228,7 +228,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
             y = beginY;
         }
         x = endX;
-        d += 'L' + x+Sx + ' ' + y+Sy + ' ';
+        d += 'L' + (x+Sx) + ' ' + (y+Sy) + ' ';
         d += 'M' + x + ' ' + y + ' ';
         y = endY;
         d += 'L' + x + ' ' + y + ' ';
@@ -269,7 +269,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
             x = beginX;
         }
         x = endX;
-        d += 'L' + x+Sx + ' ' + y+Sy + ' ';
+        d += 'L' + (x+Sx) + ' ' + (y+Sy) + ' ';
         d += 'M' + x + ' ' + y + ' ';
         y = endY;
         d += 'L' + x + ' ' + y + ' ';
