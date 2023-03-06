@@ -185,14 +185,18 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
     }
 
   };
-export function drawLine(color, thicness, beginX, beginY, endX, endY, style){
+export function drawLine(color, thicness, beginX, beginY, endX, endY, style, line_instance){
     var svgns = "http://www.w3.org/2000/svg";
+    var path = document.getElementById('line_' + line_instance);
+    var d = '';
     var line = document.createElementNS( svgns, 'line');
     var line2 = document.createElementNS( svgns, 'line');
     var line3 = document.createElementNS( svgns, 'line');
-    
     if(style == 'a'){
-        line.setAttributeNS( null,'id',line_instances);
+        d += 'M' + beginX + ' ' + beginY;
+        d += 'L' + endX + ' ' + endY;
+        path.setAttributeNS(null, 'd', d);
+        line.setAttributeNS( null,'id', line_instances);
         line.setAttributeNS( null,'class','first');
         line.setAttributeNS( null,'x1',beginX);
         line.setAttributeNS( null,'y1',beginY);
