@@ -230,8 +230,8 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         }else if(endX == beginX){
             x = endX;
         }
-        x = endX;
         d += 'L' + x + ' ' + y + ' ';
+        x = endX;
         if(endY > beginY){
             y = beginY+25;
         }else if(endY < beginY){
