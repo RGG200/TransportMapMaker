@@ -197,17 +197,13 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     var d = path.getAttributeNS(null, 'd');
     var x = 0;
     var y = 0;
-    var Sx = 0;
-    var Sy = 0;
-    //math behind the connection a the butt section
+    //Butt section style
     if(style == 'a'){
         d += beginX + ' ' + beginY + ' ';
         if(endX > beginX){
-            x = endX-25;
-            Sx = -1.5;
+            x = endX-40;
         }else if(endX < beginX){
-            x = endX+25;
-            Sx = 1.5;
+            x = endX+40;
         }else if(endX == beginX){
             x = endX;
         }
@@ -219,16 +215,14 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
         if(endY > beginY){
-            y = beginY+25;
-            Sy = 1.5;
+            y = beginY+40;
         }else if(endY < beginY){
-            y = beginY-25;
-            Sy = -1.5;
+            y = beginY-40;
         }else if(endY == beginY){
             y = beginY;
         }
         x = endX;
-        d += 'L' + (x+Sx) + ' ' + (y+Sy) + ' ';
+        d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
         y = endY;
         d += 'L' + x + ' ' + y + ' ';
@@ -244,11 +238,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     }else if(style == 'b'){
         d += beginX + ' ' + beginY + ' ';
         if(endY > beginY){
-            y = endY-25;
-            Sy = -1.5;
+            y = endY-40;
         }else if(endY < beginY){
-            y = endY+25;
-            Sy = 1.5;
+            y = endY+40;
         }else if(endY == beginY){
             y = endY;
         }
@@ -260,16 +252,14 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
         if(endX > beginX){
-            x = beginX+25;
-            Sx = 1.5;
+            x = beginX+40;
         }else if(endX < beginX){
-            x = beginX-25;
-            Sx = -1.5;
+            x = beginX-40;
         }else if(endX == beginX){
             x = beginX;
         }
         x = endX;
-        d += 'L' + (x+Sx) + ' ' + (y+Sy) + ' ';
+        d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
         y = endY;
         d += 'L' + x + ' ' + y + ' ';
