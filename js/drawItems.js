@@ -203,9 +203,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     if(style == 'a'){
         d += beginX + ' ' + beginY + ' ';
         if(endX > beginX){
-            x = endX-27;
+            x = endX-25;
         }else if(endX < beginX){
-            x = endX+27;
+            x = endX+25;
         }else if(endX == beginX){
             x = endX;
         }
@@ -224,9 +224,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
             y = beginY;
         }
         if(endX > beginX){
-            x = endX-25;
+            x = endX-26.5;
         }else if(endX < beginX){
-            x = endX+25;
+            x = endX+26.5;
         }else if(endX == beginX){
             x = endX;
         }
@@ -254,9 +254,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     }else if(style == 'b'){
         d += beginX + ' ' + beginY + ' ';
         if(endY > beginY){
-            y = endY-27;
+            y = endY-25;
         }else if(endY < beginY){
-            y = endY+27;
+            y = endY+25;
         }else if(endY == beginY){
             y = endY;
         }
@@ -275,9 +275,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
             x = beginX;
         }
         if(endY > beginY){
-            y = endY-25;
+            y = endY-26.5;
         }else if(endY < beginY){
-            y = endY+25;
+            y = endY+26.5;
         }else if(endY == beginY){
             y = endY;
         }
