@@ -197,6 +197,12 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     var d = path.getAttributeNS(null, 'd');
     var x = 0;
     var y = 0;
+    //math behind the connection a the butt section
+    const r = 5
+    const dirX = endX > beginX;
+    const dirY = endY > beginY;
+    const Rx = dirX ? r : -r; // if directionX == true then r is positive
+    const Ry = dirY ? r : -r;
     if(style == 'a'){
         d += beginX + ' ' + beginY + ' ';
         if(endX > beginX){
@@ -211,7 +217,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         }else{
             y = endY;
         }
-        d += 'L' + x + ' ' + y + ' ';
+        d += 'L' + x + ' ' + y + ' ' + 'c' + Rx + '0, 0 0, 0 0 ';
         d += 'M' + x + ' ' + y + ' ';
         if(endY > beginY){
             y = beginY+25;
@@ -258,7 +264,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
             x = beginX;
         }
         x = endX;
-        d += 'L' + x + ' ' + y + ' ';
+        d += 'L' + x + ' ' + y + ' ' + 'c' + Ry + '0, 0 0, 0 0 ';
         d += 'M' + x + ' ' + y + ' ';
         y = endY;
         d += 'L' + x + ' ' + y + ' ';
