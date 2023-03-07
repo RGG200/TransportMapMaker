@@ -203,9 +203,9 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     if(style == 'a'){
         d += 'M' + beginX + ' ' + beginY + ' ';
         if(endX > beginX){
-            x = endX+25;
-        }else if(endX < beginX){
             x = endX-25;
+        }else if(endX < beginX){
+            x = endX+25;
         }else if(endX == beginX){
             x = endX;
         }
@@ -217,30 +217,30 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
         if(endY > beginY){
+            y = beginY+26.35;
+        }else if(endY < beginY){
+            y = beginY-26.35;
+        }else if(endY == beginY){
+            y = beginY;
+        }
+        if(endX > beginX){
+            x = endX-26.35;
+        }else if(endX < beginX){
+            x = endX+26.35;
+        }else if(endX == beginX){
+            x = endX;
+        }
+        x = endX;
+        d += 'L' + x + ' ' + y + ' ';
+        if(endY > beginY){
             y = beginY+25;
         }else if(endY < beginY){
             y = beginY-25;
         }else if(endY == beginY){
             y = beginY;
         }
-        if(endX > beginX){
-            x = endX+25;
-        }else if(endX < beginX){
-            x = endX-25;
-        }else if(endX == beginX){
-            x = endX;
-        }
-        d += 'L' + x + ' ' + y + ' ';
-        if(endY > beginY){
-            y = beginY+26.5;
-        }else if(endY < beginY){
-            y = beginY-26.5;
-        }else if(endY == beginY){
-            y = beginY;
-        }
-        y = endY;
         d += 'M' + x + ' ' + y + ' ';
-        x = endX;
+        y = endY;
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
 
@@ -252,7 +252,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         
         
     }else if(style == 'b'){
-        d += 'M' + beginX + ' ' + beginY + ' ';
+        d += 'M' +beginX + ' ' + beginY + ' ';
         if(endY > beginY){
             y = endY-25;
         }else if(endY < beginY){
@@ -268,30 +268,30 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
         if(endX > beginX){
-            x = beginX+26.5;
-        }else if(endX < beginX){
-            x = beginX-26.5;
-        }else if(endX == beginX){
-            x = beginX;
-        }
-        if(endY > beginY){
-            y = endY+2.5;
-        }else if(endY < beginY){
-            y = endY-2.5;
-        }else if(endY == beginY){
-            y = endY;
-        }
-        d += 'L' + x + ' ' + y + ' ';
-        if(endX > beginX){
             x = beginX+25;
         }else if(endX < beginX){
             x = beginX-25;
         }else if(endX == beginX){
             x = beginX;
         }
-        x = endX;
-        d += 'M' + x + ' ' + y + ' ';
+        if(endY > beginY){
+            y = endY-26.35;
+        }else if(endY < beginY){
+            y = endY+26.35;
+        }else if(endY == beginY){
+            y = endY;
+        }
         y = endY;
+        d += 'L' + x + ' ' + y + ' ';
+        if(endX > beginX){
+            x = beginX+26.35;
+        }else if(endX < beginX){
+            x = beginX-26.35;
+        }else if(endX == beginX){
+            x = beginX;
+        }
+        d += 'M' + x + ' ' + y + ' ';
+        x = endX;
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
 
