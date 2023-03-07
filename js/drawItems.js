@@ -201,7 +201,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     var Sy = 0;
     //math behind the connection a the butt section
     if(style == 'a'){
-        d += 'M' + beginX + ' ' + beginY + ' ';
+        d += beginX + ' ' + beginY + ' ';
         if(endX > beginX){
             x = endX-25;
         }else if(endX < beginX){
@@ -253,7 +253,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         
         
     }else if(style == 'b'){
-        d += 'M' +beginX + ' ' + beginY + ' ';
+        d += beginX + ' ' + beginY + ' ';
         if(endX == beginX){
             x = endX;
         }else{
