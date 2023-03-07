@@ -26,17 +26,34 @@ canvas.addEventListener('click', function(){
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color);
     net.lines[instancesLine].stationInstances++;
   }else{
+    let xArray = [];
+    let yArray = [];
+    let posI = 0;
+    let xMax = 0;
+    let yMax = 0;
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'destination', prompt('indiquez le type connexion de la station: (a ou b):'), 'rect', mosX, mosY);
-    if(net.lines[instancesLine].stationInstances-1 > 0){
+    /*if(net.lines[instancesLine].stationInstances-1 > 0){
       net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].type = "common";
       net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].style = "circle";
-    }
+    }*/
     const canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
     for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
+      xArray[posI] = element.xPos;
+      yArray[posI] = element.yPos;
+      posI++;
       drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
     }
+    xArray[posI] = element.xPos;
+    yArray[posI] = element.yPos;
+    posI++;
+    xMax = Math.max(...xArray);
+    yMax = Math.max(...yArray);
     for(const element of net.lines[instancesLine].stations){
+      if(element.xPos == xMax || element.yPos == yMax){ 
+        element.type = "destination"; 
+        element.style = "rect"
+      }
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
     }
     net.lines[instancesLine].stationInstances++;
