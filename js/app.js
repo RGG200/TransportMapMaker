@@ -31,6 +31,8 @@ canvas.addEventListener('click', function(){
     let posI = 0;
     let xMax = 0;
     let yMax = 0;
+    let xMin = 0;
+    let yMin = 0;
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'destination', prompt('indiquez le type connexion de la station: (a ou b):'), 'rect', mosX, mosY);
     /*if(net.lines[instancesLine].stationInstances-1 > 0){
       net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].type = "common";
@@ -49,10 +51,15 @@ canvas.addEventListener('click', function(){
     posI++;
     xMax = Math.max(...xArray);
     yMax = Math.max(...yArray);
+    xMin = Math.min(...xArray);
+    yMin = Math.min(...yArray);
     for(const element of net.lines[instancesLine].stations){
-      if(element.xPos == xMax || element.yPos == yMax){ 
+      if(element.xPos == xMax || element.yPos == yMax || element.xPos == xMin || element.yPos == yMin ){ 
         element.type = "destination"; 
         element.style = "rect"
+      }else{
+        element.type = "common"; 
+        element.style = "circle"
       }
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
     }
