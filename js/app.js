@@ -54,7 +54,7 @@ canvas.addEventListener('click', function(){
     xMin = Math.min(...xArray);
     yMin = Math.min(...yArray);
     for(const element of net.lines[instancesLine].stations){
-      if(element.xPos == xMax && element.yPos != yMin || element.xPos == xMin && element.yPos != yMax || element.yPos == yMin && element.xPos != xMax || element.yPos == yMax && element.xPos != xMin){ 
+      if(element.xPos == xMax && element.yPos == yMax || element.xPos == xMin && element.yPos == yMin || element.yPos == yMin && element.xPos == xMax || element.yPos == yMax && element.xPos == xMin){ 
         element.type = "destination";
         element.style = "rect";
       }else{
