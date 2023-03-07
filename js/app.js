@@ -26,7 +26,11 @@ canvas.addEventListener('click', function(){
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color);
     net.lines[instancesLine].stationInstances++;
   }else{
-    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'common', prompt('indiquez le type connexion de la station: (a ou b):'), 'circle', mosX, mosY);
+    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'destination', prompt('indiquez le type connexion de la station: (a ou b):'), 'rect', mosX, mosY);
+    if(net.lines[instancesLine].stationInstances-1 > 0){
+      net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].type = "common";
+      net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].style = "circle";
+    }
     const canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
     for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
