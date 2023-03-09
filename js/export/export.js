@@ -1,4 +1,4 @@
-export function saveMap(){
+function saveMap(){
   //get svg element.
   var svg = document.getElementById("canvas");
 
@@ -24,3 +24,4 @@ export function saveMap(){
   document.getElementById("exportsvg").href = url;
   //you can download svg file by right click menu.
 }
+saveMap();
