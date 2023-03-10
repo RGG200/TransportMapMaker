@@ -44,10 +44,10 @@ canvas.addEventListener('click', function(){
     xArray[posI] = net.lines[instancesLine].stations[posI].xPos;
     yArray[posI] = net.lines[instancesLine].stations[posI].yPos;
     posI++;
-      drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
-      if(net.lines[instancesLine].stations[i-1].connected == false && i > 1 && net.lines[instancesLine].stations[i].xPos != net.lines[instancesLine].stations[i-1].xPos && net.lines[instancesLine].stations[i].yPos != net.lines[instancesLine].stations[i-1].yPos){
-        net.lines[instancesLine].stations[i-1].connected == true;
-      }
+    drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
+    if(net.lines[instancesLine].stations[i-1].connected == false && i != 1){
+      net.lines[instancesLine].stations[i-1].connected == true;
+    }
     }
     xArray[posI] = net.lines[instancesLine].stations[posI].xPos;
     yArray[posI] = net.lines[instancesLine].stations[posI].yPos;
