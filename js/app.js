@@ -45,6 +45,9 @@ canvas.addEventListener('click', function(){
     yArray[posI] = net.lines[instancesLine].stations[posI].yPos;
     posI++;
       drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
+      if(net.lines[instancesLine].stations[i-1].connected == false && i > 1 && net.lines[instancesLine].stations[i].xPos != mosX && net.lines[instancesLine].stations[i].yPos != mosY){
+        net.lines[instancesLine].stations[i-1].connected == true;
+      }
     }
     xArray[posI] = net.lines[instancesLine].stations[posI].xPos;
     yArray[posI] = net.lines[instancesLine].stations[posI].yPos;
@@ -54,7 +57,7 @@ canvas.addEventListener('click', function(){
     xMin = Math.min(...xArray);
     yMin = Math.min(...yArray);
     for(const element of net.lines[instancesLine].stations){
-      if(element.xPos == xMax && element.yPos == yMax || element.xPos == xMin && element.yPos == yMin || element.yPos == yMin && element.xPos == xMax || element.yPos == yMax && element.xPos == xMin){ 
+      if(element.connected == false){ 
         element.type = "destination";
         element.style = "rect";
       }else{
