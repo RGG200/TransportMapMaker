@@ -7,6 +7,7 @@ export function Station(fName, sName, type, line_style, style, xPos, yPos){
     this.yPos = yPos;
     this.line_style = line_style;
     this.selected = false;
+    this.connected = false;
 };
 export function Network(lines){
     this.lines = lines;
