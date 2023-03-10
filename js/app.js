@@ -45,7 +45,7 @@ canvas.addEventListener('click', function(){
     yArray[posI] = net.lines[instancesLine].stations[posI].yPos;
     posI++;
     drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
-    if(net.lines[instancesLine].stations[i-1].connected == false && i != 1){
+    if(net.lines[instancesLine].stations[i-1].connected == false){
       net.lines[instancesLine].stations[i-1].connected == true;
     }
     }
@@ -57,7 +57,7 @@ canvas.addEventListener('click', function(){
     xMin = Math.min(...xArray);
     yMin = Math.min(...yArray);
     for(const element of net.lines[instancesLine].stations){
-      if(element.connected == false){ 
+      if(element.connected == false || element.xPos == xMin && element.yPos == yMin || element.yPos == yMax && element.xPos == xMax){ 
         element.type = "destination";
         element.style = "rect";
       }else{
