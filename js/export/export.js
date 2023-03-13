@@ -1,5 +1,6 @@
 function saveMap(){
-  //get svg element.var svgData = $("#figureSvg")[0].outerHTML;
+  //Get SVG element
+  var svgData = $("#figureSvg")[0].outerHTML;
   var svgBlob = new Blob([svgData], {type:"image/svg+xml;charset=utf-8"});
   var svgUrl = URL.createObjectURL(svgBlob);
   var downloadLink = document.createElement("a");
