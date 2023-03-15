@@ -320,7 +320,6 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
 
 export function drawStationsList(network, instancesLine){
     var st_list = document.getElementById('st-list');
-    st_list.innerHTML = "";
     for(let i = 0; i < network.lines.length; i++){
         let lineElement = document.createElement('div');
         let lineText = document.createElement('h3');
