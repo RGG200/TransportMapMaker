@@ -6,7 +6,6 @@ html body{
 }
 #canvas{
     position: absolute;
-    border: 2px solid black;
     background-image: url('../img/grid.svg');
 }
 .stationNames{
@@ -16,6 +15,21 @@ html body{
     width: 100%;
     text-transform: uppercase;
 }
+.return{
+    height: 6%;
+    color: crimson;
+    width: 100%;
+    background: white;
+    transition: 300ms;
+    text-align: left;
+    display: flex;
+    border: none;
+    font-size: 1em;
+    text-decoration: none;
+    font-family
+    : 'roboto', sans-serif;
+}
+
 .button{
     height: 6%;
     color: crimson;
