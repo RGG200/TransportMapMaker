@@ -14,8 +14,13 @@ html body{
     width: 100%;
     text-transform: uppercase;
 }
-line-section{
+line_section{
     width: 100%;
+}
+.line_name{
+    font-size: 1em;
+    font-weight: 600;
+    color: gray;
 }
 .station_instance{
     position: relative;
