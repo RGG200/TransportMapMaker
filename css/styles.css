@@ -14,6 +14,9 @@ html body{
     width: 100%;
     text-transform: uppercase;
 }
+line-section{
+    width: 100%;
+}
 .station_instance{
     position: relative;
     margin: auto;
