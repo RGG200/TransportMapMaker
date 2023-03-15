@@ -15,7 +15,9 @@ html body{
     text-transform: uppercase;
 }
 .return{
-    margin-left = 90%;
+    position: absolute;
+    left: 90%;
+    top: 5%;
     height: 6%;
     color: crimson;
     width: 100%;
@@ -31,7 +33,7 @@ html body{
 }
 
 .button{
-    height: 6%;
+    height: 10%;
     color: crimson;
     width: 100%;
     background: white;
