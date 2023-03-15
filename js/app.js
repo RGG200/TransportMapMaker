@@ -9,14 +9,6 @@ import { Station, Network, Line, drawLine, drawStation, drawStationsList} from '
   export function updateDisplay(event) {
     mosX = Math.round((event.pageX-10)/20)*20;
     mosY = Math.round((event.pageY-10)/20)*20;
-    for(const element of net.lines[instancesLine].stations){
-      if(element.connected == false){ 
-        element.type = "destination";
-      }else{
-        element.type = "common"; 
-      }
-      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
-    }
   };
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy', 'gare du nord', 'sartrouville'];
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture'];
