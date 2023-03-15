@@ -318,7 +318,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     line_instances++;
 };
 
-export function drawStationsList(network){
+export function drawStationsList(network, instancesLine){
     var st_list = document.getElementById('st-list');
     for(station of network.lines[instancesLine].stations){
         let stationButton = document.createElement('a');
