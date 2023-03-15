@@ -320,11 +320,20 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
 
 export function drawStationsList(network, instancesLine){
     var st_list = document.getElementById('st-list');
-    for(let i = 0; i < network.lines[instancesLine].stations.length; i++){
-        let stationButton = document.createElement('a');
-        stationButton.innerText = network.lines[instancesLine].stations[i].fName;
-        stationButton.setAttributeNS(null, 'id', i);
-        stationButton.setAttributeNS(null, 'class', 'station_instance');
-        st_list.appendChild(stationButton);
+    st_list.innerHTML = "";
+    for(let i = 0; i < network.lines.length; i++){
+        let lineElement = document.createElement('div');
+        let lineText = document.createElement('h3');
+        lineText.innerHTML = "ligne_" + instancesLine;
+        lineElement.setAttributeNS(null, 'id', instancesLine);
+        lineElement.setAttributeNS(null, 'class', 'line_section');
+        st_list.appendChild(lineElement);
+        for(let j = 0; j < network.lines[instancesLine].stations.length; j++){
+            let stationButton = document.createElement('a');
+            stationButton.innerText = network.lines[instancesLine].stations[j].fName;
+            stationButton.setAttributeNS(null, 'id', j);
+            stationButton.setAttributeNS(null, 'class', 'station_instance');
+            lineElement.appendChild(stationButton);
+        }
     }
 }
