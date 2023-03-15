@@ -38,7 +38,7 @@ line_section{
 .return{
     position: absolute;
     left: 90%;
-    top: 50px;
+    top: 5vh;
     height: 6%;
     color: crimson;
     width: 100%;
@@ -147,7 +147,8 @@ line_section{
 }
 .main-title{
     text-align: center;
-    margin-bottom: 20px;
+    position: absolute;
+    top: 4vh;
 }
 #st-editor{
     position: fixed;
