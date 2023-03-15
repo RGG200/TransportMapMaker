@@ -2,7 +2,7 @@ export let instancesLine = 0;
 export let stationInstances = 0;
 import { Station, Network, Line, drawLine, drawStation, drawStationsList} from './drawItems.js';
 
-  export let net = new Network([]);
+  let net = new Network([]);
 
   let mosX;
   let mosY;
@@ -34,10 +34,6 @@ canvas.addEventListener('click', function(){
     let xMin = 0;
     let yMin = 0;
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 7)], '', 'destination', 'a', 'rect', mosX, mosY);
-    /*if(net.lines[instancesLine].stationInstances-1 > 0){
-      net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].type = "common";
-      net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].style = "circle";
-    }*/
     const canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
     for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
