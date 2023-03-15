@@ -322,7 +322,7 @@ export function drawStationsList(network, instancesLine){
     var st_list = document.getElementById('st-list');
     for(let i = 0; i < network.lines[instancesLine].stations.length; i++){
         let stationButton = document.createElement('a');
-        stationButton.innerText = station.fName;
+        stationButton.innerText = network.lines[instancesLine].stations[i].fName;
         stationButton.setAttributeNS(null, 'id', network.lines[instancesLine].stations.indexOf(station));
         stationButton.setAttributeNS(null, 'class', 'station_instance');
         st_list.appendChild(stationButton);
