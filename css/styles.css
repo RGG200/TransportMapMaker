@@ -26,8 +26,6 @@ html body{
     border: none;
     font-size: 1em;
     text-decoration: none;
-    font-family
-    : 'roboto', sans-serif;
 }
 
 .button{
@@ -41,8 +39,7 @@ html body{
     border: none;
     font-size: 1em;
     text-decoration: none;
-    font-family
-    : 'Noto Sans JP', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 .button:active{
     border-style: outset;
