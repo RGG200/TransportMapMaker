@@ -101,8 +101,8 @@ html body{
     left: 0%;
     z-index: 2;
     background-color: #FFF;
-    width: 30%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     display: none;
 }
@@ -112,10 +112,10 @@ html body{
 .st-editor{
     position: fixed;
     left: 30.2%;
-    z-index: 2;
+    z-index: 3;
     background-color: #FFF;
-    width: 30%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     display: none;
     justify-content: center;
 }
