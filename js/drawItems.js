@@ -320,7 +320,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
 
 export function drawStationsList(network, instancesLine){
     var st_list = document.getElementById('st-list');
-    for(station of network.lines[instancesLine].stations){
+    for(let i = 0; i < network.lines[instancesLine].stations.length; i++){
         let stationButton = document.createElement('a');
         stationButton.innerText = station.fName;
         stationButton.setAttributeNS(null, 'id', network.lines[instancesLine].stations.indexOf(station));
