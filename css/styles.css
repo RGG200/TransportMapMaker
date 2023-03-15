@@ -15,8 +15,7 @@ html body{
     text-transform: uppercase;
 }
 .return{
-    position: relative;
-    right: 2%;
+    margin-right = 10px;
     height: 6%;
     color: crimson;
     width: 100%;
@@ -26,6 +25,7 @@ html body{
     display: flex;
     border: none;
     font-size: 1em;
+    font-weight: 700;
     text-decoration: none;
     font-family:'Roboto', sans-serif;
 }
