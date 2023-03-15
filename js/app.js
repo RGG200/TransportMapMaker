@@ -7,8 +7,16 @@ import { Station, Network, Line, drawLine, drawStation, drawStationsList} from '
   let mosX;
   let mosY;
   export function updateDisplay(event) {
-    mosX = Math.round((event.pageX-15)/20)*20;
-    mosY = Math.round((event.pageY-15)/20)*20;
+    mosX = Math.round((event.pageX-10)/20)*20;
+    mosY = Math.round((event.pageY-10)/20)*20;
+    for(const element of net.lines[instancesLine].stations){
+      if(element.connected == false){ 
+        element.type = "destination";
+      }else{
+        element.type = "common"; 
+      }
+      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
+    }
   };
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy', 'gare du nord', 'sartrouville'];
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture'];
@@ -29,10 +37,6 @@ canvas.addEventListener('click', function(){
     let xArray = [];
     let yArray = [];
     let posI = 0;
-    let xMax = 0;
-    let yMax = 0;
-    let xMin = 0;
-    let yMin = 0;
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 7)], '', 'destination', 'a', 'rect', mosX, mosY);
     const canvas = document.getElementById('canvas');
     canvas.innerHTML = "";
@@ -48,17 +52,11 @@ canvas.addEventListener('click', function(){
     xArray[posI] = net.lines[instancesLine].stations[posI].xPos;
     yArray[posI] = net.lines[instancesLine].stations[posI].yPos;
     posI++;
-    xMax = Math.max(...xArray);
-    yMax = Math.max(...yArray);
-    xMin = Math.min(...xArray);
-    yMin = Math.min(...yArray);
     for(const element of net.lines[instancesLine].stations){
       if(element.connected == false){ 
         element.type = "destination";
-        element.style = "rect";
       }else{
         element.type = "common"; 
-        element.style = "circle"
       }
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
     }
@@ -68,6 +66,43 @@ canvas.addEventListener('click', function(){
 
 const st_list = document.getElementById('st-list');
 
-st_list.addEventListener('click', function(){
+let id_selected_station_on_editor = 0;
+
+let buttonGroup = document.getElementsByClassName('station_instance');
+
+var data = {
+  fName: '',
+  sName: '',
+  coord: [0, 0],
+  cx_type: '',
+  style_type: ''
+};
+const buttonPressed = e => {
+  id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
+  data.fName= net.lines[instancesLine].stations[id_selected_station_on_editor].fName,
+  data.sName= net.lines[instancesLine].stations[id_selected_station_on_editor].sName,
+  data.coords= [net.lines[instancesLine].stations[id_selected_station_on_editor].xPos, net.lines[instancesLine].stations[id_selected_station_on_editor].xPos],
+  data.cx_type= net.lines[instancesLine].stations[id_selected_station_on_editor].line_style,
+  data.style_type= net.lines[instancesLine].stations[id_selected_station_on_editor].style
+  document.getElementById('first').setAttributeNS(null, 'value', data.fName);
+  document.getElementById('second').setAttributeNS(null, 'value', data.sName);
+  document.getElementById('cx-btn').innerHTML = data.cx_type;
+  document.getElementById('style-btn').innerHTML = data.style_type;
+  
+}
+
+st_list.addEventListener('mouseenter', function(){
   drawStationsList(net, instancesLine);
+  for (let button of buttonGroup) {
+    button.addEventListener("click", buttonPressed, false);
+  }
 }, false);
+
+const save = document.getElementById('save');
+
+save.addEventListener('click', function(){
+  net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').getAttributeNS(null, 'value');
+  net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').getAttributeNS(null, 'value');
+  net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
+  net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
+}, false)

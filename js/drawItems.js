@@ -87,7 +87,6 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 // second_name.setAttributeNS(null, 'font-weight', '700');
                 // document.getElementById( 'canvas' ).appendChild( second_name );
             }
-            instances++;
             break;
         case 'exchange':
             var inter = document.createElementNS( svgns, style);
@@ -122,14 +121,13 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
             // second_name.setAttributeNS(null, 'font-family', 'verdana');
             // second_name.setAttributeNS(null, 'font-weight', '700');
             // document.getElementById( 'canvas' ).appendChild( second_name );
-            instances++;
             break;
         case 'common':
             if(style == 'rect' && type != 'exchange'){
                 var rect = document.createElementNS( svgns, style);
                 rect.setAttributeNS( null,'id',instances);
-                rect.setAttributeNS( null,'x',posX);
-                rect.setAttributeNS( null,'y',posY);
+                rect.setAttributeNS( null,'x',posX-10);
+                rect.setAttributeNS( null,'y',posY-10);
                 rect.setAttributeNS( null,'width', '20');
                 rect.setAttributeNS( null,'height','20');
                 rect.setAttributeNS( null,'fill',lineColor);
@@ -181,9 +179,9 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 // second_name.setAttributeNS(null, 'font-weight', '700');
                 // document.getElementById( 'canvas' ).appendChild( second_name );
             }
-            instances++;
             break;
     }
+    instances++;
 
   };
 export function drawLine(color, thicness, beginX, beginY, endX, endY, style, line_instance){
@@ -319,7 +317,8 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
 };
 
 export function drawStationsList(network, instancesLine){
-    var st_list = document.getElementById('st-list');
+    var st_list = document.getElementById('content');
+    st_list.innerHTML = "";
     for(let i = 0; i < network.lines.length; i++){
         let lineElement = document.createElement('div');
         let lineText = document.createElement('h3');
@@ -327,12 +326,14 @@ export function drawStationsList(network, instancesLine){
         lineText.setAttributeNS(null, 'class', 'line_name');
         lineElement.setAttributeNS(null, 'id', i);
         lineElement.setAttributeNS(null, 'class', 'line_section');
+        lineElement.appendChild(lineText);
         st_list.appendChild(lineElement);
         for(let j = 0; j < network.lines[instancesLine].stations.length; j++){
             let stationButton = document.createElement('a');
             stationButton.innerText = network.lines[instancesLine].stations[j].fName;
             stationButton.setAttributeNS(null, 'id', j);
             stationButton.setAttributeNS(null, 'class', 'station_instance');
+            stationButton.setAttributeNS(null, 'onclick', "showEditor('options', 'st-editor');");
             lineElement.appendChild(stationButton);
         }
     }
