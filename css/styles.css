@@ -32,28 +32,30 @@ html body{
     font-family:'Roboto', sans-serif;
 }
 
+
 .button{
-    height: 10%;
+    height: 20%;
     color: crimson;
     width: 100%;
     background: white;
     transition: 300ms;
-    text-align: left;
     display: flex;
-    border: none;
-    font-size: 1em;
+    border: 1px solid transparent;
+    font-size: 0.9em;
+    text-align: center;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
 }
 .button:active{
     border-style: outset;
-    border: none;
     width: 100%;
+    background: whitesmoke;
 }
 .button:hover{
     color: red;
     transition: 300ms;
     display: flex;
+    background: whitesmoke;
 }
 #options{
     text-decoration: none;
@@ -61,8 +63,8 @@ html body{
     right: 2px;
     display: none;
     bottom: 50px;
-    width: 15%;
-    height: auto;
+    width: 20%;
+    height: 50%;
     font-size: 1.5em;
     text-align: center;
     z-index: 2;
