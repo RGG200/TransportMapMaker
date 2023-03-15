@@ -109,7 +109,7 @@ html body{
 .main-title{
     text-align: center;
 }
-.st-editor{
+#st-editor{
     position: fixed;
     left: 30.2%;
     z-index: 3;
