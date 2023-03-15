@@ -325,7 +325,7 @@ export function drawStationsList(network, instancesLine){
         let lineElement = document.createElement('div');
         let lineText = document.createElement('h3');
         lineText.innerHTML = "ligne_" + instancesLine;
-        lineElement.setAttributeNS(null, 'id', instancesLine);
+        lineElement.setAttributeNS(null, 'id', i);
         lineElement.setAttributeNS(null, 'class', 'line_section');
         st_list.appendChild(lineElement);
         for(let j = 0; j < network.lines[instancesLine].stations.length; j++){
