@@ -10,7 +10,7 @@ import { Station, Network, Line, drawLine, drawStation, drawStationsList} from '
     mosX = Math.round((event.pageX-15)/20)*20;
     mosY = Math.round((event.pageY-15)/20)*20;
   };
-  let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy'];
+  let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy', 'gare du nord', 'sartrouville'];
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture'];
   let colors = ['aqua', 'red', "blue", 'purple', 'orangered', 'red', 'yellow', 'green'];
   function getRandomIntInclusive(min, max) {
@@ -33,7 +33,7 @@ canvas.addEventListener('click', function(){
     let yMax = 0;
     let xMin = 0;
     let yMin = 0;
-    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(prompt('entrer le nom de la station'), '', 'destination', prompt('indiquez le type connexion de la station: (a ou b):'), 'rect', mosX, mosY);
+    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 7)], '', 'destination', 'a', 'rect', mosX, mosY);
     /*if(net.lines[instancesLine].stationInstances-1 > 0){
       net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].type = "common";
       net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1].style = "circle";
@@ -73,5 +73,5 @@ canvas.addEventListener('click', function(){
 const st_list = document.getElementById('st-list');
 
 st_list.addEventListener('click', function(){
-  drawStationsList(net);
+  drawStationsList(net, instancesLine);
 }, false);
