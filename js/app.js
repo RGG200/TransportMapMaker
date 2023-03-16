@@ -94,11 +94,13 @@ var save = document.getElementById('save');
 function updateCanvas(){
   const canvas = document.getElementById('canvas');
   canvas.innerHTML = "";
+  let j = 0;
   for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
     drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
     if(i <= stationInstances){
-      drawStation(net.lines[instancesLine].stations[i].fName, net.lines[instancesLine].stations[i].sName, net.lines[instancesLine].stations[i].style, net.lines[instancesLine].stations[i].type, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].color);
+      drawStation(net.lines[instancesLine].stations[j].fName, net.lines[instancesLine].stations[j].sName, net.lines[instancesLine].stations[j].style, net.lines[instancesLine].stations[j].type, net.lines[instancesLine].stations[j].xPos, net.lines[instancesLine].stations[j].yPos, net.lines[instancesLine].color);
     }
+    j++;
   }
 }
 
