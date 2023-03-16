@@ -96,9 +96,9 @@ function updateCanvas(){
   canvas.innerHTML = "";
   for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
     drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
-  }
-  for(let j = 0; i < net.lines[instancesLine].stationInstances; j++){
-    drawStation(net.lines[instancesLine].stations[j].fName, net.lines[instancesLine].stations[j].sName, net.lines[instancesLine].stations[j].style, net.lines[instancesLine].stations[j].type, net.lines[instancesLine].stations[j].xPos, net.lines[instancesLine].stations[j].yPos, net.lines[instancesLine].color);
+    for(let j = 0; i < net.lines[instancesLine].stationInstances; j++){
+      drawStation(net.lines[instancesLine].stations[j].fName, net.lines[instancesLine].stations[j].sName, net.lines[instancesLine].stations[j].style, net.lines[instancesLine].stations[j].type, net.lines[instancesLine].stations[j].xPos, net.lines[instancesLine].stations[j].yPos, net.lines[instancesLine].color);
+    }
   }
 }
 
