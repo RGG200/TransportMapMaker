@@ -44,6 +44,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 first_name.innerHTML = fName+''+sName;
                 first_name.setAttributeNS(null, 'x', posX);
                 first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
                 first_name.setAttributeNS(null, 'font-family', 'verdana');
@@ -73,6 +74,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 first_name.innerHTML = fName+''+sName;
                 first_name.setAttributeNS(null, 'x', posX);
                 first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
                 first_name.setAttributeNS(null, 'font-family', 'verdana');
@@ -108,6 +110,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
             first_name.innerHTML = fName+''+sName;
             first_name.setAttributeNS(null, 'x', posX);
             first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'id', instances);
             first_name.setAttributeNS(null, 'class', 'stationNames');
             first_name.setAttributeNS(null, 'font-size', '16');
             first_name.setAttributeNS(null, 'font-family', 'verdana');
@@ -138,6 +141,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 first_name.innerHTML = fName+''+sName;
                 first_name.setAttributeNS(null, 'x', posX);
                 first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
                 first_name.setAttributeNS(null, 'font-family', 'verdana');
@@ -165,6 +169,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 first_name.innerHTML = fName+''+sName;
                 first_name.setAttributeNS(null, 'x', posX);
                 first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
                 first_name.setAttributeNS(null, 'font-family', 'verdana');
