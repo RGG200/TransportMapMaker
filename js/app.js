@@ -98,5 +98,5 @@ save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   const element = net.lines[instancesLine].stations[id_selected_station_on_editor];
   drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
-  clearStationText(id_selected_station_on_editor);
+  clearStationText(id_selected_station_on_editor-1);
 });
