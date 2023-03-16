@@ -343,7 +343,7 @@ export function drawStationsList(network, instancesLine){
         }
     }
 }
-export function clearStationText(id, text){
+export function setStationText(id, text){
 
   document.getElementsByClassName('stationNames')[id].innerHTML = text;
 
