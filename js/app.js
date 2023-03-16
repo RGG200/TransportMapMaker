@@ -97,4 +97,4 @@ save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   alert(net.lines[instancesLine].stations[id_selected_station_on_editor].fName);
-}, false);
+});
