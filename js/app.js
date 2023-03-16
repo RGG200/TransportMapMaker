@@ -1,6 +1,6 @@
 export let instancesLine = 0;
 export let stationInstances = 0;
-import { Station, Network, Line, drawLine, drawStation, drawStationsList, clearStationText} from './drawItems.js';
+import { Station, Network, Line, drawLine, drawStation, drawStationsList, setStationText} from './drawItems.js';
 
   let net = new Network([]);
 
@@ -98,5 +98,6 @@ save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   const element = net.lines[instancesLine].stations[id_selected_station_on_editor];
   drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
-  clearStationText(id_selected_station_on_editor-1);
+  setStationText(id_selected_station_on_editor, element.fName);
+  drawStationsList(net, instancesLine);
 });
