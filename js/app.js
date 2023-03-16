@@ -63,7 +63,7 @@ st_list.addEventListener("mouseenter", function(){
   for (let button of buttonGroup) {
     button.addEventListener("click", buttonPressed, false);  
   }
-}
+});
 
 let id_selected_station_on_editor = 0;
 
