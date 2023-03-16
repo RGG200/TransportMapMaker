@@ -82,15 +82,12 @@ const buttonPressed = e => {
   document.getElementById('style-btn').innerHTML = data.style_type;
   
 }
-
-var observer = new MutationObserver(function(){
-    if(st_list.style.display != 'none'){
-       drawStationsList(net, instancesLine);
-       for (let button of buttonGroup) {
-         button.addEventListener("click", buttonPressed, false);
-       }
-    }
-});
+if(st_list.style.display != 'none'){
+  drawStationsList(net, instancesLine);
+  for (let button of buttonGroup) {
+    button.addEventListener("click", buttonPressed, false);  
+  }
+}
 observer.observe(st_list, { attributes: true, childList: true })
 
 const save = document.getElementById('save');
