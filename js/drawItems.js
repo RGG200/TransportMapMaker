@@ -343,3 +343,8 @@ export function drawStationsList(network, instancesLine){
         }
     }
 }
+export function clearStationText(id){
+
+  document.getElementsByClassName('stationNames')[id].outerHTML = "";
+
+}
