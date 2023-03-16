@@ -92,8 +92,8 @@ const buttonPressed = e => {
 var save = document.getElementById('save');
 
 save.addEventListener('click', function(){
-  net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
-  net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
+  //net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
+  //net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   drawStation(net.lines[instancesLine].stations[id_selected_station_on_editor].fName, net.lines[instancesLine].stations[id_selected_station_on_editor].sName, net.lines[instancesLine].stations[id_selected_station_on_editor].style, net.lines[instancesLine].stations[id_selected_station_on_editor].type, net.lines[instancesLine].stations[id_selected_station_on_editor].xPos, net.lines[instancesLine].stations[id_selected_station_on_editor].yPos net.lines[instancesLine].color);
