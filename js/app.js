@@ -97,7 +97,7 @@ function updateCanvas(){
   for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
     drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
   }
-  for(let i = 0; i <= net.lines[instancesLine].stationInstances; i++){
+  for(let i = 0; i < net.lines[instancesLine].stationInstances; i++){
     drawStation(net.lines[instancesLine].stations[i].fName, net.lines[instancesLine].stations[i].sName, net.lines[instancesLine].stations[i].style, net.lines[instancesLine].stations[i].type, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].color);
    }
 }
