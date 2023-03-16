@@ -101,7 +101,7 @@ save.addEventListener('click', function(){
   for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
     drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
     drawStation(net.lines[instancesLine].stations[i-1].fName, net.lines[instancesLine].stations[i-1].sName, net.lines[instancesLine].stations[i-1].style, net.lines[instancesLine].stations[i-1].type, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].color);
-    setStationText(id_selected_station_on_editor, net.lines[instancesLine].stations[i-1].fName);
+    //setStationText(id_selected_station_on_editor, net.lines[instancesLine].stations[i-1].fName);
   }
   drawStationsList(net, instancesLine);
 });
