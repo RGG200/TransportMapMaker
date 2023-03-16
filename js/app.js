@@ -59,6 +59,12 @@ canvas.addEventListener('click', function(){
 
 const st_list = document.getElementById('st-list');
 
+st_list.addEventListener("mouseenter", function(){
+  for (let button of buttonGroup) {
+    button.addEventListener("click", buttonPressed, false);  
+  }
+}
+
 let id_selected_station_on_editor = 0;
 
 let buttonGroup = document.getElementsByClassName('station_instance');
@@ -83,12 +89,7 @@ const buttonPressed = e => {
   document.getElementById('style-btn').innerHTML = data.style_type;
   
 }
-for (let button of buttonGroup) {
-  button.addEventListener("click", buttonPressed, false);  
-}
-observer.observe(st_list, { attributes: true, childList: true })
-
-const save = document.getElementById('save');
+var save = document.getElementById('save');
 
 save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').getAttributeNS(null, 'value');
@@ -96,4 +97,4 @@ save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   alert(net.lines[instancesLine].stations[id_selected_station_on_editor].fName);
-}, false)
+}, false);
