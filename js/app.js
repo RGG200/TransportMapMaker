@@ -78,11 +78,11 @@ var data = {
 };
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
-  data.fName= net.lines[instancesLine].stations[id_selected_station_on_editor].fName;
-  data.sName= net.lines[instancesLine].stations[id_selected_station_on_editor].sName;
-  data.coords= [net.lines[instancesLine].stations[id_selected_station_on_editor].xPos, net.lines[instancesLine].stations[id_selected_station_on_editor].xPos];
-  data.cx_type= net.lines[instancesLine].stations[id_selected_station_on_editor].line_style;
-  data.style_type= net.lines[instancesLine].stations[id_selected_station_on_editor].style;
+  data.fName = net.lines[instancesLine].stations[id_selected_station_on_editor].fName;
+  data.sName = net.lines[instancesLine].stations[id_selected_station_on_editor].sName;
+  data.coords = [net.lines[instancesLine].stations[id_selected_station_on_editor].xPos, net.lines[instancesLine].stations[id_selected_station_on_editor].xPos];
+  data.cx_type = net.lines[instancesLine].stations[id_selected_station_on_editor].line_style;
+  data.style_type = net.lines[instancesLine].stations[id_selected_station_on_editor].style;
   document.getElementById('first').setAttributeNS(null, 'value', data.fName);
   document.getElementById('second').setAttributeNS(null, 'value', data.sName);
   document.getElementById('cx-btn').innerHTML = data.cx_type;
@@ -97,9 +97,7 @@ function updateCanvas(){
   let j = 0;
   for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
     drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
-    if(i <= stationInstances){
-      drawStation(net.lines[instancesLine].stations[j].fName, net.lines[instancesLine].stations[j].sName, net.lines[instancesLine].stations[j].style, net.lines[instancesLine].stations[j].type, net.lines[instancesLine].stations[j].xPos, net.lines[instancesLine].stations[j].yPos, net.lines[instancesLine].color);
-    }
+    drawStation(net.lines[instancesLine].stations[j].fName, net.lines[instancesLine].stations[j].sName, net.lines[instancesLine].stations[j].style, net.lines[instancesLine].stations[j].type, net.lines[instancesLine].stations[j].xPos, net.lines[instancesLine].stations[j].yPos, net.lines[instancesLine].color);
     j++;
   }
 }
@@ -109,6 +107,6 @@ save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
-  updateCanvas();
   drawStationsList(net, instancesLine);
+  updateCanvas();
 });
