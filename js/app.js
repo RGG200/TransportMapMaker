@@ -92,8 +92,8 @@ const buttonPressed = e => {
 var save = document.getElementById('save');
 
 save.addEventListener('click', function(){
-  net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').getAttributeNS(null, 'value');
-  net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').getAttributeNS(null, 'value');
+  net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
+  net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   alert(net.lines[instancesLine].stations[id_selected_station_on_editor].fName);
