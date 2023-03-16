@@ -83,7 +83,7 @@ const buttonPressed = e => {
   
 }
 
-st_list.addEventListener('mouseover', function(){
+st_list.addEventListener('change', function(){
   drawStationsList(net, instancesLine);
   for (let button of buttonGroup) {
     button.addEventListener("click", buttonPressed, false);
