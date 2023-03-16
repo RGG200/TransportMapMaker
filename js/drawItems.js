@@ -61,8 +61,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
             }else if(style == 'circle'){
                 var circle = document.createElementNS( svgns, style);
                 circle.setAttributeNS( null,'id',instances);
-                circle.setAttributeNS( null,'cx',posX-7.5);
-                circle.setAttributeNS( null,'cy', posY-7.5);
+                circle.setAttributeNS( null,'cx',posX-2.5);
+                circle.setAttributeNS( null,'cy', posY-2.5);
                 circle.setAttributeNS( null,'r', '15');
                 circle.setAttributeNS( null,'fill','#FFFFFF');
                 circle.setAttributeNS( null,'stroke-width', '3');
