@@ -99,5 +99,11 @@ save.addEventListener('click', function(){
   const element = net.lines[instancesLine].stations[id_selected_station_on_editor];
   drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color);
   setStationText(id_selected_station_on_editor, element.fName);
+  for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
+    drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
+    if(net.lines[instancesLine].stations[i-1].connected == false && i > 1){
+      net.lines[instancesLine].stations[i-1].connected = true;
+    }
+  }
   drawStationsList(net, instancesLine);
 });
