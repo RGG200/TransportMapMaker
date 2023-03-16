@@ -72,8 +72,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
                 first_name.innerHTML = fName+''+sName;
-                first_name.setAttributeNS(null, 'x', posX-5);
-                first_name.setAttributeNS(null, 'y', posY-20);
+                first_name.setAttributeNS(null, 'x', posX-15);
+                first_name.setAttributeNS(null, 'y', posY-17.5);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
