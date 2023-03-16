@@ -94,12 +94,12 @@ var save = document.getElementById('save');
 function updateCanvas(){
   const canvas = document.getElementById('canvas');
   canvas.innerHTML = "";
-  drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, net.lines[instancesLine].stations[0].xPos, net.lines[instancesLine].stations[0].yPos, net.lines[instancesLine].color);
   for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
-    //setStationText(id_selected_station_on_editor, net.lines[instancesLine].stations[i-1].fName);
-    drawStation(net.lines[instancesLine].stations[i].fName, net.lines[instancesLine].stations[i].sName, net.lines[instancesLine].stations[i].style, net.lines[instancesLine].stations[i].type, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].color);
     drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
   }
+  for(let i = 0; i <= net.lines[instancesLine].stationInstances; i++){
+    drawStation(net.lines[instancesLine].stations[i].fName, net.lines[instancesLine].stations[i].sName, net.lines[instancesLine].stations[i].style, net.lines[instancesLine].stations[i].type, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].color);
+   }
 }
 
 save.addEventListener('click', function(){
