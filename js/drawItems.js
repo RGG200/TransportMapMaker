@@ -61,7 +61,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
             }else if(style == 'circle'){
                 var circle = document.createElementNS( svgns, style);
                 circle.setAttributeNS( null,'id',instances);
-                circle.setAttributeNS( null,'cx',posX+9.25);
+                circle.setAttributeNS( null,'cx',posX+5);
                 circle.setAttributeNS( null,'cy', posY+5);
                 circle.setAttributeNS( null,'r', '20');
                 circle.setAttributeNS( null,'fill','#FFFFFF');
@@ -72,8 +72,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
                 first_name.innerHTML = fName+''+sName;
-                first_name.setAttributeNS(null, 'x', posX-15);
-                first_name.setAttributeNS(null, 'y', posY-17.5);
+                first_name.setAttributeNS(null, 'x', posX);
+                first_name.setAttributeNS(null, 'y', posY-30);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
