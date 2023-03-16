@@ -54,16 +54,16 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 // second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width')*1.35);
                 // second_name.setAttributeNS(null, 'y', posY-25);
                 // second_name.setAttributeNS(null, 'class', 'stationNames');
-                // second_name.setAttributeNS(null, 'font-size', '16');
+                // second_name.setAttributeNS(null, 'font-size', '18');
                 // second_name.setAttributeNS(null, 'font-family', 'verdana');
                 // second_name.setAttributeNS(null, 'font-weight', '700');
                 // document.getElementById( 'canvas' ).appendChild( second_name );
             }else if(style == 'circle'){
                 var circle = document.createElementNS( svgns, style);
                 circle.setAttributeNS( null,'id',instances);
-                circle.setAttributeNS( null,'cx',posX+5);
-                circle.setAttributeNS( null,'cy', posY+5);
-                circle.setAttributeNS( null,'r', '20');
+                circle.setAttributeNS( null,'cx',posX-7.5);
+                circle.setAttributeNS( null,'cy', posY-7.5);
+                circle.setAttributeNS( null,'r', '15');
                 circle.setAttributeNS( null,'fill','#FFFFFF');
                 circle.setAttributeNS( null,'stroke-width', '3');
                 circle.setAttributeNS( null,'stroke', '#000000');
@@ -76,7 +76,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 first_name.setAttributeNS(null, 'y', posY-30);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
-                first_name.setAttributeNS(null, 'font-size', '16');
+                first_name.setAttributeNS(null, 'font-size', '18');
                 first_name.setAttributeNS(null, 'font-family', 'verdana');
                 first_name.setAttributeNS(null, 'font-weight', '700');
                 document.getElementById( 'canvas' ).appendChild( first_name );
