@@ -73,7 +73,7 @@ const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
   data.fName = net.lines[instancesLine].stations[id_selected_station_on_editor].fName;
   data.sName = net.lines[instancesLine].stations[id_selected_station_on_editor].sName;
-  data.coords = [net.lines[instancesLine].stations[id_selected_station_on_editor].xPos, net.lines[instancesLine].stations[id_selected_station_on_editor].xPos];
+  data.coords = [net.lines[instancesLine].stations[id_selected_station_on_editor].xPos, net.lines[instancesLine].stations[id_selected_station_on_editor].yPos];
   data.cx_type = net.lines[instancesLine].stations[id_selected_station_on_editor].line_style;
   data.style_type = net.lines[instancesLine].stations[id_selected_station_on_editor].style;
   document.getElementById('first').setAttributeNS(null, 'value', data.fName);
