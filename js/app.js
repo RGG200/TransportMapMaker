@@ -78,8 +78,8 @@ const buttonPressed = e => {
   data.style_type = net.lines[instancesLine].stations[id_selected_station_on_editor].style;
   document.getElementById('first').setAttributeNS(null, 'value', data.fName);
   document.getElementById('second').setAttributeNS(null, 'value', data.sName);
-  document.getElementById('xPos').setAttributeNS(null, 'value', data.xPos);
-  document.getElementById('yPos').setAttributeNS(null, 'value', data.yPos);
+  document.getElementById('xPos').setAttributeNS(null, 'value', data.coords[0]);
+  document.getElementById('yPos').setAttributeNS(null, 'value', data.coords[1]);
   document.getElementById('cx-btn').innerHTML = data.cx_type;
   document.getElementById('style-btn').innerHTML = data.style_type;
   
