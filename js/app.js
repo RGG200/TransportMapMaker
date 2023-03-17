@@ -69,7 +69,7 @@ var data = {
   cx_type: '',
   style_type: ''
 };
-const buttonPressed = e => {
+var buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
   data.fName = net.lines[instancesLine].stations[id_selected_station_on_editor].fName;
   data.sName = net.lines[instancesLine].stations[id_selected_station_on_editor].sName;
