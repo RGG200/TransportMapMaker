@@ -54,7 +54,7 @@ const st_list = document.getElementById('st-list');
 
 st_list.addEventListener("mouseenter", function(){
   for (let button of buttonGroup) {
-    button.addEventListener("click", buttonPressed, false);  
+    button.addEventListener("click", buttonPressed);  
   }
 });
 
