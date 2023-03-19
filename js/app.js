@@ -162,7 +162,6 @@ function updateCanvas(){
 }
 
 save.addEventListener('click', function(){
-  drawStationsList(net, instancesLine);
   net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
@@ -170,6 +169,7 @@ save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   updateCanvas();
+  drawStationsList(net, instancesLine);
 });
 
 
