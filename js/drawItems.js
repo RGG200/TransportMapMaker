@@ -1,4 +1,4 @@
-export function Station(fName, sName, type, line_style, style, xPos, yPos){
+export function Station(fName, sName, type, line_style, style, xPos, yPos, stationInstance){
     this.fName = fName;
     this.sName = sName;
     this.style = style;
@@ -8,11 +8,12 @@ export function Station(fName, sName, type, line_style, style, xPos, yPos){
     this.line_style = line_style;
     this.selected = false;
     this.connected = false;
+    this.stationInstance = stationInstance;
 };
 export function Network(lines){
     this.lines = lines;
 }
-export function Line(id, name, lineThicness, color, stations){
+export function Line(id, name, lineThicness, color, stations, linePath){
     this.id = id;
     this.name = name;
     this.lineThicness = lineThicness;
@@ -20,16 +21,17 @@ export function Line(id, name, lineThicness, color, stations){
     this.stations = stations;
     this.selected = false;
     this.stationInstances = 0;
+    this.linePath = linePath;
 };
-let instances = 0;
 let line_instances = 0;
-export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
+export function drawStation(fName,sName, style, type, posX, posY, lineColor, instances) {
     var svgns = "http://www.w3.org/2000/svg";
     switch(type){
         case 'destination':
             if(style == 'rect' && type != 'exchange'){
                 var rect = document.createElementNS( svgns, style);
                 rect.setAttributeNS( null,'id',instances);
+                rect.setAttributeNS( null,'class','stations');
                 rect.setAttributeNS( null,'x',posX-15);
                 rect.setAttributeNS( null,'y',posY-15);
                 rect.setAttributeNS( null,'width', '30');
@@ -60,7 +62,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
                 // document.getElementById( 'canvas' ).appendChild( second_name );
             }else if(style == 'circle'){
                 var circle = document.createElementNS( svgns, style);
-                circle.setAttributeNS( null,'id',instances);
+                circle.setAttributeNS( null,'id',instances);   
+                circle.setAttributeNS( null,'class','stations');
                 circle.setAttributeNS( null,'cx',posX+0);
                 circle.setAttributeNS( null,'cy', posY+0);
                 circle.setAttributeNS( null,'r', '17.5');
@@ -93,7 +96,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
         case 'exchange':
             var inter = document.createElementNS( svgns, style);
             inter.setAttributeNS( null,'id',instances);
-            inter.setAttributeNS( null,'id',instances);
+            inter.setAttributeNS( null,'class','stations');
             inter.setAttributeNS( null,'x',posX);
             inter.setAttributeNS( null,'y',posY+15);
             inter.setAttributeNS( null,'width', '40');
@@ -129,6 +132,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
             if(style == 'rect' && type != 'exchange'){
                 var rect = document.createElementNS( svgns, style);
                 rect.setAttributeNS( null,'id',instances);
+                rect.setAttributeNS( null,'class','stations');
                 rect.setAttributeNS( null,'x',posX-10);
                 rect.setAttributeNS( null,'y',posY-10);
                 rect.setAttributeNS( null,'width', '20');
@@ -158,6 +162,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor) {
             }else if(style == 'circle'){
                 var circle = document.createElementNS( svgns, style);
                 circle.setAttributeNS( null,'id',instances);
+                circle.setAttributeNS( null,'class','stations');
                 circle.setAttributeNS( null,'cx',posX);
                 circle.setAttributeNS( null,'cy', posY);
                 circle.setAttributeNS( null,'r', '10');
@@ -193,7 +198,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     var svgns = "http://www.w3.org/2000/svg";
     if(document.getElementById('line_' + line_instance) == null){
         var path = document.createElementNS(svgns, 'path');
-        path.setAttributeNS(null, 'd', 'M');
+        path.setAttributeNS(null, 'd', '');
     }
     else{
         var path = document.getElementById('line_' + line_instance);
@@ -205,7 +210,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     var Sy = 0;
     //math behind the connection a the butt section
     if(style == 'a'){
-        d += beginX + ' ' + beginY + ' ';
+        d += 'M' + beginX + ' ' + beginY + ' ';
         if(endX > beginX){
             x = endX-24;
         }else if(endX < beginX){
@@ -250,7 +255,6 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         
         y = endY;
         d += 'L' + x + ' ' + y + ' ';
-        d += 'M' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
@@ -260,7 +264,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         
         
     }else if(style == 'b'){
-        d += beginX + ' ' + beginY + ' ';
+        d += 'M' + beginX + ' ' + beginY + ' ';
         if(endX < beginX){
             x = beginX+0.85;
         }else if(endX > beginX){
@@ -308,7 +312,6 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         
         x = endX;
         d += 'L' + x + ' ' + y + ' ';
-        d += 'M' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
