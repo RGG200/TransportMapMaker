@@ -149,7 +149,6 @@ function updateCanvas(){
         net.lines[instancesLine].linePath[i-1].connected = true;
       }
     }
-    drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].linePath[1-1].xPos, net.lines[instancesLine].linePath[1-1].yPos, net.lines[instancesLine].linePath[1].xPos, net.lines[instancesLine].linePath[1].yPos, net.lines[instancesLine].linePath[1].line_style, instancesLine);
   }
   drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].linePath[1-1].xPos, net.lines[instancesLine].linePath[1-1].yPos, net.lines[instancesLine].linePath[1].xPos, net.lines[instancesLine].linePath[1].yPos, net.lines[instancesLine].linePath[1].line_style, instancesLine);
   for(const element of net.lines[instancesLine].stations){
