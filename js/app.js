@@ -1,5 +1,5 @@
 export let instancesLine = 0; // counts the line instances ( gonna remove that soon I think )
-import { Station, Network, Line, drawLine, drawStation, drawStationsList, setStationText} from './drawItems.js';
+import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList} from './drawItems.js';
 
   let net = new Network([]); //initial network
 
@@ -76,19 +76,29 @@ canvas.addEventListener('click', function(){
     getStations();
   }
   drawStationsList(net, instancesLine);
+  drawLinesList(net, instancesLine);
 }, true);
 
 const st_list = document.getElementById('st-list');
+const ln_list = document.getElementById('ln-list');
+
 
 st_list.addEventListener("mouseenter", function(){
   for (let button of buttonGroup) {
     button.addEventListener("click", buttonPressed, false);  
   }
 });
+ln_list.addEventListener("mouseenter", function(){
+  for (let button of ln_buttonGroup) {
+    button.addEventListener("click", ln_buttonPressed, false);  
+  }
+});
 
 let id_selected_station_on_editor = 0;
+let id_selected_line_on_editor = 0;
 
 let buttonGroup = document.getElementsByClassName('station_instance');
+let ln_buttonGroup = document.getElementsByClassName('line_name');
 
 let data = {
   fName: '',
@@ -97,6 +107,21 @@ let data = {
   cx_type: '',
   style_type: ''
 };
+let ln_data = {
+  name: '',
+  color: '',
+  thicness: 0
+};
+const ln_buttonPressed = e => {
+  id_selected_line_on_editor = e.target.id; // Get ID of Clicked Element
+  data.name = net.lines[id_selected_line_on_editor].name;
+  data.color = net.lines[id_selected_line_on_editor].color;
+  data.thicness = net.lines[id_selected_line_on_editor].lineThicness;
+  document.getElementById('name').value = data.name;
+  document.getElementById('color').value = net.lines[id_selected_line_on_editor].color;
+  document.getElementById('thicness').value = data.thicness;
+  
+}
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
   data.fName = net.lines[instancesLine].stations[id_selected_station_on_editor].fName;
@@ -144,5 +169,16 @@ save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].yPos = document.getElementById('yPos').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
+  updateCanvas();
+});
+
+
+const ln_save = document.getElementById('ln_save');
+
+ln_save.addEventListener('click', function(){
+  net.lines[id_selected_line_on_editor].name = document.getElementById('name').value;
+  net.lines[id_selected_line_on_editor].color = document.getElementById('color').value;
+  net.lines[id_selected_line_on_editor].lineThicness = document.getElementById('thicness').value;
+  drawLinesList(net, instancesLine);
   updateCanvas();
 });

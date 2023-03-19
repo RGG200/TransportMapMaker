@@ -185,6 +185,28 @@ html body{
     display: none;
     justify-content: center;
 }
+#ln-list{
+    position: fixed;
+    left: 0%;
+    top: -5%;
+    z-index: 2;
+    background-color: #FFF;
+    width: 100%;
+    min-height: 125%;
+    justify-content: center;
+    display: none;
+}
+#ln-editor{
+    position: fixed;
+    top: -5%;
+    z-index: 3;
+    background-color: #FFF;
+    width: 100%;
+    min-height: 125%;
+    display: none;
+    justify-content: center;
+}
+
 .stname{
     position: relative;
     top: 20%;
@@ -196,6 +218,29 @@ html body{
     display: block;
     border: none;
     border-bottom: #00000047 solid 2px;
+    outline: none;
+}
+.lnname{
+    position: relative;
+    top: 20%;
+    margin: auto;
+    padding: 5px;
+    font-size: 2em;
+    width: 80%;
+    display: block;
+    border: none;
+    border-bottom: #00000047 solid 2px;
+    outline: none;
+}
+.lame{
+    position: relative;
+    top: 20%;
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    width: 80%;
+    display: block;
+    height: 100px;
     outline: none;
 }
 .dropdowns{
@@ -254,7 +299,7 @@ html body{
     background-color: white;
     color: crimson;
   }
-  #save2{
+  #ln_save{
     text-decoration: none;
     position: relative;
     top: 85%;
@@ -271,7 +316,7 @@ html body{
     font-family
     : 'Noto Sans JP', sans-serif;
   }
-  #save2:active{
+  #ln_save:active{
     background-color: white;
     color: crimson;
   }

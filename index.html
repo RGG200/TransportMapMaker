@@ -19,7 +19,7 @@
     <div id="options">  
         <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('options'); hideOptions('hide');">Exporter la carte en SVG</a>
         <button id="" onclick="showEditor('options', 'st-list'); hideOptions('hide');" class="button" href="">Editer une Station</button>
-        <button id="" onclick="hideOptions('options'); hideOptions('hide');" class="button" href="">Editer une Ligne</button>
+        <button id="" onclick="showEditor('options', 'ln-list'); hideOptions('options'); hideOptions('hide');" class="button" href="">Editer une Ligne</button>
         <button id="" onclick="hideOptions('options'); hideOptions('hide');" class="button" href="">Paramètres</button>
         <button id="" onclick="hideOptions('options'); hideOptions('hide');" class="button" href="">Quitter</button>
     </div>
@@ -57,5 +57,22 @@
         </div>
         <a id="save"> Sauvegarder </a>
     </section>
+    <section id="ln-editor">
+      <div class="head">
+        <h1 class="main-title">Editer une Ligne</h1>
+        <button class="return" onclick="hideOptions('ln-editor');"> <span class="return-obj"> < </span>  Retour </button>    
+      </div>
+      <input id="name" class="lnname" type="text" placeholder="Nom">
+      <input id="thicness" class="lnname" type="text" inputmode="numeric" pattern="[0-9]" placeholder="eppaisseur">
+      <input id="color" class="lame" type="color" placeholder="couleur">
+      <a id="ln_save"> Sauvegarder </a>
+    </section>
+    <section id="ln-list">
+      <div class="head">
+          <h1 class="main-title">Liste des Lignes</h1>
+          <button class="return" onclick="hideOptions('ln-list');"> <span class="return-obj"> < </span>  Retour </button>    
+      </div>
+      <div id="ln_content"></div>
+  </section>
 </body>
 </html>

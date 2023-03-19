@@ -64,8 +64,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 var circle = document.createElementNS( svgns, style);
                 circle.setAttributeNS( null,'id',instances);   
                 circle.setAttributeNS( null,'class','stations');
-                circle.setAttributeNS( null,'cx',posX+0);
-                circle.setAttributeNS( null,'cy', posY+0);
+                circle.setAttributeNS( null,'cx',posX);
+                circle.setAttributeNS( null,'cy', posY);
                 circle.setAttributeNS( null,'r', '17.5');
                 circle.setAttributeNS( null,'fill','#FFFFFF');
                 circle.setAttributeNS( null,'stroke-width', '3');
@@ -330,7 +330,7 @@ export function drawStationsList(network, instancesLine){
     for(let i = 0; i < network.lines.length; i++){
         let lineElement = document.createElement('div');
         let lineText = document.createElement('h3');
-        lineText.innerHTML = "ligne_" + instancesLine;
+        lineText.innerHTML = "ligne_" + i;
         lineText.setAttributeNS(null, 'class', 'line_name');
         lineElement.setAttributeNS(null, 'id', i);
         lineElement.setAttributeNS(null, 'class', 'line_section');
@@ -346,8 +346,15 @@ export function drawStationsList(network, instancesLine){
         }
     }
 }
-export function setStationText(id, text){
-
-  document.getElementsByClassName('stationNames')[id].innerHTML = text;
-
+export function drawLinesList(network, instancesLine){
+    var ln_list = document.getElementById('ln_content');
+    ln_list.innerHTML = "";
+    for(let i = 0; i < network.lines.length; i++){
+        let lineText = document.createElement('a');
+        lineText.innerHTML = "ligne_" + i;
+        lineText.setAttributeNS(null, 'class', 'line_name');
+        lineText.setAttributeNS(null, 'id', i);
+        lineText.setAttributeNS(null, 'onclick', "showEditor('options', 'ln-editor');");
+        ln_list.appendChild(lineText);
+    }
 }
