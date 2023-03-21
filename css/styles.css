@@ -3,7 +3,7 @@ html body{
     background-color: white;
     font-family:'Noto Sans JP', sans-serif;
 }
-#canvas{
+#svg-canvas{
     position: absolute;
     background-image: url('../img/grid.svg');
 }

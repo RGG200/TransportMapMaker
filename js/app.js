@@ -1,14 +1,39 @@
 export let instancesLine = 0; // counts the line instances ( gonna remove that soon I think )
 import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList} from './drawItems.js';
 
-  let net = new Network([]); //initial network
+let net = new Network([]); //initial network
 
-  let mosX; // mouse position on the canvas
-  let mosY;
-  export function updateDisplay(event) {
-    mosX = Math.round((event.pageX-10)/20)*20; // make it so that the stuff goes in a grid
-    mosY = Math.round((event.pageY-10)/20)*20;
-  };
+let mosX; // mouse position on the canvas
+let mosY;
+let linePathId = 2;
+let is_any_station_selected = false;
+let selected_station = undefined;
+const ln_save = document.getElementById('ln_save');
+const st_list = document.getElementById('st-list');
+const ln_list = document.getElementById('ln-list');
+let id_selected_station_on_editor = 0;
+let id_selected_line_on_editor = 0;
+
+let buttonGroup = document.getElementsByClassName('station_instance');
+let ln_buttonGroup = document.getElementsByClassName('line_name');
+
+let data = {
+  fName: '',
+  sName: '',
+  coord: [0, 0],
+  cx_type: '',
+  style_type: ''
+};
+let ln_data = {
+  name: '',
+  color: '',
+  thicness: 0
+};
+
+export function updateDisplay(event) {
+  mosX = Math.round((event.pageX-10)/20)*20; // make it so that the stuff goes in a grid
+  mosY = Math.round((event.pageY-10)/20)*20;
+};
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy', 'gare du nord', 'sartrouville', 'poissy']; // default first station names
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture']; // défault complementary names
   let colors = ['aqua', 'red', "blue", 'purple', 'orangered', 'red', 'yellow', 'green', 'crimson', 'black']; // Line colors
@@ -30,9 +55,17 @@ import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLi
         }, true);
       }
   }
-  let linePathId = 2;
-  let is_any_station_selected = false;
-  let selected_station = undefined;
+
+  function isConnected(stationID, lineID) {
+    for(let i = 0; i < stationID; i++){
+      if(net.lines[lineID].linePath[stationID].stationInstance == net.lines[lineID].linePath[i].stationInstance){
+        return false;
+      }
+    }
+    return true;
+  }
+
+const canvas = document.getElementById('svg-canvas');
 canvas.addEventListener('mouseenter', updateDisplay, false);
 canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
@@ -47,7 +80,7 @@ canvas.addEventListener('click', function(){
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
   }else if(net.lines[instancesLine].stationInstances == 1){
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
-    const canvas = document.getElementById('canvas');
+    const canvas = document.getElementById('svg-canvas');
     canvas.innerHTML = "";
     for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
       drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
@@ -79,8 +112,6 @@ canvas.addEventListener('click', function(){
   drawLinesList(net, instancesLine);
 }, true);
 
-const st_list = document.getElementById('st-list');
-const ln_list = document.getElementById('ln-list');
 
 
 st_list.addEventListener("mouseenter", function(){
@@ -94,32 +125,14 @@ ln_list.addEventListener("mouseenter", function(){
   }
 });
 
-let id_selected_station_on_editor = 0;
-let id_selected_line_on_editor = 0;
-
-let buttonGroup = document.getElementsByClassName('station_instance');
-let ln_buttonGroup = document.getElementsByClassName('line_name');
-
-let data = {
-  fName: '',
-  sName: '',
-  coord: [0, 0],
-  cx_type: '',
-  style_type: ''
-};
-let ln_data = {
-  name: '',
-  color: '',
-  thicness: 0
-};
 const ln_buttonPressed = e => {
   id_selected_line_on_editor = e.target.id; // Get ID of Clicked Element
-  data.name = net.lines[id_selected_line_on_editor].name;
-  data.color = net.lines[id_selected_line_on_editor].color;
-  data.thicness = net.lines[id_selected_line_on_editor].lineThicness;
-  document.getElementById('name').value = data.name;
-  document.getElementById('color').value = net.lines[id_selected_line_on_editor].color;
-  document.getElementById('thicness').value = data.thicness;
+  ln_data.name = net.lines[id_selected_line_on_editor].name;
+  ln_data.color = net.lines[id_selected_line_on_editor].color;
+  ln_data.thicness = net.lines[id_selected_line_on_editor].lineThicness;
+  document.getElementById('name').value = ln_data.name;
+  document.getElementById('color').value = ln_data.color;
+  document.getElementById('thicness').value = ln_data.thicness;
   
 }
 const buttonPressed = e => {
@@ -140,17 +153,16 @@ const buttonPressed = e => {
 const save = document.getElementById('save');
 
 function updateCanvas(){
-  const canvas = document.getElementById('canvas');
+  const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
-  for(let i = 2; i < net.lines[instancesLine].linePath.length; i++){
-    if(net.lines[instancesLine].linePath[i-2] !== net.lines[instancesLine].linePath[i]){
+  for(let i = 1; i < net.lines[instancesLine].linePath.length; i++){
+    if(isConnected(i, instancesLine)){
       drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].linePath[i-1].xPos, net.lines[instancesLine].linePath[i-1].yPos, net.lines[instancesLine].linePath[i].xPos, net.lines[instancesLine].linePath[i].yPos, net.lines[instancesLine].linePath[i].line_style, instancesLine);
       if(net.lines[instancesLine].linePath[i-1].connected == false && i > 1){
         net.lines[instancesLine].linePath[i-1].connected = true;
       }
     }
   }
-  drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].linePath[1-1].xPos, net.lines[instancesLine].linePath[1-1].yPos, net.lines[instancesLine].linePath[1].xPos, net.lines[instancesLine].linePath[1].yPos, net.lines[instancesLine].linePath[1].line_style, instancesLine);
   for(const element of net.lines[instancesLine].stations){
     if(element.connected == false){ 
       element.type = "destination";
@@ -162,6 +174,7 @@ function updateCanvas(){
 }
 
 save.addEventListener('click', function(){
+  drawStationsList(net, instancesLine);
   net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
@@ -169,11 +182,9 @@ save.addEventListener('click', function(){
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   updateCanvas();
-  drawStationsList(net, instancesLine);
 });
 
 
-const ln_save = document.getElementById('ln_save');
 
 ln_save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].name = document.getElementById('name').value;
