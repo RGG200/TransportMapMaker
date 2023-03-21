@@ -5,7 +5,7 @@ html body{
 }
 #svg-canvas{
     position: absolute;
-    background-image: url('../img/grid.svg');
+    background: url('../img/grid.svg');
 }
 .stationNames{
     font-family: 'Noto Sans JP', sans-serif;
