@@ -18,8 +18,8 @@
     </svg>
     <button id="show" class="main" onclick="showOptions('options'); showOptions('hide');">Show Options</button>
     <button id="hide" class="main" onclick="hideOptions('options'); hideOptions('hide');">hide Options</button>
-    <div id="options">  
-        <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('options'); hideOptions('hide'); exportSVG(););">Exporter la carte en SVG</a>
+    <div id="options" onmouseleave="resetSVG();">  
+        <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('options'); hideOptions('hide'); exportSVG();">Exporter la carte en SVG</a>
         <button id="" onclick="showEditor('options', 'st-list'); hideOptions('hide');" class="button" href="">Editer une Station</button>
         <button id="" onclick="showEditor('options', 'ln-list'); hideOptions('options'); hideOptions('hide');" class="button" href="">Editer une Ligne</button>
         <button id="" onclick="hideOptions('options'); hideOptions('hide');" class="button" href="">Paramètres</button>
