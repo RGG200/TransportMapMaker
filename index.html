@@ -77,21 +77,21 @@
       <div id="ln_content"></div>
   </section>
   <section id="export-section">
-    <div id="preview">
-      <svg id="svg-preview"></svg>
-    </div>
-    <div id="content">
+    <section id="content">
       <div class="head">
         <h1 class="main-title">Exporter la carte</h1>
         <button class="return" onclick="hideOptions('ln-editor');"> <span class="return-obj"> < </span>  Retour </button>    
       </div>
-      <div id="export-menu">
+      <section id="preview">
+        <svg id="svg-preview"></svg>
+      </div>
+      <div class="export-menu">
         <p>Exporter vers</p>
-        <button id="export-btn" onclick="showOptions('exportDropdown');" ondblclick="hideOptions('exportDropdown');" class="dropbtn">Style de la station</button>
+        <button id="export-btn" onclick="showOptions('exportDropdown');" ondblclick="hideOptions('exportDropdown');" class="dropbtn">Type de fichier</button>
         <div id="exportDropdown" class="dropdown-content" onmouseleave="hideOptions('styleDropdown');">
-          <a id="sa" hideOptions('exportDropdown'); exportSVG();">SVG</a>
-          <a id="sb" hideOptions('exportDropdown'); exportPNG();">PNG/a>
-          <a id="sa" hideOptions('exportDropdown'); exportJPG();">JPG</a>
+          <a id="ea" hideOptions('exportDropdown'); exportSVG();">SVG</a>
+          <a id="eb" hideOptions('exportDropdown'); exportPNG();">PNG/a>
+          <a id="ec" hideOptions('exportDropdown'); exportJPG();">JPG</a>
         </div>
       </div>
     </div>
