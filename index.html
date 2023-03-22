@@ -89,9 +89,9 @@
         <p>Exporter vers</p>
         <button id="export-btn" onclick="showOptions('exportDropdown');" ondblclick="hideOptions('exportDropdown');" class="dropbtn">Type de fichier</button>
         <div id="exportDropdown" class="dropdown-content" onmouseleave="hideOptions('exportDropdown');">
-          <a id="ea" hideOptions('exportDropdown'); exportSVG();">SVG</a>
-          <a id="eb" hideOptions('exportDropdown'); exportPNG();">PNG/a>
-          <a id="ec" hideOptions('exportDropdown'); exportJPG();">JPG</a>
+          <a id="ea" onclick="hideOptions('exportDropdown'); exportSVG();">SVG</a>
+          <a id="eb" onclick="hideOptions('exportDropdown'); exportPNG();">PNG</a>
+          <a id="ec" onclick="hideOptions('exportDropdown'); exportJPG();">JPG</a>
         </div>
       </div>
     </div>
