@@ -19,7 +19,7 @@
     <button id="show" class="main" onclick="showOptions('options'); showOptions('hide');">Show Options</button>
     <button id="hide" class="main" onclick="hideOptions('options'); hideOptions('hide');">hide Options</button>
     <div id="options" onmousemove="resetSVG();">  
-        <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('options'); hideOptions('hide'); exportSVG();">Exporter la carte en SVG</a>
+        <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('options'); hideOptions('hide'); showOptions('export-section'); exportSVG();">Exporter la carte en SVG</a>
         <button id="" onclick="showEditor('options', 'st-list'); hideOptions('hide');" class="button" href="">Editer une Station</button>
         <button id="" onclick="showEditor('options', 'ln-list'); hideOptions('options'); hideOptions('hide');" class="button" href="">Editer une Ligne</button>
         <button id="" onclick="hideOptions('options'); hideOptions('hide');" class="button" href="">Paramètres</button>
@@ -75,6 +75,26 @@
           <button class="return" onclick="hideOptions('ln-list');"> <span class="return-obj"> < </span>  Retour </button>    
       </div>
       <div id="ln_content"></div>
+  </section>
+  <section id="export-section">
+    <div id="preview">
+      <svg id="svg-preview"></svg>
+    </div>
+    <div id="content">
+      <div class="head">
+        <h1 class="main-title">Exporter la carte</h1>
+        <button class="return" onclick="hideOptions('ln-editor');"> <span class="return-obj"> < </span>  Retour </button>    
+      </div>
+      <div id="export-menu">
+        <p>Exporter vers</p>
+        <button id="export-btn" onclick="showOptions('exportDropdown');" ondblclick="hideOptions('exportDropdown');" class="dropbtn">Style de la station</button>
+        <div id="exportDropdown" class="dropdown-content" onmouseleave="hideOptions('styleDropdown');">
+          <a id="sa" hideOptions('exportDropdown'); exportSVG();">SVG</a>
+          <a id="sb" hideOptions('exportDropdown'); exportPNG();">PNG/a>
+          <a id="sa" hideOptions('exportDropdown'); exportJPG();">JPG</a>
+        </div>
+      </div>
+    </div>
   </section>
 </body>
 </html>

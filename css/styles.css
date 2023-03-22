@@ -76,7 +76,6 @@ html body{
     transition: 150ms;
 }
 
-
 .button{
     height: 20%;
     color: crimson;
@@ -85,7 +84,7 @@ html body{
     transition: 300ms;
     display: flex;
     border: 1px solid transparent;
-    font-size: 0.9em;
+    font-size: 4vh;
     text-align: center;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -104,15 +103,17 @@ html body{
 #options{
     text-decoration: none;
     position: fixed;
+    bottom: 5%;
     right: 2px;
     display: none;
     bottom: 50px;
-    width: 20%;
-    height: 50%;
+    width: 59.8vh;
+    height: 40%;
     font-size: 1.5em;
     text-align: center;
     z-index: 2;
     border: 2px solid crimson;
+    border-bottom: none;
     transition: 300ms;
     font-family
     : 'Noto Sans JP', sans-serif;
@@ -122,7 +123,7 @@ html body{
         position: fixed;
         right: 2px;
         bottom: 2px;
-        width: 20.2%;
+        width: 60.9vh;
         height: auto;
         padding: 10px;
         font-size: 1.5em;
@@ -153,6 +154,7 @@ html body{
 }
 #hide{
     display: none;
+    width: 60.9vh;
 }
 .title-station{
     display: block;
@@ -205,6 +207,22 @@ html body{
     min-height: 125%;
     display: none;
     justify-content: center;
+}
+#export-section{
+    position: fixed;
+    top: -5%;
+    z-index: 3;
+    background-color: #FFF;
+    width: 100%;
+    min-height: 125%;
+    display: none;
+    justify-content: center;
+}
+
+#preview{
+    position: relative;
+    width: 80%;
+    height: 80%;
 }
 
 .stname{
@@ -270,6 +288,15 @@ html body{
     display: inline-flex;
   }
   .style-type {
+    position: relative;
+    top: 35%;
+    left: 12%;
+    width: 100%;
+    font-size: 1em;
+    border-radius: 1em;
+    display: inline-flex;
+  }
+  .export-menu {
     position: relative;
     top: 35%;
     left: 12%;
