@@ -135,8 +135,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 rect.setAttributeNS( null,'class','stations');
                 rect.setAttributeNS( null,'x',posX-10);
                 rect.setAttributeNS( null,'y',posY-10);
-                rect.setAttributeNS( null,'rx', '2');
-                rect.setAttributeNS( null,'ry','2');
+                rect.setAttributeNS( null,'rx', '5');
+                rect.setAttributeNS( null,'ry','5');
                 rect.setAttributeNS( null,'width', '20');
                 rect.setAttributeNS( null,'height','20');
                 rect.setAttributeNS( null,'fill',lineColor);
