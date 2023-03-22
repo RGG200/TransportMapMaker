@@ -52,7 +52,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 first_name.setAttributeNS(null, 'font-weight', '700');
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
-                second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width')*1.35);
+                second_name.setAttributeNS(null, 'x', posX);
                 second_name.setAttributeNS(null, 'y', posY-25);
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
@@ -116,7 +116,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
             first_name.setAttributeNS(null, 'font-weight', '700');
             document.getElementById( 'svg-canvas' ).appendChild( first_name );
             second_name.innerHTML = sName;
-            second_name.setAttributeNS(null, 'x', posX-inter.getAttributeNS(null ,'width'));
+            second_name.setAttributeNS(null, 'x', posX);
             second_name.setAttributeNS(null, 'y', posY-25);
             second_name.setAttributeNS(null, 'class', 'stationNames');
             second_name.setAttributeNS(null, 'font-size', '12');
@@ -148,7 +148,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 first_name.setAttributeNS(null, 'font-weight', '700');
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
-                second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width'));
+                second_name.setAttributeNS(null, 'x', posX);
                 second_name.setAttributeNS(null, 'y', posY-25);
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
@@ -175,7 +175,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 first_name.setAttributeNS(null, 'font-weight', '700');
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
-                second_name.setAttributeNS(null, 'x', posX-circle.getAttributeNS(null ,'width'));
+                second_name.setAttributeNS(null, 'x', posX);
                 second_name.setAttributeNS(null, 'y', posY-25);
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
