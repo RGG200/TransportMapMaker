@@ -43,23 +43,21 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
 
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
-                first_name.innerHTML = fName+''+sName;
+                first_name.innerHTML = fName;
                 first_name.setAttributeNS(null, 'x', posX);
-                first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'y', posY-35);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
-                first_name.setAttributeNS(null, 'font-size', '16');
-                first_name.setAttributeNS(null, 'font-family', 'verdana');
+                first_name.setAttributeNS(null, 'font-size', '18');
                 first_name.setAttributeNS(null, 'font-weight', '700');
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
-                // second_name.innerHTML = sName;
-                // second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width')*1.35);
-                // second_name.setAttributeNS(null, 'y', posY-25);
-                // second_name.setAttributeNS(null, 'class', 'stationNames');
-                // second_name.setAttributeNS(null, 'font-size', '18');
-                // second_name.setAttributeNS(null, 'font-family', 'verdana');
-                // second_name.setAttributeNS(null, 'font-weight', '700');
-                // document.getElementById( 'svg-canvas' ).appendChild( second_name );
+                second_name.innerHTML = sName;
+                second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width')*1.35);
+                second_name.setAttributeNS(null, 'y', posY-25);
+                second_name.setAttributeNS(null, 'class', 'stationNames');
+                second_name.setAttributeNS(null, 'font-size', '12');
+                second_name.setAttributeNS(null, 'font-weight', '700');
+                document.getElementById( 'svg-canvas' ).appendChild( second_name );
             }else if(style == 'circle'){
                 var circle = document.createElementNS( svgns, style);
                 circle.setAttributeNS( null,'id',instances);   
@@ -74,27 +72,25 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
-                first_name.innerHTML = fName+''+sName;
+                first_name.innerHTML = fName;
                 first_name.setAttributeNS(null, 'x', posX);
-                first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'y', posY-35);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '18');
-                first_name.setAttributeNS(null, 'font-family', 'verdana');
                 first_name.setAttributeNS(null, 'font-weight', '700');
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
-                // second_name.innerHTML = sName;
-                // second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width')*1.35);
-                // second_name.setAttributeNS(null, 'y', posY-25);
-                // second_name.setAttributeNS(null, 'class', 'stationNames');
-                // second_name.setAttributeNS(null, 'font-size', '16');
-                // second_name.setAttributeNS(null, 'font-family', 'verdana');
-                // second_name.setAttributeNS(null, 'font-weight', '700');
-                // document.getElementById( 'svg-canvas' ).appendChild( second_name );
+                second_name.innerHTML = sName;
+                second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width')*1.35);
+                second_name.setAttributeNS(null, 'y', posY-25);
+                second_name.setAttributeNS(null, 'class', 'stationNames');
+                second_name.setAttributeNS(null, 'font-size', '12');
+                second_name.setAttributeNS(null, 'font-weight', '700');
+                document.getElementById( 'svg-canvas' ).appendChild( second_name );
             }
             break;
         case 'exchange':
-            var inter = document.createElementNS( svgns, style);
+            var inter = document.createElementNS( svgns, 'rect');
             inter.setAttributeNS( null,'id',instances);
             inter.setAttributeNS( null,'class','stations');
             inter.setAttributeNS( null,'x',posX);
@@ -110,23 +106,22 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
 
             var first_name = document.createElementNS(svgns, 'text');
             var second_name = document.createElementNS(svgns, 'text');
-            first_name.innerHTML = fName+''+sName;
+            first_name.innerHTML = fName;
             first_name.setAttributeNS(null, 'x', posX);
-            first_name.setAttributeNS(null, 'y', posY-30);
-                first_name.setAttributeNS(null, 'id', instances);
+            first_name.setAttributeNS(null, 'y', posY-35);
+            first_name.setAttributeNS(null, 'id', instances);
             first_name.setAttributeNS(null, 'class', 'stationNames');
             first_name.setAttributeNS(null, 'font-size', '16');
-            first_name.setAttributeNS(null, 'font-family', 'verdana');
+            
             first_name.setAttributeNS(null, 'font-weight', '700');
             document.getElementById( 'svg-canvas' ).appendChild( first_name );
-            // second_name.innerHTML = sName;
-            // second_name.setAttributeNS(null, 'x', posX-inter.getAttributeNS(null ,'width'));
-            // second_name.setAttributeNS(null, 'y', posY-25);
-            // second_name.setAttributeNS(null, 'class', 'stationNames');
-            // second_name.setAttributeNS(null, 'font-size', '16');
-            // second_name.setAttributeNS(null, 'font-family', 'verdana');
-            // second_name.setAttributeNS(null, 'font-weight', '700');
-            // document.getElementById( 'svg-canvas' ).appendChild( second_name );
+            second_name.innerHTML = sName;
+            second_name.setAttributeNS(null, 'x', posX-inter.getAttributeNS(null ,'width'));
+            second_name.setAttributeNS(null, 'y', posY-25);
+            second_name.setAttributeNS(null, 'class', 'stationNames');
+            second_name.setAttributeNS(null, 'font-size', '12');
+            second_name.setAttributeNS(null, 'font-weight', '700');
+            document.getElementById( 'svg-canvas' ).appendChild( second_name );
             break;
         case 'common':
             if(style == 'rect' && type != 'exchange'){
@@ -144,23 +139,21 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
 
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
-                first_name.innerHTML = fName+''+sName;
+                first_name.innerHTML = fName;
                 first_name.setAttributeNS(null, 'x', posX);
-                first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'y', posY-35);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
-                first_name.setAttributeNS(null, 'font-family', 'verdana');
                 first_name.setAttributeNS(null, 'font-weight', '700');
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
-                // second_name.innerHTML = sName;
-                // second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width'));
-                // second_name.setAttributeNS(null, 'y', posY-25);
-                // second_name.setAttributeNS(null, 'class', 'stationNames');
-                // second_name.setAttributeNS(null, 'font-size', '16');
-                // second_name.setAttributeNS(null, 'font-family', 'verdana');
-                // second_name.setAttributeNS(null, 'font-weight', '700');
-                // document.getElementById( 'svg-canvas' ).appendChild( second_name );
+                second_name.innerHTML = sName;
+                second_name.setAttributeNS(null, 'x', posX-rect.getAttributeNS(null ,'width'));
+                second_name.setAttributeNS(null, 'y', posY-25);
+                second_name.setAttributeNS(null, 'class', 'stationNames');
+                second_name.setAttributeNS(null, 'font-size', '12');
+                second_name.setAttributeNS(null, 'font-weight', '700');
+                document.getElementById( 'svg-canvas' ).appendChild( second_name );
             }else if(style == 'circle'){
                 var circle = document.createElementNS( svgns, style);
                 circle.setAttributeNS( null,'id',instances);
@@ -173,23 +166,21 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
 
                 var first_name = document.createElementNS(svgns, 'text');
                 var second_name = document.createElementNS(svgns, 'text');
-                first_name.innerHTML = fName+''+sName;
+                first_name.innerHTML = fName;
                 first_name.setAttributeNS(null, 'x', posX);
-                first_name.setAttributeNS(null, 'y', posY-30);
+                first_name.setAttributeNS(null, 'y', posY-35);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
-                first_name.setAttributeNS(null, 'font-family', 'verdana');
                 first_name.setAttributeNS(null, 'font-weight', '700');
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
-                // second_name.innerHTML = sName;
-                // second_name.setAttributeNS(null, 'x', posX-circle.getAttributeNS(null ,'width'));
-                // second_name.setAttributeNS(null, 'y', posY-25);
-                // second_name.setAttributeNS(null, 'class', 'stationNames');
-                // second_name.setAttributeNS(null, 'font-size', '16');
-                // second_name.setAttributeNS(null, 'font-family', 'verdana');
-                // second_name.setAttributeNS(null, 'font-weight', '700');
-                // document.getElementById( 'svg-canvas' ).appendChild( second_name );
+                second_name.innerHTML = sName;
+                second_name.setAttributeNS(null, 'x', posX-circle.getAttributeNS(null ,'width'));
+                second_name.setAttributeNS(null, 'y', posY-25);
+                second_name.setAttributeNS(null, 'class', 'stationNames');
+                second_name.setAttributeNS(null, 'font-size', '12');
+                second_name.setAttributeNS(null, 'font-weight', '700');
+                document.getElementById( 'svg-canvas' ).appendChild( second_name );
             }
             break;
     }
