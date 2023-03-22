@@ -233,7 +233,7 @@ html body{
 #export-box button{
     margin-top: 6.5%;
     padding: 1%;
-    font-size: 4em;
+    font-size: 30vh;
     color: #0055FF;
 }
 #export-box button:hover{
