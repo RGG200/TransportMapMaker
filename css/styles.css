@@ -7,6 +7,10 @@ html body{
     position: absolute;
     background: url('../img/grid.svg');
 }
+#svg-canvas-preview{
+    background-color: red;
+
+}
 .stationNames{
     font-family: 'Noto Sans JP', sans-serif;
     text-anchor: middle;
@@ -15,6 +19,9 @@ html body{
 }
 .head{
     height: 20%;
+}
+.head-export{
+    height: 10%;
 }
 .line_section{
     position: relative;  
@@ -43,9 +50,8 @@ html body{
 .return{
     opacity: 0.5;
     position: fixed;
-    left: 95%;
+    left: 90%;
     top: 8%;
-    right: 20px;
     height: 6%;
     color: rgb(220, 30, 64);
     width: 100%;
@@ -70,11 +76,6 @@ html body{
     font-size: 2em;
     margin-right: 0.25%;
 }
-.return-obj:hover{
-    position: relative;
-    right: 20px;
-    transition: 150ms;
-}
 
 .button{
     height: 20%;
@@ -84,7 +85,7 @@ html body{
     transition: 300ms;
     display: flex;
     border: 1px solid transparent;
-    font-size: 4vh;
+    font-size: 2vh;
     text-align: center;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -103,13 +104,13 @@ html body{
 #options{
     text-decoration: none;
     position: fixed;
-    bottom: 5%;
+    bottom: 2%;
     right: 2px;
     display: none;
     bottom: 50px;
-    width: 59.8vh;
+    width: 25.8vh;
     height: 40%;
-    font-size: 1.5em;
+    font-size: 2vh;
     text-align: center;
     z-index: 2;
     border: 2px solid crimson;
@@ -119,30 +120,27 @@ html body{
     : 'Noto Sans JP', sans-serif;
 }
 .main{
-        text-decoration: none;
-        position: fixed;
-        right: 2px;
-        bottom: 2px;
-        width: 60.9vh;
-        height: auto;
-        padding: 10px;
-        font-size: 1.5em;
-        text-align: center;
-        background-color: white;
-        color: crimson;
-        z-index: 2;
-        border: 2px solid crimson;
-        transition: 300ms;
-        font-family
-        : 'Noto Sans JP', sans-serif;
-}
-.main:hover{
     text-decoration: none;
     position: fixed;
     right: 2px;
-    bottom: 2px;
+    bottom: 0.01%;
+    width: 25.9vh;
     height: auto;
-    font-size: 1.5em;
+    padding: 10px;
+    font-size: 2vh;
+    text-align: center;
+    background-color: white;
+    color: crimson;
+    z-index: 2;
+    border: 2px solid crimson;
+    transition: 300ms;
+    font-family
+    : 'Noto Sans JP', sans-serif;
+}
+.main:hover{
+    text-decoration: none;
+    height: auto;
+    font-size: 2vh;
     text-align: center;
     background-color: white;
     color: red;
@@ -154,7 +152,6 @@ html body{
 }
 #hide{
     display: none;
-    width: 60.9vh;
 }
 .title-station{
     display: block;
@@ -211,22 +208,41 @@ html body{
 #export-section{
     position: fixed;
     top: -5%;
+    left: -2.5%;
     z-index: 3;
     background-color: #FFF;
-    width: 100%;
+    min-width: 103%;
     min-height: 125%;
+    max-width: 105%;
+    max-height: 105%;
     display: none;
     justify-content: center;
 }
 #export-section div{
     display: inline-flex;
+    min-height: 100%;
 }
-
+#export-box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#export-box button{
+    margin-top: 6.5%;
+    padding: 1%;
+    font-size: 4em;
+    color: #0055FF;
+}
+#export-box button:hover{
+    opacity: 0.5;
+    background: transparent;
+}
 
 #preview{
     position: relative;
-    width: 80%;
-    height: 80%;
 }
 
 .stname{
@@ -296,15 +312,6 @@ html body{
     top: 35%;
     left: 12%;
     width: 100%;
-    font-size: 1em;
-    border-radius: 1em;
-    display: inline-flex;
-  }
-  .export-menu {
-    position: relative;
-    top: 10%;
-    left: 60%;
-    width: 20%;
     font-size: 1em;
     border-radius: 1em;
     display: inline-flex;

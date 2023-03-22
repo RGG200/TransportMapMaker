@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>RG Rail Map Maker</title>
 </head>
-<body>
+<body>2
     <script src="./js/app.js" type="module"></script>
     <script src="./js/options.js"></script>
     <script src="./js/export/export.js"></script>
@@ -78,21 +78,15 @@
   </section>
   <section id="export-section">
     <section id="content">
-      <div class="head">
+      <section class="head-export">
         <h1 class="main-title">Exporter la carte</h1>
-        <button class="return" onclick="hideOptions('ln-editor');"> <span class="return-obj"> < </span>  Retour </button>    
+        <button class="return" onclick="hideOptions('export-section'); resetSVG();"> <span class="return-obj"> < </span>  Retour </button>    
+      </section>
       </div>
-      <div id="preview">
-        <svg id="svg-preview"></svg>
-      </div>
-      <div class="export-menu">
-        <p>Exporter vers</p>
-        <button id="export-btn" onclick="showOptions('exportDropdown');" ondblclick="hideOptions('exportDropdown');" class="dropbtn">Type de fichier</button>
-        <div id="exportDropdown" class="dropdown-content" onmouseleave="hideOptions('exportDropdown');">
-          <a id="ea" onclick="hideOptions('exportDropdown'); exportSVG();">SVG</a>
-          <a id="eb" onclick="hideOptions('exportDropdown'); exportPNG();">PNG</a>
-          <a id="ec" onclick="hideOptions('exportDropdown'); exportJPG();">JPG</a>
-        </div>
+      <div id="export-box">
+        <button class="button" onclick="exportSVG();">Exporter comme SVG</button>
+        <button class="button" onclick="exportJPG();">Exporter comme JPEG</button>
+        <button class="button" onclick="exportPNG();">Exporter comme PNG</button>
       </div>
     </div>
   </section>
