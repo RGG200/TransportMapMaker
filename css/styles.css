@@ -81,6 +81,7 @@ html body{
     opacity: 0.5;
     color: rgb(220, 30, 64);
     width: auto;
+    height: auto;
     background: white;
     transition: 300ms;
     text-align: center;
@@ -352,17 +353,6 @@ html body{
     position: relative;
     top: 85%;
     left: 85%;
-    height: auto;
-    padding: 10px;
-    font-size: 1.5em;
-    text-align: center;
-    background-color: crimson;
-    color: white;
-    border-radius: 5px;
-    z-index: 2;
-    transition: 300ms;
-    font-family
-    : 'Noto Sans JP', sans-serif;
   }
   #save:active{
     background-color: white;
@@ -373,17 +363,6 @@ html body{
     position: relative;
     top: 85%;
     left: 85%;
-    height: auto;
-    padding: 10px;
-    font-size: 1.5em;
-    text-align: center;
-    background-color: crimson;
-    color: white;
-    border-radius: 5px;
-    z-index: 2;
-    transition: 300ms;
-    font-family
-    : 'Noto Sans JP', sans-serif;
   }
   #ln_save:active{
     background-color: white;
