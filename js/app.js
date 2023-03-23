@@ -131,17 +131,17 @@ const ln_buttonPressed = e => {
 }
 const ln_buttonPressed_2 = e => {
   instancesLine = e.target.id; // Get ID of Clicked Element
-  alert(e.target.id);
   e.target.style.color = "#00FF22";
-  linePathId = net.lines[instancesLine].linePath.length-1;
+  linePathId = net.lines[instancesLine].linePath.length;
 }
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
-  data.fName = net.lines[instancesLine].stations[id_selected_station_on_editor].fName;
-  data.sName = net.lines[instancesLine].stations[id_selected_station_on_editor].sName;
-  data.coords = [net.lines[instancesLine].stations[id_selected_station_on_editor].xPos, net.lines[instancesLine].stations[id_selected_station_on_editor].yPos];
-  data.cx_type = net.lines[instancesLine].stations[id_selected_station_on_editor].line_style;
-  data.style_type = net.lines[instancesLine].stations[id_selected_station_on_editor].style;
+  id_selected_line_on_editor = e.parentNode.id;
+  data.fName = net.lines[e.parentNode.id].stations[id_selected_station_on_editor].fName;
+  data.sName = net.lines[e.parentNode.id].stations[id_selected_station_on_editor].sName;
+  data.coords = [net.lines[e.parentNode.id].stations[id_selected_station_on_editor].xPos, net.lines[e.parentNode.id].stations[id_selected_station_on_editor].yPos];
+  data.cx_type = net.lines[e.parentNode.id].stations[id_selected_station_on_editor].line_style;
+  data.style_type = net.lines[e.parentNode.id].stations[id_selected_station_on_editor].style;
   document.getElementById('first').value = data.fName;
   document.getElementById('second').value = data.sName;
   document.getElementById('xPos').value = data.coords[0];
@@ -180,12 +180,12 @@ function updateCanvas(){
 }
 
 save.addEventListener('click', function(){
-  net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
-  net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
-  net.lines[instancesLine].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
-  net.lines[instancesLine].stations[id_selected_station_on_editor].yPos = document.getElementById('yPos').value;
-  net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
-  net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
+  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
+  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
+  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
+  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].yPos = document.getElementById('yPos').value;
+  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
+  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
   drawStationsList(net, instancesLine);
   updateCanvas();
 });
