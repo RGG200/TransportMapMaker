@@ -15,7 +15,8 @@ let id_selected_station_on_editor = 0;
 let id_selected_line_on_editor = 0;
 
 let buttonGroup = document.getElementsByClassName('station_instance');
-let ln_buttonGroup = document.getElementsByClassName('line_name');
+let ln_buttonGroup = document.getElementsByClassName('line_button');
+let ln_buttonGroup_2 = document.getElementsByClassName('line_name');
 
 let data = {
   fName: '',
@@ -123,6 +124,9 @@ ln_list.addEventListener("mouseenter", function(){
   for (let button of ln_buttonGroup) {
     button.addEventListener("click", ln_buttonPressed, false);  
   }
+  for(let ln_name of ln_buttonGroup_2){
+    button.addEventListener("click", ln_buttonPressed_2, false);
+  }
 });
 
 const ln_buttonPressed = e => {
@@ -134,6 +138,9 @@ const ln_buttonPressed = e => {
   document.getElementById('color').value = ln_data.color;
   document.getElementById('thicness').value = ln_data.thicness;
   
+}
+const ln_buttonPressed_2 = e => {
+  instancesLine = e.target.id; // Get ID of Clicked Element
 }
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
