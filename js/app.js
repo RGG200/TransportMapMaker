@@ -113,7 +113,7 @@ st_list.addEventListener("mouseenter", function(){
     button.addEventListener("click", buttonPressed, true);  
   }
   for(let ln_name of ln_buttonGroup_2){
-    ln_name.addEventListener("click", ln_buttonPressed_2, true);
+    //ln_name.addEventListener("click", ln_buttonPressed_2, true);
   }
 });
 ln_list.addEventListener("mouseenter", function(){
@@ -177,7 +177,7 @@ function updateCanvas(){
       }else{
         element.type = "common"; 
       }
-      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), instancesLine);
+      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
     }
   }
 }
