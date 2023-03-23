@@ -132,6 +132,7 @@ const ln_buttonPressed = e => {
 }
 const ln_buttonPressed_2 = e => {
   instancesLine = e.target.id; // Get ID of Clicked Element
+  alert(instancesLine);
 }
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
