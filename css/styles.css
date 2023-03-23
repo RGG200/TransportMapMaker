@@ -71,17 +71,20 @@ html body{
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
 }
-.menu-buttons{
-    opacity: 0.5;
+#ln_create{
     position: fixed;
     left: 10%;
     top: 4%;
     height: 6%;
+}
+.menu-buttons{
+    opacity: 0.5;
     color: rgb(220, 30, 64);
-    width: 10%;
+    width: auto;
     background: white;
     transition: 300ms;
     text-align: center;
+    padding: 10px;
     display: flex;
     border: none;
     font-size: 3em;
