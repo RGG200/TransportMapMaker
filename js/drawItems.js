@@ -323,6 +323,7 @@ export function drawStationsList(network, instancesLine){
         lineText.innerHTML = "ligne_" + i;
         lineText.setAttributeNS(null, 'class', 'line_name');
         lineElement.setAttributeNS(null, 'id', i);
+        lineText.setAttributeNS(null, 'id', i);
         lineElement.setAttributeNS(null, 'class', 'line_section');
         lineElement.appendChild(lineText);
         st_list.appendChild(lineElement);
