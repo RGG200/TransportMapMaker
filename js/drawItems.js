@@ -24,7 +24,7 @@ export function Line(id, name, lineThicness, color, stations, linePath){
     this.linePath = linePath;
 };
 let line_instances = 0;
-export function drawStation(fName,sName, style, type, posX, posY, lineColor, instances) {
+export function drawStation(fName,sName, style, type, posX, posY, lineColor, instances, line_instance) {
     var svgns = "http://www.w3.org/2000/svg";
     switch(type){
         case 'destination':
@@ -39,6 +39,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 rect.setAttributeNS( null,'fill', '#FFFFFF');
                 rect.setAttributeNS( null,'stroke-width', '3');
                 rect.setAttributeNS( null,'stroke', '#000000');
+                rect.innerHTML = line_instance;
                 document.getElementById( 'svg-canvas' ).appendChild( rect );
 
                 var first_name = document.createElementNS(svgns, 'text');
@@ -68,6 +69,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 circle.setAttributeNS( null,'fill','#FFFFFF');
                 circle.setAttributeNS( null,'stroke-width', '3');
                 circle.setAttributeNS( null,'stroke', '#000000');
+                circle.innerHTML = line_instance;
                 document.getElementById( 'svg-canvas' ).appendChild( circle );
                 
                 var first_name = document.createElementNS(svgns, 'text');
@@ -102,6 +104,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
             inter.setAttributeNS( null,'fill','#FFFFFF');
             inter.setAttributeNS( null,'stroke-width', '3');
             inter.setAttributeNS( null,'stroke', '#000000');
+            inter.innerHTML = line_instance;
             document.getElementById( 'svg-canvas' ).appendChild( inter );
 
             var first_name = document.createElementNS(svgns, 'text');
@@ -135,6 +138,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 rect.setAttributeNS( null,'width', '20');
                 rect.setAttributeNS( null,'height','20');
                 rect.setAttributeNS( null,'fill',lineColor);
+                rect.innerHTML = line_instance;
                 document.getElementById( 'svg-canvas' ).appendChild( rect );
 
                 var first_name = document.createElementNS(svgns, 'text');
@@ -162,6 +166,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 circle.setAttributeNS( null,'cy', posY);
                 circle.setAttributeNS( null,'r', '10');
                 circle.setAttributeNS( null,'fill',lineColor);
+                circle.innerHTML = line_instance;
                 document.getElementById( 'svg-canvas' ).appendChild( circle );
 
                 var first_name = document.createElementNS(svgns, 'text');
