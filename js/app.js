@@ -76,31 +76,18 @@ canvas.addEventListener('click', function(){
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0); // draw stations
     net.lines[instancesLine].stationInstances++; // add station instances
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
+    updateCanvas();
   }else if(net.lines[instancesLine].stationInstances == 0){
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0); // draw stations
     net.lines[instancesLine].stationInstances++;
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
+    updateCanvas();
   }else if(net.lines[instancesLine].stationInstances == 1){
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
-    const canvas = document.getElementById('svg-canvas');
-    canvas.innerHTML = "";
-    for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
-      drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].stations[i-1].xPos, net.lines[instancesLine].stations[i-1].yPos, net.lines[instancesLine].stations[i].xPos, net.lines[instancesLine].stations[i].yPos, net.lines[instancesLine].stations[i].line_style, instancesLine);
-      if(net.lines[instancesLine].stations[i-1].connected == false && i > 1){
-        net.lines[instancesLine].stations[i-1].connected = true;
-      }
-    }
-    for(const element of net.lines[instancesLine].stations){
-      if(element.connected == false){ 
-        element.type = "destination";
-      }else{
-        element.type = "common"; 
-      }
-      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color, net.lines[instancesLine].stations.indexOf(element));
-    }
     net.lines[instancesLine].linePath[1] = net.lines[instancesLine].stations[1];
-    net.lines[instancesLine].stationInstances++;
+    net.lines[instancesLine].stationInstances++;  
+    updateCanvas();
   }else if(is_any_station_selected == true){
       net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
       net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
