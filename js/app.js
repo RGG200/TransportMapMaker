@@ -14,6 +14,7 @@ const ln_list = document.getElementById('ln-list');
 let id_selected_station_on_editor = 0;
 let id_selected_line_on_editor = 0;
 
+let ln_create = document.getElementById("ln_create");
 let buttonGroup = document.getElementsByClassName('station_instance');
 let ln_buttonGroup = document.getElementsByClassName('line_button');
 let ln_buttonGroup_2 = document.getElementsByClassName('line_name');
@@ -71,16 +72,17 @@ canvas.addEventListener('mouseenter', updateDisplay, false);
 canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
   if(net.lines[instancesLine] == undefined){
-    net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a' , 'rect', mosX, mosY, 0)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a' , 'rect', mosX, mosY, 0)]); // make a new line and station
+    net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a' , 'rect', mosX, mosY, 0)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a' , 'rect', mosX, mosY, 0)]); // make a new line and station
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0); // draw stations
     net.lines[instancesLine].stationInstances++; // add station instances
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
   }else if(net.lines[instancesLine].stationInstances == 0){
+    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0); // draw stations
     net.lines[instancesLine].stationInstances++;
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
   }else if(net.lines[instancesLine].stationInstances == 1){
-    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
+    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
     const canvas = document.getElementById('svg-canvas');
     canvas.innerHTML = "";
     for(let i = 1; i <= net.lines[instancesLine].stationInstances; i++){
@@ -100,7 +102,7 @@ canvas.addEventListener('click', function(){
     net.lines[instancesLine].linePath[1] = net.lines[instancesLine].stations[1];
     net.lines[instancesLine].stationInstances++;
   }else if(is_any_station_selected == true){
-      net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
+      net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
       net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
       linePathId++;
       net.lines[instancesLine].stationInstances++;
@@ -191,7 +193,12 @@ save.addEventListener('click', function(){
   updateCanvas();
 });
 
-
+ln_create.addEventListener("click", function(){
+  if(net.lines[instancesLine] != null){
+    instancesLine++;
+  }
+  net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], []);
+});
 
 ln_save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].name = document.getElementById('name').value;
