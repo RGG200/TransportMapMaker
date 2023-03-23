@@ -131,9 +131,8 @@ const ln_buttonPressed = e => {
 }
 const ln_buttonPressed_2 = e => {
   instancesLine = e.target.id; // Get ID of Clicked Element
-  e.target.color = "#00FF22";
-  alert(instancesLine);
-  linePathId = e.target.linePath.length;
+  net.lines[instancesLine].color = "#00FF22";
+  linePathId = net.lines[instancesLine].linePath.length;
 }
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
