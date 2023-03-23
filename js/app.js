@@ -91,7 +91,7 @@ canvas.addEventListener('click', function(){
   }else if(is_any_station_selected == true){
       net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
       net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
-      linePathId++;
+      linePathId = net.lines[instancesLine].linePath.length;
       net.lines[instancesLine].stationInstances++;
       updateCanvas();
       is_any_station_selected = false;
@@ -114,6 +114,7 @@ ln_list.addEventListener("mouseenter", function(){
     button.addEventListener("click", ln_buttonPressed, true);  
   }
   for(let ln_name of ln_buttonGroup_2){
+    alert("it's workin");
     button.addEventListener("click", ln_buttonPressed_2, true);
   }
 });
@@ -172,20 +173,19 @@ function updateCanvas(){
 }
 
 save.addEventListener('click', function(){
-  drawStationsList(net, instancesLine);
   net.lines[instancesLine].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].yPos = document.getElementById('yPos').value;
   net.lines[instancesLine].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[instancesLine].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
+  drawStationsList(net, instancesLine);
   updateCanvas();
 });
 
 ln_create.addEventListener("click", function(){
   if(net.lines[instancesLine].stationInstances > 0){
     if(net.lines[0] != null){
-      alert("everything alright");
       instancesLine++;
       net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], []);
       drawLinesList(net, instancesLine);
