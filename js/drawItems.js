@@ -319,7 +319,7 @@ export function drawStationsList(network, instancesLine){
     st_list.innerHTML = "";
     for(let i = 0; i < network.lines.length; i++){
         let lineElement = document.createElement('div');
-        let lineText = document.createElement('h3');
+        let lineText = document.createElement('a');
         lineText.innerHTML = "ligne_" + i;
         lineText.setAttributeNS(null, 'class', 'line_name');
         lineElement.setAttributeNS(null, 'id', i);
