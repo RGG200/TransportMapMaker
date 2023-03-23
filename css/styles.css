@@ -30,8 +30,14 @@ html body{
 .line_name{
     font-size: 2em;
     font-weight: 600;
-    color: aquamarine;
-    margin-left: 1em;
+    color: crimson;
+    margin-left: 2%;
+}
+.line_button{
+    font-size: 2em;
+    font-weight: 600;
+    color: crimson;
+    margin-left: 2%;
 }
 .station_instance{
     position: relative;
