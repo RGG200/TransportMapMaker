@@ -116,6 +116,7 @@ ln_list.addEventListener("mouseenter", function(){
   }
   for(let ln_name of ln_buttonGroup_2){
     button.addEventListener("click", ln_buttonPressed_2, true);
+    linePathId = net.lines[instancesLine].linePath.length;
   }
 });
 
