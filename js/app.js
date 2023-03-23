@@ -92,6 +92,7 @@ canvas.addEventListener('click', function(){
       net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
       net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
       linePathId = net.lines[instancesLine].linePath.length;
+      alert(linePathId);
       net.lines[instancesLine].stationInstances++;
       updateCanvas();
       is_any_station_selected = false;
@@ -153,11 +154,13 @@ function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
   for(let j = 0; j < net.lines.length; j++){
-    for(let i = 1; i < net.lines[j].linePath.length; i++){
-      if(isConnected(i, j)){
-        drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
-        if(net.lines[j].linePath[i-1].connected == false && i > 1){
-          net.lines[j].linePath[i-1].connected = true;
+    if(net.lines[j].linePath.length > 1){
+      for(let i = 1; i < net.lines[j].linePath.length; i++){
+        if(isConnected(i, j)){
+          drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
+          if(net.lines[j].linePath[i-1].connected == false && i > 1){
+            net.lines[j].linePath[i-1].connected = true;
+          }
         }
       }
     }
