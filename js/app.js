@@ -115,7 +115,6 @@ ln_list.addEventListener("mouseenter", function(){
     button.addEventListener("click", ln_buttonPressed, true);  
   }
   for(let ln_name of ln_buttonGroup_2){
-    alert("it's workin");
     button.addEventListener("click", ln_buttonPressed_2, true);
   }
 });
@@ -192,6 +191,7 @@ ln_create.addEventListener("click", function(){
       instancesLine++;
       net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], []);
       drawLinesList(net, instancesLine);
+      linePathId = 0;
     }
   }
 });
