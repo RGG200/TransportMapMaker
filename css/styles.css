@@ -56,7 +56,25 @@ html body{
 .return{
     opacity: 0.5;
     position: fixed;
-    left: 90%;
+    left: 80%;
+    top: 8%;
+    height: 6%;
+    color: rgb(220, 30, 64);
+    width: 100%;
+    background: white;
+    transition: 300ms;
+    text-align: center;
+    display: flex;
+    border: none;
+    font-size: 1em;
+    font-weight: 300;
+    text-decoration: none;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.menu-buttons{
+    opacity: 0.5;
+    position: fixed;
+    left: 20%;
     top: 8%;
     height: 6%;
     color: rgb(220, 30, 64);
@@ -72,6 +90,10 @@ html body{
     font-family: 'Noto Sans JP', sans-serif;
 }
 .return:hover{
+    opacity: 1;
+    transition: 150ms;
+}
+.menu-buttons:hover{
     opacity: 1;
     transition: 150ms;
 }
