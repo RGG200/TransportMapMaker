@@ -326,9 +326,9 @@ export function drawStationsList(network, instancesLine){
         lineElement.setAttributeNS(null, 'class', 'line_section');
         lineElement.appendChild(lineText);
         st_list.appendChild(lineElement);
-        for(let j = 0; j < network.lines[instancesLine].stations.length; j++){
+        for(let j = 0; j < network.lines[i].stations.length; j++){
             let stationButton = document.createElement('a');
-            stationButton.innerText = network.lines[instancesLine].stations[j].fName;
+            stationButton.innerText = network.lines[i].stations[j].fName;
             stationButton.setAttributeNS(null, 'id', j);
             stationButton.setAttributeNS(null, 'class', 'station_instance');
             stationButton.setAttributeNS(null, 'onclick', "showEditor('options', 'st-editor');");
