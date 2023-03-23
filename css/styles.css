@@ -350,9 +350,9 @@ html body{
   }
   #save{
     text-decoration: none;
-    position: relative;
-    top: 85%;
-    left: 85%;
+    position: fixed;
+    top: 90%;
+    left: 90%;
   }
   #save:active{
     background-color: white;
@@ -360,9 +360,9 @@ html body{
   }
   #ln_save{
     text-decoration: none;
-    position: relative;
-    top: 85%;
-    left: 85%;
+    position: fixed;
+    top: 90%;
+    left: 90%;
   }
   #ln_save:active{
     background-color: white;
