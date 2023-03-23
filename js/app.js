@@ -136,12 +136,12 @@ const ln_buttonPressed_2 = e => {
 }
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
-  id_selected_line_on_editor = e.parentNode.id;
-  data.fName = net.lines[e.parentNode.id].stations[id_selected_station_on_editor].fName;
-  data.sName = net.lines[e.parentNode.id].stations[id_selected_station_on_editor].sName;
-  data.coords = [net.lines[e.parentNode.id].stations[id_selected_station_on_editor].xPos, net.lines[e.parentNode.id].stations[id_selected_station_on_editor].yPos];
-  data.cx_type = net.lines[e.parentNode.id].stations[id_selected_station_on_editor].line_style;
-  data.style_type = net.lines[e.parentNode.id].stations[id_selected_station_on_editor].style;
+  id_selected_line_on_editor = e.target.parentNode.id;
+  data.fName = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].fName;
+  data.sName = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].sName;
+  data.coords = [net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].xPos, net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].yPos];
+  data.cx_type = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].line_style;
+  data.style_type = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].style;
   document.getElementById('first').value = data.fName;
   document.getElementById('second').value = data.sName;
   document.getElementById('xPos').value = data.coords[0];
