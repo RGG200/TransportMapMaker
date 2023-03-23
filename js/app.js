@@ -109,14 +109,13 @@ st_list.addEventListener("mouseenter", function(){
   for (let button of buttonGroup) {
     button.addEventListener("click", buttonPressed, true);  
   }
+  for(let ln_name of ln_buttonGroup_2){
+    button.addEventListener("click", ln_buttonPressed_2, true);
+  }
 });
 ln_list.addEventListener("mouseenter", function(){
   for (let button of ln_buttonGroup) {
     button.addEventListener("click", ln_buttonPressed, true);  
-  }
-  for(let ln_name of ln_buttonGroup_2){
-    button.addEventListener("click", ln_buttonPressed_2, true);
-    linePathId = net.lines[instancesLine].linePath.length;
   }
 });
 
@@ -132,7 +131,9 @@ const ln_buttonPressed = e => {
 }
 const ln_buttonPressed_2 = e => {
   instancesLine = e.target.id; // Get ID of Clicked Element
+  e.target.style.color = "#00FF22";
   alert(instancesLine);
+  linePathId = e.target.linePath.length;
 }
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
