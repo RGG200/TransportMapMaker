@@ -197,7 +197,7 @@ ln_create.addEventListener("click", function(){
   if(net.lines[0] != null){
     instancesLine++;
   }
-  net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], []);
+  net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], []);
 });
 
 ln_save.addEventListener('click', function(){
