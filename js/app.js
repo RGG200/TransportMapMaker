@@ -47,6 +47,7 @@ export function updateDisplay(event) {
   function getStations(){
     let lineStations = document.getElementsByClassName('stations');
     for(let stationd of lineStations){
+        instancesLine = stationd.innerHTML;
         stationd.addEventListener("click", function(){
           this.setAttributeNS(null, 'stroke', '#00FF00');
           this.setAttributeNS(null, 'stroke-width', '5');
@@ -73,13 +74,13 @@ canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
   if(net.lines[instancesLine] == undefined){
     net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a' , 'rect', mosX, mosY, 0)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a' , 'rect', mosX, mosY, 0)]); // make a new line and station
-    drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0); // draw stations
+    drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
     net.lines[instancesLine].stationInstances++; // add station instances
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
     updateCanvas();
   }else if(net.lines[instancesLine].stationInstances == 0){
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
-    drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0); // draw stations
+    drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
     net.lines[instancesLine].stationInstances++;
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
     updateCanvas();
@@ -174,7 +175,7 @@ function updateCanvas(){
       }else{
         element.type = "common"; 
       }
-      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element));
+      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), instancesLine);
     }
   }
 }
