@@ -75,10 +75,10 @@ html body{
     opacity: 0.5;
     position: fixed;
     left: 10%;
-    top: 8%;
+    top: 4%;
     height: 6%;
     color: rgb(220, 30, 64);
-    width: 100%;
+    width: 10%;
     background: white;
     transition: 300ms;
     text-align: center;
