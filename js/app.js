@@ -89,13 +89,13 @@ canvas.addEventListener('click', function(){
     net.lines[instancesLine].stationInstances++;  
     updateCanvas();
   }else if(is_any_station_selected == true){
-      net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
-      net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
-      linePathId = net.lines[instancesLine].linePath.length;
-      alert(linePathId);
-      net.lines[instancesLine].stationInstances++;
-      updateCanvas();
-      is_any_station_selected = false;
+    net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
+    net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
+    linePathId = net.lines[instancesLine].linePath.length;
+    alert(linePathId);
+    net.lines[instancesLine].stationInstances++;
+    updateCanvas();
+    is_any_station_selected = false;
   }else{
     getStations();
   }
@@ -132,6 +132,7 @@ const ln_buttonPressed = e => {
 const ln_buttonPressed_2 = e => {
   instancesLine = e.target.id; // Get ID of Clicked Element
   e.target.style.color = "#00FF22";
+  alert(e.target.id);
   linePathId = net.lines[instancesLine].linePath.length;
 }
 const buttonPressed = e => {
