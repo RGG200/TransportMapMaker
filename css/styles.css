@@ -56,7 +56,7 @@ html body{
 .return{
     opacity: 0.5;
     position: fixed;
-    left: 80%;
+    left: 90%;
     top: 8%;
     height: 6%;
     color: rgb(220, 30, 64);
@@ -74,7 +74,7 @@ html body{
 .menu-buttons{
     opacity: 0.5;
     position: fixed;
-    left: 20%;
+    left: 10%;
     top: 8%;
     height: 6%;
     color: rgb(220, 30, 64);
@@ -84,7 +84,7 @@ html body{
     text-align: center;
     display: flex;
     border: none;
-    font-size: 1em;
+    font-size: 3em;
     font-weight: 300;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
