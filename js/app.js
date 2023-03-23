@@ -46,9 +46,9 @@ export function updateDisplay(event) {
   }
   function getStations(){
     let lineStations = document.getElementsByClassName('stations');
-    for(let stationd of lineStations){
-        instancesLine = stationd.innerHTML;
+    for(let stationd of lineStations){   
         stationd.addEventListener("click", function(){
+          instancesLine = stationd.innerHTML;
           this.setAttributeNS(null, 'stroke', '#00FF00');
           this.setAttributeNS(null, 'stroke-width', '5');
           selected_station = stationd.id;
