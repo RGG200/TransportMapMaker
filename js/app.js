@@ -119,15 +119,15 @@ canvas.addEventListener('click', function(){
 
 st_list.addEventListener("mouseenter", function(){
   for (let button of buttonGroup) {
-    button.addEventListener("click", buttonPressed, false);  
+    button.addEventListener("click", buttonPressed, true);  
   }
 });
 ln_list.addEventListener("mouseenter", function(){
   for (let button of ln_buttonGroup) {
-    button.addEventListener("click", ln_buttonPressed, false);  
+    button.addEventListener("click", ln_buttonPressed, true);  
   }
   for(let ln_name of ln_buttonGroup_2){
-    button.addEventListener("click", ln_buttonPressed_2, false);
+    button.addEventListener("click", ln_buttonPressed_2, true);
   }
 });
 
@@ -194,10 +194,12 @@ save.addEventListener('click', function(){
 });
 
 ln_create.addEventListener("click", function(){
-  if(net.lines[0] != null){
-    instancesLine++;
+  if(net.lines[instancesLine].stationInstances > 0){
+    if(net.lines[0] != null){
+      instancesLine++;
+    }
+    net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], []);
   }
-  net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], []);
 });
 
 ln_save.addEventListener('click', function(){
