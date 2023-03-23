@@ -164,21 +164,23 @@ const save = document.getElementById('save');
 function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
-  for(let i = 1; i < net.lines[instancesLine].linePath.length; i++){
-    if(isConnected(i, instancesLine)){
-      drawLine(net.lines[instancesLine].color, net.lines[instancesLine].lineThicness, net.lines[instancesLine].linePath[i-1].xPos, net.lines[instancesLine].linePath[i-1].yPos, net.lines[instancesLine].linePath[i].xPos, net.lines[instancesLine].linePath[i].yPos, net.lines[instancesLine].linePath[i].line_style, instancesLine);
-      if(net.lines[instancesLine].linePath[i-1].connected == false && i > 1){
-        net.lines[instancesLine].linePath[i-1].connected = true;
+  for(let j = 0; j < net.lines.length; j++){
+    for(let i = 1; i < net.lines[j].linePath.length; i++){
+      if(isConnected(i, j)){
+        drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
+        if(net.lines[j].linePath[i-1].connected == false && i > 1){
+          net.lines[j].linePath[i-1].connected = true;
+        }
       }
     }
-  }
-  for(const element of net.lines[instancesLine].stations){
-    if(element.connected == false){ 
-      element.type = "destination";
-    }else{
-      element.type = "common"; 
+    for(const element of net.lines[j].stations){
+      if(element.connected == false){ 
+        element.type = "destination";
+      }else{
+        element.type = "common"; 
+      }
+      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element));
     }
-    drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[instancesLine].color, net.lines[instancesLine].stations.indexOf(element));
   }
 }
 
