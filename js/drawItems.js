@@ -342,7 +342,7 @@ export function drawLinesList(network, instancesLine){
     for(let i = 0; i < network.lines.length; i++){
         let lineText = document.createElement('a');
         lineText.innerHTML = "ligne_" + i;
-        lineText.setAttributeNS(null, 'class', 'line_name');
+        lineText.setAttributeNS(null, 'class', 'line_button');
         lineText.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'onclick', "showEditor('options', 'ln-editor');");
         ln_list.appendChild(lineText);
