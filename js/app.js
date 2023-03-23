@@ -165,6 +165,8 @@ function updateCanvas(){
         }
       }
     }
+  } 
+  for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
       if(element.connected == false){ 
         element.type = "destination";
@@ -193,7 +195,7 @@ ln_create.addEventListener("click", function(){
       instancesLine++;
       net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], []);
       drawLinesList(net, instancesLine);
-      linePathId = 0;
+      linePathId = 2;
     }
   }
 });
