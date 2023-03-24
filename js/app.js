@@ -197,7 +197,7 @@ function updateCanvas(){
   canvas.innerHTML = "";
   for(let j = 0; j < net.lines.length; j++){
     console.log(net.lines[j].linePath.length);
-    console.log(net.lines[j].linePath);
+    console.log(linePathId);
     if(net.lines[j].linePath.length > 1){
       for(let i = 1; i < net.lines[j].linePath.length; i++){
         console.log(Object.values(net.lines[j].linePath[i-1]));
