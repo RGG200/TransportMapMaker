@@ -200,6 +200,7 @@ html body{
     width: 100%;
     min-height: 125%;
     justify-content: center;
+    overflow-y: auto;
     display: none;
 }
 .main-title{
@@ -214,6 +215,7 @@ html body{
     width: 100%;
     min-height: 125%;
     display: none;
+    overflow-y: auto;
     justify-content: center;
 }
 #ln-list{
@@ -235,6 +237,7 @@ html body{
     width: 100%;
     min-height: 125%;
     display: none;
+    overflow-y: auto;
     justify-content: center;
 }
 #export-section{
