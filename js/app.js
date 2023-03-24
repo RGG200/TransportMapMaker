@@ -267,7 +267,7 @@ deleter.addEventListener('click', function(){
       net.lines[instancesLine].stations[i].stationInstance = net.lines[instancesLine].stations.length-i;
     }
   }
-  alert(net.lines[instancesLine].linePath.values());
+  alert(net.lines[instancesLine].linePath);
   drawStationsList(net, instancesLine);
   updateCanvas();
 }, false);
