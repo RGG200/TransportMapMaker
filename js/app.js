@@ -200,6 +200,8 @@ function updateCanvas(){
     console.log(net.lines[j].linePath);
     if(net.lines[j].linePath.length > 1){
       for(let i = 1; i < net.lines[j].linePath.length; i++){
+        console.log(Object.values(net.lines[j].linePath[i-1]));
+        console.log(Object.values(net.lines[j].linePath[i]));
         if(isConnected(i, j)){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
           if(net.lines[j].linePath[i-1].connected == false && i > 1){
