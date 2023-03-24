@@ -255,7 +255,7 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
   net.lines[instancesLine].stationInstances-=1
   net.lines[instancesLine].stations[net.lines[instancesLine].stations.length-1];
-  linePathId = net.lines[instancesLine].linePath.length;
+  linePathId = net.lines[instancesLine].linePath.length-1;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
     console.log(net.lines[instancesLine].stations.length);
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
