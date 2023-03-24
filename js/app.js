@@ -196,6 +196,7 @@ function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
   for(let j = 0; j < net.lines.length; j++){
+    console.log(net.lines[j].linePath);
     if(net.lines[j].linePath.length > 1){
       for(let i = 1; i < net.lines[j].linePath.length; i++){
         if(isConnected(i, j)){
@@ -267,7 +268,6 @@ deleter.addEventListener('click', function(){
       net.lines[instancesLine].stations[i].stationInstance = net.lines[instancesLine].stations.length-i;
     }
   }
-  alert(net.lines[instancesLine].linePath);
   drawStationsList(net, instancesLine);
   updateCanvas();
 }, false);
