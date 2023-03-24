@@ -200,7 +200,6 @@ html body{
     width: 100%;
     min-height: 125%;
     justify-content: center;
-    overflow-y: scroll;
     display: none;
 }
 .main-title{
@@ -229,6 +228,9 @@ html body{
     justify-content: center;
     display: none;
     overflow-y: scroll;
+}
+.content{ 
+  overflow-y: scroll;
 }
 #ln-editor{
     position: fixed;
