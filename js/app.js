@@ -46,9 +46,9 @@ export function updateDisplay(event) {
   }
   function getStations(){
     let lineStations = document.getElementsByClassName('stations');
+    let i = 0;
     for(let stationd of lineStations){
-       lineSt_Array = Array.from(lineStations)
-       const duplicate_Stations = lineSt_Array.filter(element => { element.yPos == stationd.getAttributeNS(null, 'y') && element.xPos == stationd.getAttributeNS(null, 'x')});
+       const duplicate_Stations = net.lines[i].stations.filter(element => { element.yPos == stationd.getAttributeNS(null, 'y') && element.xPos == stationd.getAttributeNS(null, 'x')});
        if(is_any_station_selected == false){
          stationd.addEventListener("click", function(){
             if(duplicate_Station > 1){
@@ -63,9 +63,10 @@ export function updateDisplay(event) {
             this.setAttributeNS(null, 'stroke-width', '5');
             net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
             linePathId = net.lines[instancesLine].linePath.length;
-            is_any_station_selected = true;   
+            is_any_station_selected = true; 
           }, true);
         }
+      i++;
       }
   }
 
