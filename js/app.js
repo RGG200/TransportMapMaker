@@ -52,8 +52,8 @@ export function updateDisplay(event) {
           this.setAttributeNS(null, 'stroke', '#00FF00');
           this.setAttributeNS(null, 'stroke-width', '5');
           selected_station = stationd.id;
-          linePathId = net.lines[instancesLine].linePath.length;
           net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
+          linePathId = net.lines[instancesLine].linePath.length;
           is_any_station_selected = true;   
         }, true);
       }
