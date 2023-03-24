@@ -49,8 +49,6 @@ export function updateDisplay(event) {
     for(let stationd of lineStations){   
         stationd.addEventListener("click", function(){
           instancesLine = stationd.innerHTML;
-          alert(stationd.innerHTML);
-          alert(instancesLine);
           this.setAttributeNS(null, 'stroke', '#00FF00');
           this.setAttributeNS(null, 'stroke-width', '5');
           selected_station = stationd.id;
@@ -95,7 +93,6 @@ canvas.addEventListener('click', function(){
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
     linePathId = net.lines[instancesLine].linePath.length;
-    alert(linePathId);
     net.lines[instancesLine].stationInstances++;
     updateCanvas();
     is_any_station_selected = false;
@@ -111,9 +108,6 @@ canvas.addEventListener('click', function(){
 st_list.addEventListener("mouseenter", function(){
   for (let button of buttonGroup) {
     button.addEventListener("click", buttonPressed, true);  
-  }
-  for(let ln_name of ln_buttonGroup_2){
-    //ln_name.addEventListener("click", ln_buttonPressed_2, true);
   }
 });
 ln_list.addEventListener("mouseenter", function(){
@@ -131,11 +125,6 @@ const ln_buttonPressed = e => {
   document.getElementById('color').value = ln_data.color;
   document.getElementById('thicness').value = ln_data.thicness;
   
-}
-const ln_buttonPressed_2 = e => {
-  instancesLine = e.target.id; // Get ID of Clicked Element
-  e.target.style.color = "#00FF22";
-  linePathId = net.lines[instancesLine].linePath.length;
 }
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
