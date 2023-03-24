@@ -196,7 +196,7 @@ function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
   for(let j = 0; j < net.lines.length; j++){
-    console.log(net.lines[j].linePath);
+    console.log(net.lines[j].linePath.length);
     if(net.lines[j].linePath.length > 1){
       for(let i = 1; i < net.lines[j].linePath.length; i++){
         if(isConnected(i, j)){
