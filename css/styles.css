@@ -200,7 +200,7 @@ html body{
     width: 100%;
     min-height: 125%;
     justify-content: center;
-    overflow-y: auto;
+    overflow-y: scroll;
     display: none;
 }
 .main-title{
@@ -215,7 +215,7 @@ html body{
     width: 100%;
     min-height: 125%;
     display: none;
-    overflow-y: auto;
+    overflow-y: scroll;
     justify-content: center;
 }
 #ln-list{
@@ -228,6 +228,7 @@ html body{
     min-height: 125%;
     justify-content: center;
     display: none;
+    overflow-y: scroll;
 }
 #ln-editor{
     position: fixed;
@@ -237,7 +238,7 @@ html body{
     width: 100%;
     min-height: 125%;
     display: none;
-    overflow-y: auto;
+    overflow-y: scroll;
     justify-content: center;
 }
 #export-section{
