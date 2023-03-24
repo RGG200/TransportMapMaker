@@ -262,6 +262,7 @@ deleter.addEventListener('click', function(){
       net.lines[instancesLine].linePath.forEach(element => {
         if(element.stationInstance == net.lines[instancesLine].stations[i].stationInstance){
           element.stationInstance = net.lines[instancesLine].stations.length-i;
+          alert ("3");
         }
       });
       net.lines[instancesLine].stations[i].stationInstance = net.lines[instancesLine].stations.length-i;
