@@ -26,6 +26,9 @@ html body{
 .line_section{
     position: relative;  
     width: 100%;
+    height: 25%;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 .line_name{
     font-size: 2em;
@@ -214,7 +217,6 @@ html body{
     width: 100%;
     min-height: 125%;
     display: none;
-    overflow-y: scroll;
     justify-content: center;
 }
 #ln-list{
@@ -227,10 +229,10 @@ html body{
     min-height: 125%;
     justify-content: center;
     display: none;
-    overflow-y: scroll;
 }
 .content{ 
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 #ln-editor{
     position: fixed;
@@ -240,7 +242,6 @@ html body{
     width: 100%;
     min-height: 125%;
     display: none;
-    overflow-y: scroll;
     justify-content: center;
 }
 #export-section{
