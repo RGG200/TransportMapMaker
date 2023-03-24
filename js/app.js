@@ -47,15 +47,17 @@ export function updateDisplay(event) {
   function getStations(){
     let lineStations = document.getElementsByClassName('stations');
     for(let stationd of lineStations){   
-        stationd.addEventListener("click", function(){
-          instancesLine = stationd.innerHTML;
-          this.setAttributeNS(null, 'stroke', '#00FF00');
-          this.setAttributeNS(null, 'stroke-width', '5');
-          selected_station = stationd.id;
-          net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
-          linePathId = net.lines[instancesLine].linePath.length;
-          is_any_station_selected = true;   
-        }, true);
+       if(is_any_station_selected == false){
+         stationd.addEventListener("click", function(){
+            instancesLine = stationd.innerHTML;
+            this.setAttributeNS(null, 'stroke', '#00FF00');
+            this.setAttributeNS(null, 'stroke-width', '5');
+            selected_station = stationd.id;
+            net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
+            linePathId = net.lines[instancesLine].linePath.length;
+            is_any_station_selected = true;   
+          }, true);
+        }
       }
   }
 
