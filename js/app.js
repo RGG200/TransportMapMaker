@@ -47,7 +47,8 @@ export function updateDisplay(event) {
   function getStations(){
     let lineStations = document.getElementsByClassName('stations');
     for(let stationd of lineStations){
-       const duplicate_Stations = lineStations.filter(element => { element.yPos == stationd.getAttributeNS(null, 'y') && element.xPos == stationd.getAttributeNS(null, 'x')});
+       lineSt_Array = Array.from(lineStations)
+       const duplicate_Stations = lineSt_Array.filter(element => { element.yPos == stationd.getAttributeNS(null, 'y') && element.xPos == stationd.getAttributeNS(null, 'x')});
        if(is_any_station_selected == false){
          stationd.addEventListener("click", function(){
             if(duplicate_Station > 1){
