@@ -95,12 +95,12 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
             var inter = document.createElementNS( svgns, 'rect');
             inter.setAttributeNS( null,'id',instances);
             inter.setAttributeNS( null,'class','stations');
-            inter.setAttributeNS( null,'x',posX);
-            inter.setAttributeNS( null,'y',posY+15);
-            inter.setAttributeNS( null,'width', '40');
-            inter.setAttributeNS( null,'height','80');
-            inter.setAttributeNS( null,'rx', '20');
-            inter.setAttributeNS( null,'ry','20');
+            inter.setAttributeNS( null,'x',posX-10);
+            inter.setAttributeNS( null,'y',posY-20);
+            inter.setAttributeNS( null,'width', '20');
+            inter.setAttributeNS( null,'height','40');
+            inter.setAttributeNS( null,'rx', '10');
+            inter.setAttributeNS( null,'ry','10');
             inter.setAttributeNS( null,'fill','#FFFFFF');
             inter.setAttributeNS( null,'stroke-width', '3');
             inter.setAttributeNS( null,'stroke', '#000000');

@@ -91,7 +91,7 @@ html body{
     padding: 10px;
     display: flex;
     border: none;
-    font-size: 3em;
+    font-size: 2em;
     font-weight: 300;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -358,23 +358,48 @@ html body{
   #save{
     text-decoration: none;
     position: fixed;
-    top: 90%;
-    left: 90%;
+    top: 85%;
+    left: 70%;
+    color: forestgreen;
   }
+
   #save:active{
     background-color: white;
-    color: crimson;
+    color: greenyellow;
   }
   #ln_save{
     text-decoration: none;
     position: fixed;
-    top: 90%;
-    left: 90%;
+    top: 85%;
+    left: 70%;
+    color: forestgreen;
   }
   #ln_save:active{
     background-color: white;
-    color: crimson;
+    color: greenyellow;
   }
+  #delete{
+    text-decoration: none;
+    position: fixed;
+    top: 85%;
+    left: 55%;
+  }
+  
+  #delete:active{
+    background-color: white;
+    color: orangered;
+  }
+  #ln_delete{
+    text-decoration: none;
+    position: fixed;
+    top: 85%;
+    left: 55%;
+  }
+  #ln_delete:active{
+    background-color: white;
+    color: orangered;
+  }
+  
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
     position: relative;
