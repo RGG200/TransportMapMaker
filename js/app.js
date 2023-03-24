@@ -46,13 +46,20 @@ export function updateDisplay(event) {
   }
   function getStations(){
     let lineStations = document.getElementsByClassName('stations');
-    for(let stationd of lineStations){   
+    for(let stationd of lineStations){
+       const duplicate_Stations = lineStations.filter(element => { element.yPos == stationd.getAttributeNS(null, 'y') && element.xPos == stationd.getAttributeNS(null, 'x')});
        if(is_any_station_selected == false){
          stationd.addEventListener("click", function(){
-            instancesLine = stationd.innerHTML;
+            if(duplicate_Station > 1){
+              selected_station = net.lines[instancesLine].stations.find(element => { element.yPos == stationd.getAttributeNS(null, 'y') && element.xPos == stationd.getAttributeNS(null, 'x')});
+              alert(selected_station + " very good");
+            }else{
+              instancesLine = stationd.innerHTML;
+              selected_station = stationd.id;
+              alert(selected_station);
+            }
             this.setAttributeNS(null, 'stroke', '#00FF00');
             this.setAttributeNS(null, 'stroke-width', '5');
-            selected_station = stationd.id;
             net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
             linePathId = net.lines[instancesLine].linePath.length;
             is_any_station_selected = true;   
