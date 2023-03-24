@@ -197,6 +197,7 @@ function updateCanvas(){
   canvas.innerHTML = "";
   for(let j = 0; j < net.lines.length; j++){
     console.log(net.lines[j].linePath.length);
+    console.log(net.lines[j].linePath);
     if(net.lines[j].linePath.length > 1){
       for(let i = 1; i < net.lines[j].linePath.length; i++){
         if(isConnected(i, j)){
@@ -256,7 +257,7 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
   net.lines[instancesLine].stationInstances-=1
   net.lines[instancesLine].stations[net.lines[instancesLine].stations.length-1];
-  linePathId = net.lines[instancesLine].linePath.length-1;
+  linePathId = net.lines[instancesLine].linePath.length;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
     console.log(net.lines[instancesLine].stations.length);
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
