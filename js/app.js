@@ -196,8 +196,6 @@ function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
   for(let j = 0; j < net.lines.length; j++){
-    console.log(net.lines[j].linePath.length);
-    console.log(linePathId);
     if(net.lines[j].linePath.length > 1){
       for(let i = 1; i < net.lines[j].linePath.length; i++){
         console.log(Object.values(net.lines[j].linePath[i-1]));
@@ -257,11 +255,10 @@ deleter.addEventListener('click', function(){
   let new_linePath = net.lines[instancesLine].linePath.filter(station => station.stationInstance != id_selected_station_on_editor);
   net.lines[instancesLine].linePath = new_linePath;
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
-  net.lines[instancesLine].stationInstances-=1
-  net.lines[instancesLine].stations[net.lines[instancesLine].stations.length-1];
+  net.lines[instancesLine].stationInstances-=1;
+  console.log("stations: " + net.lines[instancesLine].stationInstances);
   linePathId = net.lines[instancesLine].linePath.length;
-  if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
-    console.log(net.lines[instancesLine].stations.length);
+  if(net.lines[instancesLine].stations.length > id_selected_station_on_editor)
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
       net.lines[instancesLine].linePath.forEach(element => {
         if(element.stationInstance == net.lines[instancesLine].stations[i].stationInstance){
@@ -273,4 +270,4 @@ deleter.addEventListener('click', function(){
   }
   drawStationsList(net, instancesLine);
   updateCanvas();
-}, false);
+});
