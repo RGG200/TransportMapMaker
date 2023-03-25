@@ -83,8 +83,10 @@ export function updateDisplay(event) {
 
   function isConnected(stationID, lineID) {
     for(let i = 0; i < stationID; i++){
-      if(net.lines[lineID].linePath[stationID].stationInstance == net.lines[lineID].linePath[i].stationInstance){
-        return false;
+      if(i != stationID){
+        if(net.lines[lineID].linePath[stationID] == net.lines[lineID].linePath[i]){
+          return false;
+        }
       }
     }
     return true;
@@ -105,7 +107,6 @@ export function updateDisplay(event) {
           if(array_stations[stationID].getAttributeNS(null, 'x') == stationDrawable.getAttributeNS(null, 'x') && array_stations[stationID].getAttributeNS(null, 'y') == stationDrawable.getAttributeNS(null, 'y')){
             net.lines[stationDrawable.innerHTML].stations[stationDrawable.id].type = 'exchange';
             line.stations[stationID].type = 'exchange';
-            alert('yes');
           }
         }
       }
@@ -134,7 +135,7 @@ canvas.addEventListener('click', function(){
       if(isUniqueInLine(instancesLine)){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
-        linePathId = net.lines[instancesLine].linePath.length;
+        if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
         net.lines[instancesLine].stationInstances++;
         updateCanvas();
         station_is_being_created = true;
@@ -197,9 +198,8 @@ function updateCanvas(){
   canvas.innerHTML = "";
   for(let j = 0; j < net.lines.length; j++){
     if(net.lines[j].linePath.length > 1){
+      console.log(net.lines[j].linePath);
       for(let i = 1; i < net.lines[j].linePath.length; i++){
-        console.log(Object.values(net.lines[j].linePath[i-1]));
-        console.log(Object.values(net.lines[j].linePath[i]));
         if(isConnected(i, j)){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
           if(net.lines[j].linePath[i-1].connected == false && i > 1){
@@ -211,7 +211,7 @@ function updateCanvas(){
   } 
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
-      if(element.connected == false && element.type != "exchange" || net.lines[j].stations.indexOf(element) == 0){ 
+      if(element.connected == false && element.type != "exchange" || net.lines[j].stations.indexOf(element) == 0 && element.type != "exchange"){ 
         element.type = "destination";
       }else if(element.type != "exchange"){
         element.type = "common";
@@ -256,9 +256,12 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].linePath = new_linePath;
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
   net.lines[instancesLine].stationInstances-=1;
-  console.log("stations: " + net.lines[instancesLine].stationInstances);
+  if(net.lines[instancesLine].stationInstances == 0){
+    net.lines.splice(instancesLine, 1)
+  }
   linePathId = net.lines[instancesLine].linePath.length;
-  if(net.lines[instancesLine].stations.length > id_selected_station_on_editor)
+  if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
+    console.log(net.lines[instancesLine].stations.length);
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
       net.lines[instancesLine].linePath.forEach(element => {
         if(element.stationInstance == net.lines[instancesLine].stations[i].stationInstance){
@@ -270,4 +273,4 @@ deleter.addEventListener('click', function(){
   }
   drawStationsList(net, instancesLine);
   updateCanvas();
-});
+}, false);
