@@ -12,8 +12,8 @@ html body{
 
 }
 #ln_content{
-    width: 100%;
-    display: flex;
+    max-width: 100%;
+    display: block;
     min-height: 100%;
 }
 .stationNames{
@@ -42,12 +42,25 @@ html body{
     margin-left: 2%;
 }
 .line_button{
-    font-size: 2em;
+    font-size: 3em;
+    padding: 10px;
     font-weight: 600;
-    color: crimson;
-    margin-left: 2%;
     min-width: 100%;
-    max-height: 10%;
+    max-width: 100%;
+    margin-left: 0%;
+    min-height: 10%;
+    text-align: center;
+    display: block;
+    opacity: 0.3;
+    transition: 300ms;
+}
+.line_button:hover{
+    opacity: 1.0;
+    transition: 0.3s;
+}
+.line_button:active{
+    opacity: 1.0;
+    color: white;
 }
 .station_instance{
     position: relative;
