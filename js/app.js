@@ -63,7 +63,7 @@ export function updateDisplay(event) {
                   this.setAttributeNS(null, 'stroke', '#00FF00');
                   this.setAttributeNS(null, 'stroke-width', '5');
                   if(instancesLine != previous_instancesLine){
-                    linePathId = net.lines[instancesLine].linePath.length-1;
+                    linePathId = net.lines[instancesLine].linePath.length;
                   }
                   net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                   linePathId = net.lines[instancesLine].linePath.length;
