@@ -217,6 +217,7 @@ function updateCanvas(){
         element.type = "common";
       }
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
+      isDrawableUnique(net.lines[j].stations.indexOf(element));
     }
   }
 }
