@@ -221,7 +221,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = endY-beginY;
         x = endX-beginX;
-        d += 'c0 ' + y + ', ' + '0 ' + y + ', ' + x + ' ' + y + ' ';
+        d += 'c0 ' + y + ', ' + '0.0 ' + y + ', ' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
