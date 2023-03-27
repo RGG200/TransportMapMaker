@@ -111,7 +111,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
             var second_name = document.createElementNS(svgns, 'text');
             first_name.innerHTML = fName;
             first_name.setAttributeNS(null, 'x', posX);
-            first_name.setAttributeNS(null, 'y', posY-35);
+            first_name.setAttributeNS(null, 'y', posY-40);
             first_name.setAttributeNS(null, 'id', instances);
             first_name.setAttributeNS(null, 'class', 'stationNames');
             first_name.setAttributeNS(null, 'font-size', '16');
@@ -120,7 +120,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
             document.getElementById( 'svg-canvas' ).appendChild( first_name );
             second_name.innerHTML = sName;
             second_name.setAttributeNS(null, 'x', posX);
-            second_name.setAttributeNS(null, 'y', posY-25);
+            second_name.setAttributeNS(null, 'y', posY-30);
             second_name.setAttributeNS(null, 'class', 'stationNames');
             second_name.setAttributeNS(null, 'font-size', '12');
             second_name.setAttributeNS(null, 'font-weight', '700');
@@ -145,7 +145,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 var second_name = document.createElementNS(svgns, 'text');
                 first_name.innerHTML = fName;
                 first_name.setAttributeNS(null, 'x', posX);
-                first_name.setAttributeNS(null, 'y', posY-35);
+                first_name.setAttributeNS(null, 'y', posY-30);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
@@ -153,7 +153,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
                 second_name.setAttributeNS(null, 'x', posX);
-                second_name.setAttributeNS(null, 'y', posY-25);
+                second_name.setAttributeNS(null, 'y', posY-20);
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
                 second_name.setAttributeNS(null, 'font-weight', '700');
@@ -173,7 +173,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 var second_name = document.createElementNS(svgns, 'text');
                 first_name.innerHTML = fName;
                 first_name.setAttributeNS(null, 'x', posX);
-                first_name.setAttributeNS(null, 'y', posY-35);
+                first_name.setAttributeNS(null, 'y', posY-30);
                 first_name.setAttributeNS(null, 'id', instances);
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
@@ -181,7 +181,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
                 second_name.setAttributeNS(null, 'x', posX);
-                second_name.setAttributeNS(null, 'y', posY-25);
+                second_name.setAttributeNS(null, 'y', posY-20);
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
                 second_name.setAttributeNS(null, 'font-weight', '700');
@@ -222,6 +222,45 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         y = endY-beginY;
         x = endX-beginX;
         d += 'c' + '0' + y + ', ' + '0' + y + ', ' + x + ' ' + y + ' ';
+
+        path.setAttributeNS(null, 'd', d);
+        path.setAttributeNS(null, 'id', 'line_' + line_instance);
+        path.setAttributeNS(null, 'stroke', color);
+        path.setAttributeNS(null, 'stroke-width', thicness);
+        path.setAttributeNS(null, 'fill', 'transparent');
+    }else if(style == 'c'){
+        d += 'M' + beginX + ' ' + beginY + ' ';
+        y = beginY;
+        x = endX;
+        d += 'L' + x + ' ' + y + ' ';
+        d += 'M' + x + ' ' + y + ' ';
+        y = endY;
+        d += 'L' + x + ' ' + y + ' ';
+
+        path.setAttributeNS(null, 'd', d);
+        path.setAttributeNS(null, 'id', 'line_' + line_instance);
+        path.setAttributeNS(null, 'stroke', color);
+        path.setAttributeNS(null, 'stroke-width', thicness);
+        path.setAttributeNS(null, 'fill', 'transparent');
+    }else if(style == 'd'){
+        d += 'M' + beginX + ' ' + beginY + ' ';
+        y = endY-beginY;
+        x = beginX;
+        d += 'L' + x + ' ' + y + ' ';
+        d += 'M' + x + ' ' + y + ' ';
+        x = endX;
+        d += 'L' + x + ' ' + y + ' ';
+
+        path.setAttributeNS(null, 'd', d);
+        path.setAttributeNS(null, 'id', 'line_' + line_instance);
+        path.setAttributeNS(null, 'stroke', color);
+        path.setAttributeNS(null, 'stroke-width', thicness);
+        path.setAttributeNS(null, 'fill', 'transparent');
+    }else if(style == 'e'){
+        d += 'M' + beginX + ' ' + beginY + ' ';
+        y = endY;
+        x = endX;
+        d += 'L' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
