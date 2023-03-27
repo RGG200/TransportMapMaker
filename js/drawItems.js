@@ -221,7 +221,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = endY-beginY;
         x = endX-beginX;
-        d += 'c' + '0' + y + ', ' + '0' + y + ', ' + x + ' ' + y + ' ';
+        d += 'c0 ' + y + ', ' + '0 ' + y + ', ' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
@@ -244,7 +244,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'fill', 'transparent');
     }else if(style == 'd'){
         d += 'M' + beginX + ' ' + beginY + ' ';
-        y = endY-beginY;
+        y = endY;
         x = beginX;
         d += 'L' + x + ' ' + y + ' ';
         d += 'M' + x + ' ' + y + ' ';
