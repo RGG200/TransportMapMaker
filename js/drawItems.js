@@ -202,13 +202,12 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         var path = document.getElementById('line_' + line_instance);
     }
     var d = path.getAttributeNS(null, 'd');
-    let x = 0;
+    let x = endY;
     let y = 0;
-    //math behind the connection a the butt section
+    //math behind the connection at the butt section
     if(style == 'a'){
         d += 'M' + beginX + ' ' + beginY + ' ';
             y = endY;
-            x = endX;
         d += 'c' + x + ' ' + 0 + ',' x + ' ' + 0 + ',' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
