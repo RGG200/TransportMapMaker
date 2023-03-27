@@ -280,7 +280,7 @@ ln_delete.addEventListener("click", function(){
     for(let i = id_selected_line_on_editor; i < net.lines.length; i++){
      net.lines[i].id -= 1;  
     }
-    instanceLine = 0;
+    instancesLine = 0;
     drawLinesList(net, instancesLine);
     updateCanvas();
 }, true);
