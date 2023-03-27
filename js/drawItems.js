@@ -214,64 +214,20 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
-        path.setAttributeNS(null, 'stroke-width', thicness);        
+        path.setAttributeNS(null, 'stroke-width', thicness);
+        path.setAttributeNS(null, 'fill', 'transparent');     
         
     }else if(style == 'b'){
         d += 'M' + beginX + ' ' + beginY + ' ';
-        if(endX < beginX){
-            x = beginX;
-        }else if(endX > beginX){
-            x = beginX;
-        }else{
-            x = endX;
-        }
-        if(endY == beginY){
-            y = endY;
-        }else if(endY > beginY){
-            y = endY-23.5;
-        }else if(endY < beginY){
-            y = endY-(-23.5);
-        }
-
-        d += 'L' + x + ' ' + y + ' ';
-        if(endY > beginY){
-            y = endY-25;
-        }else if(endY < beginY){
-            y = endY-(-25);
-        }else if(endY == beginY){
-            y = endY;
-        }
-        d += 'M' + x + ' ' + y + ' ';
-
-        y = endY;
-
-        if(endX > beginX){
-            x = beginX-(-26.5);
-        }else if(endX < beginX){
-            x = beginX-26.5;
-        }else if(endX == beginX){
-            x = endX;
-        }
-        
-        d += 'L' + x + ' ' + y + ' ';
-        if(endX > beginX){
-            x = beginX-(-25);
-        }else if(endX < beginX){
-            x = beginX-25;
-        }else if(endX == beginX){
-            x = endX;
-        }
-        d += 'M' + x + ' ' + y + ' ';
-        
-        x = endX;
-        d += 'L' + x + ' ' + y + ' ';
+        y = endY-beginY;
+        x = endX-beginX;
+        d += 'c' + '0' + y + ', ' + '0' + y + ', ' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', color);
-        
+        path.setAttributeNS(null, 'fill', 'transparent');
     }
     document.getElementById( 'svg-canvas' ).appendChild( path );
 };
