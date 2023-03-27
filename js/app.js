@@ -281,6 +281,7 @@ ln_delete.addEventListener("click", function(){
      net.lines[i].id -= 1;  
     }
     instancesLine = 0;
+    linePathId = 1
     drawLinesList(net, instancesLine);
     updateCanvas();
 }, true);
