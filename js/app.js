@@ -276,8 +276,8 @@ deleter.addEventListener('click', function(){
   updateCanvas();
 }, true);
 ln_delete.addEventListener("click", function(){
-    net.lines.splice(id_line_selected_on_editor, 1);
-    for(let i = id_line_selected_on_editor; i < net.lines.length; i++){
+    net.lines.splice(id_selected_line_on_editor, 1);
+    for(let i = id_selected_line_on_editor; i < net.lines.length; i++){
      net.lines[i].id -= 1;  
     }
     instanceLine = 0;
