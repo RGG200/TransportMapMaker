@@ -207,56 +207,14 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     //math behind the connection a the butt section
     if(style == 'a'){
         d += 'M' + beginX + ' ' + beginY + ' ';
-        if(endX > beginX){
-            x = endX-23.5;
-        }else if(endX < beginX){
-            x = endX-(-23.5);
-        }else if(endX == beginX){
-            x = endX;
-        }
-        if(endY < beginY){
-            y = beginY;
-        }else if(endY > beginY){
-            y = beginY;
-        }else{
             y = endY;
-        }
-        d += 'L' + x + ' ' + y + ' ';
-        if(endX > beginX){
-            x = endX-25;
-        }else if(endX < beginX){
-            x = endX-(-25);
-        }else if(endX == beginX){
             x = endX;
-        }
-        d += 'M' + x + ' ' + y + ' ';
-        if(endY > beginY){
-            y = beginY-(-26.5);
-        }else if(endY < beginY){
-            y = beginY-26.5;
-        }else if(endY == beginY){
-            y = beginY;
-        }
-        x = endX;
-
-        d += 'L' + x + ' ' + y + ' ';
-        if(endY > beginY){
-            y = beginY-(-25);
-        }else if(endY < beginY){
-            y = beginY-25;
-        }else if(endY == beginY){
-            y = beginY;
-        }
-        d += 'M' + x + ' ' + y + ' ';
-        
-        y = endY;
-        d += 'L' + x + ' ' + y + ' ';
+        d += 'c' + x + ' ' + 0 + ',' x + ' ' + 0 + ',' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', color);
         
         
     }else if(style == 'b'){
