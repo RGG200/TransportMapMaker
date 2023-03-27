@@ -274,10 +274,11 @@ deleter.addEventListener('click', function(){
   }
   drawStationsList(net, instancesLine);
   updateCanvas();
-}, false);
+}, true);
 ln_delete.addEventListener("click", function(){
     net.lines.splice(instancesLine, 1);
     for(let i = instancesLine; i < net.lines.length; i++){
      net.lines[i].id -= 1;  
     }
-});
+    updateCanvas();
+}, true);
