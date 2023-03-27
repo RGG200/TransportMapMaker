@@ -208,13 +208,12 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     if(style == 'a'){
         d += 'M' + beginX + ' ' + beginY + ' ';
             y = endY;
-        d += 'c' + x + ' ' + 0 + ',' x + ' ' + 0 + ',' + x + ' ' + y + ' ';
+        d += 'c' + endX + ' ' + 0 + ',' endX + ' ' + 0 + ',' + endX + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
-        path.setAttributeNS(null, 'stroke-width', thicness);
-        
+        path.setAttributeNS(null, 'stroke-width', thicness);        
         
     }else if(style == 'b'){
         d += 'M' + beginX + ' ' + beginY + ' ';
