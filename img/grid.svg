@@ -7,5 +7,5 @@
       <rect width="100" height="100" style="stroke:#366" fill="url(#square)"/>
     </pattern>
   </defs>
-  <rect width="400" height="400" fill="url(#quad)" style="stroke:#366;stroke-width:2px"/>
+  <rect width="400" height="400" fill="url(#quad)" style="stroke:#366;stroke-width:3px"/>
 </svg>
