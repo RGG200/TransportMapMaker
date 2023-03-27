@@ -212,10 +212,10 @@ function updateCanvas(){
     for(const element of net.lines[j].stations){
       if(element.connected == false && element.type != "exchange" || net.lines[j].stations.indexOf(element) == 0 && element.type != "exchange"){ 
         element.type = "destination";
-      }else if(element.type != "exchange"){
-        element.type = "common";
       }else if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){
         element.type = "exchange";
+      }else{
+        element.type = "common";
       }
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
     }
@@ -258,7 +258,7 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
   net.lines[instancesLine].stationInstances-=1;
   if(net.lines[instancesLine].stationInstances <= 0){
-    net.lines.splice(instancesLine, 1)
+    net.lines.splice(instancesLine, 1);
   }
   linePathId = net.lines[instancesLine].linePath.length;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
@@ -275,3 +275,9 @@ deleter.addEventListener('click', function(){
   drawStationsList(net, instancesLine);
   updateCanvas();
 }, false);
+ln_delete.addEventListener("click", function(){
+    net.lines.splice(instancesLine, 1);
+    for(let i = instancesLine; i < net.lines.length; i++){
+     net.lines[i].id -= 1;  
+    }
+});
