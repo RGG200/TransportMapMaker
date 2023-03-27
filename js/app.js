@@ -1,4 +1,4 @@
-let instancesLine = 0; // counts the line instances ( gonna remove that soon I think )
+let instancesLine = 0; // selected line
 import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList} from './drawItems.js';
 
 let net = new Network([]); //initial network
@@ -257,9 +257,6 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].linePath = new_linePath;
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
   net.lines[instancesLine].stationInstances-=1;
-  if(net.lines[instancesLine].stationInstances <= 0){
-    net.lines.splice(instancesLine, 1);
-  }
   linePathId = net.lines[instancesLine].linePath.length;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
     console.log(net.lines[instancesLine].stations.length);
@@ -271,6 +268,9 @@ deleter.addEventListener('click', function(){
       });
       net.lines[instancesLine].stations[i].stationInstance = net.lines[instancesLine].stations.length-i;
     }
+  }
+  if(net.lines[instancesLine].stationInstances <= 0){
+    net.lines.splice(instancesLine, 1);
   }
   drawStationsList(net, instancesLine);
   updateCanvas();
