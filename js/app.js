@@ -51,7 +51,6 @@ export function updateDisplay(event) {
   let lineStations = document.getElementsByClassName('stations');
   function getStations(){
     for(let stationd of lineStations){
-      isDrawableUnique(stationd.id);
       switch(is_any_station_selected){
         case false:
           stationd.addEventListener("click", function(){
@@ -99,18 +98,18 @@ export function updateDisplay(event) {
     }
     return true;
   }
-  function isDrawableUnique(stationID) {
+  function isDrawableUnique(stationID, lineID) {
     let array_stations = Array.from(lineStations);
     for(const line of net.lines){
-      for(const stationDrawable of array_stations){
-        if(array_stations.indexOf(stationDrawable) != stationID){
-          if(array_stations[stationID].getAttributeNS(null, 'x') == stationDrawable.getAttributeNS(null, 'x') && array_stations[stationID].getAttributeNS(null, 'y') == stationDrawable.getAttributeNS(null, 'y')){
-            net.lines[stationDrawable.innerHTML].stations[stationDrawable.id].type = 'exchange';
-            line.stations[stationID].type = 'exchange';
+      for(const station of line.stations){
+        if(line.stations.indexOf(station) != stationID && lineID != net.lines.indexOf(line)){
+          if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos == net.lines[lineID].stations[stationID].yPos){
+            return false;
           }
         }
       }
     }
+    return true;
   }
 
 const canvas = document.getElementById('svg-canvas');
@@ -215,9 +214,10 @@ function updateCanvas(){
         element.type = "destination";
       }else if(element.type != "exchange"){
         element.type = "common";
+      }else if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){
+        element.type = "exchange";
       }
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
-      isDrawableUnique(net.lines[j].stations.indexOf(element));
     }
   }
 }
