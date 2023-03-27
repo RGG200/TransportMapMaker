@@ -207,8 +207,8 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
     //math behind the connection at the butt section
     if(style == 'a'){
         d += 'M' + beginX + ' ' + beginY + ' ';
-        y = endY;
-        x = endX;
+        y = endY-beginY;
+        x = endX-beginX;
         d += 'c' + x + ' 0,' + x + ' 0,' + x + ' ' + y + ' ';
 
         path.setAttributeNS(null, 'd', d);
