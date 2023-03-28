@@ -191,7 +191,7 @@ const buttonPressed = e => {
   
 }
 const save = document.getElementById('save');
-
+let firstStationRendered = false;
 function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
@@ -203,6 +203,8 @@ function updateCanvas(){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
           if(net.lines[j].linePath[i-1].connected == false && i > 1){
             net.lines[j].linePath[i-1].connected = true;
+          }else if(firstStationRendered){
+            net.lines[j].linePath[i-1].connected = false;
           }
         }
       }
@@ -210,7 +212,7 @@ function updateCanvas(){
   } 
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
-      if(element.connected == false && net.lines[j].stations.length > 1){ 
+      if(element.connected == false){ 
         element.type = "destination";
       }else if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){
         element.type = "exchange";
