@@ -230,6 +230,28 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'fill', 'transparent');
     }else if(style == 'c'){
         d += 'M' + beginX + ' ' + beginY + ' ';
+        y = endY-beginY;
+        x = endX-beginX;
+        d += 'c' + x + ' ' + y/8 + ', ' x/8 + ' ' + y ', ' + x + ' ' + y + ' ';
+
+        path.setAttributeNS(null, 'd', d);
+        path.setAttributeNS(null, 'id', 'line_' + line_instance);
+        path.setAttributeNS(null, 'stroke', color);
+        path.setAttributeNS(null, 'stroke-width', thicness);
+        path.setAttributeNS(null, 'fill', 'transparent'); 
+      }else if(style == 'd'){
+        d += 'M' + beginX + ' ' + beginY + ' ';
+        y = endY-beginY;
+        x = endX-beginX;
+        d += 'c' + x/8 + ' ' + y + ', ' x + ' ' + y/8 ', ' + x + ' ' + y + ' ';
+
+        path.setAttributeNS(null, 'd', d);
+        path.setAttributeNS(null, 'id', 'line_' + line_instance);
+        path.setAttributeNS(null, 'stroke', color);
+        path.setAttributeNS(null, 'stroke-width', thicness);
+        path.setAttributeNS(null, 'fill', 'transparent'); 
+      }else if(style == 'e'){
+        d += 'M' + beginX + ' ' + beginY + ' ';
         y = beginY;
         x = endX;
         d += 'L' + x + ' ' + y + ' ';
@@ -242,7 +264,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
         path.setAttributeNS(null, 'fill', 'transparent');
-    }else if(style == 'd'){
+    }else if(style == 'f'){
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = endY;
         x = beginX;
@@ -256,7 +278,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
         path.setAttributeNS(null, 'fill', 'transparent');
-    }else if(style == 'e'){
+    }else if(style == 'g'){
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = endY;
         x = endX;
