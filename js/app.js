@@ -210,7 +210,7 @@ function updateCanvas(){
   } 
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
-      if(element.connected == false && element.type != "exchange" || net.lines[j].stations.indexOf(element) == 0 && element.type != "exchange"){ 
+      if(element.connected == false && net.lines[j].stations.length > 1){ 
         element.type = "destination";
       }else if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){
         element.type = "exchange";
