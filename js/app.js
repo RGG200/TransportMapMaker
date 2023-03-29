@@ -116,17 +116,17 @@ const canvas = document.getElementById('svg-canvas');
 canvas.addEventListener('mouseenter', updateDisplay, false);
 canvas.addEventListener("mousemove", updateDisplay, false);
 canvas.addEventListener('click', function(){
-  if(net.lines[instancesLine] == undefined){
+  if(net.lines[instancesLine] == undefined || net.lines[instancesLine].stationInstances == 0){
     net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a' , 'rect', mosX, mosY, 0)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a' , 'rect', mosX, mosY, 0)]); // make a new line and station
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
     net.lines[instancesLine].stationInstances++; // add station instances
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
     updateCanvas();
-  }else if(net.lines[instancesLine].stationInstances == 0){
+  }else if(net.lines[instancesLine].stationInstances == 1){
     net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
-    drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
+    drawStation(net.lines[instancesLine].stations[1].fName, net.lines[instancesLine].stations[1].sName, net.lines[instancesLine].stations[1].style, net.lines[instancesLine].stations[1].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
     net.lines[instancesLine].stationInstances++;
-    net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
+    net.lines[instancesLine].linePath[1] = net.lines[instancesLine].stations[1];
     updateCanvas();
   }
   switch(is_any_station_selected){
@@ -191,19 +191,28 @@ const buttonPressed = e => {
   
 }
 const save = document.getElementById('save');
-let firstStationRendered = false;
 function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
+  let xArray = [];
+  let yArray = [];
+  let xValues = [0, 0];
+  let yValues = [0, 0];
   for(let j = 0; j < net.lines.length; j++){
+    net.lines[j].stations.forEach(station => {
+      xArray[net.lines[j].stations.indexOf(station)] = station.xPos;
+      yArray[net.lines[j].stations.indexOf(station)] = station.yPos;
+      xValues[0] = Math.max(...xArray);
+      yValues[0] = Math.max(...yArray);
+      xValues[1] = Math.min(...xArray);
+      yValues[1] = Math.min(...xArray);
+    });
     if(net.lines[j].linePath.length > 1){
       console.log(net.lines[j].linePath);
       for(let i = 1; i < net.lines[j].linePath.length; i++){
         if(isConnected(i, j)){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
           if(net.lines[j].linePath[i-1].connected == false && i > 1){
-            net.lines[j].linePath[i-1].connected = true;
-          }else if(firstStationRendered){
             net.lines[j].linePath[i-1].connected = false;
           }
         }
@@ -212,7 +221,7 @@ function updateCanvas(){
   } 
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
-      if(element.connected == false){ 
+      if(element.connected == false || net.lines[j].linePath[i-1].xPos == xValues[0] && net.lines[j].linePath[i-1].yPos == yValues[0] || net.lines[j].linePath[i-1].xPos == xValues[1] && net.lines[j].linePath[i-1].yPos == yValues[1]){ 
         element.type = "destination";
       }else if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){
         element.type = "exchange";
