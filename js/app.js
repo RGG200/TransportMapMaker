@@ -206,7 +206,6 @@ function updateCanvas(){
       yValues[0] = Math.max(...yArray);
       xValues[1] = Math.min(...xArray);
       yValues[1] = Math.min(...yArray);
-      console.log(xValues + ' ' + yValues);
     });
     if(net.lines[j].linePath.length > 1){
       console.log(net.lines[j].linePath);
@@ -222,6 +221,7 @@ function updateCanvas(){
   } 
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
+      console.log(xValues + ' ' + yValues);
       if(element.connected == false || net.lines[j].linePath[i-1].xPos == xValues[0] && net.lines[j].linePath[i-1].yPos == yValues[0] || net.lines[j].linePath[i-1].xPos == xValues[1] && net.lines[j].linePath[i-1].yPos == yValues[1]){ 
         element.type = "destination";
       }else if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){
