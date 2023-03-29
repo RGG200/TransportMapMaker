@@ -205,7 +205,7 @@ function updateCanvas(){
       xValues[0] = Math.max(...xArray);
       yValues[0] = Math.max(...yArray);
       xValues[1] = Math.min(...xArray);
-      yValues[1] = Math.min(...xArray);
+      yValues[1] = Math.min(...yArray);
       console.log(xValues + ' ' + yValues);
     });
     if(net.lines[j].linePath.length > 1){
