@@ -212,7 +212,7 @@ function updateCanvas(){
       for(let i = 1; i < net.lines[j].linePath.length; i++){
         if(isConnected(i, j)){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
-          if(net.lines[j].linePath[i-1].connected == false && i > 1){
+          if(net.lines[j].linePath[i-1].connected == false && i > 1 && net.lines[j].linePath[i-1].xPos != xValues[0] && net.lines[j].linePath[i-1].yPos != yValues[0] || net.lines[j].linePath[i-1].connected == false && i > 1 && net.lines[j].linePath[i-1].xPos != xValues[1] && net.lines[j].linePath[i-1].yPos != yValues[1]){
             net.lines[j].linePath[i-1].connected = true;
           }
         }
@@ -222,7 +222,7 @@ function updateCanvas(){
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
       console.log(xValues + ' ' + yValues);
-      if(element.connected == false || net.lines[j].linePath[i-1].xPos == xValues[0] && net.lines[j].linePath[i-1].yPos == yValues[0] || net.lines[j].linePath[i-1].xPos == xValues[1] && net.lines[j].linePath[i-1].yPos == yValues[1]){ 
+      if(element.connected == false){ 
         element.type = "destination";
       }else if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){
         element.type = "exchange";
