@@ -208,6 +208,7 @@ function updateCanvas(){
         if(isConnected(i, j)){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
           if(net.lines[j].linePath[i-1].connected == false && i > 1 || i > 1 net.lines[j].linePath[i-1].xPos != xValues[0] && net.lines[j].linePath[i-1].yPos != yValues[0] || i > 1 && net.lines[j].linePath[i-1].xPos != xValues[1] && net.lines[j].linePath[i-1].yPos != yValues[1] || i > 1 && net.lines[j].linePath[i-1].xPos != xValues[1] && net.lines[j].linePath[i-1].yPos != yValues[0] || i > 1 && net.lines[j].linePath[i-1].xPos != xValues[0] && net.lines[j].linePath[i-1].yPos != yValues[1]){
+            console.log(net.lines[j].linePath[i-1].xPos);
             net.lines[j].linePath[i-1].connected = true;
           }
         }
@@ -266,7 +267,7 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].stationInstances-=1;
   linePathId = net.lines[instancesLine].linePath.length;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
-    console.log(net.lines[instancesLine].linePath);
+    console.log(net.lines[instancesLine].stationInstances);
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
       net.lines[instancesLine].linePath.forEach(element => {
         if(element.stationInstance == net.lines[instancesLine].stations[i].stationInstance){
