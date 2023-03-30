@@ -267,14 +267,13 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].stationInstances-=1;
   linePathId = net.lines[instancesLine].linePath.length;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
-    console.log(net.lines[instancesLine].stationInstances);
+    console.log(net.lines[instancesLine].linePath);
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
       net.lines[instancesLine].linePath.forEach(element => {
-        if(element.stationInstance > net.lines[instancesLine].stations[i].stationInstance){
-          element.stationInstance = net.lines[instancesLine].stations.length-i;
+        if(element.stationInstance > id_selected_station_on_editor){
+          element.stationInstance -= 1;
         }
       });
-      net.lines[instancesLine].stations[i].stationInstance = net.lines[instancesLine].stations.length-i;
     }
   }
   if(net.lines[instancesLine].stationInstances <= 0){
@@ -289,7 +288,7 @@ ln_delete.addEventListener("click", function(){
      net.lines[i].id -= 1;  
     }
     instancesLine = 0;
-    linePathId = 1
+    linePathId = 1;
     drawLinesList(net, instancesLine);
     updateCanvas();
 }, true);
