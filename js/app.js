@@ -271,6 +271,7 @@ deleter.addEventListener('click', function(){
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
       net.lines[instancesLine].linePath.forEach(element => {
         element.connected = false;
+        console.log(element.connected);
         if(element.stationInstance > id_selected_station_on_editor){
           element.stationInstance -= 1;
         }
