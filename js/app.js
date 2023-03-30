@@ -263,7 +263,7 @@ ln_save.addEventListener('click', function(){
 deleter.addEventListener('click', function(){
   let new_linePath = net.lines[instancesLine].linePath.filter(station => station.stationInstance != id_selected_station_on_editor);
   net.lines[instancesLine].linePath = new_linePath;
-  net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
+  net.lines[instancesLine].stations.splice(id_selected_station_on_editor);
   net.lines[instancesLine].stationInstances-=1;
   linePathId = net.lines[instancesLine].linePath.length;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
@@ -279,13 +279,13 @@ deleter.addEventListener('click', function(){
     }
   }
   if(net.lines[instancesLine].stationInstances <= 0){
-    net.lines.splice(instancesLine, 1);
+    net.lines.splice(instancesLine);
   }
   drawStationsList(net, instancesLine);
   updateCanvas();
 }, true);
 ln_delete.addEventListener("click", function(){
-    net.lines.splice(id_selected_line_on_editor, 1);
+    net.lines.splice(id_selected_line_on_editor);
     for(let i = id_selected_line_on_editor; i < net.lines.length; i++){
      net.lines[i].id -= 1;  
     }
