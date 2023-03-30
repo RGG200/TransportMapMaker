@@ -270,7 +270,7 @@ deleter.addEventListener('click', function(){
     console.log(net.lines[instancesLine].stationInstances);
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
       net.lines[instancesLine].linePath.forEach(element => {
-        if(element.stationInstance == net.lines[instancesLine].stations[i].stationInstance){
+        if(element.stationInstance > net.lines[instancesLine].stations[i].stationInstance){
           element.stationInstance = net.lines[instancesLine].stations.length-i;
         }
       });
