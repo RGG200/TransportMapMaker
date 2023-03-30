@@ -63,9 +63,10 @@ export function updateDisplay(event) {
                   this.setAttributeNS(null, 'stroke-width', '5');
                   if(instancesLine != previous_instancesLine){
                     linePathId = net.lines[instancesLine].linePath.length;
+                  }if(net.lines[instancesLine].linePath[linePathId-1] != net.lines[instancesLine].stations[selected_station]){
+                    net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
+                    linePathId = net.lines[instancesLine].linePath.length;
                   }
-                  net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
-                  linePathId = net.lines[instancesLine].linePath.length;
                   is_any_station_selected = true;
                 break;
               case true:
@@ -265,7 +266,7 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].linePath = new_linePath;
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
   net.lines[instancesLine].stationInstances-=1;
-  linePathId = net.lines[instancesLine].linePath.length;
+  linePathId = net.lines[instancesLine].linePath.length-1;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
     console.log(net.lines[instancesLine].linePath);
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
