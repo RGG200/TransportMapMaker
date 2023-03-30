@@ -275,6 +275,7 @@ deleter.addEventListener('click', function(){
         if(element.stationInstance > id_selected_station_on_editor){
           element.stationInstance -= 1;
         }
+        console.log(element.stationInstance);
       });
     }
   }
