@@ -132,7 +132,6 @@ canvas.addEventListener('click', function(){
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
         net.lines[instancesLine].stationInstances++;
         updateCanvas();
-        net.lines[instancesLine].stationInstances++;
         station_is_being_created = true;
       }else{
         updateCanvas();
@@ -266,7 +265,7 @@ deleter.addEventListener('click', function(){
   net.lines[instancesLine].linePath = new_linePath;
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
   net.lines[instancesLine].stationInstances-=1;
-  linePathId = net.lines[instancesLine].linePath.length-1;
+  linePathId = net.lines[instancesLine].linePath.length;
   if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
     console.log(net.lines[instancesLine].linePath);
     for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
