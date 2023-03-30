@@ -278,6 +278,11 @@ deleter.addEventListener('click', function(){
         console.log(element.stationInstance);
       });
     }
+    net.lines[instancesLine].stations.forEach(station => {
+    if(id_selected_on_editor > station.stationInstance){
+      station.stationInstance -= 1;
+    }
+    });
   }
   if(net.lines[instancesLine].stationInstances <= 0){
     net.lines.splice(instancesLine);
