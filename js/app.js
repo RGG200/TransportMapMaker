@@ -264,26 +264,18 @@ deleter.addEventListener('click', function(){
   let new_linePath = net.lines[instancesLine].linePath.filter(station => station.stationInstance != id_selected_station_on_editor);
   net.lines[instancesLine].linePath = new_linePath;
   net.lines[instancesLine].stations.splice(id_selected_station_on_editor);
-  net.lines[instancesLine].stationInstances-=1;
+  net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
   linePathId = net.lines[instancesLine].linePath.length;
-  if(net.lines[instancesLine].stations.length > id_selected_station_on_editor){
-    console.log(net.lines[instancesLine].linePath);
-    for(let i = net.lines[instancesLine].stations.length-1; i > -1; i--){
-      net.lines[instancesLine].linePath.forEach(element => {
-        element.connected = false;
-        console.log(element.connected);
-        if(element.stationInstance > id_selected_station_on_editor){
-          element.stationInstance -= 1;
-        }
-        console.log(element.stationInstance);
-      });
-    }
-    net.lines[instancesLine].stations.forEach(station => {
-    if(id_selected_on_editor > station.stationInstance){
-      station.stationInstance -= 1;
-    }
+  net.lines[instancesLine].stations.forEach(station => {
+    station.stationInstance = net.lines[instancesLine].stations.indexOf(station);
+    net.lines[instancesLine].linePath.forEach(element => {
+      element.connected = false;
+      if(element.stationInstance >= id_selected_station_on_editor){
+        element.stationInstance--;
+      }
     });
-  }
+  });
+    console.log(net.lines[instancesLine].linePath);
   if(net.lines[instancesLine].stationInstances <= 0){
     net.lines.splice(instancesLine);
   }
