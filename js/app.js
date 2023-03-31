@@ -142,10 +142,11 @@ canvas.addEventListener('click', function(){
       is_any_station_selected = false;
       break;
     case false:
-      updateCanvas();
       getStations();
       break;
   }
+}
+  updateCanvas();
   drawStationsList(net, instancesLine);
   drawLinesList(net, instancesLine);
 }, true);
@@ -233,6 +234,7 @@ function updateCanvas(){
       drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
     }
   }
+  getStations();
 }
 
 save.addEventListener('click', function(){
