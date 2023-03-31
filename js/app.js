@@ -104,15 +104,11 @@ export function updateDisplay(event) {
     for(const line of net.lines){
       for(const station of line.stations){
         if(station.xPos === net.lines[lineID].stations[stationID].xPos && station.yPos === net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
-          console.log("it works really !");
+          update canvas();
           return false;
         }
-        console.log("it no works really !");
-        console.log('dude');
       }
-      console.log("it works not really !");
     }
-    console.log("it absolutely no works really !");
     return true;
   }
 
