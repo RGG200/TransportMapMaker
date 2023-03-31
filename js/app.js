@@ -110,7 +110,8 @@ export function updateDisplay(event) {
           }
           console.log("it no works really !");
         }
-      };
+        console.log('dude');
+      }
       console.log("it works not really !");
     }
     console.log("it absolutely no works really !");
