@@ -102,7 +102,7 @@ export function updateDisplay(event) {
   }
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
-      for(const station of net.lines.stations){
+      for(const station of line.stations){
         if(line.stations.indexOf(station) != stationID && lineID != net.lines.indexOf(line)){
           if(station.xPos === net.lines[lineID].stations[stationID].xPos && station.yPos === net.lines[lineID].stations[stationID].yPos){
             console.log("it works really !");
