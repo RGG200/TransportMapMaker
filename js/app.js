@@ -104,7 +104,6 @@ export function updateDisplay(event) {
     for(const line of net.lines){
       line.stations.forEach(station => {
         if(line.stations.indexOf(station) != stationID && lineID != net.lines.indexOf(line)){
-          console.log("no");
           if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos == net.lines[lineID].stations[stationID].yPos){
             return false;
           }
