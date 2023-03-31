@@ -103,8 +103,8 @@ export function updateDisplay(event) {
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
       line.stations.forEach(station => {
-        if(line.stations.indexOf(station) != stationID && lineID != net.lines.indexOf(line)){
-          if(station.xPos == net.lines[lineID].stations[stationID].xPos){
+        if(lineID != net.lines.indexOf(line)){
+          if(station.xPos === net.lines[lineID].stations[stationID].xPos && station.yPos === net.lines[lineID].stations[stationID].yPos){
             return false;
           }
         }
@@ -219,6 +219,7 @@ function updateCanvas(){
     for(const element of net.lines[j].stations){
       console.log(xValues + ' ' + yValues);
       if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){ 
+        console.log("yesssss");
         element.type = "exchange";
       }else if(element.connected == false){
         element.type = "destination";
