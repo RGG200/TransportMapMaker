@@ -219,10 +219,10 @@ function updateCanvas(){
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
       console.log(xValues + ' ' + yValues);
-      if(element.connected == false && isDrawableUnique(net.lines[j].stations.indexOf(element), j)){ 
-        element.type = "destination";
-      }else if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){
+      if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){ 
         element.type = "exchange";
+      }else if(element.connected == false){
+        element.type = "destination";
       }else{
         element.type = "common";
       }
@@ -245,7 +245,7 @@ save.addEventListener('click', function(){
 ln_create.addEventListener("click", function(){
   if(net.lines[instancesLine].stationInstances > 0){
     if(net.lines[0] != null){
-      instancesLine++;
+      instancesLine = net.lines.length;
       net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], []);
       drawLinesList(net, instancesLine);
       linePathId = 1;
