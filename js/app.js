@@ -70,6 +70,7 @@ export function updateDisplay(event) {
                   is_any_station_selected = true;
                 break;
               case true:
+                is_any_station_selected = false;
                 station_is_being_created = false;
                 break;
             }
