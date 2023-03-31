@@ -102,7 +102,7 @@ export function updateDisplay(event) {
   }
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
-      line.stations.forEach(station => {
+      for(const station of net.lines.stations){
         if(line.stations.indexOf(station) != stationID && lineID != net.lines.indexOf(line)){
           if(station.xPos === net.lines[lineID].stations[stationID].xPos && station.yPos === net.lines[lineID].stations[stationID].yPos){
             console.log("it works really !");
@@ -110,7 +110,7 @@ export function updateDisplay(event) {
           }
           console.log("it no works really !");
         }
-      });
+      };
       console.log("it works not really !");
     }
     console.log("it absolutely no works really !");
