@@ -104,7 +104,6 @@ export function updateDisplay(event) {
     for(const line of net.lines){
       for(const station of line.stations){
         if(station.xPos === net.lines[lineID].stations[stationID].xPos && station.yPos === net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
-          update canvas();
           return false;
         }
       }
