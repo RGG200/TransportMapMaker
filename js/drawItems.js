@@ -301,9 +301,13 @@ export function drawStationsList(network, instancesLine){
         let lineText = document.createElement('a');
         lineText.innerHTML = "ligne_" + i;
         lineText.setAttributeNS(null, 'class', 'line_name');
+        lineElement.style.background = "#FFF";
+        lineElement.style.outlineColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'id', i);
+        lineText.style.color = network.lines[i].color;
         lineElement.setAttributeNS(null, 'class', 'line_section');
+        lineElement.style.webkitTextStroke = "black";
         lineElement.appendChild(lineText);
         st_list.appendChild(lineElement);
         for(let j = 0; j < network.lines[i].stations.length; j++){
@@ -311,6 +315,9 @@ export function drawStationsList(network, instancesLine){
             stationButton.innerText = network.lines[i].stations[j].fName;
             stationButton.setAttributeNS(null, 'id', j);
             stationButton.setAttributeNS(null, 'class', 'station_instance');
+            stationButton.style.color = network.lines[i].color;
+            stationButton.style.fontSize = "1em";
+            stationButton.style.textShadow = "5px 5px 5px #000000";
             stationButton.setAttributeNS(null, 'onclick', "showEditor('options', 'st-editor');");
             lineElement.appendChild(stationButton);
         }

@@ -31,15 +31,19 @@ html body{
 .line_section{
     position: relative;  
     width: 100%;
-    height: 25%;
-    overflow-x: hidden;
-    overflow-y: scroll;
+    min-height: 25%;
+    background: #ADE25D;
+    border-radius: 1em;
+    transform: scale(0.9);
+    padding: 15px;
+    text-align: center;
+    outline: 5px solid #3A5743CC;
 }
 .line_name{
-    font-size: 2em;
+    font-size: 5em;
     font-weight: 600;
-    color: crimson;
-    margin-left: 2%;
+    color: #000;
+    text-transform: uppercase;
 }
 .line_button{
     font-size: 3em;
@@ -64,8 +68,6 @@ html body{
 }
 .station_instance{
     position: relative;
-    top: 8%;
-    left: 5%;
     padding: 5px;
     font-size: 1.5em;
     margin-bottom: 10px;
@@ -73,31 +75,40 @@ html body{
     display: block;
     border: none;
     outline: none;
-    margin-left: 5%;
+    transition: 300ms;
     display: block;
+    text-transform: uppercase;
+}
+.station_instance:hover{
+    transition: 300ms;
+    color: #0055FF;
+    cursor: pointer;
 }
 .return{
     opacity: 0.5;
-    position: fixed;
-    left: 90%;
+    position: absolute;
+    left: 85%;
     top: 8%;
-    height: 6%;
+    height: 2%;
     color: rgb(220, 30, 64);
     width: 100%;
     background: white;
     transition: 300ms;
     text-align: center;
-    display: flex;
+    display: inline-flex;
     border: none;
     font-size: 1em;
+    line-height: 15px;
     font-weight: 300;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
 }
 #ln_create{
-    position: fixed;
+    position: absolute;
     left: 10%;
+    top: 5%;
     height: 6%;
+    z-index: 2;
 }
 .menu-buttons{
     opacity: 0.5;
@@ -117,11 +128,12 @@ html body{
 }
 .return:hover{
     opacity: 1;
-    transition: 150ms;
+    transition: 300ms;
 }
 .menu-buttons:hover{
     opacity: 1;
-    transition: 150ms;
+    cursor: pointer;
+    transition: 300ms;
 }
 .return-obj{
     transform: scaleX(0.7);
@@ -213,9 +225,10 @@ html body{
     font-size: 1em;
 }
 #st-list{
-    position: fixed;
+    position: absolute;
     left: 0%;
     top: -5%;
+    overflow-x: hidden;
     z-index: 2;
     background-color: #FFF;
     width: 100%;
@@ -228,7 +241,8 @@ html body{
     padding: 2em;
 }
 #st-editor{
-    position: fixed;
+    overflow-x: hidden;
+    position: absolute;
     top: -5%;
     z-index: 3;
     background-color: #FFF;
@@ -238,10 +252,10 @@ html body{
     justify-content: center;
 }
 #ln-list{
-    position: fixed;
+    position: absolute;
     left: 0%;
     top: -5%;
-    z-index: 2;
+    z-index: 3;
     background-color: #FFF;
     width: 100%;
     min-height: 125%;
@@ -255,7 +269,7 @@ html body{
 #ln-editor{
     position: fixed;
     top: -5%;
-    z-index: 3;
+    z-index: 2;
     background-color: #FFF;
     width: 100%;
     min-height: 125%;
@@ -263,7 +277,7 @@ html body{
     justify-content: center;
 }
 #export-section{
-    position: fixed;
+    position: absolute;
     top: -5%;
     left: -2.5%;
     z-index: 3;
@@ -290,7 +304,7 @@ html body{
 #export-box button{
     margin-top: 6.5%;
     padding: 1%;
-    font-size: 30vh;
+    font-size: 5vh;
     color: #0055FF;
 }
 #export-box button:hover{
