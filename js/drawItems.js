@@ -343,5 +343,4 @@ export function drawLinesList(network, instancesLine){
         lineText.style.textTransform = "uppercase";
         ln_list.appendChild(lineText);
     }
-    drawStationsList();
 }
