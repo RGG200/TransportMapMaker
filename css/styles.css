@@ -277,7 +277,7 @@ html body{
   overflow-x: hidden;
 }
 #ln-editor{
-    position: fixed;
+    position: absolute;
     top: -5%;
     z-index: 2;
     background-color: #FFF;
@@ -289,6 +289,8 @@ html body{
     justify-content: center;
 }
 #export-section{
+    overflow-x: hidden;
+    overflow-y: hidden;
     position: absolute;
     top: -5%;
     left: -2.5%;
