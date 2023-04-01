@@ -299,7 +299,7 @@ export function drawStationsList(network, instancesLine){
     for(let i = 0; i < network.lines.length; i++){
         let lineElement = document.createElement('div');
         let lineText = document.createElement('a');
-        lineText.innerHTML = "ligne_" + i;
+        lineText.innerHTML = net.lines[i].name;
         lineText.setAttributeNS(null, 'class', 'line_name');
         lineElement.style.background = "#FFF";
         lineElement.style.outlineColor = network.lines[i].color;
