@@ -305,20 +305,23 @@ export function drawStationsList(network, instancesLine){
         lineElement.style.outlineColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'id', i);
-        lineText.style.color = network.lines[i].color;
+        lineText.style.backgroundColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'class', 'line_section');
-        lineElement.style.webkitTextStroke = "black";
+        lineText.style.webkitTextStroke = "black";
         lineElement.appendChild(lineText);
+        // lineElement.appendChild(stationsText);
         st_list.appendChild(lineElement);
         for(let j = 0; j < network.lines[i].stations.length; j++){
             let stationButton = document.createElement('a');
             stationButton.innerText = network.lines[i].stations[j].fName;
             stationButton.setAttributeNS(null, 'id', j);
             stationButton.setAttributeNS(null, 'class', 'station_instance');
-            stationButton.style.color = network.lines[i].color;
-            stationButton.style.fontSize = "1em";
-            stationButton.style.textShadow = "5px 5px 5px #000000";
-            stationButton.setAttributeNS(null, 'onclick', "showEditor('options', 'st-editor');");
+            stationButton.style.color = "white";
+            stationButton.style.backgroundColor = network.lines[i].color;
+            stationButton.style.borderRadius = "0.1em";
+            stationButton.style.padding = "0.2em";
+            stationButton.style.fontSize = "2em";
+            stationButton.setAttributeNS(null, 'onclick', "showEditor('st-list', 'st-editor');");
             lineElement.appendChild(stationButton);
         }
     }
@@ -331,7 +334,13 @@ export function drawLinesList(network, instancesLine){
         lineText.innerHTML = "ligne_" + i;
         lineText.setAttributeNS(null, 'class', 'line_button');
         lineText.setAttributeNS(null, 'id', i);
-        lineText.setAttributeNS(null, 'onclick', "showEditor('options', 'ln-editor');");
+        lineText.setAttributeNS(null, 'onclick', "showEditor('options', 'ln-editor'); hideOptions('ln-list');");
+        lineText.style.background = network.lines[i].color;
+        lineText.style.outlineColor = network.lines[i].color;
+        lineText.style.borderRadius = "0.2em";
+        lineText.style.width = "100%";
+        lineText.style.transform = "scale(0.8)";
+        lineText.style.textTransform = "uppercase";
         ln_list.appendChild(lineText);
     }
 }

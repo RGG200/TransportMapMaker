@@ -15,6 +15,7 @@ html body{
     max-width: 100%;
     display: block;
     min-height: 100%;
+    align-items: center;
 }
 .stationNames{
     font-family: 'Noto Sans JP', sans-serif;
@@ -31,30 +32,38 @@ html body{
 .line_section{
     position: relative;  
     width: 100%;
-    min-height: 25%;
+    height: auto;
     background: #ADE25D;
     border-radius: 1em;
-    transform: scale(0.9);
+    transform: scale(0.8);
     padding: 15px;
     text-align: center;
+    align-items: center;
+
     outline: 5px solid #3A5743CC;
+    margin: 0px;
 }
 .line_name{
+    position: relative;
     font-size: 5em;
     font-weight: 600;
-    color: #000;
+    color: #FFF;
+    display: block;
+    min-width: 100%;
+    border-radius: 0.1em;
+    min-height: 10%;
+    margin-bottom: 0.5em;
     text-transform: uppercase;
 }
 .line_button{
     font-size: 3em;
     padding: 10px;
     font-weight: 600;
-    min-width: 100%;
-    max-width: 100%;
     margin-left: 0%;
     min-height: 10%;
     text-align: center;
     display: block;
+    color: white;
     opacity: 0.3;
     transition: 300ms;
 }
@@ -68,10 +77,10 @@ html body{
 }
 .station_instance{
     position: relative;
-    padding: 5px;
-    font-size: 1.5em;
+    margin: auto;
+    font-size: 2.5em;
     margin-bottom: 10px;
-    width: 100%;
+    width: 50%;
     display: block;
     border: none;
     outline: none;
@@ -87,7 +96,7 @@ html body{
 .return{
     opacity: 0.5;
     position: absolute;
-    left: 85%;
+    left: 90%;
     top: 8%;
     height: 2%;
     color: rgb(220, 30, 64);
@@ -232,7 +241,7 @@ html body{
     z-index: 2;
     background-color: #FFF;
     width: 100%;
-    min-height: 125%;
+    min-height: 100%;
     justify-content: center;
     display: none;
 }
@@ -242,12 +251,12 @@ html body{
 }
 #st-editor{
     overflow-x: hidden;
+    overflow-y: hidden;
     position: absolute;
-    top: -5%;
     z-index: 3;
     background-color: #FFF;
     width: 100%;
-    min-height: 125%;
+    min-height: 100%;
     display: none;
     justify-content: center;
 }
@@ -256,9 +265,10 @@ html body{
     left: 0%;
     top: -5%;
     z-index: 3;
+    overflow-x: hidden;
     background-color: #FFF;
     width: 100%;
-    min-height: 125%;
+    min-height: 100%;
     justify-content: center;
     display: none;
 }
@@ -271,8 +281,10 @@ html body{
     top: -5%;
     z-index: 2;
     background-color: #FFF;
+    overflow-x: hidden;
+    overflow-y: hidden;
     width: 100%;
-    min-height: 125%;
+    min-height: 110%;
     display: none;
     justify-content: center;
 }
