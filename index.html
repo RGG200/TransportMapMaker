@@ -16,7 +16,7 @@
     <script src="https://sharonchoong.github.io/svg-exportJS/svg-export.min.js"></script>
     <svg id="svg-canvas" height="8000" width="8000" xmlns="http://www.w3.org/2000/svg">
     </svg>
-    <button id="show" class="main" onclick="showOptions('options'); showOptions('hide');">Montrer les Options</button>
+    <button id="show" class="main" onclick="showOptions('options'); showOptions('hide'); showOptions('show');">Montrer les Options</button>
     <button id="hide" class="main" onclick="hideOptions('options'); hideOptions('hide');">Cacher les Options</button>
     <div id="options" onmousemove="resetSVG();">  
         <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('options'); hideOptions('hide'); showOptions('export-section'); hideOptions('svg-canvas');">Exporter la carte en SVG</a>
@@ -29,7 +29,7 @@
     <section id="st-list" onmouseenter="">
         <div class="head">
             <h1 class="main-title">Liste des station</h1>
-            <button class="return" onclick="hideOptions('st-list'); showOptions('svg-canvas');">
+            <button class="return" onclick="hideOptions('st-list'); showOptions('svg-canvas'); showOptions('show');">
               <span class="return-obj"> < </span> 
               <span> Retour</span> 
             </button>
@@ -37,7 +37,7 @@
         <div id="content" class="content"></div>
     </section>
     <section id="st-editor">
-        <button class="return" onclick="hideOptions('st-editor'); showOptions('st-list');">
+        <button class="return" onclick="hideOptions('st-editor'); showOptions('st-list'); showOptions('show');">
           <span class="return-obj"> < </span> 
           <span> Retour</span> 
         </button>
@@ -73,7 +73,7 @@
     <section id="ln-editor">
       <div class="head">
         <h1 class="main-title">Editer une Ligne</h1>
-        <button class="return" onclick="hideOptions('ln-editor'); showOptions('ln-list');">
+        <button class="return" onclick="hideOptions('ln-editor'); showOptions('ln-list'); showOptions('show');">
           <span class="return-obj"> < </span> 
           <span> Retour</span> 
         </button>
@@ -86,7 +86,7 @@
     </section>
     <section id="ln-list">
       <div class="head">
-        <button class="return" onclick="hideOptions('ln-list'); showOptions('svg-canvas');">
+        <button class="return" onclick="hideOptions('ln-list'); showOptions('svg-canvas'); showOptions('show');">
           <span class="return-obj"> < </span> 
           <span> Retour</span> 
         </button>
@@ -99,7 +99,7 @@
     <section id="ex_content">
       <section class="head-export">
         <h1 class="main-title">Exporter la carte</h1>
-        <button class="return" onclick="hideOptions('export-section'); showOptions('svg-canvas'); resetSVG();"> <span class="return-obj"> < </span> <span> Retour</span> </button>    
+        <button class="return" onclick="hideOptions('export-section'); showOptions('svg-canvas'); showOptions('show'); resetSVG();"> <span class="return-obj"> < </span> <span> Retour</span> </button>    
       </section>
       </div>
       <div id="export-box">
