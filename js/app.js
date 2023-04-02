@@ -1,7 +1,10 @@
 let instancesLine = 0; // selected line
+import { exportRTM } from './FileOptions/export-rtm.js';
+import { importRTM } from './FileOptions/import.js';
 import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList} from './drawItems.js';
 
-let net = new Network([]); //initial network
+
+export let net = new Network([]); //initial network
 
 let mosX; // mouse position on the canvas
 let mosY;
@@ -14,6 +17,8 @@ const ln_delete = document.getElementById('ln_delete');
 const deleter = document.getElementById('delete');
 const st_list = document.getElementById('st-list');
 const ln_list = document.getElementById('ln-list');
+const export_rtm = document.getElementById("export-rtm");
+const import_rtm = document.getElementById("import");
 let id_selected_station_on_editor = 0;
 let id_selected_line_on_editor = 0;
 
@@ -246,7 +251,6 @@ ln_create.addEventListener("click", function(){
       instancesLine = net.lines.length;
       net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], []);
       drawLinesList(net, instancesLine);
-      drawStationsList(net, instancesLine);
       linePathId = 1;
     }
   }
@@ -257,7 +261,6 @@ ln_save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].color = document.getElementById('color').value;
   net.lines[id_selected_line_on_editor].lineThicness = document.getElementById('thicness').value;
   drawLinesList(net, instancesLine);
-  drawStationsList(net, instancesLine);
   updateCanvas();
 });
 
@@ -293,3 +296,26 @@ ln_delete.addEventListener("click", function(){
     drawLinesList(net, instancesLine);
     updateCanvas();
 }, true);
+
+export_rtm.addEventListener("click", function(){
+  exportRTM(net);
+});
+var input = document.getElementById('import');
+const onChange = e => { 
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    reader.onload = onReaderLoad;
+    reader.readAsText(file);
+
+    function onReaderLoad(e){
+        var obj = JSON.parse(e.target.result);
+        if(obj.lines != []){
+          net = obj;
+          instancesLine = 0;
+          linePathId = net.lines[instancesLine].linePath;
+          updateCanvas();
+        }
+        console.log(net);
+    }
+}
+import_rtm.addEventListener("change", onChange);

@@ -11,6 +11,9 @@ html body{
     background-color: red;
 
 }
+input[type="file"] {
+    display: none;
+}
 #ln_content{
     max-width: 100%;
     display: block;
@@ -277,7 +280,7 @@ html body{
   overflow-x: hidden;
 }
 #ln-editor{
-    position: absolute;
+    position: fixed;
     top: -5%;
     z-index: 2;
     background-color: #FFF;
@@ -289,8 +292,6 @@ html body{
     justify-content: center;
 }
 #export-section{
-    overflow-x: hidden;
-    overflow-y: hidden;
     position: absolute;
     top: -5%;
     left: -2.5%;
