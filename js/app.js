@@ -302,18 +302,13 @@ export_rtm.addEventListener("click", function(){
 var input = document.getElementById('import');
 const onChange = e => { 
     var file = e.target.files[0];
-    const allowedFileTypes = ["application/json", "application/rtm"];
-    if(e.target.files.length == 1 && allowedFileTypes.includes(file.type)){
-      var obj = JSON.parse(e.target.result);
-      if(obj.lines != []){
-        net.lines = obj.lines;
-        instancesLine = 0;
-        linePathId = net.lines[instancesLine].linePath;
-        updateCanvas();
-      }
-      console.log(net);
-    }else{
-      alert("didn't work :(");
+    var obj = JSON.parse(e.target.result);
+    if(obj.lines != []){
+      net.lines = obj.lines;
+      instancesLine = 0;
+      linePathId = net.lines[instancesLine].linePath;
+      updateCanvas();
     }
+    console.log(net);
 }
 import_rtm.addEventListener("change", onChange);
