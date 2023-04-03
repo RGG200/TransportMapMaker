@@ -280,7 +280,7 @@ input[type="file"] {
   overflow-x: hidden;
 }
 #ln-editor{
-    position: fixed;
+    position: absolute;
     top: -5%;
     z-index: 2;
     background-color: #FFF;
@@ -296,6 +296,8 @@ input[type="file"] {
     top: -5%;
     left: -2.5%;
     z-index: 3;
+    overflow-x: hidden;
+    overflow-y: hidden;
     background-color: #FFF;
     min-width: 103%;
     min-height: 125%;

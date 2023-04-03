@@ -299,7 +299,7 @@ export function drawStationsList(network, instancesLine){
     for(let i = 0; i < network.lines.length; i++){
         let lineElement = document.createElement('div');
         let lineText = document.createElement('a');
-        lineText.innerHTML = "ligne_" + i;
+        lineText.innerHTML = net.lines[i].name;
         lineText.setAttributeNS(null, 'class', 'line_name');
         lineElement.style.background = "#FFF";
         lineElement.style.outlineColor = network.lines[i].color;
@@ -331,7 +331,7 @@ export function drawLinesList(network, instancesLine){
     ln_list.innerHTML = "";
     for(let i = 0; i < network.lines.length; i++){
         let lineText = document.createElement('a');
-        lineText.innerHTML = "ligne_" + i;
+        lineText.innerHTML = net.lines[i].name;
         lineText.setAttributeNS(null, 'class', 'line_button');
         lineText.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'onclick', "showEditor('options', 'ln-editor'); hideOptions('ln-list');");
