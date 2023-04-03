@@ -310,8 +310,10 @@ const onChange = e => {
       if(obj.lines != []){
         net.lines = obj.lines;
         instancesLine = 0;
-        linePathId = net.lines[instancesLine].linePath;
+        linePathId = net.lines[instancesLine].linePath.length;
         updateCanvas();
+        drawStationsList();
+        drawLinesList();
       }
       console.log(net);
     }
