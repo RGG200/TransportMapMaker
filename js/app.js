@@ -309,6 +309,9 @@ const onChange = e => {
       var obj = JSON.parse(e.target.result);
       if(obj.lines != []){
         net.lines = obj.lines
+        is_any_station_selected = false;
+        selected_station = undefined;
+        station_is_being_created = false;
         instancesLine = 0;
         linePathId = net.lines[instancesLine].linePath.length;
         updateCanvas();
