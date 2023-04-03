@@ -308,14 +308,17 @@ const onChange = e => {
     reader.readAsText(file);
 
     function onReaderLoad(e){
-        var obj = JSON.parse(e.target.result);
-        if(obj.lines != []){
-          net = obj;
-          instancesLine = 0;
-          linePathId = net.lines[instancesLine].linePath;
-          updateCanvas();
+      const allowedFileTypes = ["application/json", "application/rtm"];
+        if(allowedFileTypes.includes(e.target.result)){
+          var obj = JSON.parse(e.target.result);
+          if(obj.lines != []){
+            net.lines = obj.lines;
+            instancesLine = 0;
+            linePathId = net.lines[instancesLine].linePath;
+            updateCanvas();
+          }
+          console.log(net);
         }
-        console.log(net);
     }
 }
 import_rtm.addEventListener("change", onChange);
