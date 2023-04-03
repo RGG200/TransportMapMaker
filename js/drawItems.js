@@ -10,8 +10,11 @@ export function Station(fName, sName, type, line_style, style, xPos, yPos, stati
     this.connected = false;
     this.stationInstance = stationInstance;
 };
-export function Network(lines){
+export function Network(lines, width, height, filename){
     this.lines = lines;
+    this.width = width;
+    this.height = height;
+    this.filename = filename;
 }
 export function Line(id, name, lineThicness, color, stations, linePath){
     this.id = id;

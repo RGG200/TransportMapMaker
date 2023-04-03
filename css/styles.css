@@ -20,6 +20,12 @@ input[type="file"] {
     min-height: 100%;
     align-items: center;
 }
+#param_content{
+    max-width: 100%;
+    display: block;
+    min-height: 100%;
+    align-items: center;
+}
 .stationNames{
     font-family: 'Noto Sans JP', sans-serif;
     text-anchor: middle;
@@ -306,6 +312,25 @@ input[type="file"] {
     display: none;
     justify-content: center;
 }
+#parameters{
+    position: absolute;
+    top: -5%;
+    left: -2.5%;
+    z-index: 3;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: #FFF;
+    min-width: 103%;
+    min-height: 125%;
+    max-width: 105%;
+    max-height: 105%;
+    display: none;
+    justify-content: center;
+}
+#param-content{
+    width: 100%;
+
+}
 #export-section div{
     display: inline-flex;
     min-height: 100%;
@@ -413,6 +438,18 @@ input[type="file"] {
   }
 
   #save:active{
+    background-color: white;
+    color: greenyellow;
+  }
+  #param-save{
+    text-decoration: none;
+    position: fixed;
+    top: 90%;
+    left: 80%;
+    color: forestgreen;
+  }
+
+  #param-save:active{
     background-color: white;
     color: greenyellow;
   }

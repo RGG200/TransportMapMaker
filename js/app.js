@@ -3,7 +3,7 @@ import { exportRTM } from './FileOptions/export-rtm.js';
 import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList} from './drawItems.js';
 
 
-export let net = new Network([]); //initial network
+export let net = new Network([], 8000, 8000, "transportmap"); //initial network
 
 let mosX; // mouse position on the canvas
 let mosY;
@@ -13,6 +13,7 @@ let selected_station = undefined;
 let station_is_being_created = false;
 const ln_save = document.getElementById('ln_save');
 const ln_delete = document.getElementById('ln_delete');
+const param_save = document.getElementById("param-save");
 const deleter = document.getElementById('delete');
 const st_list = document.getElementById('st-list');
 const ln_list = document.getElementById('ln-list');
@@ -38,6 +39,9 @@ let ln_data = {
   color: '',
   thicness: 0
 };
+let param_data ={
+  filename: '',  width: 0, height: 0
+}
 
 export function updateDisplay(event) {
   mosX = Math.round((event.pageX-10)/20)*20; // make it so that the stuff goes in a grid
@@ -89,7 +93,7 @@ export function updateDisplay(event) {
   function isConnected(stationID, lineID) {
     for(let i = 0; i < stationID; i++){
       if(i != stationID){
-        if(net.lines[lineID].linePath[stationID] == net.lines[lineID].linePath[i]){
+        if(net.lines[lineID].linePath[stationID].xPos == net.lines[lineID].linePath[i].xPos && net.lines[lineID].linePath[stationID].yPos == net.lines[lineID].linePath[i].yPos){
           return false;
         }
       }
@@ -262,6 +266,23 @@ ln_save.addEventListener('click', function(){
   drawLinesList(net, instancesLine);
   updateCanvas();
 });
+document.getElementById("param-btn").addEventListener("click", function(){
+  param_data.filename = net.filename;
+  param_data.width = net.width;
+  param_data.height = net.height;
+  document.getElementById("filename").value = param_data.filename;
+  document.getElementById("width").value = param_data.width;
+  document.getElementById("height").value = param_data.height;
+});
+param_save.addEventListener("click", function(){
+  net.filename = document.getElementById("filename").value;
+  net.width = document.getElementById("width").value;
+  net.height = document.getElementById("height").value;
+  document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
+  document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
+  document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG('${net.filename}');`);
+  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG('${net.filename}');`);
+});
 
 deleter.addEventListener('click', function(){
   let new_linePath = net.lines[instancesLine].linePath.filter(station => station.stationInstance != id_selected_station_on_editor);
@@ -297,9 +318,8 @@ ln_delete.addEventListener("click", function(){
 }, true);
 
 export_rtm.addEventListener("click", function(){
-  exportRTM(net);
+  exportRTM(net, net.filename);
 });
-var input = document.getElementById('import');
 const onChange = e => { 
     var file = e.target.files[0];
     var reader = new FileReader();
@@ -307,7 +327,7 @@ const onChange = e => {
     reader.readAsText(file);
     function onReaderLoad(e){
       var obj = JSON.parse(e.target.result);
-      if(obj.lines != []){
+      if(obj != undefined){
         net.lines = obj.lines
         is_any_station_selected = false;
         selected_station = undefined;
