@@ -300,7 +300,7 @@ export_rtm.addEventListener("click", function(){
   exportRTM(net);
 });
 function isRTM(item){
-  try{JSON.parse(e.target.result);} catch(err){return false;} return true;
+  try{JSON.parse(item);} catch(err){return false;} return true;
 }
 var input = document.getElementById('import');
 const onChange = e => { 
