@@ -212,10 +212,9 @@ function updateCanvas(){
       console.log(net.lines[j].linePath);
       for(let i = 1; i < net.lines[j].linePath.length; i++){
         if(isConnected(i, j)){
-          drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].linePath[i-1].xPos, net.lines[j].linePath[i-1].yPos, net.lines[j].linePath[i].xPos, net.lines[j].linePath[i].yPos, net.lines[j].linePath[i].line_style, j);
-          if(net.lines[j].linePath[i-1].connected == false && i > 1 || i > 1 && net.lines[j].linePath[i-1].xPos != xValues[0] || i > 1 && net.lines[j].linePath[i-1].yPos != yValues[0] || i > 1 && net.lines[j].linePath[i-1].xPos != xValues[1] || i > 1 && net.lines[j].linePath[i-1].yPos != yValues[1]){
-            console.log(net.lines[j].linePath[i-1].xPos);
-            net.lines[j].linePath[i-1].connected = true;
+          drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[instancesLine].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[instancesLine].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[instancesLine].stations[net.lines[j].linePath[i].stationInstance].line_style, j);
+          if(net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].connected == false && i > 1 || i > 1 && net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[0] || i > 1 && net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[0] || i > 1 && net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[1] || i > 1 && net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[1]){
+            net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].connected = true;
           }
         }
       }
