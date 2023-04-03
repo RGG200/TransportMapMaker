@@ -6,7 +6,7 @@ export function exportRTM(network){
         href,
         style: "display:none",
     });
-    a.download = "transportmap";
+    a.download = "transportmap.rtm";
     document.body.appendChild(a);
     a.click();
 }
