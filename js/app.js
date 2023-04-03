@@ -308,7 +308,7 @@ const onChange = e => {
     function onReaderLoad(e){
       var obj = JSON.parse(e.target.result);
       if(obj.lines != []){
-        net.lines[0] = obj.lines[0];
+        net.lines = obj.lines
         instancesLine = 0;
         linePathId = net.lines[instancesLine].linePath.length;
         updateCanvas();
