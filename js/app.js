@@ -299,7 +299,7 @@ ln_delete.addEventListener("click", function(){
 export_rtm.addEventListener("click", function(){
   exportRTM(net);
 });
-function isRTM(e){
+function isRTM(item){
   try{JSON.parse(e.target.result);} catch(err){return false;} return true;
 }
 var input = document.getElementById('import');
@@ -311,7 +311,7 @@ const onChange = e => {
 
     function onReaderLoad(e){
       const allowedFileTypes = ["application/json", "application/rtm"];
-      if(isRTM()){
+      if(isRTM(file)){
         var obj = JSON.parse(e.target.result);
         if(obj.lines != []){
           net.lines = obj.lines;
