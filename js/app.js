@@ -299,16 +299,31 @@ ln_delete.addEventListener("click", function(){
 export_rtm.addEventListener("click", function(){
   exportRTM(net);
 });
+function isRTM(e){
+  try{JSON.parse(e.target.result);} catch(err){return false;} return true;
+}
 var input = document.getElementById('import');
 const onChange = e => { 
     var file = e.target.files[0];
-    var obj = JSON.parse(e.target.result);
-    if(obj.lines != []){
-      net.lines = obj.lines;
-      instancesLine = 0;
-      linePathId = net.lines[instancesLine].linePath;
-      updateCanvas();
+    var reader = new FileReader();
+    reader.onload = onReaderLoad;
+    reader.readAsText(file);
+
+    function onReaderLoad(e){
+      const allowedFileTypes = ["application/json", "application/rtm"];
+      if(isRTM()){
+        var obj = JSON.parse(e.target.result);
+        if(obj.lines != []){
+          net.lines = obj.lines;
+          instancesLine = 0;
+          linePathId = net.lines[instancesLine].linePath;
+          updateCanvas();
+        }
+        console.log(net);
+      }
+      else{
+          alert('the sads');
+        }
     }
-    console.log(net);
 }
 import_rtm.addEventListener("change", onChange);
