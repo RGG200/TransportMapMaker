@@ -21,7 +21,7 @@
     <button id="hide" class="main" onclick="showOptions('options'); hideOptions('hide');">Montrer les Options</button>
     <div id="options" onmousemove="resetSVG();">  
         <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('options'); hideOptions('hide'); showOptions('export-section'); hideOptions('svg-canvas');">Exporter la carte en SVG</a>
-        <label id="" onclick="hideOptions('options'); showOptions('show');" class="button">Importer une Carte <input type="file" id="import" />​</label>
+        <label id="" onclick="hideOptions('options'); showOptions('show');" class="button">Importer une carte (.rtm) <input type="file" id="import" accept="application/rtm, application/json" />​</label>
         <button id="" onclick="showEditor('options', 'st-list'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" href="">Editer une Station</button>
         <button id="" onclick="showEditor('options', 'ln-list'); hideOptions('options'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" href="">Editer une Ligne</button>
         <button id="" onclick="hideOptions('options'); showOptions('hide');" class="button" href="">Paramètres</button>
