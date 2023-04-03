@@ -308,16 +308,18 @@ const onChange = e => {
 
     function onReaderLoad(e){
       const allowedFileTypes = ["application/json", "application/rtm"];
-        if(allowedFileTypes.includes(e.target.result)){
-          var obj = JSON.parse(e.target.result);
-          if(obj.lines != []){
-            net.lines = obj.lines;
-            instancesLine = 0;
-            linePathId = net.lines[instancesLine].linePath;
-            updateCanvas();
-          }
-          console.log(net);
+      if(e.target.files.length == 1 && allowedFileTypes.includes(file.type)){
+        var obj = JSON.parse(e.target.result);
+        if(obj.lines != []){
+          net.lines = obj.lines;
+          instancesLine = 0;
+          linePathId = net.lines[instancesLine].linePath;
+          updateCanvas();
         }
+        console.log(net);
+      }else{
+        alert("didn't work :(");
+      }
     }
 }
 import_rtm.addEventListener("change", onChange);
