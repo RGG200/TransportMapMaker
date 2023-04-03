@@ -299,16 +299,15 @@ ln_delete.addEventListener("click", function(){
 export_rtm.addEventListener("click", function(){
   exportRTM(net);
 });
-function isRTM(item){
-  try{JSON.parse(item);} catch(err){return false;} return true;
-}
 var input = document.getElementById('import');
 const onChange = e => { 
     var file = e.target.files[0];
     var reader = new FileReader();
     reader.onload = onReaderLoad;
     reader.readAsText(file);
-
+    function isRTM(item){
+      try{JSON.parse(item);} catch(err){return false;} return true;
+    }
     function onReaderLoad(e){
       const allowedFileTypes = ["application/json", "application/rtm"];
       if(isRTM(file)){
