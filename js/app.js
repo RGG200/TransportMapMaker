@@ -1,6 +1,5 @@
 let instancesLine = 0; // selected line
 import { exportRTM } from './FileOptions/export-rtm.js';
-import { importRTM } from './FileOptions/import.js';
 import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList} from './drawItems.js';
 
 
