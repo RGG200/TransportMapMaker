@@ -16,7 +16,7 @@ export function Network(lines, width, height, filename){
     this.height = height;
     this.filename = filename;
 }
-export function Line(id, name, lineThicness, color, stations, linePath){
+export function Line(id, name, lineThicness, color, stations, linePath, xArray, yArray){
     this.id = id;
     this.name = name;
     this.lineThicness = lineThicness;
@@ -25,8 +25,8 @@ export function Line(id, name, lineThicness, color, stations, linePath){
     this.selected = false;
     this.stationInstances = 0;
     this.linePath = linePath;
-    this.xArray = [];
-    this.yArray = [];
+    this.xArray = xArray;
+    this.yArray = yArray;
 };
 let line_instances = 0;
 export function drawStation(fName,sName, style, type, posX, posY, lineColor, instances, line_instance) {
