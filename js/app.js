@@ -195,14 +195,12 @@ const save = document.getElementById('save');
 function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
-  let xArray = [];
-  let yArray = [];
   let xValues = [0, 0];
   let yValues = [0, 0];
   for(let j = 0; j < net.lines.length; j++){
     net.lines[j].stations.forEach(station => {
-      xArray[net.lines[j].stations.indexOf(station)] = station.xPos;
-      yArray[net.lines[j].stations.indexOf(station)] = station.yPos;
+      net.lines[j].xArray[net.lines[j].stations.indexOf(station)] = station.xPos;
+      net.lines[j].yArray[net.lines[j].stations.indexOf(station)] = station.yPos;
       xValues[0] = Math.max(...xArray);
       yValues[0] = Math.max(...yArray);
       xValues[1] = Math.min(...xArray);
