@@ -25,6 +25,8 @@ export function Line(id, name, lineThicness, color, stations, linePath){
     this.selected = false;
     this.stationInstances = 0;
     this.linePath = linePath;
+    this.xArray = [];
+    this.yArray = [];
 };
 let line_instances = 0;
 export function drawStation(fName,sName, style, type, posX, posY, lineColor, instances, line_instance) {
