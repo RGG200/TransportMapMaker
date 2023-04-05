@@ -198,7 +198,7 @@ function updateCanvas(){
   let xValues = [0, 0];
   let yValues = [0, 0];
   for(let j = 0; j < net.lines.length; j++){
-    net.lines[j].stations.forEach(station => {
+    for(station of net.lines[j].stations){
       net.lines[j].xArray[net.lines[j].stations.indexOf(station)] = station.xPos;
       net.lines[j].yArray[net.lines[j].stations.indexOf(station)] = station.yPos;
       xValues[0] = Math.max(...net.lines[j].xArray);
