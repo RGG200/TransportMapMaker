@@ -201,10 +201,10 @@ function updateCanvas(){
     net.lines[j].stations.forEach(station => {
       net.lines[j].xArray[net.lines[j].stations.indexOf(station)] = station.xPos;
       net.lines[j].yArray[net.lines[j].stations.indexOf(station)] = station.yPos;
-      xValues[0] = Math.max(...xArray);
-      yValues[0] = Math.max(...yArray);
-      xValues[1] = Math.min(...xArray);
-      yValues[1] = Math.min(...yArray);
+      xValues[0] = Math.max(...net.lines[j].xArray);
+      yValues[0] = Math.max(...net.lines[j].yArray);
+      xValues[1] = Math.min(...net.lines[j].xArray);
+      yValues[1] = Math.min(...net.lines[j].yArray);
     });
     if(net.lines[j].linePath.length > 1){
       console.log(net.lines[j].linePath);
