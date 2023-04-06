@@ -195,6 +195,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
 
   };
   export function drawExchange(exchangeArray, colorArray, line_instances){
+    var svgns = "http://www.w3.org/2000/svg";
     for(const exPoint of exchangeArray){
         var exchangeDrawable = document.createElementNS( svgns, 'rect');
         exchangeDrawable.setAttributeNS( null,'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
