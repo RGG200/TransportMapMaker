@@ -212,11 +212,12 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     inter.setAttributeNS( null,'fill','#FF00FF');
     inter.setAttributeNS( null,'stroke-width', '3');
     inter.setAttributeNS( null,'stroke', '#000000');
+    document.getElementById( 'svg-canvas' ).appendChild( inter );
     for(const exPoint of exchangeArray){
         var exchangeDrawable = document.createElementNS( svgns, 'rect');
         exchangeDrawable.setAttributeNS( null,'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
         exchangeDrawable.setAttributeNS( null,'class','stations');
-        exchangeDrawable.setAttributeNS( null,'x',posX-20);
+        exchangeDrawable.setAttributeNS( null,'x',posX);
         exchangeDrawable.setAttributeNS( null,'y',posY-30+(35/(exchangeArray.length-exchangeArray.indexOf(exPoint))));
         exchangeDrawable.setAttributeNS( null,'width', '10');
         exchangeDrawable.setAttributeNS( null,'height','10');
@@ -225,7 +226,6 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
         exchangeDrawable.setAttributeNS( null,'fill', colorArray[exchangeArray.indexOf(exPoint)]);
         document.getElementById( 'svg-canvas' ).appendChild( exchangeDrawable );
     }
-    document.getElementById( 'svg-canvas' ).appendChild( inter );
   }
 export function drawLine(color, thicness, beginX, beginY, endX, endY, style, line_instance){
     var svgns = "http://www.w3.org/2000/svg";
