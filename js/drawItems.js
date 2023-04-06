@@ -198,12 +198,23 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     var svgns = "http://www.w3.org/2000/svg";
     let posX = exchangeArray[0].xPos;
     let posY = exchangeArray[0].yPos;
+    var inter = document.createElementNS( svgns, 'rect');
+    inter.setAttributeNS( null,'x',posX-10);
+    inter.setAttributeNS( null,'y',posY-20);
+    inter.setAttributeNS( null,'width', '20');
+    inter.setAttributeNS( null,'height', 17.5*exchangeArray.length);       
+    inter.setAttributeNS( null,'rx', '10');        
+    inter.setAttributeNS( null,'ry','10');
+    inter.setAttributeNS( null,'fill','#FFFFFF');        
+    inter.setAttributeNS( null,'stroke-width', '3');       
+    inter.setAttributeNS( null,'stroke', '#000000');       
+    document.getElementById( 'svg-canvas' ).appendChild( inter );
     for(const exPoint of exchangeArray){
         var exchangeDrawable = document.createElementNS( svgns, 'rect');
         exchangeDrawable.setAttributeNS( null,'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
         exchangeDrawable.setAttributeNS( null,'class','stations');
         exchangeDrawable.setAttributeNS( null,'x',posX-5);
-        exchangeDrawable.setAttributeNS( null,'y',posY-17.5+((35/exchangeArray.length)*exchangeArray.indexOf(exPoint)));
+        exchangeDrawable.setAttributeNS( null,'y',posY-10+((35/exchangeArray.length)*exchangeArray.indexOf(exPoint)));
         exchangeDrawable.setAttributeNS( null,'width', '10');
         exchangeDrawable.setAttributeNS( null,'height','10');
         exchangeDrawable.setAttributeNS( null,'rx', '50');
