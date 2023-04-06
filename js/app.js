@@ -151,6 +151,7 @@ canvas.addEventListener('click', function(){
       is_any_station_selected = false;
       break;
     case false:
+      is_any_station_selected = false;
       getStations();
       break;
   }
