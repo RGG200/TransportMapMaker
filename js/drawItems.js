@@ -197,6 +197,37 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     instances++;
 
   };
+  export function drawExchange(exchangeArray, colorArray){
+    posX = exchangeArray[0].xPos;
+    posY = exchangeArray[0].yPos;
+    var inter = document.createElementNS( svgns, 'rect');
+    inter.setAttributeNS( null,'id',instances);
+    inter.setAttributeNS( null,'class','exchange');
+    inter.setAttributeNS( null,'x',posX-10);
+    inter.setAttributeNS( null,'y',posY-20);
+    inter.setAttributeNS( null,'width', '20');
+    inter.setAttributeNS( null,'height','40');
+    inter.setAttributeNS( null,'rx', '10');
+    inter.setAttributeNS( null,'ry','10');
+    inter.setAttributeNS( null,'fill','#FFFFFF');
+    inter.setAttributeNS( null,'stroke-width', '3');
+    inter.setAttributeNS( null,'stroke', '#000000');
+    for(const exPoint of exchangeArray){
+        var exchangeDrawable = document.createElementNS( svgns, 'rect');
+        exchangeDrawable.setAttributeNS( null,'id', exchangeArray.indexOf(exPoint));
+        exchangeDrawable.setAttributeNS( null,'class','stations');
+        exchangeDrawable.setAttributeNS( null,'x',posX-10-(20/exchangeArray.length));
+        exchangeDrawable.setAttributeNS( null,'y',posY-20-(40/exchangeArray.length));
+        exchangeDrawable.setAttributeNS( null,'width', '5');
+        exchangeDrawable.setAttributeNS( null,'height','5');
+        exchangeDrawable.setAttributeNS( null,'rx', '1');
+        exchangeDrawable.setAttributeNS( null,'ry','1');
+        exchangeDrawable.setAttributeNS( null,'fill', colorArray[exchangeArray.indexOf(exPoint)]);
+        document.getElementById( 'svg-canvas' ).appendChild( exchangeDrawable );
+    }
+    document.getElementById( 'svg-canvas' ).appendChild( inter );
+    instances++;
+  }
 export function drawLine(color, thicness, beginX, beginY, endX, endY, style, line_instance){
     var svgns = "http://www.w3.org/2000/svg";
     if(document.getElementById('line_' + line_instance) == null){

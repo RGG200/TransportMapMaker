@@ -1,6 +1,6 @@
 let instancesLine = 0; // selected line
 import { exportRTM } from './FileOptions/export-rtm.js';
-import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList} from './drawItems.js';
+import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList, drawExchange} from './drawItems.js';
 
 
 export let net = new Network([], 8000, 8000, "transportmap"); //initial network
@@ -224,19 +224,28 @@ function updateCanvas(){
       }
     }
   } 
+  let exArray = [];
+  let coArray = [];
+  let exID = 0;
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
       console.log(xValues + ' ' + yValues);
       if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){ 
-        console.log("yesssss");
         element.type = "exchange";
+        exArray[exID] = element;
+        coArray[exID] = net.lines[j].color;
+        exID++;
       }else if(element.connected == false){
         element.type = "destination";
+        drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
       }else{
         element.type = "common";
+        drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
       }
-      drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
     }
+  }
+  if(exArray.length > 0){
+    drawExchange(exArray, coArray);
   }
 }
 
