@@ -97,36 +97,6 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
             }
             break;
         case 'exchange':
-            var inter = document.createElementNS( svgns, 'rect');
-            inter.setAttributeNS( null,'x',posX-10);
-            inter.setAttributeNS( null,'y',posY-20);
-            inter.setAttributeNS( null,'width', '20');
-            inter.setAttributeNS( null,'height','40');
-            inter.setAttributeNS( null,'rx', '10');
-            inter.setAttributeNS( null,'ry','10');
-            inter.setAttributeNS( null,'fill','#FFFFFF');
-            inter.setAttributeNS( null,'stroke-width', '3');
-            inter.setAttributeNS( null,'stroke', '#000000');
-            document.getElementById( 'svg-canvas' ).appendChild( inter );
-
-            var first_name = document.createElementNS(svgns, 'text');
-            var second_name = document.createElementNS(svgns, 'text');
-            first_name.innerHTML = fName;
-            first_name.setAttributeNS(null, 'x', posX);
-            first_name.setAttributeNS(null, 'y', posY-40);
-            first_name.setAttributeNS(null, 'id', instances);
-            first_name.setAttributeNS(null, 'class', 'stationNames');
-            first_name.setAttributeNS(null, 'font-size', '16');
-            
-            first_name.setAttributeNS(null, 'font-weight', '700');
-            document.getElementById( 'svg-canvas' ).appendChild( first_name );
-            second_name.innerHTML = sName;
-            second_name.setAttributeNS(null, 'x', posX);
-            second_name.setAttributeNS(null, 'y', posY-30);
-            second_name.setAttributeNS(null, 'class', 'stationNames');
-            second_name.setAttributeNS(null, 'font-size', '12');
-            second_name.setAttributeNS(null, 'font-weight', '700');
-            document.getElementById( 'svg-canvas' ).appendChild( second_name );
             break;
         case 'common':
             if(style == 'rect' && type != 'exchange'){
@@ -209,12 +179,30 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     inter.setAttributeNS( null,'stroke-width', '3');       
     inter.setAttributeNS( null,'stroke', '#000000');       
     document.getElementById( 'svg-canvas' ).appendChild( inter );
+    var first_name = document.createElementNS(svgns, 'text');
+    var second_name = document.createElementNS(svgns, 'text');
+    first_name.innerHTML = exchangeArray[0].fName;
+    first_name.setAttributeNS(null, 'x', posX);
+    first_name.setAttributeNS(null, 'y', posY-30-(10*exchangeArray.length));
+    first_name.setAttributeNS(null, 'id', instances);
+    first_name.setAttributeNS(null, 'class', 'stationNames');
+    first_name.setAttributeNS(null, 'font-size', '16');
+            
+    first_name.setAttributeNS(null, 'font-weight', '700');
+    document.getElementById( 'svg-canvas' ).appendChild( first_name );
+    second_name.innerHTML = exchangeArray[0].sName;
+    second_name.setAttributeNS(null, 'x', posX);
+    second_name.setAttributeNS(null, 'y', posY-20-(10*exchangeArray.length));
+    second_name.setAttributeNS(null, 'class', 'stationNames');
+    second_name.setAttributeNS(null, 'font-size', '12');
+    second_name.setAttributeNS(null, 'font-weight', '700');
+    document.getElementById( 'svg-canvas' ).appendChild( second_name );
     for(const exPoint of exchangeArray){
         var exchangeDrawable = document.createElementNS( svgns, 'rect');
         exchangeDrawable.setAttributeNS( null,'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
         exchangeDrawable.setAttributeNS( null,'class','stations');
         exchangeDrawable.setAttributeNS( null,'x',posX-5);
-        exchangeDrawable.setAttributeNS( null,'y',posY-10+((35/exchangeArray.length)*exchangeArray.indexOf(exPoint)));
+        exchangeDrawable.setAttributeNS( null,'y',posY-17.5+10*(exchangeArray.indexOf(exPoint));
         exchangeDrawable.setAttributeNS( null,'width', '10');
         exchangeDrawable.setAttributeNS( null,'height','10');
         exchangeDrawable.setAttributeNS( null,'rx', '50');
