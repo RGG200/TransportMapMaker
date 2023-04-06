@@ -198,8 +198,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
 
   };
   export function drawExchange(exchangeArray, colorArray){
-    posX = exchangeArray[0].xPos;
-    posY = exchangeArray[0].yPos;
+    let posX = exchangeArray[0].xPos;
+    let posY = exchangeArray[0].yPos;
     var inter = document.createElementNS( svgns, 'rect');
     inter.setAttributeNS( null,'id',instances);
     inter.setAttributeNS( null,'class','exchange');
