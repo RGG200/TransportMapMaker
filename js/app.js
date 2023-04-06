@@ -247,7 +247,7 @@ function updateCanvas(){
       }
     }
   }
-  for(k = 0; k < exArray.length; k++ ){
+  for(let k = 0; k < exArray.length; k++ ){
     let exArray_station = exArray.filter(exStation => exStation.xPos == exArray[k].xPos && exStation.yPos == exArray[k].yPos);
     if(exArray.length > 0){
       drawStation(exArray[0].fName, exArray[0].sName, exArray[0].style, exArray[0].type, exArray[0].xPos, exArray[0].yPos, line_instances[exArray.indexOf(exArray[0])], exArray.indexOf(exArray[0]), line_instances[exArray.indexOf(exArray[0])]);
