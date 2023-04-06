@@ -155,7 +155,9 @@ canvas.addEventListener('click', function(){
       getStations();
       break;
   }
-  drawStationsList(net, instancesLine);
+  if(net.lines[instancesLine].stationInstances > 0){
+    drawStationsList(net, instancesLine);
+  }
   drawLinesList(net, instancesLine);
 }, true);
 
