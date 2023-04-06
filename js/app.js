@@ -226,6 +226,7 @@ function updateCanvas(){
   } 
   let exArray = [];
   let coArray = [];
+  let line_instances = [];
   let exID = 0;
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
@@ -234,6 +235,7 @@ function updateCanvas(){
         element.type = "exchange";
         exArray[exID] = element;
         coArray[exID] = net.lines[j].color;
+        line_instances[exID] = j;
         exID++;
       }else if(element.connected == false){
         element.type = "destination";
@@ -245,7 +247,8 @@ function updateCanvas(){
     }
   }
   if(exArray.length > 0){
-    drawExchange(exArray, coArray);
+    drawStation(exArray[exID].fName, exArray[exID].sName, exArray[exID].style, exArray[exID].type, exArray[exID].xPos, exArray[exID].yPos, net.lines[j].color, exArray.indexOf(exArray[exID]), j)
+    drawExchange(exArray, coArray, line_instances);
   }
 }
 
