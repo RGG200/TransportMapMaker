@@ -184,7 +184,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     first_name.innerHTML = exchangeArray[0].fName;
     first_name.setAttributeNS(null, 'x', posX);
     first_name.setAttributeNS(null, 'y', posY-30-(10*exchangeArray.length));
-    first_name.setAttributeNS(null, 'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
+    first_name.setAttributeNS(null, 'id', exchangeArray[0].stationInstance);
     first_name.setAttributeNS(null, 'class', 'stationNames');
     first_name.setAttributeNS(null, 'font-size', '16');
             
