@@ -172,7 +172,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     inter.setAttributeNS( null,'x',posX-10);
     inter.setAttributeNS( null,'y',posY-10-10*exchangeArray.length);
     inter.setAttributeNS( null,'width', '20');
-    inter.setAttributeNS( null,'height', 35*exchangeArray.length);       
+    inter.setAttributeNS( null,'height', 20*exchangeArray.length);       
     inter.setAttributeNS( null,'rx', '10');        
     inter.setAttributeNS( null,'ry','10');
     inter.setAttributeNS( null,'fill','#FFFFFF');        
@@ -183,7 +183,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     var second_name = document.createElementNS(svgns, 'text');
     first_name.innerHTML = exchangeArray[0].fName;
     first_name.setAttributeNS(null, 'x', posX);
-    first_name.setAttributeNS(null, 'y', posY-30-(5*exchangeArray.length));
+    first_name.setAttributeNS(null, 'y', posY-30-(10*exchangeArray.length));
     first_name.setAttributeNS(null, 'id', exchangeArray[0].stationInstance);
     first_name.setAttributeNS(null, 'class', 'stationNames');
     first_name.setAttributeNS(null, 'font-size', '16');
@@ -192,7 +192,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     document.getElementById( 'svg-canvas' ).appendChild( first_name );
     second_name.innerHTML = exchangeArray[0].sName;
     second_name.setAttributeNS(null, 'x', posX);
-    second_name.setAttributeNS(null, 'y', posY-20-(5*exchangeArray.length));
+    second_name.setAttributeNS(null, 'y', posY-20-(10*exchangeArray.length));
     second_name.setAttributeNS(null, 'class', 'stationNames');
     second_name.setAttributeNS(null, 'font-size', '12');
     second_name.setAttributeNS(null, 'font-weight', '700');
@@ -202,7 +202,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
         exchangeDrawable.setAttributeNS( null,'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
         exchangeDrawable.setAttributeNS( null,'class','stations');
         exchangeDrawable.setAttributeNS( null,'x',posX-5);
-        exchangeDrawable.setAttributeNS( null,'y',posY-25+15*(exchangeArray.indexOf(exPoint)));
+        exchangeDrawable.setAttributeNS( null,'y',posY-17*(exchangeArray.indexOf(exPoint)));
         exchangeDrawable.setAttributeNS( null,'width', '10');
         exchangeDrawable.setAttributeNS( null,'height','10');
         exchangeDrawable.setAttributeNS( null,'rx', '50');
