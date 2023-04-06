@@ -170,7 +170,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     let posY = exchangeArray[0].yPos;
     var inter = document.createElementNS( svgns, 'rect');
     inter.setAttributeNS( null,'x',posX-10);
-    inter.setAttributeNS( null,'y',posY-20);
+    inter.setAttributeNS( null,'y',posY-10-10*exchangeArray.length);
     inter.setAttributeNS( null,'width', '20');
     inter.setAttributeNS( null,'height', 17.5*exchangeArray.length);       
     inter.setAttributeNS( null,'rx', '10');        
@@ -202,7 +202,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
         exchangeDrawable.setAttributeNS( null,'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
         exchangeDrawable.setAttributeNS( null,'class','stations');
         exchangeDrawable.setAttributeNS( null,'x',posX-5);
-        exchangeDrawable.setAttributeNS( null,'y',posY-17.5+10*(exchangeArray.indexOf(exPoint)));
+        exchangeDrawable.setAttributeNS( null,'y',posY-17.5+15*(exchangeArray.indexOf(exPoint)));
         exchangeDrawable.setAttributeNS( null,'width', '10');
         exchangeDrawable.setAttributeNS( null,'height','10');
         exchangeDrawable.setAttributeNS( null,'rx', '50');
