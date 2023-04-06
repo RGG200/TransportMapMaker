@@ -214,7 +214,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     inter.setAttributeNS( null,'stroke', '#000000');
     for(const exPoint of exchangeArray){
         var exchangeDrawable = document.createElementNS( svgns, 'rect');
-        exchangeDrawable.setAttributeNS( null,'id', exchangeArray.indexOf(exPoint));
+        exchangeDrawable.setAttributeNS( null,'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
         exchangeDrawable.setAttributeNS( null,'class','stations');
         exchangeDrawable.setAttributeNS( null,'x',posX-20);
         exchangeDrawable.setAttributeNS( null,'y',posY-30+(35/(exchangeArray.length-exchangeArray.indexOf(exPoint))));
