@@ -228,7 +228,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
         document.getElementById( 'svg-canvas' ).appendChild( exchangeDrawable );
     }
     document.getElementById( 'svg-canvas' ).appendChild( inter );
-    instances++;
+    exInstances++;
   }
 export function drawLine(color, thicness, beginX, beginY, endX, endY, style, line_instance){
     var svgns = "http://www.w3.org/2000/svg";
