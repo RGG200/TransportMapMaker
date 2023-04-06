@@ -110,22 +110,12 @@ export function updateDisplay(event) {
   }
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
-<<<<<<< HEAD
-      line.stations.forEach(station => {
-        if(line.stations.indexOf(station) != stationID && lineID != net.lines.indexOf(line)){
-          if(station.xPos === net.lines[lineID].stations[stationID].xPos && station.yPos === net.lines[lineID].stations[stationID].yPos){
-            return false;
-          }
-          console.log("it doesn't works really !");
-=======
       for(const station of line.stations){
         if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos == net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
           return false;
->>>>>>> 7773ce9abc880467c406e9427f95ca5af81f72b5
         }
       }
     }
-    console.log("it doesn't works really !");
     return true;
   }
 
@@ -224,10 +214,10 @@ function updateCanvas(){
       xValues[1] = Math.min(...net.lines[j].xArray);
       yValues[1] = Math.min(...net.lines[j].yArray);
     }
-    console.log(net.lines[j].linePath);
     for(let i = 1; i < net.lines[j].linePath.length; i++){
       if(isConnected(i, j)){
         drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[instancesLine].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[instancesLine].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[instancesLine].stations[net.lines[j].linePath[i].stationInstance].line_style, j);
+        console.log(net.lines[j].linePath[i].stationInstance);
         if(net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].connected == false && i > 1 || i > 1 && net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[0] || i > 1 && net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[0] || i > 1 && net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[1] || i > 1 && net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[1]){
           net.lines[instancesLine].stations[net.lines[j].linePath[i-1].stationInstance].connected = true;
         }
@@ -265,6 +255,7 @@ ln_create.addEventListener("click", function(){
   if(net.lines[instancesLine].stationInstances > 0 || net.lines[instancesLine] == undefined){
     if(net.lines[0] != null){
       instancesLine = net.lines.length;
+      net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [], [], [], []);
       drawLinesList(net, instancesLine);
       linePathId = 1;
     }
