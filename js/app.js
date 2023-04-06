@@ -247,7 +247,7 @@ function updateCanvas(){
     }
   }
   if(exArray.length > 0){
-    drawStation(exArray[0].fName, exArray[0].sName, exArray[0].style, exArray[0].type, exArray[0].xPos, exArray[0].yPos, net.lines[j].color, exArray.indexOf(exArray[0]), j)
+    drawStation(exArray[0].fName, exArray[0].sName, exArray[0].style, exArray[0].type, exArray[0].xPos, exArray[0].yPos, net.lines[j].color, exArray.indexOf(exArray[0]), line_instances[exArray.indexOf(exArray[0])]);
     drawExchange(exArray, coArray, line_instances);
   }
 }
