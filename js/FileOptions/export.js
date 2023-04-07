@@ -1,6 +1,6 @@
 function exportSVG(filename, filewidth, fileheight){
     document.getElementById('svg-canvas').style.background = 'none';
-    svgExport.downloadSvg(document.getElementById('svg-canvas'), filename, {width: filewidth, fileheight: height});
+    svgExport.downloadSvg(document.getElementById('svg-canvas'), filename, {width: filewidth, height: fileheight});
     return true;
 }
 function exportPNG(filename, filewidth, fileheight){

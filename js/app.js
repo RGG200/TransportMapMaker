@@ -306,7 +306,7 @@ param_save.addEventListener("click", function(){
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
   document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG('${net.filename}, ${net.width}, ${net.height}');`);
   document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG('${net.filename}, ${net.width}, ${net.height}');`);
-  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM('${net.filename}');`);
+  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM('${net}, ${net.filename}');`);
 
 });
 
