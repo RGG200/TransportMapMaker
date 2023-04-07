@@ -160,8 +160,10 @@ canvas.addEventListener('click', function(){
     drawStationsList(net, instancesLine);
   }
   drawLinesList(net, instancesLine);
+});
+canvas.addEventListener('dblclick', function(){
+  getStations();
 }, true);
-canvas.addEventListener('dblclick', getStations());
 
 
 st_list.addEventListener("mouseenter", function(){
@@ -253,7 +255,7 @@ function updateCanvas(){
     let exArray_station = exArray.filter(exStation => exStation.xPos == exArray[k].xPos && exStation.yPos == exArray[k].yPos);
     let coArray_station = coArray.filter(color => color = exArray[k].line_parent.color);
     if(exArray.length > 0){
-      drawExchange(exArray_station, coArray);
+      drawExchange(exArray_station, coArray_station);
     }
   }
 }
