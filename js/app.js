@@ -75,8 +75,8 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-                break;
                 is_any_station_selected = true;
+                break;
               case true:
                 station_is_being_created = false;
                 break;
