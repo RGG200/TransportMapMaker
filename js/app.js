@@ -252,11 +252,13 @@ function updateCanvas(){
   }
   for(let k = 0; k < exArray.length; k++ ){
     let exArray_station = exArray.filter(exStation => exStation.xPos == exArray[k].xPos && exStation.yPos == exArray[k].yPos);
+    let coArray_station = [];
     for(let l = 0; l < exArray_station.length; l++){
-      let coArray_station = coArray.filter(color => color == exArray_station[l].line_parent.color);  
-      if(exArray.length > 0){
-        drawExchange(exArray_station, coArray_station);
-      }
+      coArray_station = coArray.filter(color => color == exArray_station[l].line_parent.color);  
+    }
+    console.log(coArray_station);
+    if(exArray.length > 0){
+      drawExchange(exArray_station, coArray_station);
     }
   }
 }
