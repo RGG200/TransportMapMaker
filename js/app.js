@@ -77,7 +77,6 @@ export function updateDisplay(event) {
                   }
                 break;
               case true:
-                is_any_station_selected = false;
                 station_is_being_created = false;
                 break;
             }
@@ -150,7 +149,6 @@ canvas.addEventListener('click', function(){
       is_any_station_selected = false;
       break;
     case false:
-      is_any_station_selected = false;
       getStations();
       break;
   }
