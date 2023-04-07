@@ -256,10 +256,7 @@ function updateCanvas(){
     for(let l = 0; l < exArray_station.length; l++){
       coArray_station = coArray.filter(color => color == exArray_station[l].line_parent.color);  
     }
-    console.log(coArray_station);
-    if(exArray.length > 0){
-      drawExchange(exArray_station, coArray_station);
-    }
+    drawExchange(exArray_station, coArray_station);
   }
 }
 
