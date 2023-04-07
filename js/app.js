@@ -311,24 +311,24 @@ param_save.addEventListener("click", function(){
 });
 
 deleter.addEventListener('click', function(){
-  let new_linePath = net.lines[instancesLine].linePath.filter(station => station.stationInstance !== id_selected_station_on_editor);
-  net.lines[instancesLine].linePath = new_linePath;
+  let new_linePath = net.lines[id_selected_line_on_editor].linePath.filter(station => station.stationInstance !== id_selected_station_on_editor);
+  net.lines[id_selected_line_on_editor].linePath = new_linePath;
   console.log(new_linePath);
-  net.lines[instancesLine].stations.splice(id_selected_station_on_editor, 1);
-  net.lines[instancesLine].stationInstances -= 1;
-  linePathId = net.lines[instancesLine].linePath.length;
-  net.lines[instancesLine].stations.forEach(station => {
-    station.stationInstance = net.lines[instancesLine].stations.indexOf(station);
-    net.lines[instancesLine].linePath.forEach(element => {
+  net.lines[id_selected_line_on_editor].stations.splice(id_selected_station_on_editor, 1);
+  net.lines[id_selected_line_on_editor].stationInstances -= 1;
+  linePathId = net.lines[id_selected_line_on_editor].linePath.length;
+  net.lines[id_selected_line_on_editor].stations.forEach(station => {
+    station.stationInstance = net.lines[id_selected_line_on_editor].stations.indexOf(station);
+    net.lines[id_selected_line_on_editor].linePath.forEach(element => {
       element.connected = false;
       if(element.stationInstance > id_selected_station_on_editor){
         element.stationInstance--;
       }
     });
   });
-    console.log(net.lines[instancesLine].linePath);
-  if(net.lines[instancesLine].stationInstances <= 0){
-    net.lines.splice(instancesLine);
+    console.log(net.lines[id_selected_line_on_editor].linePath);
+  if(net.lines[id_selected_line_on_editor].stationInstances <= 0){
+    net.lines.splice(id_selected_line_on_editor);
   }
   drawStationsList(net, instancesLine);
   updateCanvas();
