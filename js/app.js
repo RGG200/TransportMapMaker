@@ -238,7 +238,7 @@ function updateCanvas(){
         element.type = "exchange";
         exArray[exID] = element;
         coArray[exID] = net.lines[j].color;
-        exArray[exID].line_parent = j;
+        exArray[exID].line_parent = net.lines[j];
         line_instances[exID] = j;
         exID++;
       }else if(element.connected == false){
