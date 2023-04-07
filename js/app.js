@@ -238,6 +238,7 @@ function updateCanvas(){
         element.type = "exchange";
         exArray[exID] = element;
         coArray[exID] = net.lines[j].color;
+        exArray[exID].line_parent = net.lines[j];
         line_instances[exID] = j;
         exID++;
       }else if(element.connected == false){
@@ -251,8 +252,9 @@ function updateCanvas(){
   }
   for(let k = 0; k < exArray.length; k++ ){
     let exArray_station = exArray.filter(exStation => exStation.xPos == exArray[k].xPos && exStation.yPos == exArray[k].yPos);
+    let coArray_station = coArray.filter(color => color = exArray[exID].line_parent.color);
     if(exArray.length > 0){
-      drawExchange(exArray_station, coArray, line_instances);
+      drawExchange(exArray_station, coArray);
     }
   }
 }

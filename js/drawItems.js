@@ -208,7 +208,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
         exchangeDrawable.setAttributeNS( null,'rx', '50');
         exchangeDrawable.setAttributeNS( null,'ry','50');
         exchangeDrawable.setAttributeNS( null,'fill', colorArray[exchangeArray.indexOf(exPoint)]);
-        exchangeDrawable.innerHTML = line_instances[exchangeArray.indexOf(exPoint)];
+        exchangeDrawable.innerHTML = exPoint.line_parent.id;
         document.getElementById( 'svg-canvas' ).appendChild( exchangeDrawable );
     }
   }
