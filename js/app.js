@@ -287,6 +287,7 @@ ln_save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].color = document.getElementById('color').value;
   net.lines[id_selected_line_on_editor].lineThicness = document.getElementById('thicness').value;
   drawLinesList(net, instancesLine);
+  drawStationsList(net, instancesLine);
   updateCanvas();
 });
 document.getElementById("param-btn").addEventListener("click", function(){
