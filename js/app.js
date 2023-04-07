@@ -75,7 +75,6 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-                  is_any_station_selected = true;
                 break;
               case true:
                 is_any_station_selected = false;
@@ -148,6 +147,7 @@ canvas.addEventListener('click', function(){
       }else{
         updateCanvas();
       }
+      station_is_being_created = true;
       is_any_station_selected = false;
       break;
     case false:
