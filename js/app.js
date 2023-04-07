@@ -143,10 +143,10 @@ canvas.addEventListener('click', function(){
         net.lines[instancesLine].stationInstances++;
         updateCanvas();
         station_is_being_created = true;
+        is_any_station_selected = false;
       }else{
         updateCanvas();
       }
-      is_any_station_selected = false;
       break;
     case false:
       getStations();
