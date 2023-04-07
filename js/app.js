@@ -77,12 +77,9 @@ export function updateDisplay(event) {
                   }
                 is_any_station_selected = true;
                 break;
-              case true:
-                this.setAttributeNS(null, 'stroke', '#000000');
-                this.setAttributeNS(null, 'stroke-width', '3');
+              case true
                 station_is_being_created = false;
                 is_any_station_selected = false;
-                getStations();
                 break;
             }
           }, true);
