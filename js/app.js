@@ -254,10 +254,9 @@ function updateCanvas(){
     let exArray_station = exArray.filter(exStation => exStation.xPos == exArray[k].xPos && exStation.yPos == exArray[k].yPos);
     for(let l = 0; l < exArray_station.length; l++){
       let coArray_station = coArray.filter(color => color == exArray_station[k].line_parent.color);  
-    }
-    console.log(coArray_station);
-    if(exArray.length > 0){
-      drawExchange(exArray_station, coArray_station);
+      if(exArray.length > 0){
+        drawExchange(exArray_station, coArray_station);
+      }
     }
   }
 }
