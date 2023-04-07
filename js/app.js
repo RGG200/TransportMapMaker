@@ -78,8 +78,10 @@ export function updateDisplay(event) {
                 is_any_station_selected = true;
                 break;
               case true:
-                is_any_station_selected = false;
+                this.setAttributeNS(null, 'stroke', '#000000');
+                this.setAttributeNS(null, 'stroke-width', '3');
                 station_is_being_created = false;
+                is_any_station_selected = false;
                 break;
             }
           }, true);
@@ -159,7 +161,8 @@ canvas.addEventListener('click', function(){
     drawStationsList(net, instancesLine);
   }
   drawLinesList(net, instancesLine);
-});
+}, true);
+
 
 
 st_list.addEventListener("mouseenter", function(){
@@ -235,7 +238,7 @@ function updateCanvas(){
         element.type = "exchange";
         exArray[exID] = element;
         coArray[exID] = net.lines[j].color;
-        exArray[exID].line_parent = net.lines[j];
+        exArray[exID].line_parent = j;
         line_instances[exID] = j;
         exID++;
       }else if(element.connected == false){
@@ -249,10 +252,11 @@ function updateCanvas(){
   }
   for(let k = 0; k < exArray.length; k++ ){
     let exArray_station = exArray.filter(exStation => exStation.xPos == exArray[k].xPos && exStation.yPos == exArray[k].yPos);
-    let coArray_station = coArray.filter(color => color = exArray[k].line_parent.color);
+    let coArray_station = coArray.filter(color => color == exStation.line_parent.color);
     console.log(coArray_station);
-    console.log(exArray.length);
-    drawExchange(exArray_station, coArray_station);
+    if(exArray.length > 0){
+      drawExchange(exArray_station, coArray_station);
+    }
   }
 }
 
