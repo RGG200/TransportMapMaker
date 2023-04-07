@@ -1,11 +1,18 @@
 function exportSVG(filename, filewidth, fileheight){
     document.getElementById('svg-canvas').style.background = 'none';
-    svgExport.downloadSvg(document.getElementById('svg-canvas'), `${filename}`, {width: filewidth, height: fileheight});
+    svgExport.downloadSvg(document.getElementById('svg-canvas'), `${filename}`, {
+        width: filewidth,
+        height: fileheight,
+    });
     return true;
 }
 function exportPNG(filename, filewidth, fileheight){
     document.getElementById('svg-canvas').style.background = 'none';
-    svgExport.downloadPng("<svg id=\"svg-canvas\"></svg>", `${filename}`, {width: filewidth, height: fileheight, scale: 10});
+    svgExport.downloadPng("<svg id=\"svg-canvas\"></svg>", `${filename}`, {
+        width: filewidth,
+        height: fileheight,
+        scale: 10,
+    });
     return true;
 }
 // function exportJPG(){
