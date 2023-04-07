@@ -1,11 +1,11 @@
-function exportSVG(filename){
+function exportSVG(filename, width, height){
     document.getElementById('svg-canvas').style.background = 'none';
-    svgExport.downloadSvg(document.getElementById('svg-canvas'), filename, {width: 2000, height: 2000});
+    svgExport.downloadSvg(document.getElementById('svg-canvas'), filename, {width: width, height: height});
     return true;
 }
-function exportPNG(filename){
+function exportPNG(filename, width, height){
     document.getElementById('svg-canvas').style.background = 'none';
-    svgExport.downloadPng(document.getElementById('svg-canvas'), filename, {width: 2000, height: 2000});
+    svgExport.downloadPng(document.getElementById('svg-canvas'), filename, {width: width, height: height});
     return true;
 }
 // function exportJPG(){

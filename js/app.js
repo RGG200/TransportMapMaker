@@ -304,8 +304,10 @@ param_save.addEventListener("click", function(){
   net.height = document.getElementById("height").value;
   document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
-  document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG('${net.filename}');`);
-  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG('${net.filename}');`);
+  document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG('${net.filename}, ${net.width}, ${net.height}');`);
+  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG('${net.filename}, ${net.width}, ${net.height}');`);
+  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM('${net.filename}');`);
+
 });
 
 deleter.addEventListener('click', function(){
@@ -343,7 +345,7 @@ ln_delete.addEventListener("click", function(){
 }, true);
 
 export_rtm.addEventListener("click", function(){
-  exportRTM(net, net.filename);
+  exportRTM(net);
 });
 const onChange = e => { 
     var file = e.target.files[0];
