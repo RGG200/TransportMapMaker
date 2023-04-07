@@ -353,8 +353,13 @@ const onChange = e => {
     function onReaderLoad(e){
       var obj = JSON.parse(e.target.result);
       if(obj != undefined){
-        net = obj;
-        param_save.click();
+        net.lines = obj.lines;
+        net.width = obj.width;
+        net.filename = obj.filename;
+        net.height = obj.height;
+        param_data.filename = net.filename;
+        param_data.width = net.width;
+        param_data.height = net.height;            
         is_any_station_selected = false;
         selected_station = undefined;
         station_is_being_created = false;
