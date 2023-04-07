@@ -170,7 +170,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     let posY = exchangeArray[0].yPos;
     var inter = document.createElementNS( svgns, 'rect');
     inter.setAttributeNS( null,'x',posX-10);
-    inter.setAttributeNS( null,'y',posY+5-20*exchangeArray.length);
+    inter.setAttributeNS( null,'y',posY-20*exchangeArray.length);
     inter.setAttributeNS( null,'width', '20');
     inter.setAttributeNS( null,'height', 20*exchangeArray.length);       
     inter.setAttributeNS( null,'rx', '10');        
