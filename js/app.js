@@ -79,11 +79,13 @@ export function updateDisplay(event) {
                 break;
               case true:
                 station_is_being_created = false;
+                is_any_station_selected = false;
                 break;
             }
           }, true);
           break;
         case true:
+          is_any_station_selected = false;
           break;
       }
     }
