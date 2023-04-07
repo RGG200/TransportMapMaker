@@ -315,7 +315,7 @@ deleter.addEventListener('click', function(){
     station.stationInstance = net.lines[instancesLine].stations.indexOf(station);
     net.lines[instancesLine].linePath.forEach(element => {
       element.connected = false;
-      if(element.stationInstance >= id_selected_station_on_editor){
+      if(element.stationInstance > id_selected_station_on_editor){
         element.stationInstance--;
       }
     });
