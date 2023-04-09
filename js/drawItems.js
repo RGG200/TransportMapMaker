@@ -203,6 +203,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
         exchangeDrawable.setAttributeNS( null,'class','stations');
         exchangeDrawable.setAttributeNS( null,'x',posX-5);
         exchangeDrawable.setAttributeNS( null,'y',posY+25-(10*(exchangeArray.length))+20*(exchangeArray.indexOf(exPoint)-1));
+        exchangeDrawable.setAttributeNS( null,'z', '5');
         exchangeDrawable.setAttributeNS( null,'width', '10');
         exchangeDrawable.setAttributeNS( null,'height','10');
         exchangeDrawable.setAttributeNS( null,'rx', '50');
