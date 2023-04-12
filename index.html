@@ -9,13 +9,12 @@
     <title>TMM</title>
 </head>
 <body>
-    <script src="./js/app.js" type="module"></script>
-    <script src="./js/options.js"></script>
-    <script src="./js/FileOptions/export.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/3.0.9/umd.js" integrity="sha512-Wu9XXg78PiNE0DI4Z80lFKlEpLq7yGjquc0I35Nz+sYmSs4/oNHaSW8ACStXBoXciqwTLnSINqToeWP3iNDGmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- svg-exportJS plugin -->
     <script src="https://sharonchoong.github.io/svg-exportJS/svg-export.min.js"></script>
- 
+    <script src="./js/app.js" type="module"></script>
+    <script src="./js/options.js"></script>
+    <script src="./js/FileOptions/export.js"></script>
     <svg id="svg-canvas" height="8000" width="8000" xmlns="http://www.w3.org/2000/svg">
     </svg>
     <button id="show" class="main" onclick="showOptions('options'); showOptions('hide'); hideOptions('show');">Montrer les Options</button>
@@ -59,6 +58,8 @@
               <a id="csc" onclick="document.getElementById('cx-btn').innerHTML = 'c'; hideOptions('myDropdown');">C</a>
               <a id="csd" onclick="document.getElementById('cx-btn').innerHTML = 'd'; hideOptions('myDropdown');">D</a>
               <a id="cse" onclick="document.getElementById('cx-btn').innerHTML = 'e'; hideOptions('myDropdown');">E</a>
+              <a id="csf" onclick="document.getElementById('cx-btn').innerHTML = 'f'; hideOptions('myDropdown');">F</a>
+              <a id="csg" onclick="document.getElementById('cx-btn').innerHTML = 'g'; hideOptions('myDropdown');">G</a>
             </div>
           </div> 
           <div class="style-type">
