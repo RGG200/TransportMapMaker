@@ -18,7 +18,7 @@ function exportPNG(filename, filewidth, fileheight){
     const canvas = document.createElement('canvas');
     canvas.width = width;
     canvas.height = height;
-    const context = canvas.getContext('2d");
+    const context = canvas.getContext("2d");
     context.drawImage(image, x, y, width, height);
     const link = document.getElementById("link");
     link.href = canvas.toDataURL();
