@@ -8,10 +8,10 @@ function exportSVG(filename, filewidth, fileheight){
 }
 function exportPNG(filename, filewidth, fileheight){
     document.getElementById('svg-canvas').style.background = 'white';
-    svgExport.downloadPng("<svg id=\"svg-canvas\"></svg>", `${filename}`, {
+    svgExport.downloadPng(document.querySelector("#svg-canvas"), filename, {
         width: filewidth,
         height: fileheight,
-        scale: 10,
+        scale: 10
     });
     return true;
 }
