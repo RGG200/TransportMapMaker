@@ -6,7 +6,7 @@ function exportSVG(network){
     });
     return true;
 }
-function  exportPNG(network){
+function exportPNG(network){
   document.getElementById('svg-canvas').style.background = 'white';
   svgExport.downloadPng(document.getElementById('svg-canvas'), "transport-map", { width: network.width, height: network.height});
   return true;
