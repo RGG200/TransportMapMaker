@@ -297,8 +297,8 @@ document.getElementById("param-btn").addEventListener("click", function(){
   document.getElementById("filename").value = param_data.filename;
   document.getElementById("width").value = param_data.width;
   document.getElementById("height").value = param_data.height;
-  document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height})`);
-  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height})`);
+  document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG(${net})`);
+  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net})`);
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
 });
 document.getElementById("svg-exbtn").addEventListener("click", function(){
