@@ -307,7 +307,7 @@ document.getElementById("svg-exbtn").addEventListener("click", function(){
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
 });
 document.getElementById("png-exbtn").addEventListener("click", function(){
-  document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG(${net});`);
+  document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height});`);
   this.setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height});`);
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
 });
