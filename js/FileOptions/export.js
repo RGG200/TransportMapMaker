@@ -1,14 +1,14 @@
-function exportSVG(filename, filewidth, fileheight){
+function exportSVG(network){
     document.getElementById('svg-canvas').style.background = 'white';
-    svgExport.downloadSvg(document.getElementById('svg-canvas'), filename, {
-        width: filewidth,
-        height: fileheight,
+    svgExport.downloadSvg(document.getElementById('svg-canvas'), "transport-map", {
+        width: network.filewidth,
+        height: network.fileheight,
     });
     return true;
 }
-function exportPNG(filename, filewidth, fileheight){
+function  exportPNG(network){
   document.getElementById('svg-canvas').style.background = 'white';
-  svgExport.downloadPng(document.getElementById('svg-canvas'), filename, { width: filewidth, height: fileheight});
+  svgExport.downloadPng(document.getElementById('svg-canvas'), "transport-map", { width: network.filewidth, height: network.fileheight});
   return true;
 }
 // function exportJPG(){
