@@ -302,14 +302,14 @@ document.getElementById("param-btn").addEventListener("click", function(){
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
 });
 document.getElementById("svg-exbtn").addEventListener("click", function(){
-  this.setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height})`);
-  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height})`);
-  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
+  this.setAttributeNS(null, "onclick", `exportSVG(${net.});`);
+  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net});`);
+  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
 });
 document.getElementById("png-exbtn").addEventListener("click", function(){
-  document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height})`);
-  this.setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height})`);
-  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
+  this.setAttributeNS(null, "onclick", `exportSVG(${net});`);
+  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net});`);
+  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
 });
 param_save.addEventListener("click", function(){
   net.filename = document.getElementById("filename").value;
@@ -317,9 +317,9 @@ param_save.addEventListener("click", function(){
   net.height = document.getElementById("height").value;
   document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
-  document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height})`);
-  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height})`);
-  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
+  this.setAttributeNS(null, "onclick", `exportSVG(${net});`);
+  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net});`);
+  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
 
 });
 
@@ -385,9 +385,9 @@ const onChange = e => {
         updateCanvas();
         drawStationsList(net, instancesLine);
         drawLinesList(net, instancesLine);
-        document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height})`);
-        document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height})`);
-        document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
+  this.setAttributeNS(null, "onclick", `exportSVG(${net});`);
+  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net});`);
+  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
       }
       console.log(net);
     }
