@@ -302,7 +302,7 @@ document.getElementById("param-btn").addEventListener("click", function(){
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
 });
 document.getElementById("svg-exbtn").addEventListener("click", function(){
-  this.setAttributeNS(null, "onclick", `exportSVG(${net.});`);
+  this.setAttributeNS(null, "onclick", `exportSVG(${net});`);
   document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net});`);
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
 });
