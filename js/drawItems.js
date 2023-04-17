@@ -235,7 +235,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', 'transparent');     
+        path.setAttributeNS(null, 'fill', '#ffffff00');     
         
     }else if(style == 'b'){
         d += 'M' + beginX + ' ' + beginY + ' ';
@@ -247,7 +247,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', 'transparent');
+        path.setAttributeNS(null, 'fill', '#ffffff00');
     }else if(style == 'c'){
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = endY-beginY;
@@ -258,7 +258,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', 'transparent'); 
+        path.setAttributeNS(null, 'fill', '#ffffff00'); 
       }else if(style == 'd'){
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = endY-beginY;
@@ -269,7 +269,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', 'transparent'); 
+        path.setAttributeNS(null, 'fill', '#ffffff00'); 
       }else if(style == 'e'){
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = beginY;
@@ -283,7 +283,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', 'transparent');
+        path.setAttributeNS(null, 'fill', '#ffffff00');
     }else if(style == 'f'){
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = endY;
@@ -297,7 +297,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', 'transparent');
+        path.setAttributeNS(null, 'fill', '#ffffff00');
     }else if(style == 'g'){
         d += 'M' + beginX + ' ' + beginY + ' ';
         y = endY;
@@ -308,7 +308,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'fill', 'transparent');
+        path.setAttributeNS(null, 'fill', '#ffffff00');
     }
     document.getElementById( 'svg-canvas' ).appendChild( path );
 };
