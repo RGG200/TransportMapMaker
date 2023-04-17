@@ -7,7 +7,7 @@
             href,
             style: "display:none",
         });
-        a.download = filename + ".rtm";
+        a.download = network.filename + ".rtm";
         document.body.appendChild(a);
         a.click();
     }else{alert("la carte est vide");}
