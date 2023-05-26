@@ -8,7 +8,7 @@ function exportSVG(name, width, height){
 }
 function exportPNG(name, width, height){
   document.getElementById('svg-canvas').style.background = 'white';
-  svgExport.downloadPng(document.getElementById('svg-canvas'), $`{name}`, { width: width, height: height});
+  svgExport.downloadPng(document.getElementById('svg-canvas'), `${name}`, { width: width, height: height});
   return true;
 }
 // function exportJPG(){
