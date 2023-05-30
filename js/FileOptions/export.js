@@ -7,7 +7,7 @@ function exportSVG(name, width, height){
     return true;
 }
 function exportPNG(name, width, height){
-  document.getElementById('svg-canvas').style.background = 'white';
+  document.getElementById('svg-canvas').style.background = 'transparent';
   svgExport.downloadPng(document.getElementById('svg-canvas'), `${name}`, { width: width, height: height});
   return true;
 }
