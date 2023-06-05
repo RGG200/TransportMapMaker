@@ -423,13 +423,14 @@ input[type="file"] {
   }
   .connexion-type label{
       
+      text-align: center;
       margin: 15px;
       
    }
   .style-type label{
 
 
-
+      text-align: center;
       margin: 15px;
 
       
