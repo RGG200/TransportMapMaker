@@ -416,16 +416,32 @@ input[type="file"] {
     top: 25%;
     left: 12%;
     width: 100%;
-    font-size: 1em;
+    height: 10%;
+    font-size: 2em;
     border-radius: 1em;
     display: block;
   }
+  .connexion-type label{
+      
+      margin: 15px;
+      
+   }
+  .style-type label{
+
+
+
+      margin: 15px;
+
+      
+
+   }
   .style-type {
     position: relative;
     top: 35%;
     left: 12%;
     width: 100%;
-    font-size: 1em;
+    height: 10%;
+    font-size: 2em;
     border-radius: 1em;
     display: block;
   }
