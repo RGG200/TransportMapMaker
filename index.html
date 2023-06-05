@@ -52,14 +52,17 @@
         <div class="connexion-type">
             <p>Type de connexion</p>
             <button id="cx-btn" onclick="showOptions('myDropdown');" ondblclick="hideOptions('myDropdown');" class="dropbtn">Type de connexion</button>
-            <div id="myDropdown" class="dropdown-content" onmouseleave="hideOptions('myDropdown');">
-              <a id="csa" onclick="document.getElementById('cx-btn').innerHTML = 'a'; hideOptions('myDropdown');">A</a>
-              <a id="csb" onclick="document.getElementById('cx-btn').innerHTML = 'b'; hideOptions('myDropdown');">B</a>
-              <a id="csc" onclick="document.getElementById('cx-btn').innerHTML = 'c'; hideOptions('myDropdown');">C</a>
-              <a id="csd" onclick="document.getElementById('cx-btn').innerHTML = 'd'; hideOptions('myDropdown');">D</a>
-              <a id="cse" onclick="document.getElementById('cx-btn').innerHTML = 'e'; hideOptions('myDropdown');">E</a>
-              <a id="csf" onclick="document.getElementById('cx-btn').innerHTML = 'f'; hideOptions('myDropdown');">F</a>
-              <a id="csg" onclick="document.getElementById('cx-btn').innerHTML = 'g'; hideOptions('myDropdown');">G</a>
+            <div id="myDropdown" class="dropdown-content" onmouseleave="hideOptions('myDropdown');" onpointerleave="hideOptions('myDropdown');">
+              <label for="connexion-types">Type de Connexion de ligne</label>
+                <select name="" id="connexion-types">
+                  <option value="" onclick="document.getElementById('cx-btn').innerHTML = 'a'; hideOptions('myDropdown');">Round A</option>
+                  <option value="" onclick="document.getElementById('cx-btn').innerHTML = 'b'; hideOptions('myDropdown');">Round B</option>
+                  <option value="" onclick="document.getElementById('cx-btn').innerHTML = 'c'; hideOptions('myDropdown');">Curve A</option>
+                  <option value="" onclick="document.getElementById('cx-btn').innerHTML = 'd'; hideOptions('myDropdown');">Curve B</option>
+                  <option value="" onclick="document.getElementById('cx-btn').innerHTML = 'e'; hideOptions('myDropdown');">Butt A</option>
+                  <option value="" onclick="document.getElementById('cx-btn').innerHTML = 'f'; hideOptions('myDropdown');">Butt B</option>
+                  <option value="" onclick="document.getElementById('cx-btn').innerHTML = 'g'; hideOptions('myDropdown');">Straight line</option>
+                </select>
             </div>
           </div> 
           <div class="style-type">
