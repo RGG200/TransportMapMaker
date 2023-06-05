@@ -418,7 +418,7 @@ input[type="file"] {
     width: 100%;
     font-size: 1em;
     border-radius: 1em;
-    display: inline-flex;
+    display: block;
   }
   .style-type {
     position: relative;
@@ -427,7 +427,7 @@ input[type="file"] {
     width: 100%;
     font-size: 1em;
     border-radius: 1em;
-    display: inline-flex;
+    display: block;
   }
   #save{
     text-decoration: none;
