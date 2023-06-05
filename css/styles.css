@@ -416,8 +416,8 @@ input[type="file"] {
     top: 25%;
     left: 12%;
     width: 100%;
-    height: 10%;
-    font-size: 2em;
+    height: 5%;
+    font-size: 1em;
     border-radius: 1em;
     display: block;
   }
@@ -441,8 +441,8 @@ input[type="file"] {
     top: 35%;
     left: 12%;
     width: 100%;
-    height: 10%;
-    font-size: 2em;
+    height: 5%;
+    font-size: 1em;
     border-radius: 1em;
     display: block;
   }
@@ -507,6 +507,7 @@ input[type="file"] {
   .dropdown-content {
     background-color: white;
     outline: none;
+    height: 100%;
 
 }
   
