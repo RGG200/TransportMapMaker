@@ -488,20 +488,21 @@ input[type="file"] {
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
-    position: relative;
-    right: 9%;
-    z-index: 999;
+    position: fixed;
+    left: 25%;
+    margin-top: 10px;
     display: none;
     background-color: white;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(125,125,125,0.2);
-    z-index: 3;
-  }
+    z-index: 999  
+}
   
   /* Links inside the dropdown */
   .dropdown-content a {
     color: black;
-    padding: 5px 10px;
+    padding: 8px 10px;
+    text-align: center;
     text-decoration: none;
     display: block;
   }
