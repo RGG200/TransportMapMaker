@@ -490,6 +490,7 @@ input[type="file"] {
   .dropdown-content {
     position: relative;
     right: 9%;
+    z-index: 999;
     display: none;
     background-color: white;
     min-width: 160px;
@@ -500,7 +501,7 @@ input[type="file"] {
   /* Links inside the dropdown */
   .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 5px 10px;
     text-decoration: none;
     display: block;
   }
