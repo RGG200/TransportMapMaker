@@ -235,6 +235,8 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
+        path.setAttributeNS(null, 'stroke-linecap', "round");
+        path.setAttributeNS(null, 'stroke-linejoin', "butt");
         path.setAttributeNS(null, 'fill', '#ffffff00');     
         
     }else if(style == 'b'){
