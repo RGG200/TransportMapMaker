@@ -19,6 +19,8 @@ const st_list = document.getElementById('st-list');
 const ln_list = document.getElementById('ln-list');
 const export_rtm = document.getElementById("export-rtm");
 const import_rtm = document.getElementById("import");
+const connexion_types = document.getElementById("connexion-types");
+const style_types = document.getElementById("style-types");
 let id_selected_station_on_editor = 0;
 let id_selected_line_on_editor = 0;
 
@@ -198,8 +200,6 @@ const buttonPressed = e => {
   document.getElementById('second').value = data.sName;
   document.getElementById('xPos').value = data.coords[0];
   document.getElementById('yPos').value = data.coords[1];
-  document.getElementById('cx-btn').innerHTML = data.cx_type;
-  document.getElementById('style-btn').innerHTML = data.style_type;
   
 }
 const save = document.getElementById('save');
@@ -267,6 +267,7 @@ save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].yPos = document.getElementById('yPos').value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
+  connexion_types.getAttributeNS();
   drawStationsList(net, instancesLine);
   updateCanvas();
 });
