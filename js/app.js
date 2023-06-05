@@ -265,9 +265,8 @@ save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].yPos = document.getElementById('yPos').value;
-  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].style = document.getElementById('style-btn').innerHTML;
-  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].line_style = document.getElementById('cx-btn').innerHTML;
-  connexion_types.getAttributeNS();
+  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].style = style_types.value;
+  net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].line_style = connexion_types.value;
   drawStationsList(net, instancesLine);
   updateCanvas();
 });
