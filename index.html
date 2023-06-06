@@ -81,6 +81,10 @@
       <input id="name" class="lnname" type="text" placeholder="Nom">
       <input id="thicness" class="lnname" type="text" inputmode="numeric" pattern="[0-9]" placeholder="eppaisseur">
       <input id="color" class="lame" type="color">
+      <div class="slidecontainer">
+          <p>Nombre de pointillés</p>
+          <input type="range" min="0" max="20" value="0" class="dasharrayslider" id="myRange">
+      </div>
       <a id="ln_delete" class="menu-buttons" onclick="hideOptions('ln-editor'); showOptions('ln-list');"> Supprimer </a>
       <a id="ln_save" class="menu-buttons"> Sauvegarder </a>
     </section>
