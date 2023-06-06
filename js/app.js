@@ -23,6 +23,7 @@ const connexion_types = document.getElementById("connexion-types");
 const style_types = document.getElementById("style-types");
 let id_selected_station_on_editor = 0;
 let id_selected_line_on_editor = 0;
+const dasharray = document.getElementsByClassName('dasharrayslider')[0]
 
 let ln_create = document.getElementById("ln_create");
 let buttonGroup = document.getElementsByClassName('station_instance');
@@ -286,6 +287,7 @@ ln_save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].name = document.getElementById('name').value;
   net.lines[id_selected_line_on_editor].color = document.getElementById('color').value;
   net.lines[id_selected_line_on_editor].lineThicness = document.getElementById('thicness').value;
+  net.lines[id_selected_line_on_editor].dasharray = dasharray.value
   drawLinesList(net, instancesLine);
   drawStationsList(net, instancesLine);
   updateCanvas();
