@@ -27,6 +27,7 @@ export function Line(id, name, lineThicness, color, stations, linePath, xArray, 
     this.linePath = linePath;
     this.xArray = xArray;
     this.yArray = yArray;
+    this.dasharray = 0
 };
 let line_instances = 0;
 export function drawStation(fName,sName, style, type, posX, posY, lineColor, instances, line_instance) {
@@ -212,7 +213,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
         document.getElementById( 'svg-canvas' ).appendChild( exchangeDrawable );
     }
   }
-export function drawLine(color, thicness, beginX, beginY, endX, endY, style, line_instance){
+export function drawLine(color, thicness, beginX, beginY, endX, endY, style, line_instance, dasharray){
     var svgns = "http://www.w3.org/2000/svg";
     if(document.getElementById('line_' + line_instance) == null){
         var path = document.createElementNS(svgns, 'path');
@@ -237,6 +238,7 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'stroke-width', thicness);
         path.setAttributeNS(null, 'stroke-linecap', "round");
         path.setAttributeNS(null, 'stroke-linejoin', "butt");
+        path.setAttributeNS(null, 'stroke-dasharray', dasharray);
         path.setAttributeNS(null, 'fill', '#ffffff00');     
         
     }else if(style == 'b'){
