@@ -217,9 +217,13 @@ function updateCanvas(){
 //      xValues[1] = Math.min(...net.lines[j].xArray);
 //      yValues[1] = Math.min(...net.lines[j].yArray);
     }
-    for(let i = 1; i < net.lines[j].linePath.length-1; i++){
+    for(let i = 1; i < net.lines[j].linePath.length; i++){
       if(isConnected(i, j)){
-        drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].line_style, j, net.lines[j].dasharray);
+        if(net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance] != undefined){
+          drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].line_style, j, net.lines[j].dasharray); 000000000000000000000 
+        }else{
+          console.log("huh weird !")
+        }
         console.log(net.lines[j].linePath[i].stationInstance);
         if(net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].connected == false && i > 1 || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[0] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[0] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[1] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[1]){
           net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].connected = true;
