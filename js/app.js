@@ -374,6 +374,7 @@ const onChange = e => {
         net.width = obj.width;
         net.filename = obj.filename;
         net.height = obj.height;
+        net = obj
         document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
         document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
         param_data.filename = net.filename;
@@ -387,9 +388,9 @@ const onChange = e => {
         updateCanvas();
         drawStationsList(net, instancesLine);
         drawLinesList(net, instancesLine);
-  document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
-  document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
-  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
+        document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
+        document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
+        document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
       }
       console.log(net);
     }
