@@ -219,7 +219,7 @@ function updateCanvas(){
     }
     for(let i = 1; i < net.lines[j].linePath.length; i++){
       if(isConnected(i, j)){
-        if(net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance] != undefined){
+        if(net.lines[j].stations[net.lines[j].linePath[i].stationInstance] != undefined){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].line_style, j, net.lines[j].dasharray); 000000000000000000000 
         }else{
           console.log("huh weird !")
