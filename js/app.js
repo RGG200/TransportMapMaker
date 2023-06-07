@@ -338,6 +338,7 @@ deleter.addEventListener('click', function(){
       element.connected = false;
       if(element.stationInstance > id_selected_station_on_editor){
         element.stationInstance--;
+        break;
       }
     });
   });
