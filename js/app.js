@@ -210,14 +210,14 @@ function updateCanvas(){
   let yValues = [0, 0];
   for(let j = 0; j < net.lines.length; j++){
     for(const station of net.lines[j].stations){
-      net.lines[j].xArray[net.lines[j].stations.indexOf(station)] = station.xPos;
-      net.lines[j].yArray[net.lines[j].stations.indexOf(station)] = station.yPos;
-      xValues[0] = Math.max(...net.lines[j].xArray);
-      yValues[0] = Math.max(...net.lines[j].yArray);
-      xValues[1] = Math.min(...net.lines[j].xArray);
-      yValues[1] = Math.min(...net.lines[j].yArray);
+//      net.lines[j].xArray[net.lines[j].stations.indexOf(station)] = station.xPos;
+//      net.lines[j].yArray[net.lines[j].stations.indexOf(station)] = station.yPos;
+//      xValues[0] = Math.max(...net.lines[j].xArray);
+//      yValues[0] = Math.max(...net.lines[j].yArray);
+//      xValues[1] = Math.min(...net.lines[j].xArray);
+//      yValues[1] = Math.min(...net.lines[j].yArray);
     }
-    for(let i = 1; i < net.lines[j].linePath.length; i++){
+    for(let i = 1; i < net.lines[j].linePath.length-1; i++){
       if(isConnected(i, j)){
         drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].line_style, j, net.lines[j].dasharray);
         console.log(net.lines[j].linePath[i].stationInstance);
@@ -374,7 +374,6 @@ const onChange = e => {
         net.width = obj.width;
         net.filename = obj.filename;
         net.height = obj.height;
-        net = obj
         document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
         document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
         param_data.filename = net.filename;
