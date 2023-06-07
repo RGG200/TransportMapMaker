@@ -24,7 +24,6 @@ const style_types = document.getElementById("style-types");
 let id_selected_station_on_editor = 0;
 let id_selected_line_on_editor = 0;
 const dasharray = document.getElementsByClassName('dasharrayslider')[0]
-
 let ln_create = document.getElementById("ln_create");
 let buttonGroup = document.getElementsByClassName('station_instance');
 let ln_buttonGroup = document.getElementsByClassName('line_button');
@@ -336,9 +335,9 @@ deleter.addEventListener('click', function(){
     station.stationInstance = net.lines[id_selected_line_on_editor].stations.indexOf(station);
     net.lines[id_selected_line_on_editor].linePath.forEach(element => {
       element.connected = false;
+      let new_station_instance = element.stationInstance-1;
       if(element.stationInstance > id_selected_station_on_editor){
-        element.stationInstance--;
-        break;
+        element.stationInstance = new_station_instance
       }
     });
   });
