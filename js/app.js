@@ -332,6 +332,7 @@ deleter.addEventListener('click', function(){
   var new_linePath = net.lines[id_selected_line_on_editor].linePath.filter(station => station.stationInstance != id_selected_station_on_editor);
   net.lines[id_selected_line_on_editor].linePath = new_linePath;
   console.log(new_linePath);
+  console.log(net.lines[id_selected_line_on_editor]);
   net.lines[id_selected_line_on_editor].stations.splice(id_selected_station_on_editor, 1);
   net.lines[id_selected_line_on_editor].stationInstances = net.lines[id_selected_line_on_editor].stations.length;
   linePathId = net.lines[id_selected_line_on_editor].linePath.length;
