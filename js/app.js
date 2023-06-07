@@ -378,6 +378,9 @@ const onChange = e => {
         net.width = obj.width;
         net.filename = obj.filename;
         net.height = obj.height;
+        for(var line of net.lines){
+          line.stations[line.stations.length].stationInstance-=1
+        }
         document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
         document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
         param_data.filename = net.filename;
