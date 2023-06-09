@@ -329,6 +329,7 @@ param_save.addEventListener("click", function(){
 });
 
 deleter.addEventListener('click', function(){
+  console.log(net)
   var new_linePath = net.lines[id_selected_line_on_editor].linePath.filter(station => station.stationInstance != id_selected_station_on_editor);
   net.lines[id_selected_line_on_editor].linePath = new_linePath;
   console.log(new_linePath);
