@@ -341,10 +341,10 @@ deleter.addEventListener('click', function(){
     station.stationInstance = net.lines[id_selected_line_on_editor].stations.indexOf(station);
     net.lines[id_selected_line_on_editor].linePath.forEach(element => {
       element.connected = false;
-//      let new_station_instance = element.stationInstance-1;
-//      if(element.stationInstance > id_selected_station_on_editor){
- //       element.stationInstance = new_station_instance
-//      }
+      let new_station_instance = element.stationInstance-1;
+      if(element.stationInstance > id_selected_station_on_editor){
+        element.stationInstance = new_station_instance
+      }
     });
   });
   console.log(net.lines[id_selected_line_on_editor].linePath);
