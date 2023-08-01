@@ -131,14 +131,14 @@ canvas.addEventListener('click', function(){
   if(net.lines[instancesLine] == undefined){
     net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 9)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a' , 'rect', mosX, mosY, 0)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a' , 'rect', mosX, mosY, 0)], [] , []); // make a new line and station
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
-    net.lines[instancesLine].stationInstances++; // add station instances
+    net.lines[instancesLine].stationInstances= 1; // add station instances
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
     updateCanvas();
   }
   else if(net.lines[instancesLine].stationInstances == 0){
     net.lines[instancesLine].stations[0] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a' , 'rect', mosX, mosY, 0); // make a new line and station
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
-    net.lines[instancesLine].stationInstances++; // add station instances
+    net.lines[instancesLine].stationInstances= 2; // add station instances
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
   }
   switch(is_any_station_selected){
@@ -147,7 +147,7 @@ canvas.addEventListener('click', function(){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
-        net.lines[instancesLine].stationInstances++;
+        net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
         updateCanvas();
         station_is_being_created = true;
       }else{
