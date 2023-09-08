@@ -138,7 +138,7 @@ canvas.addEventListener('click', function(){
   else if(net.lines[instancesLine].stationInstances == 0){
     net.lines[instancesLine].stations[0] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a' , 'rect', mosX, mosY, 0); // make a new line and station
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
-    net.lines[instancesLine].stationInstances= 2; // add station instances
+    net.lines[instancesLine].stationInstances= 1; // add station instances
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
   }
   switch(is_any_station_selected){
