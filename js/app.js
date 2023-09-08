@@ -107,8 +107,10 @@ export function updateDisplay(event) {
   }
   function isUniqueInLine(lineID) {
     for(const element of net.lines[lineID].stations){
-      if(mosX == element.xPos && mosY == element.yPos){
+      if(element != undefined){
+        if(mosX == element.xPos && mosY == element.yPos){
         return false;
+        }
       }
     }
     return true;
