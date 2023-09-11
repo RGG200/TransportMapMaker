@@ -89,7 +89,7 @@ export function updateDisplay(event) {
           }, true);
           break;
         case false:
-          
+          is_any_station_selected = true
           break;
       }
     }
