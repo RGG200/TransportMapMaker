@@ -77,7 +77,9 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-//                is_any_station_selected = true;
+                if(isDrawableUniqueMos(stationd.id, instancesLine)){
+                  is_any_station_selected = true;
+                }
                 break;
               case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
@@ -118,6 +120,17 @@ export function updateDisplay(event) {
     for(const line of net.lines){
       for(const station of line.stations){
         if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos == net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  function isDrawableUniqueMos(stationID, lineID) {
+    for(const line of net.lines){
+      for(const station of line.stations){
+        if(station.xPos == mosX && station.yPos == mosY && net.lines.indexOf(line) != lineID){
           return false;
         }
       }
