@@ -77,9 +77,9 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-                is_any_station_selected = true;
+                is_any_station_selected = false;
                 break;
-              case true:
+              case false:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
                 this.setAttributeNS(null, 'stroke-width', '3');
                 station_is_being_created = false;
