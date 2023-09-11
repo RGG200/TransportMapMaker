@@ -83,7 +83,7 @@ export function updateDisplay(event) {
                 this.setAttributeNS(null, 'stroke', '#FF0000');
                 this.setAttributeNS(null, 'stroke-width', '3');
                 station_is_being_created = false;
-                is_any_station_selected = true;
+                is_any_station_selected = false;
                 break;
             }
           }, true);
