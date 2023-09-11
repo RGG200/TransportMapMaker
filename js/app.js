@@ -65,7 +65,7 @@ export function updateDisplay(event) {
         case false:
           stationd.addEventListener("click", function(){
             switch(station_is_being_created){
-              case true:
+              case false:
                   previous_instancesLine = instancesLine;
                   instancesLine = stationd.innerHTML;
                   selected_station = stationd.id;
@@ -79,10 +79,9 @@ export function updateDisplay(event) {
                   }
                 is_any_station_selected = true;
                 break;
-              case false:
+              case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
                 this.setAttributeNS(null, 'stroke-width', '3');
-                station_is_being_created = false;
                 is_any_station_selected = false;
                 break;
             }
