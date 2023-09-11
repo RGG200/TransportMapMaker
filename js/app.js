@@ -89,7 +89,7 @@ export function updateDisplay(event) {
           }, true);
           break;
         case false:
-          is_any_station_selected = true
+          //is_any_station_selected = true
           break;
       }
     }
@@ -168,10 +168,8 @@ canvas.addEventListener('click', function(){
       is_any_station_selected = false
       break;
     case false:
-      if(isDrawableUnique2(net.lines[instancesLine].stationInstances, instancesLine)){
-        getStations();
-      }
-      is_any_station_selected = true
+      getStations();
+      is_any_station_selected = false
       break;
   }
   if(net.lines[instancesLine].stationInstances > 0){
