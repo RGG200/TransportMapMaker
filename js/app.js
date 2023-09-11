@@ -69,8 +69,8 @@ export function updateDisplay(event) {
                   previous_instancesLine = instancesLine;
                   instancesLine = stationd.innerHTML;
                   selected_station = stationd.id;
-                  this.setAttributeNS(null, 'stroke', '#00FF00');
-                  this.setAttributeNS(null, 'stroke-width', '5');
+                  this.setAttributeNS(null, 'stroke', '#0FFF00');
+                  this.setAttributeNS(null, 'stroke-width', '3');
                   if(instancesLine != previous_instancesLine){
                     linePathId = net.lines[instancesLine].linePath.length;
                   }if(net.lines[instancesLine].linePath[linePathId-1] != net.lines[instancesLine].stations[selected_station]){
@@ -83,7 +83,7 @@ export function updateDisplay(event) {
                 this.setAttributeNS(null, 'stroke', '#FF0000');
                 this.setAttributeNS(null, 'stroke-width', '3');
                 station_is_being_created = false;
-                is_any_station_selected = false;
+                is_any_station_selected = true;
                 break;
             }
           }, true);
