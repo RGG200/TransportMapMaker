@@ -171,6 +171,7 @@ canvas.addEventListener('click', function(){
       if(isDrawableUnique2(net.lines[instancesLine].stationInstances, instancesLine)){
         getStations();
       }
+      is_any_station_selected = true
       break;
   }
   if(net.lines[instancesLine].stationInstances > 0){
