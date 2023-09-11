@@ -77,7 +77,7 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-                is_any_station_selected = true;
+//                is_any_station_selected = true;
                 break;
               case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
@@ -164,7 +164,6 @@ canvas.addEventListener('click', function(){
     drawStationsList(net, instancesLine);
   }
   drawLinesList(net, instancesLine);
-  is_any_station_selected = true;
 }, true);
 
 
