@@ -5,6 +5,7 @@ export function Station(fName, sName, type, line_style, style, xPos, yPos, stati
     this.type = type;
     this.xPos = xPos;
     this.yPos = yPos;
+    this.height = 0;
     this.line_style = line_style;
     this.selected = false;
     this.connected = false;
@@ -173,7 +174,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     inter.setAttributeNS( null,'x',posX-10);
     inter.setAttributeNS( null,'y',posY-10-10*(exchangeArray.length-1));
     inter.setAttributeNS( null,'width', '20');
-    inter.setAttributeNS( null,'height', 20*exchangeArray.length);       
+    inter.setAttributeNS( null,'height', 20*exchangeArray.length);
+    exchangeArray[0].height = 20*exchangeArray.length;
     inter.setAttributeNS( null,'rx', '10');        
     inter.setAttributeNS( null,'ry','10');
     inter.setAttributeNS( null,'fill','#FFFFFF');        
