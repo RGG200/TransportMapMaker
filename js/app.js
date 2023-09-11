@@ -151,7 +151,11 @@ canvas.addEventListener('click', function(){
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
         net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
         updateCanvas();
-        station_is_being_created = true;
+        if(isDrawableUnique(net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances-1], instancesLine)){
+          station_is_being_created = true;
+        }else{
+          station_is_being_created = false;
+        }
       }else{
         updateCanvas();
       }
