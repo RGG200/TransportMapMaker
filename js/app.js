@@ -155,10 +155,11 @@ canvas.addEventListener('click', function(){
       }else{
         updateCanvas();
       }
-      is_any_station_selected = false;
       break;
     case true:
-      getStations();
+      if(isDrawableUnique(net.lines[instancesLine].stationInstances, instancesLine)){
+        getStations();
+      }
       break;
   }
   if(net.lines[instancesLine].stationInstances > 0){
