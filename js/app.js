@@ -62,34 +62,34 @@ export function updateDisplay(event) {
   function getStations(){
     for(let stationd of lineStations){
       switch(is_any_station_selected){
-        case true:
+        case false:
           stationd.addEventListener("click", function(){
             switch(station_is_being_created){
-              case true:
+              case false:
                   previous_instancesLine = instancesLine;
                   instancesLine = stationd.innerHTML;
                   selected_station = stationd.id;
-                  this.setAttributeNS(null, 'stroke', '#0FFF00');
-                  this.setAttributeNS(null, 'stroke-width', '3');
+                  this.setAttributeNS(null, 'stroke', '#00FF00');
+                  this.setAttributeNS(null, 'stroke-width', '5');
                   if(instancesLine != previous_instancesLine){
                     linePathId = net.lines[instancesLine].linePath.length;
                   }if(net.lines[instancesLine].linePath[linePathId-1] != net.lines[instancesLine].stations[selected_station]){
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-                is_any_station_selected = false;
+                is_any_station_selected = true;
                 break;
-              case false:
+              case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
                 this.setAttributeNS(null, 'stroke-width', '3');
                 station_is_being_created = false;
-                is_any_station_selected = true;
+                is_any_station_selected = false;
                 break;
             }
           }, true);
           break;
-        case false:
-          //is_any_station_selected = true
+        case true:
+          is_any_station_selected = false;
           break;
       }
     }
@@ -119,16 +119,6 @@ export function updateDisplay(event) {
     for(const line of net.lines){
       for(const station of line.stations){
         if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos == net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
-          return false;
-        }
-      }
-    }
-    return true;
-  }
-  function isDrawableUnique2(stationID, lineID) {
-    for(const line of net.lines){
-      for(const station of line.stations){
-        if(station.xPos == mosX && mosY == station.yPos && net.lines.indexOf(line) != lineID){
           return false;
         }
       }
@@ -165,11 +155,10 @@ canvas.addEventListener('click', function(){
       }else{
         updateCanvas();
       }
-      is_any_station_selected = false
+      is_any_station_selected = false;
       break;
     case false:
       getStations();
-      is_any_station_selected = false
       break;
   }
   if(net.lines[instancesLine].stationInstances > 0){
