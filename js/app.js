@@ -165,6 +165,7 @@ canvas.addEventListener('click', function(){
     drawStationsList(net, instancesLine);
   }
   drawLinesList(net, instancesLine);
+  is_any_station_selected = false;
 }, true);
 
 
