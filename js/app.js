@@ -117,7 +117,7 @@ export function updateDisplay(event) {
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
       for(const station of line.stations){
-        if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos >= net.lines[lineID].stations[stationID].yPos-net.lines[lineID].stations[stationID].height && station.yPos <= net.lines[lineID].stations[stationID].yPos+net.lines[lineID].stations[stationID].height && net.lines.indexOf(line) != lineID){
+        if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos-station.height <= net.lines[lineID].stations[stationID].yPos-station.height && station.yPos+height >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
           return false;
         }
       }
