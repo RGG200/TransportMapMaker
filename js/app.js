@@ -62,7 +62,7 @@ export function updateDisplay(event) {
   function getStations(){
     for(let stationd of lineStations){
       switch(is_any_station_selected){
-        case false:
+        case true:
           stationd.addEventListener("click", function(){
             switch(station_is_being_created){
               case true:
@@ -83,13 +83,13 @@ export function updateDisplay(event) {
                 this.setAttributeNS(null, 'stroke', '#FF0000');
                 this.setAttributeNS(null, 'stroke-width', '3');
                 station_is_being_created = false;
-                is_any_station_selected = false;
+                is_any_station_selected = true;
                 break;
             }
           }, true);
           break;
         case false:
-          is_any_station_selected = true;
+          
           break;
       }
     }
