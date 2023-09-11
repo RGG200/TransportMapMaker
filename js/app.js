@@ -77,7 +77,7 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-                if(isDrawableUniqueMos(stationd.id, instancesLine)){
+                if(!isDrawableUniqueMos(stationd.id, instancesLine)){
                   is_any_station_selected = true;
                 }
                 break;
@@ -382,7 +382,7 @@ ln_delete.addEventListener("click", function(){
 }, true);
 
 export_rtm.addEventListener("click", function(){
-  exportRTM(net);
+  exportRTM(net, "ooo");
 });
 const onChange = e => { 
     var file = e.target.files[0];
