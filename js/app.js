@@ -65,7 +65,7 @@ export function updateDisplay(event) {
         case false:
           stationd.addEventListener("click", function(){
             switch(station_is_being_created){
-              case false:
+              case true:
                   previous_instancesLine = instancesLine;
                   instancesLine = stationd.innerHTML;
                   selected_station = stationd.id;
@@ -88,7 +88,7 @@ export function updateDisplay(event) {
             }
           }, true);
           break;
-        case true:
+        case false:
           is_any_station_selected = false;
           break;
       }
@@ -125,6 +125,16 @@ export function updateDisplay(event) {
     }
     return true;
   }
+  function isDrawableUnique2(stationID, lineID) {
+    for(const line of net.lines){
+      for(const station of line.stations){
+        if(station.xPos == mosX && mosY == station.yPos && net.lines.indexOf(line) != lineID){
+          return false;
+        }
+      }
+    }
+    return true;
+  }
 
 const canvas = document.getElementById('svg-canvas');
 canvas.addEventListener('mouseenter', updateDisplay, false);
@@ -145,7 +155,7 @@ canvas.addEventListener('click', function(){
   }
   switch(is_any_station_selected){
     case false:
-      if(isUniqueInLine(instancesLine)){
+      if(isUniqueInLine(instancesLine) && isDrawableUnique2(net.lines[instancesLine].stationInstances, instancesLine)){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
@@ -157,9 +167,7 @@ canvas.addEventListener('click', function(){
       }
       break;
     case true:
-      if(isDrawableUnique(net.lines[instancesLine].stationInstances, instancesLine)){
-        getStations();
-      }
+      getStations();
       break;
   }
   if(net.lines[instancesLine].stationInstances > 0){
