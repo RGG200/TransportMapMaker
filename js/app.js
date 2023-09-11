@@ -154,7 +154,7 @@ canvas.addEventListener('click', function(){
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
   }
   switch(is_any_station_selected){
-    case false:
+    case true:
       if(isUniqueInLine(instancesLine) && isDrawableUnique2(net.lines[instancesLine].stationInstances, instancesLine)){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
@@ -166,7 +166,7 @@ canvas.addEventListener('click', function(){
         updateCanvas();
       }
       break;
-    case true:
+    case false:
       getStations();
       break;
   }
