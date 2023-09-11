@@ -82,9 +82,7 @@ export function updateDisplay(event) {
               case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
                 this.setAttributeNS(null, 'stroke-width', '3');
-                if(isDrawableUniqueMos(stationd.id, instancesLine)){
-                  is_any_station_selected = false;
-                }
+                is_any_station_selected = false;
                 break;
             }
           }, true);
