@@ -259,6 +259,7 @@ function updateCanvas(){
         exArray[exID].line_parent = net.lines[j];
         line_instances[exID] = j;
         exID++;
+        is_any_station_selected = false
       }else if(element.connected == false){
         element.type = "destination";
         drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
