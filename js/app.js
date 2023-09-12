@@ -382,7 +382,7 @@ ln_delete.addEventListener("click", function(){
 
 export_rtm.addEventListener("click", function(){
   exportRTM(net, "ooo");
-}, false);
+});
 const onChange = e => { 
     var file = e.target.files[0];
     var reader = new FileReader();
@@ -413,7 +413,7 @@ const onChange = e => {
         drawLinesList(net, instancesLine);
         document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
         document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
-        document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
+        document.getElementById("export-rtm").setAttributeNS(null, "ondblclick", `exportRTM(${net}, "ooo");`);
         e.target.files[0] = null
       }
       console.log(net);
