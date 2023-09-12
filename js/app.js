@@ -382,7 +382,7 @@ ln_delete.addEventListener("click", function(){
 
 export_rtm.addEventListener("click", function(){
   exportRTM(net, "ooo");
-}, true);
+}, false);
 const onChange = e => { 
     var file = e.target.files[0];
     var reader = new FileReader();
