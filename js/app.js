@@ -319,7 +319,7 @@ document.getElementById("param-btn").addEventListener("click", function(){
   document.getElementById("height").value = param_data.height;
   document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG("${param_data.filename}", ${net.width}, ${net.height})`);
   document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height})`);
-  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
+  document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
 });
 document.getElementById("svg-exbtn").addEventListener("click", function(){
   this.setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
@@ -382,7 +382,6 @@ ln_delete.addEventListener("click", function(){
 
 export_rtm.addEventListener("click", function(){
   exportRTM(net, "ooo");
-    this.setAttributeNS(null, "onclick", 
 });
 const onChange = e => { 
     var file = e.target.files[0];
@@ -414,7 +413,7 @@ const onChange = e => {
         drawLinesList(net, instancesLine);
         document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
         document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
-        document.getElementById("export-rtm").setAttributeNS(null, "ondblclick", `exportRTM(${net}, "ooo");`);
+        document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
         e.target.files[0] = null
       }
       console.log(net);
