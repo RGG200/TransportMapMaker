@@ -77,7 +77,9 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-                is_any_station_selected = true;
+                if(isDrawableUniqueMos(net.lines[instancesLine].stationInstances, instancesLine)){
+                  is_any_station_selected = true;
+                }
                 break;
               case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
@@ -155,7 +157,7 @@ canvas.addEventListener('click', function(){
   }
   switch(is_any_station_selected){
     case true:
-      if(isUniqueInLine(instancesLine) && isDrawableUniqueMos(net.lines[instancesLine].stationInstances, instancesLine){
+      if(isUniqueInLine(instancesLine)){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
