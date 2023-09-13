@@ -154,7 +154,7 @@ canvas.addEventListener('click', function(){
     net.lines[instancesLine].linePath[0] = net.lines[instancesLine].stations[0];
   }
   switch(is_any_station_selected){
-    case true:
+    case false:
       if(isUniqueInLine(instancesLine)){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
@@ -164,12 +164,11 @@ canvas.addEventListener('click', function(){
         station_is_being_created = true
       }else{
         updateCanvas();
-        is_any_station_selected = false;
       }
-      station_is_being_created = false;
-      is_any_station_selected = false;
+      getStations();
+      station_is_being_created = false
       break;
-    case false:
+    case true:
       getStations();
       break;
   }
