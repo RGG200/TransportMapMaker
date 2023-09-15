@@ -1,6 +1,6 @@
  export function exportRTM(network, filename){
     if(network != null){
-        var file = new Blob([JSON.stringify(network, null)], {type: 'application/rtm');
+        var file = new Blob([JSON.stringify(network, null)], {type: 'application/rtm'});
         const href = URL.createObjectURL(file);
         const a = Object.assign(document.createElement('a'),
         {
