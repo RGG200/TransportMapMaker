@@ -257,6 +257,7 @@ function updateCanvas(){
       if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){ 
         element.type = "exchange";
         exArray[exID] = element;
+        console.log(exArray);
         coArray[exID] = net.lines[j].color;
         exArray[exID].line_parent = net.lines[j];
         line_instances[exID] = j;
