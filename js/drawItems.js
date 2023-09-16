@@ -175,7 +175,6 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     inter.setAttributeNS( null,'y',posY-10-10*(exchangeArray.length-1));
     inter.setAttributeNS( null,'width', '20');
     inter.setAttributeNS( null,'height', 20*exchangeArray.length);
-    exchangeArray[0].height = 20*exchangeArray.length;
     inter.setAttributeNS( null,'rx', '10');        
     inter.setAttributeNS( null,'ry','10');
     inter.setAttributeNS( null,'fill','#FFFFFF');        
@@ -190,7 +189,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     first_name.setAttributeNS(null, 'id', exchangeArray[0].stationInstance);
     first_name.setAttributeNS(null, 'class', 'stationNames');
     first_name.setAttributeNS(null, 'font-size', '16');
-            
+    exchangeArray[0].height = 20*exchangeArray.length;
     first_name.setAttributeNS(null, 'font-weight', '700');
     document.getElementById( 'svg-canvas' ).appendChild( first_name );
     second_name.innerHTML = exchangeArray[0].sName;
@@ -201,6 +200,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     second_name.setAttributeNS(null, 'font-weight', '700');
     document.getElementById( 'svg-canvas' ).appendChild( second_name );
     for(const exPoint of exchangeArray){
+        exchangeArray[exchangeArray.indexOf(exPoint)].height = 20*exchangeArray.length;
         var exchangeDrawable = document.createElementNS( svgns, 'rect');
         exchangeDrawable.setAttributeNS( null,'id', exchangeArray[exchangeArray.indexOf(exPoint)].stationInstance);
         exchangeDrawable.setAttributeNS( null,'class','stations');
