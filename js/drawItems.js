@@ -1,11 +1,11 @@
-export function Station(fName, sName, type, line_style, style, xPos, yPos, stationInstance){
+export function Station(fName, sName, type, line_style, style, xPos, yPos, stationInstance, height){
     this.fName = fName;
     this.sName = sName;
     this.style = style;
     this.type = type;
     this.xPos = xPos;
     this.yPos = yPos;
-    this.height = 0;
+    this.height = height;
     this.line_style = line_style;
     this.selected = false;
     this.connected = false;
