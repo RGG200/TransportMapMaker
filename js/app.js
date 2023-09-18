@@ -155,7 +155,7 @@ canvas.addEventListener('click', function(){
   }
   switch(is_any_station_selected){
     case true:
-      if(isUniqueInLine(instancesLine)){
+      if(isDrawableUniqueMos(net.lines[instancesLine].stationInstances, instancesLine)){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances, 0);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
