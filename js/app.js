@@ -77,8 +77,9 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
-                  
-                  is_any_station_selected = true;
+                  if(isDrawableUniqueMos(instancesLine)){
+                    is_any_station_selected = true;
+                  }
                 break;
               case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
