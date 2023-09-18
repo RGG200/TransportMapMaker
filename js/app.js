@@ -132,7 +132,7 @@ export function updateDisplay(event) {
   function isDrawableUniqueMos(stationID, lineID) {
     for(const line of net.lines){
       for(const station of line.stations){
-        if(station.xPos == mosX && station.yPos == mosY && net.lines.indexOf(line) != lineID){
+        if(station.xPos-10 <= mosX && station.yPos-station.height/2 <= mosY && station.xPos+10 >= mosX && station.yPos+station.height/2 >= mosY && net.lines.indexOf(line) != lineID){
           return false;
         }
       }
