@@ -82,9 +82,7 @@ export function updateDisplay(event) {
               case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
                 this.setAttributeNS(null, 'stroke-width', '3');
-                if(isDrawableUniqueMos(instancesLine)){
-                  is_any_station_selected = false;
-                }
+                is_any_station_selected = false;
                 break;
             }
           }, true);
@@ -173,7 +171,9 @@ canvas.addEventListener('click', function(){
       station_is_being_created = false
       break;
     case false:
-      getStations();
+      if(isDrawableUniqueMos(instancesLine)){
+        getStations();
+      }
       break;
   }
   if(net.lines[instancesLine].stationInstances > 0){
