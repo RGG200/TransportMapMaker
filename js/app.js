@@ -69,6 +69,8 @@ export function updateDisplay(event) {
                   previous_instancesLine = instancesLine;
                   instancesLine = stationd.innerHTML;
                   selected_station = stationd.id;
+                  this.setAttributeNS(null, 'stroke', '#FF0000');
+                  this.setAttributeNS(null, 'stroke-width', '3');
                   if(instancesLine != previous_instancesLine){
                     linePathId = net.lines[instancesLine].linePath.length;
                   }if(net.lines[instancesLine].linePath[linePathId-1] != net.lines[instancesLine].stations[selected_station]){
@@ -105,7 +107,7 @@ export function updateDisplay(event) {
   function isUniqueInLine(lineID) {
     for(const element of net.lines[lineID].stations){
       if(element != undefined){
-        if(mosX == element.xPos && mosY == element.yPos){
+        if(mosX >= element.xPos-10 && mosY == element.yPos+element.height/2 && mosX <= element.xPos+10 && mosY <= element.yPos-element.height/2){
         return false;
         }
       }
