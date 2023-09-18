@@ -180,6 +180,7 @@ canvas.addEventListener('click', function(){
     drawStationsList(net, instancesLine);
   }
   drawLinesList(net, instancesLine);
+  getStations();
 }, true);
 
 
