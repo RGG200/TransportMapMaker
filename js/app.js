@@ -66,7 +66,6 @@ export function updateDisplay(event) {
           stationd.addEventListener("click", function(){
             switch(station_is_being_created){
               case false:
-                if(isDrawableUniqueMos(instancesLine)){
                   previous_instancesLine = instancesLine;
                   instancesLine = stationd.innerHTML;
                   selected_station = stationd.id;
@@ -79,7 +78,6 @@ export function updateDisplay(event) {
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
                   is_any_station_selected = true;
-                }
                 break;
               case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
@@ -159,7 +157,7 @@ canvas.addEventListener('click', function(){
   }
   switch(is_any_station_selected){
     case true:
-      if(isUniqueInLine(instancesLine)){
+      if(isUniqueInLine(instancesLine) && isDrawableUniqueMos(instancesLine)){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances, 0);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
