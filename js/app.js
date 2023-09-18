@@ -52,7 +52,7 @@ export function updateDisplay(event) {
   let previous_instancesLine = 1;
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy', 'gare du nord', 'sartrouville', 'poissy']; // default first station names
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture']; // défault complementary names
-  let colors = ['#5555FF', '#FF0000', "#0000FF", '#9900CC', '#FFAA00', '#0F0F00', '#FFFF00', '#00FF00', '#CCCC00', '#000000']; // Line colors
+  let colors = ['#5555FF', '#FF0000', "#0000FF", '#9900CC', '#FFAA00', '#0F0F00', '#AAAA00', '#00FF00', '#CCCC00', '#000000']; // Line colors
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -77,6 +77,7 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
+                  
                   is_any_station_selected = true;
                 break;
               case true:
@@ -127,7 +128,7 @@ export function updateDisplay(event) {
     return true;
   }
 
-  function isDrawableUniqueMos(stationID, lineID) {
+  function isDrawableUniqueMos(lineID) {
     for(const line of net.lines){
       for(const station of line.stations){
         if(station.xPos-10 <= mosX && station.yPos-station.height/2 <= mosY && station.xPos+10 >= mosX && station.yPos+station.height/2 >= mosY && net.lines.indexOf(line) != lineID){
@@ -157,7 +158,7 @@ canvas.addEventListener('click', function(){
   }
   switch(is_any_station_selected){
     case true:
-      if(isDrawableUniqueMos(net.lines[instancesLine].stationInstances, instancesLine)){
+      if(isUniqueInLine(instancesLine)){
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances, 0);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
