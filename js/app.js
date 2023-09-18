@@ -69,8 +69,6 @@ export function updateDisplay(event) {
                   previous_instancesLine = instancesLine;
                   instancesLine = stationd.innerHTML;
                   selected_station = stationd.id;
-                  this.setAttributeNS(null, 'stroke', '#00FF00');
-                  this.setAttributeNS(null, 'stroke-width', '5');
                   if(instancesLine != previous_instancesLine){
                     linePathId = net.lines[instancesLine].linePath.length;
                   }if(net.lines[instancesLine].linePath[linePathId-1] != net.lines[instancesLine].stations[selected_station]){
@@ -166,7 +164,6 @@ canvas.addEventListener('click', function(){
         net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
         updateCanvas();
         station_is_being_created = true
-        is_any_station_selected = false
       }else{
         updateCanvas();
       }
