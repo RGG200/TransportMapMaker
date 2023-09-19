@@ -66,17 +66,17 @@ export function updateDisplay(event) {
           stationd.addEventListener("click", function(){
             switch(station_is_being_created){
               case false:
-                  previous_instancesLine = instancesLine;
-                  instancesLine = stationd.innerHTML;
-                  selected_station = stationd.id;
-                  this.setAttributeNS(null, 'stroke', '#FF0000');
-                  this.setAttributeNS(null, 'stroke-width', '3');
-                  if(instancesLine != previous_instancesLine){
-                    linePathId = net.lines[instancesLine].linePath.length;
-                  }if(net.lines[instancesLine].linePath[linePathId-1] != net.lines[instancesLine].stations[selected_station]){
-                    net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
-                    linePathId = net.lines[instancesLine].linePath.length;
-                  }
+                previous_instancesLine = instancesLine;
+                instancesLine = stationd.innerHTML;
+                selected_station = stationd.id;
+                this.setAttributeNS(null, 'stroke', '#FF0000');
+                this.setAttributeNS(null, 'stroke-width', '3');
+                if(instancesLine != previous_instancesLine){
+                  linePathId = net.lines[instancesLine].linePath.length;
+                }if(net.lines[instancesLine].linePath[linePathId-1] != net.lines[instancesLine].stations[selected_station]){
+                  net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
+                  linePathId = net.lines[instancesLine].linePath.length;
+                }
                 if(isDrawableUniqueMos(instancesLine)){
                   is_any_station_selected = true;
                 }
@@ -173,14 +173,14 @@ canvas.addEventListener('click', function(){
       station_is_being_created = false
       break;
     case false:
-      getStations():
+      getStations();
       break;
   }
   if(net.lines[instancesLine].stationInstances > 0){
     drawStationsList(net, instancesLine);
   }
   drawLinesList(net, instancesLine);
-}, true);
+});
 
 
 
