@@ -171,7 +171,7 @@ canvas.addEventListener('click', function(){
       station_is_being_created = false
       break;
     case false:
-      if( isDrawableUniqueMos(instancesLine)){
+      if(isDrawableUniqueMos(instancesLine)){
         getStations();
       }
       break;
@@ -180,7 +180,7 @@ canvas.addEventListener('click', function(){
     drawStationsList(net, instancesLine);
   }
   drawLinesList(net, instancesLine);
-}, true);
+}, false);
 
 
 
