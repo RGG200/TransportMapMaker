@@ -77,7 +77,9 @@ export function updateDisplay(event) {
                     net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                     linePathId = net.lines[instancesLine].linePath.length;
                   }
+                if(isDrawableUniqueMos(instancesLine)){
                   is_any_station_selected = true;
+                }
                 break;
               case true:
                 this.setAttributeNS(null, 'stroke', '#FF0000');
@@ -171,9 +173,7 @@ canvas.addEventListener('click', function(){
       station_is_being_created = false
       break;
     case false:
-      if(isDrawableUniqueMos(instancesLine)){
-        getStations();
-      }
+      getStations():
       break;
   }
   if(net.lines[instancesLine].stationInstances > 0){
