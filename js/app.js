@@ -77,7 +77,7 @@ export function updateDisplay(event) {
                   net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[selected_station];
                   linePathId = net.lines[instancesLine].linePath.length;
                 }
-                if(isDrawableUniqueMos(instancesLine)){
+                if(isDrawableUniqueMos(instancesLine) || isUniqueInLine(instancesLine)){
                   is_any_station_selected = true;
                 }
                 break;
