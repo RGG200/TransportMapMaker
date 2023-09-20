@@ -219,11 +219,10 @@ export function updateDisplay(event) {
         return false;
 
         }
-
+        alert("yes")
       }
 
     }
-    alert("yes")
     return true;
 
   }
@@ -243,11 +242,11 @@ export function updateDisplay(event) {
           return false;
 
         }
+        alert("yes")
 
       }
 
     }
-    alert("yes")
     return true;
 
   }
