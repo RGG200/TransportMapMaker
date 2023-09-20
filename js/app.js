@@ -52,7 +52,7 @@ export function updateDisplay(event) {
   let previous_instancesLine = 1;
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy', 'gare du nord', 'sartrouville', 'poissy']; // default first station names
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture']; // défault complementary names
-  let colors = ['#CCCCFF', '#FF0000', "#0000FF", '#9900CC', '#FFAA00', '#0F0F00', '#AAAA00', '#00FF00', '#CCCC00', '#000000', "B47F6A", "AB4A3A"]; // Line colors
+  let colors = ['#CCCCFF', '#FF0000', "#0000FF", '#9900CC', '#FFAA00', '#0F0F00', '#AAAA00', '#00FF00', '#CCCC00', '#000000', "#B47F6A", "#AB4A3A"]; // Line colors
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
