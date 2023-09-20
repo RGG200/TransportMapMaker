@@ -52,7 +52,7 @@ export function updateDisplay(event) {
   let previous_instancesLine = 1;
   let default_fNames = ['fontenay', 'VINCENNES', 'nation', 'auber', 'gare de lyon', 'cergy', 'gare du nord', 'sartrouville', 'poissy']; // default first station names
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture']; // défault complementary names
-  let colors = ['#5555FF', '#FF0000', "#0000FF", '#9900CC', '#FFAA00', '#0F0F00', '#AAAA00', '#00FF00', '#CCCC00', '#000000']; // Line colors
+  let colors = ['#CCCCFF', '#FF9900', "#0000FF", '#9900CC', '#FFAA00', '#0F0F00', '#AAAA00', '#00FF00', '#CCCC00', '#000000']; // Line colors
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
@@ -116,20 +116,9 @@ export function updateDisplay(event) {
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
       for(const station of line.stations){
-        if(station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 <= net.lines[lineID].stations[stationID].yPos && station.xPos+10 >= net.lines[lineID].stations[stationID].xPos && station.yPos+station.height/2 >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
-          //net.lines[lineID].stations[stationID].xPos = station.xPos;
-          //net.lines[lineID].stations[stationID].yPos = station.yPos;
-          return false;
-        }
-      }
-    }
-    return true;
-  }
-
-  function isDrawableUniqueMos(lineID) {
-    for(const line of net.lines){
-      for(const station of line.stations){
-        if(station.xPos-10 <= mosX && station.yPos-station.height/2 <= mosY && station.xPos+10 >= mosX && station.yPos+station.height/2 >= mosY && net.lines.indexOf(line) != lineID){
+        if(station.xPos-10 >= net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 >= net.lines[lineID].stations[stationID].yPos && station.xPos+10 <= net.lines[lineID].stations[stationID].xPos && station.yPos+station.height/2 <= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
+          net.lines[lineID].stations[stationID].xPos = station.xPos;
+          net.lines[lineID].stations[stationID].yPos = station.yPos;
           return false;
         }
       }
