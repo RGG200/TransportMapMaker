@@ -162,7 +162,9 @@ canvas.addEventListener('click', function(){
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
         net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
         updateCanvas();
-        station_is_being_created = true
+        station_is_being_created = true;
+        is_any_station_selected = false;
+        alert("station has been created !");
       }else{
         updateCanvas();
       }
@@ -234,10 +236,7 @@ function updateCanvas(){
       if(isConnected(i, j)){
         if(net.lines[j].stations[net.lines[j].linePath[i].stationInstance] != undefined){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].line_style, j, net.lines[j].dasharray);
-        }else{
-          console.log("huh weird !")
         }
-        console.log(net.lines[j].linePath[i].stationInstance);
         if(net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].connected == false && i > 1 || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[0] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[0] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[1] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[1]){
           net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].connected = true;
         }
@@ -250,7 +249,6 @@ function updateCanvas(){
   let exID = 0;
   for(let j = 0; j < net.lines.length; j++){
     for(const element of net.lines[j].stations){
-      console.log(xValues + ' ' + yValues);
       if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){ 
         element.type = "exchange";
         exArray[exID] = element;
