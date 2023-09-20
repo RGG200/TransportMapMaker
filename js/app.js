@@ -304,9 +304,9 @@ canvas.addEventListener('click', function(){
 
         updateCanvas();
 
-        station_is_being_created = true;
+        station_is_being_created = true
 
-        is_any_station_selected = false;
+        is_any_station_selected = false
 
       }else{
 
