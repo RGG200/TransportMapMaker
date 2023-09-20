@@ -289,53 +289,29 @@ canvas.addEventListener('click', function(){
   }
 
   switch(is_any_station_selected){
-
     case true:
-
       if(isUniqueInLine(instancesLine)){
-
         net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances, 0);
-
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
-
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
-
         net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
-
         updateCanvas();
-
-        station_is_being_created = true
-
-        is_any_station_selected = false
-
-      }else{
-
-        updateCanvas();
-
+        station_is_being_created = true;
         is_any_station_selected = false;
-
+      }else{
+        updateCanvas();
+        is_any_station_selected = false;
       }
-
       break;
-
     case false:
-
       getStations();
-
       station_is_being_created = false
-
       break;
-
   }
-
   if(net.lines[instancesLine].stationInstances > 0){
-
     drawStationsList(net, instancesLine);
-
   }
-
   drawLinesList(net, instancesLine);
-
 }, true);
 
 
@@ -345,321 +321,161 @@ canvas.addEventListener('click', function(){
 
 
 st_list.addEventListener("mouseenter", function(){
-
   for (let button of buttonGroup) {
-
     button.addEventListener("click", buttonPressed, true);  
-
   }
-
 });
 
 ln_list.addEventListener("mouseenter", function(){
-
   for (let button of ln_buttonGroup) {
-
     button.addEventListener("click", ln_buttonPressed, true);  
-
   }
-
 });
 
-
-
 const ln_buttonPressed = e => {
-
   id_selected_line_on_editor = e.target.id; // Get ID of Clicked Element
-
   ln_data.name = net.lines[id_selected_line_on_editor].name;
-
   ln_data.color = net.lines[id_selected_line_on_editor].color;
-
   ln_data.thicness = net.lines[id_selected_line_on_editor].lineThicness;
-
   document.getElementById('name').value = ln_data.name;
-
   document.getElementById('color').value = ln_data.color;
-
   document.getElementById('thicness').value = ln_data.thicness;
-
-  
-
 }
 
 const buttonPressed = e => {
-
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
-
   id_selected_line_on_editor = e.target.parentNode.id;
-
   data.fName = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].fName;
-
   data.sName = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].sName;
-
   data.coords = [net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].xPos, net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].yPos];
-
   data.cx_type = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].line_style;
-
   data.style_type = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].style;
-
   document.getElementById('first').value = data.fName;
-
   document.getElementById('second').value = data.sName;
-
   document.getElementById('xPos').value = data.coords[0];
-
-  document.getElementById('yPos').value = data.coords[1];
-
-  
-
+  document.getElementById('yPos').value = data.coords[1];  
 }
 
 const save = document.getElementById('save');
-
 function updateCanvas(){
-
   const canvas = document.getElementById('svg-canvas');
-
   canvas.innerHTML = "";
-
   let xValues = [0, 0];
-
   let yValues = [0, 0];
-
   for(let j = 0; j < net.lines.length; j++){
-
-    for(const station of net.lines[j].stations){
-
-//      net.lines[j].xArray[net.lines[j].stations.indexOf(station)] = station.xPos;
-
-//      net.lines[j].yArray[net.lines[j].stations.indexOf(station)] = station.yPos;
-
-//      xValues[0] = Math.max(...net.lines[j].xArray);
-
-//      yValues[0] = Math.max(...net.lines[j].yArray);
-
-//      xValues[1] = Math.min(...net.lines[j].xArray);
-
-//      yValues[1] = Math.min(...net.lines[j].yArray);
-
-    }
-
     for(let i = 1; i < net.lines[j].linePath.length; i++){
-
       if(isConnected(i, j)){
-
         if(net.lines[j].stations[net.lines[j].linePath[i].stationInstance] != undefined){
-
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].line_style, j, net.lines[j].dasharray);
-
         }
 
         if(net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].connected == false && i > 1 || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[0] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[0] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[1] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[1]){
-
           net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].connected = true;
-
         }
-
       }
-
     }
-
   } 
-
   let exArray = [];
-
   let coArray = [];
-
   let line_instances = [];
-
   let exID = 0;
-
   for(let j = 0; j < net.lines.length; j++){
-
     for(const element of net.lines[j].stations){
-
       if(!isDrawableUnique(net.lines[j].stations.indexOf(element), j)){ 
-
         element.type = "exchange";
-
         exArray[exID] = element;
-
         coArray[exID] = net.lines[j].color;
-
         exArray[exID].line_parent = net.lines[j];
-
         line_instances[exID] = j;
-
         exID++;
-
         is_any_station_selected = false
-
       }else if(element.connected == false){
-
         element.type = "destination";
-
         drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
-
       }else{
-
         element.type = "common";
-
         drawStation(element.fName, element.sName, element.style, element.type, element.xPos, element.yPos, net.lines[j].color, net.lines[j].stations.indexOf(element), j);
-
       }
-
     }
-
   }
-
   for(let k = 0; k < exArray.length; k++ ){
-
     let exArray_station = exArray.filter(exStation => exStation.xPos == exArray[k].xPos && exStation.yPos == exArray[k].yPos);
-
     let coArray_station = [];
-
     for(let l = 0; l < exArray_station.length; l++){
-
       coArray_station = coArray.filter(color => color == exArray_station[l].line_parent.color);  
-
     }
-
     drawExchange(exArray_station, coArray_station);
-
   }
-
 }
 
-
-
 save.addEventListener('click', function(){
-
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
-
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
-
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
-
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].yPos = document.getElementById('yPos').value;
-
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].style = style_types.value;
-
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].line_style = connexion_types.value;
-
   station_is_being_created = false
-
   drawStationsList(net, instancesLine);
-
   updateCanvas();
-
 });
 
 
 
 ln_create.addEventListener("click", function(){
-
   if(net.lines[instancesLine].stationInstances > 0 || net.lines[instancesLine] == undefined){
-
     if(net.lines[0] != null){
-
       instancesLine = net.lines.length;
-
       net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 11)], [], [], [], []);
-
       drawLinesList(net, instancesLine);
-
       linePathId = 1;
-
     }
-
   }
-
 });
 
-
-
 ln_save.addEventListener('click', function(){
-
   net.lines[id_selected_line_on_editor].name = document.getElementById('name').value;
-
   net.lines[id_selected_line_on_editor].color = document.getElementById('color').value;
-
   net.lines[id_selected_line_on_editor].lineThicness = document.getElementById('thicness').value;
-
   net.lines[id_selected_line_on_editor].dasharray = dasharray.value
-
   station_is_being_created = false
-
-  drawLinesList(net, instancesLine);
-
-  drawStationsList(net, instancesLine);
-
+  drawLinesList(net, instancesLine);  drawStationsList(net, instancesLine);
   updateCanvas();
-
 });
 
 document.getElementById("param-btn").addEventListener("click", function(){
-
   param_data.filename = net.filename;
-
   param_data.width = net.width;
-
   param_data.height = net.height;
-
   document.getElementById("filename").value = param_data.filename;
-
   document.getElementById("width").value = param_data.width;
-
   document.getElementById("height").value = param_data.height;
-
   document.getElementById("svg-exbtn").setAttributeNS(null, "onclick", `exportSVG("${param_data.filename}", ${net.width}, ${net.height})`);
-
   document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height})`);
-
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
-
 });
 
 document.getElementById("svg-exbtn").addEventListener("click", function(){
-
   this.setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
-
   document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
-
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
-
 });
 
 document.getElementById("png-exbtn").addEventListener("click", function(){
-
   document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
-
   this.setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
-
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
-
 });
 
 param_save.addEventListener("click", function(){
-
   net.filename = document.getElementById("filename").value;
-
   net.width = document.getElementById("width").value;
-
   net.height = document.getElementById("height").value;
-
   document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
-
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
-
   document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
-
   document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
-
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
-
-
-
 });
 
 
