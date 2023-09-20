@@ -241,7 +241,6 @@ export function updateDisplay(event) {
           return false;
 
         }
-        alert("yes")
 
       }
 
