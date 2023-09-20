@@ -223,7 +223,7 @@ export function updateDisplay(event) {
       }
 
     }
-
+    alert("yes")
     return true;
 
   }
@@ -247,7 +247,7 @@ export function updateDisplay(event) {
       }
 
     }
-
+    alert("yes")
     return true;
 
   }
