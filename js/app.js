@@ -163,7 +163,6 @@ canvas.addEventListener('click', function(){
         net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
         updateCanvas();
         station_is_being_created = true
-        is_any_station_selected = false
       }else{
         updateCanvas();
       }
