@@ -8,8 +8,33 @@ function exportSVG(name, width, height){
 }
 function exportPNG(name, width, height){
   document.getElementById('svg-canvas').style.background = '#ffffff';
-  var file = new Blob([document.getElementById('svg-canvas')], {type: 'image/png'})
-  const href = URL.createObjectURL(file);
+  const svgNode = document.querySelector('svg-canvas');
+  const svgString = (new XMLSerializer()).serializeToString(svgNode);
+  const svgBlob = new Blob([svgString], {
+    type: 'image/svg+xml;charset=utf-8'
+  });
+
+  const DOMURL = window.URL || window.webkitURL || window;
+  const url = DOMURL.createObjectURL(svgBlob);
+  const image = new Image();
+  image.width = svgNode.width.baseVal.value;
+  image.height = svgNode.height.baseVal.value;
+  image.src = url;
+  image.onload = function () {
+    const canvas = document.getElementById('canvas');
+    canvas.width = image.width;
+    canvas.height = image.height;
+
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(image, 0, 0);
+    DOMURL.revokeObjectURL(url);
+
+    const imgURI = canvas
+      .toDataURL('image/png')
+      .replace('image/png', 'image/octet-stream');
+    triggerDownload(imgURI);
+  };
+  var href = imgURI
   const a = Object.assign(document.createElement('a'),
     {
         href,
