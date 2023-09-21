@@ -8,7 +8,7 @@ function exportSVG(name, width, height){
 }
 function exportPNG(name, width, height){
   document.getElementById('svg-canvas').style.background = '#ffffff';
-  var file = new Blob([canvas.toDataURL('image/png')], {type: 'image/png'})
+  var file = new Blob([document.getElementById('svg-canvas')], {type: 'image/png'})
   const href = URL.createObjectURL(file);
   const a = Object.assign(document.createElement('a'),
     {
