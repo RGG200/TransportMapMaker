@@ -8,7 +8,16 @@ function exportSVG(name, width, height){
 }
 function exportPNG(name, width, height){
   document.getElementById('svg-canvas').style.background = '#ffffff';
-  svgExport.downloadPng(document.getElementById('svg-canvas'), `${name}`, { scale:20});
+  var file = new Blob([canvas.toDataURL('image/png')], {type: 'image/png'})
+  const href = URL.createObjectURL(file);
+  const a = Object.assign(document.createElement('a'),
+    {
+        href,
+        style: "display:none",
+    });
+  a.download = name + ".png";
+  document.body.appendChild(a);
+  a.click();
   return true;
 }
 // function exportJPG(){
