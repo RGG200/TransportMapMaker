@@ -600,7 +600,7 @@ const onChange = e => {
         param_data.width = net.width;
 
         param_data.height = net.height;            
-
+        param_save.click();
         is_any_station_selected = false;
 
         selected_station = undefined;
