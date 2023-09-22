@@ -211,7 +211,7 @@ export function updateDisplay(event) {
   function isUniqueInLine(lineID) {
     for(const element of net.lines[lineID].stations){
       if(element != undefined){
-        if(mosX >= element.xPos-10 && mosY >= element.yPos-element.height/2 && mosX <= element.xPos+10 && mosY <= element.yPos+element.height/2){return false;}
+        if(mosX >= element.xPos-10 && mosY >= element.yPos-element.height/2 || mosX <= element.xPos+10 && mosY <= element.yPos+element.height/2){return false;}
       }
     }
     return true;
@@ -280,7 +280,6 @@ canvas.addEventListener('click', function(){
       getStations();
       station_is_being_created = false
       break;
-    updateCanvas();
   }
   if(net.lines[instancesLine].stationInstances > 0){
     drawStationsList(net, instancesLine);
