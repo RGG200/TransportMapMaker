@@ -271,6 +271,7 @@ canvas.addEventListener('click', function(){
         net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
         station_is_being_created = true;
         is_any_station_selected = false;
+        updateCanvas();
       }else{
         updateCanvas();
         is_any_station_selected = false;
