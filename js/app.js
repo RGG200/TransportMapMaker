@@ -214,7 +214,7 @@ export function updateDisplay(event) {
 
       if(element != undefined){
 
-        if(mosX >= element.xPos-10 && mosY >= element.yPos-element.height/3 && mosX <= element.xPos+10 && mosY <= element.yPos+element.height/3){
+        if(mosX >= element.xPos-10 && mosY >= element.yPos-element.height/2 && mosX <= (element.xPos+10) && mosY <= element.yPos+element.height/2){
 
         return false;
 
@@ -232,7 +232,7 @@ export function updateDisplay(event) {
 
       for(const station of line.stations){
 
-        if(station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/3 <= net.lines[lineID].stations[stationID].yPos && station.xPos+10 >= net.lines[lineID].stations[stationID].xPos && station.yPos+station.height/3 >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
+        if(station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 <= net.lines[lineID].stations[stationID].yPos && (station.xPos+10) >= net.lines[lineID].stations[stationID].xPos && station.yPos+station.height/2 >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
 
           net.lines[lineID].stations[stationID].xPos = station.xPos;
 
