@@ -214,7 +214,7 @@ export function updateDisplay(event) {
 
       if(element != undefined){
 
-        if(mosX < element.xPos-10 && mosY < element.yPos-element.height/2 && mosX > element.xPos+10 && mosY > element.yPos+element.height/2){
+        if(mosX >= element.xPos-10 && mosY >= element.yPos-element.height/2 && mosX <= element.xPos+10 && mosY <= element.yPos+element.height/2){
 
         return false;
 
@@ -232,7 +232,7 @@ export function updateDisplay(event) {
 
       for(const station of line.stations){
 
-        if(station.xPos-10 < net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 < net.lines[lineID].stations[stationID].yPos && station.xPos+10 > net.lines[lineID].stations[stationID].xPos && station.yPos+station.height/2 > net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
+        if(station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 <= net.lines[lineID].stations[stationID].yPos && station.xPos+10 >= net.lines[lineID].stations[stationID].xPos && station.yPos+station.height/2 >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
 
           net.lines[lineID].stations[stationID].xPos = station.xPos;
 
@@ -261,7 +261,7 @@ canvas.addEventListener('click', function(){
 
   if(net.lines[instancesLine] == undefined ){
 
-    net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 11)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a' , 'rect', mosX, mosY, 0, 0)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a' , 'rect', mosX, mosY, 0, 0)], [] , []); // make a new line and station
+    net.lines[instancesLine] = new Line(instancesLine, 'ligne_' + instancesLine, "5", colors[getRandomIntInclusive(0, 11)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a' , 'rect', mosX, mosY, 0, 0)], [new Station(default_fNames[getRandomIntInclusive(0, 8)], '', 'destination', 'a' , 'rect', mosX, mosY, 0, 20)], [] , []); // make a new line and station
 
     drawStation(net.lines[instancesLine].stations[0].fName, net.lines[instancesLine].stations[0].sName, net.lines[instancesLine].stations[0].style, net.lines[instancesLine].stations[0].type, mosX, mosY, net.lines[instancesLine].color, 0, instancesLine); // draw stations
 
