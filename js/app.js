@@ -412,9 +412,7 @@ save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].yPos = document.getElementById('yPos').value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].style = style_types.value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].line_style = connexion_types.value;
-  station_is_being_created = false
   drawStationsList(net, instancesLine);
-  updateCanvas();
 });
 
 
@@ -434,9 +432,9 @@ ln_save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].name = document.getElementById('name').value;
   net.lines[id_selected_line_on_editor].color = document.getElementById('color').value;
   net.lines[id_selected_line_on_editor].lineThicness = document.getElementById('thicness').value;
-  net.lines[id_selected_line_on_editor].dasharray = dasharray.value
-  station_is_being_created = false
-  drawLinesList(net, instancesLine);  drawStationsList(net, instancesLine);
+  net.lines[id_selected_line_on_editor].dasharray = dasharray.value;
+  drawLinesList(net, instancesLine);
+  drawStationsList(net, instancesLine);
   updateCanvas();
 });
 
