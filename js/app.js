@@ -232,11 +232,11 @@ export function updateDisplay(event) {
 
       for(const station of line.stations){
 
-        if(station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 <= net.lines[lineID].stations[stationID].yPos && (station.xPos+10) <= net.lines[lineID].stations[stationID].xPos && station.yPos+station.height/2 <= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
+        if(station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 <= net.lines[lineID].stations[stationID].yPos && (station.xPos+10) >= net.lines[lineID].stations[stationID].xPos && station.yPos+station.height/2 >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
 
-          net.lines[lineID].stations[stationID].xPos = station.xPos;
+          //net.lines[lineID].stations[stationID].xPos = station.xPos;
 
-          net.lines[lineID].stations[stationID].yPos = station.yPos;
+          //net.lines[lineID].stations[stationID].yPos = station.yPos;
 
           return false;
 
