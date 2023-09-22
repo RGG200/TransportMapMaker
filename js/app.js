@@ -269,7 +269,6 @@ canvas.addEventListener('click', function(){
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
         if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
         net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
-        updateCanvas();
         station_is_being_created = true;
         is_any_station_selected = false;
       }else{
@@ -281,6 +280,7 @@ canvas.addEventListener('click', function(){
       getStations();
       station_is_being_created = false
       break;
+    updateCanvas();
   }
   if(net.lines[instancesLine].stationInstances > 0){
     drawStationsList(net, instancesLine);
