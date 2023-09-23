@@ -211,19 +211,20 @@ export function updateDisplay(event) {
   function isUniqueInLine(lineID) {
     for(const element of net.lines[lineID].stations){
       if(element != undefined){
-        if(mosX <= element.xPos-10 && mosY <= element.yPos-element.height/2 && mosX >= element.xPos+10 && mosY >= element.yPos+element.height/2){return true;}
+        if(mosX >= element.xPos-10 && mosY >= element.yPos-element.height/2 && mosX <= element.xPos-10 && mosX <= element.xPos+10 && mosY <= element.yPos+element.height/2 && mosX >= element.xPos-10){return false;}
       }
     }
-    return false;
+    return true;
   }
 
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
       for(const station of line.stations){
-        if(net.lines[lineID].stations[stationID].xPos <= station.xPos-10 && net.lines[lineID].stations[stationID].yPos <= station.yPos-station.height/2 || net.lines[lineID].stations[stationID].xPos >= station.xPos+10 && net.lines[lineID].stations[stationID].yPos >= station.yPos+station.height/2 && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return true;}
+        if(station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && station.yPos-station.height*0.5 <= net.lines[lineID].stations[stationID].yPos && station.xPos+10 >= net.lines[lineID].stations[stationID].xPos && station.yPos+station.height*0.5 >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;}
       }
     }
-    retrun false;
+    return true;
+  }
 
 
 
