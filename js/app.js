@@ -220,7 +220,7 @@ export function updateDisplay(event) {
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
       for(const station of line.stations){
-        if(/*station.xPos+10 >= net.lines[lineID].stations[stationID].xPos &&*/ station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;updateCanvas();return false;}
+        if(/*station.xPos+10 >= net.lines[lineID].stations[stationID].xPos &&*/ station.xPos-10 <= net.lines[lineID].stations[stationID].xPos && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;}
       }
     }
     return true;
