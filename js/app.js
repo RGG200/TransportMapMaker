@@ -211,7 +211,7 @@ export function updateDisplay(event) {
   function isUniqueInLine(lineID) {
     for(const station of net.lines[lineID].stations){
       if(station != undefined){
-        if(station.xPos+10 <= mosX && station.yPos-station.height/2 >= mosY && station.xPos-10 >= mosX && station.yPos+station.height/2 <= mosY ||  station.xPos+10 <= mosX && station.yPos+station.height/2 <= mosY &&  station.xPos-10 >= mosX && station.yPos-station.height/2 >= mosY){ return false;}
+        if(station.xPos+10 >= mosX && station.yPos-station.height/2 <= mosY && station.xPos-10 <= mosX && station.yPos+station.height/2 >= mosY){ return false;}
       }
     }
     return true;
