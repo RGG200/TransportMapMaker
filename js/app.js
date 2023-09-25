@@ -1,4 +1,4 @@
-FRlet instancesLine = 0; // selected line
+let instancesLine = 0; // selected line
 
 import { exportRTM } from './FileOptions/export-rtm.js';
 
