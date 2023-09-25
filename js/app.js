@@ -222,7 +222,7 @@ export function updateDisplay(event) {
       for(const station of line.stations){
         var overlapX = Math.max(0, Math.min(station.xPos + 10, net.lines[lineID].stations[stationID].xPos + 10) - Math.max(station.xPos, net.lines[lineID].stations[stationID].xPos));
         var overlapY = Math.max(0, Math.min(station.yPos + station.height, net.lines[lineID].stations[stationID].yPos + net.lines[lineID].stations[stationID].height) - Math.max(station.yPos, net.lines[lineID].stations[stationID].yPos));
-        if(overlapX*overlapY > 0 && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;}
+        if(overlapX*overlapY >= 0 && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;}
       }
     }
     return true;
@@ -336,8 +336,6 @@ const save = document.getElementById('save');
 function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
-  let xValues = [0, 0];
-  let yValues = [0, 0];
   for(let j = 0; j < net.lines.length; j++){
     for(let i = 1; i < net.lines[j].linePath.length; i++){
       if(isConnected(i, j)){
@@ -385,6 +383,7 @@ function updateCanvas(){
 }
 
 save.addEventListener('click', function(){
+  updateCanvas();
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
