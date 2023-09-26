@@ -221,13 +221,13 @@ function rectanglesIntersect(minAx, minAy, maxAx, maxAy, minBx, minBy, maxBx, ma
   if(maxAx < minBx){
     return true;
   }
-  if(minAx < maxBx){
+  if(minAx > maxBx){
     return true;
   }
   if(minAy > maxBy){
     return true;
   }
-  if(maxAy > minBy){
+  if(maxAy < minBy){
     return true;
   }
 
