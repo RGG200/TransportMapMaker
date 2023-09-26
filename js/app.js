@@ -222,7 +222,7 @@ export function updateDisplay(event) {
       for(const station of line.stations){
         var overlapX = Math.abs(Math.max(-(Math.min(station.xPos + 10, net.lines[lineID].stations[stationID].xPos + 10) - Math.max(station.xPos, net.lines[lineID].stations[stationID].xPos)), Math.min(station.xPos + 10, net.lines[lineID].stations[stationID].xPos + 10) - Math.max(station.xPos, net.lines[lineID].stations[stationID].xPos)));
         var overlapY = Math.abs(Math.max(-(Math.min(station.yPos + station.height, net.lines[lineID].stations[stationID].yPos + net.lines[lineID].stations[stationID].height) - Math.max(station.yPos, net.lines[lineID].stations[stationID].yPos)), Math.min(station.yPos + station.height, net.lines[lineID].stations[stationID].yPos + net.lines[lineID].stations[stationID].height) - Math.max(station.yPos, net.lines[lineID].stations[stationID].yPos)));
-        if(overlapX*overlapY > 0 && overlapX*overlapY <= 25 && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;}
+        if(overlapX*overlapY > 0 && overlapX*overlapY < 10 && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;}
       }
     }
     return true;
