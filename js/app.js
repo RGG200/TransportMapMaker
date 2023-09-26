@@ -217,12 +217,29 @@ export function updateDisplay(event) {
     return true;
   }
 
+function rectanglesIntersect(minAx, minAy, maxAx, maxAy, minBx, minBy, maxBx, maxBy ) {
+  if(maxAx < minBx){
+    return true;
+  }
+  if(minAx < maxBx){
+    return true;
+  }
+  if(minAy > maxBy){
+    return true;
+  }
+  if(maxAy > minBy){
+    return true;
+  }
+
+    return false;
+}
+
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
       for(const station of line.stations){
-        var overlapX = Math.max(0, Math.min(station.xPos + 10, net.lines[lineID].stations[stationID].xPos + 10) - Math.max(station.xPos, net.lines[lineID].stations[stationID].xPos));
-        var overlapY = Math.max(0, Math.min(station.yPos + station.height, net.lines[lineID].stations[stationID].yPos + net.lines[lineID].stations[stationID].height) - Math.max(station.yPos, net.lines[lineID].stations[stationID].yPos));
-        if(overlapX*overlapY > 0 && overlapX*overlapY < 400 && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;}
+        //var overlapX = Math.max(0, Math.min(station.xPos + 10, net.lines[lineID].stations[stationID].xPos + 10) - Math.max(station.xPos, net.lines[lineID].stations[stationID].xPos));
+        //var overlapY = Math.max(0, Math.min(station.yPos + station.height, net.lines[lineID].stations[stationID].yPos + net.lines[lineID].stations[stationID].height) - Math.max(station.yPos, net.lines[lineID].stations[stationID].yPos));
+        if(rectanglesIntersect(net.lines[lineID].stations[stationID].xPos, net.lines[lineID].stations[stationID].yPos,net.lines[lineID].stations[stationID].xPos+10, net.lines[lineID].stations[stationID].xPos+net.lines[lineID].stations[stationID].height/2, station.xPos, station.yPos, station.xPos+10, station.yPos+station.height/2) && net.lines.indexOf(line) != lineID){net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;}
       }
     }
     return true;
