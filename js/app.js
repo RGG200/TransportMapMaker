@@ -336,6 +336,8 @@ const save = document.getElementById('save');
 function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
+  let xValues = [0, 0];
+  let yValues = [0, 0];
   for(let j = 0; j < net.lines.length; j++){
     for(let i = 1; i < net.lines[j].linePath.length; i++){
       if(isConnected(i, j)){
