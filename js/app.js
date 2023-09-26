@@ -218,16 +218,16 @@ export function updateDisplay(event) {
   }
 
 function rectanglesIntersect(minAx, minAy, maxAx, maxAy, minBx, minBy, maxBx, maxBy ) {
-  if(maxAx < minBx){
+  if(maxAx > minBx){
     return true;
   }
-  if(minAx > maxBx){
+  if(minAx < maxBx){
     return true;
   }
-  if(minAy > maxBy){
+  if(minAy < maxBy){
     return true;
   }
-  if(maxAy < minBy){
+  if(maxAy > minBy){
     return true;
   }
 
