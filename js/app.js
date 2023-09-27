@@ -229,7 +229,7 @@ export function updateDisplay(event) {
           if(stationd.innerHTML == lineID && stationd.id == stationID && rectangle1 != stationd){
             rectangle2 = stationd;
           }
-        }
+        })
         if(intersectRect(rectangle1, rectangle2) && net.lines.indexOf(line) != lineID){
           net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;
         }
@@ -237,7 +237,6 @@ export function updateDisplay(event) {
     }
     return true;
   }
-
 function intersectRect(r1, r2) {
     var r1 = r1.getBoundingClientRect();    //BOUNDING BOX OF THE FIRST OBJECT
     var r2 = r2.getBoundingClientRect();    //BOUNDING BOX OF THE SECOND OBJECT
