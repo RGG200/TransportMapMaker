@@ -219,10 +219,18 @@ export function updateDisplay(event) {
 
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
-      for(const station of line.stations){
-        //var overlapX = Math.max(0, Math.min(station.xPos + 10, net.lines[lineID].stations[stationID].xPos + 10) - Math.max(station.xPos, net.lines[lineID].stations[stationID].xPos));
-        //var overlapY = Math.max(0, Math.min(station.yPos + station.height, net.lines[lineID].stations[stationID].yPos + net.lines[lineID].stations[stationID].height) - Math.max(station.yPos, net.lines[lineID].stations[stationID].yPos));
-        if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos == net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
+      for(const station of line){
+        var rectangle1;
+        var rectangle2;
+        lineStations.forEach(stationd => {
+          if(stationd.innerHTML == net.lines[net.lines.indexOf(line)] && stationd.id == net.lines[net.lines.indexOf(line)].stations.indexOf(station)){
+            rectangle1 = stationd;
+          }
+          if(stationd.innerHTML == lineID && stationd.id == stationID && rectangle1 != stationd){
+            rectangle2 = stationd;
+          }
+        }
+        if(intersectRect(rectangle1, rectangle2) && net.lines.indexOf(line) != lineID){
           net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;
         }
       }
@@ -230,6 +238,16 @@ export function updateDisplay(event) {
     return true;
   }
 
+function intersectRect(r1, r2) {
+    var r1 = r1.getBoundingClientRect();    //BOUNDING BOX OF THE FIRST OBJECT
+    var r2 = r2.getBoundingClientRect();    //BOUNDING BOX OF THE SECOND OBJECT
+
+    //CHECK IF THE TWO BOUNDING BOXES OVERLAP
+  return !(r2.left > r1.right || 
+           r2.right < r1.left || 
+           r2.top > r1.bottom ||
+           r2.bottom < r1.top);
+}
 
 
 const canvas = document.getElementById('svg-canvas');
