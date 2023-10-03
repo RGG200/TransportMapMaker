@@ -219,7 +219,7 @@ export function updateDisplay(event) {
 
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
-      for(const station of line){
+      for(const station of line.stations){
         var rectangle1;
         var rectangle2;
         lineStations.forEach(stationd => {
