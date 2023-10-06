@@ -230,7 +230,7 @@ export function updateDisplay(event) {
             rectangle2 = stationd;
           }
         })
-        if(checkIntersection(rectangle1, rectangle2) && net.lines.indexOf(line) != lineID){
+        if(rectangle1.x == rectangle2.x && rectangle1.y == rectangle2.y && net.lines.indexOf(line) != lineID){
           net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;
         }
       }
