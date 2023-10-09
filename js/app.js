@@ -220,17 +220,7 @@ export function updateDisplay(event) {
   function isDrawableUnique(stationID, lineID) {
     for(const line of net.lines){
       for(const station of line.stations){
-        var rectangle1;
-        var rectangle2;
-        lineStations.forEach(stationd => {
-          if(stationd.innerHTML == net.lines[net.lines.indexOf(line)] && stationd.id == net.lines[net.lines.indexOf(line)].stations.indexOf(station)){
-            rectangle1 = stationd;
-          }
-          if(stationd.innerHTML == lineID && stationd.id == stationID && rectangle1 != stationd){
-            rectangle2 = stationd;
-          }
-        })
-        if(rectangle1.x == rectangle2.x && rectangle1.y == rectangle2.y && net.lines.indexOf(line) != lineID){
+        if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 < net.lines[lineID].stations[stationID].yPos && station.yPos+station.height/2 >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
           net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;
         }
       }
