@@ -211,7 +211,7 @@ export function updateDisplay(event) {
   function isUniqueInLine(lineID) {
     for(const station of net.lines[lineID].stations){
       if(station != undefined){
-        if(station.xPos == mosX && station.yPos == mosY){ return false;}
+        if(station.xPos == mosX && station.yPos-station.height/2 < mosY && station.yPos+station.height/2 > mosY){ return false;}
       }
     }
     return true;
@@ -222,7 +222,6 @@ export function updateDisplay(event) {
       for(const station of line.stations){
         if(station.xPos == net.lines[lineID].stations[stationID].xPos && station.yPos-station.height/2 < net.lines[lineID].stations[stationID].yPos && station.yPos+station.height/2 >= net.lines[lineID].stations[stationID].yPos && net.lines.indexOf(line) != lineID){
           net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;return false;
-        }
       }
     }
     return true;
@@ -340,10 +339,11 @@ function updateCanvas(){
   for(let j = 0; j < net.lines.length; j++){
     for(let i = 1; i < net.lines[j].linePath.length; i++){
       if(isConnected(i, j)){
+        isDrawableUnique(i, j)
         if(net.lines[j].stations[net.lines[j].linePath[i].stationInstance] != undefined){
           drawLine(net.lines[j].color, net.lines[j].lineThicness, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].xPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].yPos, net.lines[j].stations[net.lines[j].linePath[i].stationInstance].line_style, j, net.lines[j].dasharray);
         }
-
+        
         if(net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].connected == false && i > 1 || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[0] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[0] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].xPos != xValues[1] || i > 1 && net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].yPos != yValues[1]){
           net.lines[j].stations[net.lines[j].linePath[i-1].stationInstance].connected = true;
         }
