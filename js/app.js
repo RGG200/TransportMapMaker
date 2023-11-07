@@ -435,11 +435,11 @@ document.getElementById("param-btn").addEventListener("click", function(){
 
 document.getElementById("svg-exbtn").addEventListener("click", function(){
   exportSVG(net.filename, net.width, net.height);
-});
+}, {once: false});
 
 document.getElementById("png-exbtn").addEventListener("click", function(){
   exportPNG(net.filename, net.width, net.height);
-});
+}, {once: false});
 
 param_save.addEventListener("click", function(){
   net.filename = document.getElementById("filename").value;
@@ -531,9 +531,9 @@ ln_delete.addEventListener("click", function(){
 
 export_rtm.addEventListener("click", function(){
 
-  exportRTM(net, "ooo");
+  exportRTM(net, "Être ou ne pas être? telle est la question");
 
-});
+}, {once: false});
 
 const onChange = e => { 
 
