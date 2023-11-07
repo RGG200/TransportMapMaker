@@ -437,12 +437,14 @@ document.getElementById("svg-exbtn").addEventListener("click", function(){
   this.setAttributeNS(null, "onclick", `downloadSVG(${net.filename});`);
   document.getElementById("png-exbtn").setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height});`);
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
+  this.click();
 });
 
 document.getElementById("png-exbtn").addEventListener("click", function(){
   document.getElementById('svg-exbtn').setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height});`);
   this.setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height});`);
   document.getElementById("export-rtm").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
+  this.click();
 });
 
 param_save.addEventListener("click", function(){
