@@ -238,8 +238,8 @@ export function drawLine(color, thicness, beginX, beginY, endX, endY, style, lin
         path.setAttributeNS(null, 'id', 'line_' + line_instance);
         path.setAttributeNS(null, 'stroke', color);
         path.setAttributeNS(null, 'stroke-width', thicness);
-        path.setAttributeNS(null, 'stroke-linecap', "round");
-        path.setAttributeNS(null, 'stroke-linejoin', "butt");
+        path.setAttributeNS(null, 'stroke-linecap', "square");
+        path.setAttributeNS(null, 'stroke-linejoin', "round);
         path.setAttributeNS(null, 'stroke-dasharray', dasharray+ ", " + dasharray);
         path.setAttributeNS(null, 'fill', '#ffffff00');     
         
