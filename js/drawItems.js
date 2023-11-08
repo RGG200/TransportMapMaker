@@ -72,9 +72,9 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 circle.setAttributeNS( null,'class','stations');
                 circle.setAttributeNS( null,'cx',posX);
                 circle.setAttributeNS( null,'cy', posY);
-                circle.setAttributeNS( null,'r', '17.5');
+                circle.setAttributeNS( null,'r', '15');
                 circle.setAttributeNS( null,'fill','#FFFFFF');
-                circle.setAttributeNS( null,'stroke-width', '3');
+                circle.setAttributeNS( null,'stroke-width', '4');
                 circle.setAttributeNS( null,'stroke', '#000000');
                 circle.innerHTML = line_instance;
                 document.getElementById( 'svg-canvas' ).appendChild( circle );
