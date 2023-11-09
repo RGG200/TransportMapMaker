@@ -108,8 +108,8 @@ input{
 .return{
     opacity: 0.5;
     position: absolute;
-    left: 90%;
-    top: 7%;
+    top: 6.5vh;
+    left: 76vw;
     padding: 15px;
     color: rgb(220, 30, 64);
     width: 100%;
@@ -165,7 +165,7 @@ input{
 }
 
 .button{
-    padding: 1vw;
+    padding: 1em;
     width: 100%;
     max-width: 100%;
     background-color: #AACC33;
@@ -173,7 +173,7 @@ input{
     transition: 300ms;
     display: flex;
     border: 0px solid transparent;
-    font-size: 1vw;
+    font-size: 15px;
     text-align: center;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
