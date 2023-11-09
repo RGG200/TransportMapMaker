@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
 html body{
-    background-color: #232323;
+    background-color: whitesmoke;
     font-family:'Noto Sans JP', sans-serif;
 }
 #svg-canvas{
