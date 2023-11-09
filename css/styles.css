@@ -20,6 +20,9 @@ input[type="file"] {
     min-height: 100%;
     align-items: center;
 }
+input{
+    background-color: #222222;
+  }
 #param_content{
     max-width: 100%;
     display: block;
@@ -401,10 +404,12 @@ input[type="file"] {
     left: 12%;
     width: 100%;
     height: 5%;
+    padding: 10px;
     font-size: 1em;
     border-radius: 1em;
     display: block;
   }
+
   .connexion-type label{
       
       text-align: center;
@@ -412,18 +417,13 @@ input[type="file"] {
       
    }
   .style-type label{
-
-
       text-align: center;
       margin: 15px;
-
-      
-
    }
   .style-type {
     position: relative;
     top: 35%;
-    left: 12%;
+    padding: 10px;
     width: 100%;
     height: 5%;
     font-size: 1em;
@@ -439,7 +439,7 @@ input[type="file"] {
   }
 
   #save:active{
-    background-color: white;
+    background-color: transparent;
     color: greenyellow;
   }
   #param-save{
@@ -451,7 +451,7 @@ input[type="file"] {
   }
 
   #param-save:active{
-    background-color: white;
+    background-color: transparent;
     color: greenyellow;
   }
   #ln_save{
@@ -462,7 +462,7 @@ input[type="file"] {
     color: forestgreen;
   }
   #ln_save:active{
-    background-color: white;
+    background-color: transparent;
     color: greenyellow;
   }
   #delete{
@@ -473,7 +473,7 @@ input[type="file"] {
   }
   
   #delete:active{
-    background-color: white;
+    background-color: transparent;
     color: orangered;
   }
   #ln_delete{
@@ -483,13 +483,13 @@ input[type="file"] {
     left: 55%;
   }
   #ln_delete:active{
-    background-color: white;
+    background-color: transparent;
     color: orangered;
   }
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
-    background-color: white;
+    background-color: #222222;
     outline: none;
     height: 100%;
 
