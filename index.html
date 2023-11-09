@@ -17,31 +17,32 @@
     <script src="./js/FileOptions/export.js"></script>
     <svg id="svg-canvas" height="8000" width="8000" xmlns="http://www.w3.org/2000/svg">
     </svg>
-    <button id="show" class="main" onclick="showOptions('options'); showOptions('hide'); hideOptions('show');">Montrer les Options</button>
-    <button id="hide" class="main" onclick="showOptions('options'); hideOptions('hide');">Montrer les Options</button>
-    <div id="options" onmousemove="resetSVG();">  
-        <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('options'); hideOptions('hide'); showOptions('export-section'); hideOptions('svg-canvas');">Exporter la carte</a>
-        <label id="" onclick="hideOptions('options'); showOptions('show');" class="button">Importer une carte (.rtm) <input type="file" id="import" accept="application/rtm, application/plain, .rtm, application/json" /></label>
-        <button id="" onclick="showEditor('options', 'st-list'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" href="">Editer une Station</button>
-
-        <button id="" onclick="showEditor('options', 'ln-list'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" href="">Editer une Ligne</button>
-        <button id="param-btn" onclick="showEditor('options', 'parameters'); hideOptions('options'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" >Paramètres</button>
-        <button id="" onclick="hideOptions('options'); showOptions('hide');" class="button" href="">Quitter</button>
+    <div id="options" onmousemove="resetSVG();">
+      <button id="showr" class="button" onclick="showOptions('buttons'); hideOptions('showr');">Montrer les options</button>
+      <div id="buttons" onmouseleave="showOptions('showr'); hideOptions('buttons')">
+          <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('buttons'); hideOptions('hide'); showOptions('export-section'); hideOptions('svg-canvas'); showOptions('showr');">Exporter la carte</a>
+          <label id="" onclick="hideOptions('buttons'); " class="button">Importer une carte (.rtm) <input type="file" id="import" accept="application/rtm, application/plain, .rtm, application/json" /></label>
+          <button id="" onclick="showEditor('buttons', 'st-list'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" href="">Editer une Station</button>
+  
+          <button id="" onclick="showEditor('buttons', 'ln-list'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" href="">Editer une Ligne</button>
+          <button id="param-btn" onclick="showEditor('buttons', 'parameters'); hideOptions('buttons'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" >Paramètres</button>
+          <button id="" onclick="hideOptions('buttons'); showOptions('hide');" class="button" href="">Quitter</button>  
+        </div>
     </div>
     <section id="st-list" onmouseenter="">
         <div class="head">
             <h1 class="main-title">Liste des station</h1>
-            <button class="return" onclick="hideOptions('st-list'); showOptions('svg-canvas'); showOptions('show');">
+            <button class="return" onclick="hideOptions('st-list'); showOptions('svg-canvas'); showOptions('showr');">
               <span class="return-obj"> ‹ </span> 
-              <span> Retour</span> 
+              <span> RETOUR</span> 
             </button>
         </div>
         <div id="content" class="content"></div>
     </section>
     <section id="st-editor">
-        <button class="return" onclick="hideOptions('st-editor'); showOptions('st-list'); showOptions('show');">
+        <button class="return" onclick="hideOptions('st-editor'); showOptions('st-list'); showOptions('showr');">
           <span class="return-obj"> ‹ </span> 
-          <span> Retour</span> 
+          <span> RETOUR</span> 
         </button>
         <h1 class="main-title">éditer une station</h1>
         <input id="first" class="stname" type="text" placeholder="Nom principal">
@@ -73,9 +74,9 @@
     <section id="ln-editor">
       <div class="head">
         <h1 class="main-title">Editer une Ligne</h1>
-        <button class="return" onclick="hideOptions('ln-editor'); showOptions('ln-list'); showOptions('show');">
+        <button class="return" onclick="hideOptions('ln-editor'); showOptions('ln-list'); showOptions('showr');">
           <span class="return-obj"> ‹ </span> 
-          <span> Retour</span> 
+          <span> RETOUR</span> 
         </button>
       </div>
       <input id="name" class="lnname" type="text" placeholder="Nom">
@@ -90,9 +91,9 @@
     </section>
     <section id="ln-list">
       <div class="head">
-        <button class="return" onclick="hideOptions('ln-list'); showOptions('svg-canvas'); showOptions('show');">
-          <span class="return-obj"> ‹ </span> 
-          <span> Retour</span> 
+        <button class="return" onclick="hideOptions('ln-list'); showOptions('svg-canvas'); showOptions('showr');">
+          <span class="return-obj"> < </span> 
+          <span> RETOUR </span> 
         </button>
           <button id="ln_create" class="menu-buttons"> + </button>
           <h1 class="main-title">Liste des Lignes</h1>
@@ -103,7 +104,7 @@
     <section id="ex_content">
       <section class="head-export">
         <h1 class="main-title">Exporter la carte</h1>
-        <button class="return" onclick="hideOptions('export-section'); showOptions('svg-canvas'); showOptions('show'); resetSVG();"> <span class="return-obj"> < </span> <span> Retour</span> </button>    
+        <button class="return" onclick="hideOptions('export-section'); showOptions('svg-canvas'); showOptions('showr'); resetSVG();"> <span class="return-obj"> < </span> <span> RETOUR</span> </button>    
       </section>
       </div>
       <div id="export-box">
@@ -116,9 +117,9 @@
   </section>
   <section id="parameters">
     <div class="head">
-      <button class="return" onclick="hideOptions('parameters'); showOptions('svg-canvas'); showOptions('show');">
+      <button class="return" onclick="hideOptions('parameters'); showOptions('svg-canvas'); showOptions('showr');">
         <span class="return-obj"> ‹ </span> 
-        <span> Retour</span> 
+        <span> RETOUR</span> 
       </button>
         <h1 class="main-title">Paramètres du projet</h1>
     </div>

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
 html body{
-    background-color: white;
+    background-color: black;
     font-family:'Noto Sans JP', sans-serif;
 }
 #svg-canvas{
@@ -106,11 +106,11 @@ input[type="file"] {
     opacity: 0.5;
     position: absolute;
     left: 90%;
-    top: 8%;
-    height: 2%;
+    top: 7%;
+    padding: 15px;
     color: rgb(220, 30, 64);
     width: 100%;
-    background: white;
+    background: #222222;
     transition: 300ms;
     text-align: center;
     display: inline-flex;
@@ -125,7 +125,7 @@ input[type="file"] {
     position: absolute;
     left: 10%;
     top: 5%;
-    height: 6%;
+    padding: 10px;
     z-index: 2;
 }
 .menu-buttons{
@@ -133,7 +133,7 @@ input[type="file"] {
     color: rgb(220, 30, 64);
     width: auto;
     height: auto;
-    background: white;
+    background: #222222;
     transition: 300ms;
     text-align: center;
     padding: 10px;
@@ -162,15 +162,15 @@ input[type="file"] {
 }
 
 .button{
-    padding: 6.7%;
-    color: crimson;
+    padding: 1vw;
     width: 100%;
     max-width: 100%;
-    background: white;
+    background-color: #AACC33;
+    color: whitesmoke;
     transition: 300ms;
     display: flex;
     border: 0px solid transparent;
-    font-size: 1.9vh;
+    font-size: 1vw;
     text-align: center;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -181,20 +181,19 @@ input[type="file"] {
     background: whitesmoke;
 }
 .button:hover{
-    color: red;
-    transition: 300ms;
+    color: #AACC33;
+    transition: 400ms;
     display: flex;
-    background: whitesmoke;
+    background: #111111;
 }
 #options{
     text-decoration: none;
     position: fixed;
-    bottom: 2%;
     right: 2px;
-    display: none;
+    display: block;
     bottom: 0px;
-    width: 25.8vh;
-    max-width: 25.8vh;
+    width: 25.8vw;
+    max-width: 25.8vw;
     height: auto;
     font-size: 2vh;
     text-align: center;
@@ -203,35 +202,20 @@ input[type="file"] {
     font-family
     : 'Noto Sans JP', sans-serif;
 }
-.main{
-    text-decoration: none;
-    position: fixed;
-    right: 0px;
-    bottom: 0.01%;
-    width: 25.9vh;
-    height: auto;
-    padding: 10px;
-    font-size: 2vh;
-    text-align: center;
-    background-color: white;
-    color: crimson;
-    z-index: 2;
-    transition: 300ms;
-    font-family
-    : 'Noto Sans JP', sans-serif;
+#buttons{
+    display: none;
 }
-.main:hover{
-    text-decoration: none;
-    height: auto;
-    font-size: 2vh;
-    text-align: center;
-    background-color: white;
-    color: red;
-    z-index: 2;
-    border: 2px solid crimson;
-    transition: 300ms;
-    font-family
-    : 'Noto Sans JP', sans-serif;
+@keyframes fade-in {
+    from{transform: translateY(100%);}
+    to{transform: translateY(0%);}
+}
+@keyframes fade-out {
+    from{transform: translateY(0%);}
+    to{transform: translateY(100%);}
+}
+
+#showr{
+    width: 100%; 
 }
 #hide{
     display: none;
@@ -248,24 +232,24 @@ input[type="file"] {
     top: -5%;
     overflow-x: hidden;
     z-index: 2;
-    background-color: #FFF;
+    background-color: #222222;
     width: 100%;
-    min-height: 100%;
+    min-height: 110vh;
     justify-content: center;
     display: none;
 }
 .main-title{
     text-align: center;
-    padding: 2em;
+    padding: 5vh;
 }
 #st-editor{
     overflow-x: hidden;
     overflow-y: hidden;
     position: absolute;
     z-index: 3;
-    background-color: #FFF;
+    background-color: #222222;
     width: 100%;
-    min-height: 100%;
+    min-height: 110vh;
     display: none;
     justify-content: center;
 }
@@ -275,9 +259,9 @@ input[type="file"] {
     top: -5%;
     z-index: 3;
     overflow-x: hidden;
-    background-color: #FFF;
+    background-color: #222222;
     width: 100%;
-    min-height: 100%;
+    min-height: 110vh;
     justify-content: center;
     display: none;
 }
@@ -289,11 +273,11 @@ input[type="file"] {
     position: absolute;
     top: -5%;
     z-index: 2;
-    background-color: #FFF;
+    background-color: #222222;
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100%;
-    min-height: 110%;
+    min-height: 110vh;
     display: none;
     justify-content: center;
 }
@@ -304,7 +288,7 @@ input[type="file"] {
     z-index: 3;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: #FFF;
+    background-color: #222222;
     min-width: 103%;
     min-height: 125%;
     max-width: 105%;
@@ -319,7 +303,7 @@ input[type="file"] {
     z-index: 3;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: #FFF;
+    background-color: #222222;
     min-width: 103%;
     min-height: 125%;
     max-width: 105%;
