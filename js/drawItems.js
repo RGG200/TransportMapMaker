@@ -360,7 +360,7 @@ export function drawLinesList(network, instancesLine){
         lineText.innerHTML = network.lines[i].name;
         lineText.setAttributeNS(null, 'class', 'line_button');
         lineText.setAttributeNS(null, 'id', i);
-        lineText.setAttributeNS(null, 'onclick', "showEditor('options', 'ln-editor'); hideOptions('ln-list');");
+        lineText.setAttributeNS(null, 'onclick', "showEditor('buttons', 'ln-editor'); hideOptions('ln-list');");
         lineText.style.background = network.lines[i].color;
         lineText.style.outlineColor = network.lines[i].color;
         lineText.style.borderRadius = "0.2em";
