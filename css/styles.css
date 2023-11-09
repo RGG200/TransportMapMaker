@@ -440,7 +440,7 @@ input{
     text-decoration: none;
     position: fixed;
     top: 85vh;
-    left: 55vw;
+    right: 10vw;
     color: forestgreen;
   }
 
@@ -452,7 +452,7 @@ input{
     text-decoration: none;
     position: fixed;
     top: 90vh;
-    left: 65vw;
+    right: 10vw;
     color: forestgreen;
   }
 
@@ -464,7 +464,7 @@ input{
     text-decoration: none;
     position: fixed;
     top: 85vh;
-    left: 55vw;
+    right: 10vw;
     color: forestgreen;
   }
   #ln_save:active{
@@ -475,7 +475,7 @@ input{
     text-decoration: none;
     position: fixed;
     top: 85vh;
-    left: 15vw;
+    left: 10vw;
   }
   
   #delete:active{
@@ -486,7 +486,7 @@ input{
     text-decoration: none;
     position: fixed;
     top: 85vh;
-    left: 15vw;
+    left: 10vw;
   }
   #ln_delete:active{
     background-color: transparent;
