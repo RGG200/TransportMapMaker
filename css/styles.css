@@ -108,8 +108,8 @@ input{
 .return{
     opacity: 0.5;
     position: absolute;
-    top: 6.5vh;
-    left: 76vw;
+    top: 9vh;
+    left: 75vw;
     padding: 15px;
     color: rgb(220, 30, 64);
     width: 100%;
@@ -370,6 +370,12 @@ input{
     border-bottom: #00000047 solid 2px;
     outline: none;
 }
+.slidecontainer{
+    position: relative;
+    top: 0vh;
+    left: 10vw;
+    padding: 5px;
+}
 .lame{
     position: relative;
     top: 20%;
@@ -433,8 +439,8 @@ input{
   #save{
     text-decoration: none;
     position: fixed;
-    top: 85%;
-    left: 70%;
+    top: 85vh;
+    left: 55vw;
     color: forestgreen;
   }
 
@@ -445,8 +451,8 @@ input{
   #param-save{
     text-decoration: none;
     position: fixed;
-    top: 90%;
-    left: 80%;
+    top: 90vh;
+    left: 65vw;
     color: forestgreen;
   }
 
@@ -457,8 +463,8 @@ input{
   #ln_save{
     text-decoration: none;
     position: fixed;
-    top: 85%;
-    left: 70%;
+    top: 85vh;
+    left: 55vw;
     color: forestgreen;
   }
   #ln_save:active{
@@ -468,8 +474,8 @@ input{
   #delete{
     text-decoration: none;
     position: fixed;
-    top: 85%;
-    left: 55%;
+    top: 85vh;
+    left: 15vw;
   }
   
   #delete:active{
@@ -479,8 +485,8 @@ input{
   #ln_delete{
     text-decoration: none;
     position: fixed;
-    top: 85%;
-    left: 55%;
+    top: 85vh;
+    left: 15vw;
   }
   #ln_delete:active{
     background-color: transparent;
