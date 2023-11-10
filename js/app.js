@@ -547,7 +547,7 @@ const onChange = e => {
 
     function onReaderLoad(e){
 
-      var obj = JSON.parse(e.target.result);
+      var obj = JSON.parse(file.result);
 
       if(obj != undefined){
 
