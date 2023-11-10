@@ -113,7 +113,7 @@ input{
     padding: 15px;
     color: rgb(220, 30, 64);
     width: 100%;
-    background: #222222;
+    background: transparent;
     transition: 300ms;
     text-align: center;
     display: inline-flex;
@@ -136,7 +136,7 @@ input{
     color: rgb(220, 30, 64);
     width: auto;
     height: auto;
-    background: #222222;
+    background: #22222200;
     transition: 300ms;
     text-align: center;
     padding: 10px;
