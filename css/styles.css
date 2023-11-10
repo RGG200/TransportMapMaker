@@ -68,7 +68,7 @@ input{
     text-transform: uppercase;
 }
 .line_button{
-    font-size: 3em;
+    font-size: (3vh+3vw)/2;
     padding: 10px;
     font-weight: 600;
     margin-left: 0%;
@@ -90,7 +90,7 @@ input{
 .station_instance{
     position: relative;
     margin: auto;
-    font-size: 2.5em;
+    font-size: (2.5vw+2.5vh)/2;
     margin-bottom: 10px;
     width: 50%;
     display: block;
@@ -109,7 +109,7 @@ input{
     opacity: 0.5;
     position: absolute;
     top: 9vh;
-    left: 75vw;
+    left: 70vw;
     padding: 15px;
     color: rgb(220, 30, 64);
     width: 100%;
@@ -173,7 +173,7 @@ input{
     transition: 300ms;
     display: flex;
     border: 0px solid transparent;
-    font-size: 15px;
+    font-size: 0.5*(1vw+1vh);
     text-align: center;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -496,7 +496,7 @@ input{
   
   /* Dropdown Content (Hidden by Default) */
   .dropdown-content {
-    background-color: #222222;
+    background-color: #FFFFCC;
     outline: none;
     height: 100%;
 
