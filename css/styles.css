@@ -37,9 +37,11 @@ input{
 }
 .head{
     height: 20vh;
+    font-size: (5vh+5vw)/2;
 }
 .head-export{
     height: 10vh;
+    font-size: (5vh+5vw)/2;
 }
 .line_section{
     position: relative;  
@@ -57,7 +59,7 @@ input{
 }
 .line_name{
     position: relative;
-    font-size: 5em;
+    font-size: (4vh+4vw)/2;
     font-weight: 600;
     color: #FFF;
     display: block;
@@ -68,7 +70,7 @@ input{
     text-transform: uppercase;
 }
 .line_button{
-    font-size: (3vh+3vw)/2;
+    font-size: (4vh+4vw)/2;
     padding: 10px;
     font-weight: 600;
     margin-left: 0%;
@@ -351,7 +353,7 @@ input{
     top: 20%;
     margin: auto;
     padding: 5px;
-    font-size: 2em;
+    font-size: (2vh+2vw)/2;
     margin-bottom: 10px;
     width: 80%;
     display: block;
@@ -364,7 +366,7 @@ input{
     top: 20%;
     margin: auto;
     padding: 5px;
-    font-size: 2em;
+    font-size: (2vh+2vw)/2;
     width: 80%;
     display: block;
     border: none;
