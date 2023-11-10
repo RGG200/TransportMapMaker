@@ -59,7 +59,7 @@ input{
 }
 .line_name{
     position: relative;
-    font-size: (4vh+4vw)/2;
+    font-size: (8vh+8vw)/2;
     font-weight: 600;
     color: #FFF;
     display: block;
@@ -70,7 +70,7 @@ input{
     text-transform: uppercase;
 }
 .line_button{
-    font-size: (4vh+4vw)/2;
+    font-size: (8vh+8vw)/2;
     padding: 10px;
     font-weight: 600;
     margin-left: 0%;
@@ -92,7 +92,7 @@ input{
 .station_instance{
     position: relative;
     margin: auto;
-    font-size: (2.5vw+2.5vh)/2;
+    font-size: (4vw+4vh)/2;
     margin-bottom: 10px;
     width: 50%;
     display: block;
@@ -454,7 +454,7 @@ input{
   #param-save{
     text-decoration: none;
     position: fixed;
-    top: 90vh;
+    top: 85vh;
     right: 10vw;
     color: forestgreen;
   }
