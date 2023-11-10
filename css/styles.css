@@ -21,7 +21,7 @@ input[type="file"] {
     align-items: center;
 }
 input{
-    background-color: #222222;
+    background-color: wheat;
   }
 #param_content{
     max-width: 100%;
@@ -36,10 +36,10 @@ input{
     text-transform: uppercase;
 }
 .head{
-    height: 20%;
+    height: 20vh;
 }
 .head-export{
-    height: 10%;
+    height: 10vh;
 }
 .line_section{
     position: relative;  
@@ -118,7 +118,7 @@ input{
     text-align: center;
     display: inline-flex;
     border: none;
-    font-size: 1em;
+    font-size: (1vw+1vh)/2;
     line-height: 15px;
     font-weight: 300;
     text-decoration: none;
@@ -142,7 +142,7 @@ input{
     padding: 10px;
     display: flex;
     border: none;
-    font-size: 2em;
+    font-size: (1vw+1vh)/2;
     font-weight: 300;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -160,7 +160,7 @@ input{
     transform: scaleX(0.7);
     position: relative;
     bottom: 30%;
-    font-size: 2em;
+    font-size: (2vw+2vh)/2;
     margin-right: 0.25%;
 }
 
@@ -195,8 +195,8 @@ input{
     right: 2px;
     display: block;
     bottom: 0px;
-    width: 25.8vw;
-    max-width: 25.8vw;
+    width: (25.8vw+25.8vh)/2;
+    max-width: (25.8vw+25.8vh)/2;
     height: auto;
     font-size: 2vh;
     text-align: center;
@@ -207,6 +207,7 @@ input{
 }
 #buttons{
     display: none;
+    width:100%;
 }
 @keyframes fade-in {
     from{transform: translateY(100%);}
@@ -227,7 +228,7 @@ input{
     display: block;
     width: 100%;
     text-align: center;
-    font-size: 1em;
+    font-size: (1vw+1vh)/2;
 }
 #st-list{
     position: absolute;
@@ -235,7 +236,7 @@ input{
     top: -5%;
     overflow-x: hidden;
     z-index: 2;
-    background-color: #222222;
+    background-color: #FFFFCC;
     width: 100%;
     min-height: 110vh;
     justify-content: center;
@@ -250,7 +251,7 @@ input{
     overflow-y: hidden;
     position: absolute;
     z-index: 3;
-    background-color: #222222;
+    background-color: #FFFFCC;
     width: 100%;
     min-height: 110vh;
     display: none;
@@ -262,7 +263,7 @@ input{
     top: -5%;
     z-index: 3;
     overflow-x: hidden;
-    background-color: #222222;
+    background-color: #FFFFCC;
     width: 100%;
     min-height: 110vh;
     justify-content: center;
@@ -276,7 +277,7 @@ input{
     position: absolute;
     top: -5%;
     z-index: 2;
-    background-color: #222222;
+    background-color: #FFFFCC;
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100%;
@@ -291,7 +292,7 @@ input{
     z-index: 3;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: #222222;
+    background-color: #FFFFCC;
     min-width: 103%;
     min-height: 125%;
     max-width: 105%;
@@ -306,7 +307,7 @@ input{
     z-index: 3;
     overflow-x: hidden;
     overflow-y: hidden;
-    background-color: #222222;
+    background-color: #FFFFCC;
     min-width: 103%;
     min-height: 125%;
     max-width: 105%;
