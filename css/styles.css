@@ -37,11 +37,11 @@ input{
 }
 .head{
     height: 20vh;
-    font-size: 5vmin;
+    font-size: 5vmax;
 }
 .head-export{
     height: 10vh;
-    font-size: 5vmin;
+    font-size: 5vmax;
 }
 .line_section{
     position: relative;  
@@ -59,7 +59,7 @@ input{
 }
 .line_name{
     position: relative;
-    font-size: 8vmin;
+    font-size: 8vmax;
     font-weight: 600;
     color: #FFF;
     display: block;
@@ -70,7 +70,7 @@ input{
     text-transform: uppercase;
 }
 .line_button{
-    font-size: 5vmin;
+    font-size: 5vmax;
     padding: 10px;
     font-weight: 600;
     margin-left: 0%;
@@ -92,7 +92,7 @@ input{
 .station_instance{
     position: relative;
     margin: auto;
-    font-size: 2vmin;
+    font-size: 2vmax;
     margin-bottom: 10px;
     width: 50%;
     display: block;
@@ -120,7 +120,7 @@ input{
     text-align: center;
     display: inline-flex;
     border: none;
-    font-size: 1vmin;
+    font-size: 1.5vmax;
     line-height: 15px;
     font-weight: 300;
     text-decoration: none;
@@ -144,7 +144,7 @@ input{
     padding: 10px;
     display: flex;
     border: none;
-    font-size: 1vmin;
+    font-size: 1vmax;
     font-weight: 300;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -162,7 +162,7 @@ input{
     transform: scaleX(0.7);
     position: relative;
     bottom: 30%;
-    font-size: 2vmin;
+    font-size: 2vmax;
     margin-right: 0.25%;
 }
 
@@ -175,7 +175,7 @@ input{
     transition: 300ms;
     display: flex;
     border: 0px solid transparent;
-    font-size: 1vmin;
+    font-size: 1vmax;
     text-align: center;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -197,8 +197,8 @@ input{
     right: 2px;
     display: block;
     bottom: 0px;
-    width: 25.8vmin;
-    max-width: 25.8vmin;
+    width: 20.8vmax;
+    max-width: 20.8vmax;
     height: auto;
     font-size: 2vh;
     text-align: center;
@@ -230,7 +230,7 @@ input{
     display: block;
     width: 100%;
     text-align: center;
-    font-size: 1vmin;
+    font-size: 1vmax;
 }
 #st-list{
     position: absolute;
@@ -310,10 +310,8 @@ input{
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #FFFFCC;
-    min-width: 103%;
-    min-height: 125%;
-    max-width: 105%;
-    max-height: 105%;
+    min-width: 100%;
+    min-height: 125vh;
     display: none;
     justify-content: center;
 }
@@ -353,7 +351,7 @@ input{
     top: 20%;
     margin: auto;
     padding: 5px;
-    font-size: 5vmin;
+    font-size: 5vmax;
     margin-bottom: 10px;
     width: 80%;
     display: block;
@@ -366,7 +364,7 @@ input{
     top: 20%;
     margin: auto;
     padding: 5px;
-    font-size: 5vmin;
+    font-size: 5vmax;
     width: 80%;
     display: block;
     border: none;
