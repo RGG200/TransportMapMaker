@@ -37,11 +37,11 @@ input{
 }
 .head{
     height: 20vh;
-    font-size: 3vmax;
+    font-size: 2vmax;
 }
 .head-export{
     height: 10vh;
-    font-size: 3vmax;
+    font-size: 2vmax;
 }
 .line_section{
     position: relative;  
@@ -443,7 +443,7 @@ input{
     top: 85vh;
     right: 10vw;
     color: forestgreen;
-    font-size: 4vmax;
+    font-size: 2vmax;
   }
 
   #save:active{
@@ -456,7 +456,7 @@ input{
     top: 85vh;
     right: 10vw;
     color: forestgreen;
-    font-size: 4vmax;
+    font-size: 2vmax;
   }
 
   #param-save:active{
@@ -469,7 +469,7 @@ input{
     top: 85vh;
     right: 10vw;
     color: forestgreen;
-    font-size: 4vmax;
+    font-size: 2vmax;
   }
   #ln_save:active{
     background-color: transparent;
@@ -480,7 +480,7 @@ input{
     position: fixed;
     top: 85vh;
     left: 10vw;
-    font-size: 4vmax;
+    font-size: 2vmax;
   }
   
   #delete:active{
@@ -492,7 +492,7 @@ input{
     position: fixed;
     top: 85vh;
     left: 10vw;
-    font-size: 4vmax;
+    font-size: 2vmax;
   }
   #ln_delete:active{
     background-color: transparent;
