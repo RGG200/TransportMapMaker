@@ -443,6 +443,7 @@ input{
     top: 85vh;
     right: 10vw;
     color: forestgreen;
+    font-size: 4vmax;
   }
 
   #save:active{
@@ -455,6 +456,7 @@ input{
     top: 85vh;
     right: 10vw;
     color: forestgreen;
+    font-size: 4vmax;
   }
 
   #param-save:active{
@@ -467,6 +469,7 @@ input{
     top: 85vh;
     right: 10vw;
     color: forestgreen;
+    font-size: 4vmax;
   }
   #ln_save:active{
     background-color: transparent;
@@ -477,6 +480,7 @@ input{
     position: fixed;
     top: 85vh;
     left: 10vw;
+    font-size: 4vmax;
   }
   
   #delete:active{
@@ -488,6 +492,7 @@ input{
     position: fixed;
     top: 85vh;
     left: 10vw;
+    font-size: 4vmax;
   }
   #ln_delete:active{
     background-color: transparent;
