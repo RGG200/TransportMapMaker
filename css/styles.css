@@ -37,11 +37,11 @@ input{
 }
 .head{
     height: 20vh;
-    font-size: 5vmax;
+    font-size: 3vmax;
 }
 .head-export{
     height: 10vh;
-    font-size: 5vmax;
+    font-size: 3vmax;
 }
 .line_section{
     position: relative;  
@@ -59,7 +59,7 @@ input{
 }
 .line_name{
     position: relative;
-    font-size: 8vmax;
+    font-size: 6vmax;
     font-weight: 600;
     color: #FFF;
     display: block;
@@ -70,7 +70,7 @@ input{
     text-transform: uppercase;
 }
 .line_button{
-    font-size: 5vmax;
+    font-size: 3vmax;
     padding: 10px;
     font-weight: 600;
     margin-left: 0%;
