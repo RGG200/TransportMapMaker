@@ -285,6 +285,7 @@ input[type="text"]{
 #ln-editor{
     position: absolute;
     top: -5%;
+    left: 0%;
     z-index: 2;
     background-color: #FFFFCC;
     overflow-x: hidden;
