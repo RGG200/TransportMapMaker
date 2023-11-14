@@ -25,7 +25,8 @@ input[type="text"]{
     border-radius: 5px;
     border: 4px solid #99FF11
     position: relative;
-    top: 20%;
+    top: 12.5vh;
+    right: auto;
     padding: 10px;
 }
 #param_content{
