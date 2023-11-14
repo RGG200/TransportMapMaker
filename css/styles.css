@@ -26,7 +26,7 @@ input[type="text"]{
     border: 4px solid #99FF11
     position: relative;
     top: 12.5vh;
-    right: auto;
+    right: 30vw;
     padding: 10px;
 }
 #param_content{
@@ -238,12 +238,12 @@ input[type="text"]{
 }
 #st-list{
     position: absolute;
-    left: 0%;
-    top: -5%;
+    top:-5vh;
+    left:0%;
     overflow-x: hidden;
     z-index: 2;
     background-color: #FFFFCC;
-    width: 100%;
+    width: 100vw;
     min-height: 110vh;
     justify-content: center;
     display: none;
@@ -253,12 +253,15 @@ input[type="text"]{
     padding: 5vh;
 }
 #st-editor{
+    position: absolute;
+    top:-5vh;
+    left:0%;
     overflow-x: hidden;
     overflow-y: hidden;
     position: absolute;
     z-index: 3;
     background-color: #FFFFCC;
-    width: 100%;
+    width: 100vw;
     min-height: 110vh;
     display: none;
     justify-content: center;
@@ -270,7 +273,7 @@ input[type="text"]{
     z-index: 3;
     overflow-x: hidden;
     background-color: #FFFFCC;
-    width: 100%;
+    width: 100vw;
     min-height: 110vh;
     justify-content: center;
     display: none;
@@ -286,7 +289,7 @@ input[type="text"]{
     background-color: #FFFFCC;
     overflow-x: hidden;
     overflow-y: hidden;
-    width: 100%;
+    width: 100vw;
     min-height: 110vh;
     display: none;
     justify-content: center;
