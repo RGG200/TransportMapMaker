@@ -2,7 +2,7 @@ const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
 async function showOptions(classname){
     document.getElementById(classname).style.animation = "fade-in 0.8s";
     await sleep(600) 
-    document.getElementById(classname).style.display = 'block';
+    document.getElementById(classname).style.display = 'grid';
 }
 async function hideOptions(classname){
     document.getElementById(classname).style.animation = "fade-out 0.8s";
