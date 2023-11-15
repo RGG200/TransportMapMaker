@@ -23,8 +23,12 @@ input[type="file"] {
 input[type="text"]{
     background-color: white;
     border-radius: 5px;
-    border: 4px solid #99FF16;
+    border: 2px solid #555555;
     padding: 10px;
+}
+input[type="text"]:active{
+    border: 2px solid #19FF99;
+    transition:300ms;
 }
 #param_content{
     max-width: 100%;
@@ -41,10 +45,12 @@ input[type="text"]{
 .head{
     height: 20vh;
     font-size: 2vmax;
+    display:flex;
 }
 .head-export{
     height: 10vh;
     font-size: 2vmax;
+    display:flex;
 }
 .line_section{
     position: relative;  
