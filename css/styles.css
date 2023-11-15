@@ -4,6 +4,7 @@ html body{
     font-family:'Noto Sans JP', sans-serif;
 }
 .editor-content{
+    display: grid;
     justify-content: center;
     width: 100vw;
 }
