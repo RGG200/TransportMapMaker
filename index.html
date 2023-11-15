@@ -12,9 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvg/3.0.9/umd.js" integrity="sha512-Wu9XXg78PiNE0DI4Z80lFKlEpLq7yGjquc0I35Nz+sYmSs4/oNHaSW8ACStXBoXciqwTLnSINqToeWP3iNDGmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- svg-exportJS plugin -->
     <script src="https://sharonchoong.github.io/svg-exportJS/svg-export.min.js"></script>
-    <script src="./js/app.js" type="module"></script>
-    <script src="./js/options.js"></script>
-    <script src="./js/FileOptions/export.js"></script>
+    <script src="https://transportmapmaker.duckdns.org/js/app.js" type="module"></script>
+    <script src="https://transportmapmaker.duckdns.org/js/options.js"></script>
+    <script src="https://transportmapmaker.duckdns.org/js/FileOptions/export.js"></script>
     <svg id="svg-canvas" height="8000" width="8000" xmlns="http://www.w3.org/2000/svg">
     </svg>
     <div id="options" onmousemove="resetSVG();">
@@ -80,7 +80,7 @@
       <div class="head">
         <h1 class="main-title">Editer une Ligne</h1>
         <button class="return" onclick="hideOptions('ln-editor'); showOptions('ln-list'); showOptions('showr');">
-          <span class="return-obj"> ‹ </span> 
+          <span class="return-obj"> « </span> 
           <span> RETOUR</span> 
         </button>
       </div>
@@ -97,7 +97,7 @@
     <section id="ln-list">
       <div class="head">
         <button class="return" onclick="hideOptions('ln-list'); showOptions('svg-canvas'); showOptions('showr');">
-          <span class="return-obj"> < </span> 
+          <span class="return-obj"> « </span> 
           <span> RETOUR </span> 
         </button>
           <button id="ln_create" class="menu-buttons"> + </button>
@@ -107,10 +107,9 @@
   </section>
   <section id="export-section">
     <section id="ex_content">
-      <section class="head-export">
+      <div class="head-export">
         <h1 class="main-title">Exporter la carte</h1>
-        <button class="return" onclick="hideOptions('export-section'); showOptions('svg-canvas'); showOptions('showr'); resetSVG();"> <span class="return-obj"> < </span> <span> RETOUR</span> </button>    
-      </section>
+        <button class="return" onclick="hideOptions('export-section'); showOptions('svg-canvas'); showOptions('showr'); resetSVG();"> <span class="return-obj"> « </span> <span> RETOUR</span> </button>    
       </div>
       <div id="export-box">
         <button class="menu-buttons" id="svg-exbtn" onclick="">Exporter comme SVG</button>
@@ -123,7 +122,7 @@
   <section id="parameters">
     <div class="head">
       <button class="return" onclick="hideOptions('parameters'); showOptions('svg-canvas'); showOptions('showr');">
-        <span class="return-obj"> ‹ </span> 
+        <span class="return-obj"> « </span> 
         <span> RETOUR</span> 
       </button>
         <h1 class="main-title">Paramètres du projet</h1>
