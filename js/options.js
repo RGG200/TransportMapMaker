@@ -13,6 +13,6 @@ async function showEditor(hidden, showed){
     document.getElementById(hidden).style.animation = "fade-out 0.8s";
     await sleep(800)
     document.getElementById(hidden).style.display = 'none';
-    document.getElementById(showed).style.display = 'grid';
+    document.getElementById(showed).style.display = 'block';
     document.getElementById(showed).style.animation = "fade-in 1s";
 }
