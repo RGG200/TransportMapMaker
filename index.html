@@ -40,34 +40,39 @@
         <div id="content" class="content"></div>
     </section>
     <section id="st-editor">
-        <button class="return" onclick="hideOptions('st-editor'); showOptions('st-list'); showOptions('showr');">
-          <span class="return-obj"> ‹ </span> 
-          <span> RETOUR</span> 
-        </button>
-        <h1 class="main-title">éditer une station</h1>
-        <input id="first" class="stname" type="text" placeholder="Nom principal">
-        <input id="second" class="stname" type="text" placeholder="Nom secondaire">
-        <input id="xPos" class="stname" type="text" placeholder="Position X">
-        <input id="yPos" class="stname" type="text" placeholder="Position Y">
-        <div class="dropdowns">
-        <div class="connexion-type">
-            <label for="connexion-types">Connexion Type</label>
-            <select name="" id="connexion-types" class="dropdownContent">
-                <option id="a" value="a" onclick="hideOptions('myDropdown');">Round A</option>
-                <option id="b" value="b" onclick="hideOptions('myDropdown');">Round B</option>
-                <option id="c" value="c" onclick="hideOptions('myDropdown');">Curve A</option>
-                <option id="d" value="d" onclick="hideOptions('myDropdown');">Curve B</option>
-                <option id="e" value="e" onclick="hideOptions('myDropdown');">Butt A</option>
-                <option id="f" value="f" onclick="hideOptions('myDropdown');">Butt B</option>
-                <option id="g" value="g" onclick="hideOptions('myDropdown');">Straight line</option>
-            </select>
-       <div class="style-type">
-        <label for="style-types"> Style Type </label>
-        <select name="" id="style-types" class="dropdownContent">
-            <option id="a" value="rect" onclick="hideOptions('myDropdown');">Rectangle</option>
-            <option id="b" value="circle" onclick="hideOptions('myDropdown');">Circle</option>
-          </select>
-          </div>
+        <div class="head">
+            <h1 class="main-title">Modifier une station</h1>
+            <button class="return" onclick="hideOptions('st-list'); showOptions('svg-canvas'); showOptions('showr');">
+              <span class="return-obj"> ‹ </span> 
+              <span> RETOUR</span> 
+            </button>
+        </div>
+        <div class="editor-content">
+            <input id="first" class="stname" type="text" placeholder="Nom principal">
+            <input id="second" class="stname" type="text" placeholder="Nom secondaire">
+            <input id="xPos" class="stname" type="text" placeholder="Position X">
+            <input id="yPos" class="stname" type="text" placeholder="Position Y">
+            <div class="dropdowns">
+                <div class="connexion-type">
+                    <label for="connexion-types">Connexion Type</label>
+                    <select name="" id="connexion-types" class="dropdownContent">
+                        <option id="a" value="a" onclick="hideOptions('myDropdown');">Round A</option>
+                        <option id="b" value="b" onclick="hideOptions('myDropdown');">Round B</option>
+                        <option id="c" value="c" onclick="hideOptions('myDropdown');">Curve A</option>
+                        <option id="d" value="d" onclick="hideOptions('myDropdown');">Curve B</option>
+                        <option id="e" value="e" onclick="hideOptions('myDropdown');">Butt A</option>
+                        <option id="f" value="f" onclick="hideOptions('myDropdown');">Butt B</option>
+                        <option id="g" value="g" onclick="hideOptions('myDropdown');">Straight line</option>
+                   </select>
+                </div>
+               <div class="style-type">
+                   <label for="style-types"> Style Type </label>
+                   <select name="" id="style-types" class="dropdownContent">
+                       <option id="a" value="rect" onclick="hideOptions('myDropdown');">Rectangle</option>
+                       <option id="b" value="circle" onclick="hideOptions('myDropdown');">Circle</option>
+                   </select>
+               </div>  
+        </div>
         <a id="delete" class="menu-buttons" onclick="hideOptions('st-editor'); showOptions('st-list');"> Supprimer </a>
         <a id="save" class="menu-buttons"> Sauvegarder </a>
     </section>
