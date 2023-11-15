@@ -240,8 +240,6 @@ input[type="text"]:active{
     font-size: 1vmax;
 }
 #st-list{
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top:-5vh;
     left:0%;
@@ -258,8 +256,6 @@ input[type="text"]:active{
     padding: 5vh;
 }
 #st-editor{
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top:-5vh;
     left:0%;
@@ -274,8 +270,6 @@ input[type="text"]:active{
     justify-content: center;
 }
 #ln-list{
-    align-items: center;
-    justify-content: center;
     position: absolute;
     left: 0%;
     top: -5%;
@@ -292,8 +286,6 @@ input[type="text"]:active{
   overflow-x: hidden;
 }
 #ln-editor{
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: -5%;
     left: 0%;
@@ -322,8 +314,6 @@ input[type="text"]:active{
     justify-content: center;
 }
 #parameters{
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: -5%;
     left: -2.5%;
