@@ -248,9 +248,7 @@ input[type="text"]:active{
     background-color: #FFFFCC;
     width: 100vw;
     min-height: 110vh;
-    justify-content: center;
     display: none;
-    place-items: center;
 }
 .main-title{
     text-align: center;
@@ -264,7 +262,6 @@ input[type="text"]:active{
     overflow-y: hidden;
     position: absolute;
     z-index: 3;
-    place-items: center;
     background-color: #FFFFCC;
     width: 100vw;
     min-height: 110vh;
@@ -276,7 +273,6 @@ input[type="text"]:active{
     left: 0%;
     top: -5%;
     z-index: 3;
-    place-items: center;
     overflow-x: hidden;
     background-color: #FFFFCC;
     width: 100vw;
@@ -293,7 +289,6 @@ input[type="text"]:active{
     top: -5%;
     left: 0%;
     z-index: 2;
-    place-items: center;
     background-color: #FFFFCC;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -307,7 +302,6 @@ input[type="text"]:active{
     top: -5%;
     left: -2.5%;
     z-index: 3;
-    place-items: center;
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #FFFFCC;
@@ -323,7 +317,6 @@ input[type="text"]:active{
     top: -5%;
     left: -2.5%;
     z-index: 3;
-    place-items: center;
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #FFFFCC;
