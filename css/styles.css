@@ -4,6 +4,7 @@ html body{
     font-family:'Noto Sans JP', sans-serif;
 }
 .editor-content{
+    margin-bottom: 25vh;
     display: grid;
     justify-content: center;
     width: 100vw;
@@ -28,12 +29,13 @@ input[type="file"] {
 input[type="text"]{
     background-color: white;
     border-radius: 5px;
-    border: 2px solid #555555;
-    padding: 10px;
+    border: 0.8vmin solid #555555;
+    padding: 3vh;
+    font-size: 4vh;
 }
-input[type="text"]:active{
-    border: 2px solid #19FF99;
-    transition:300ms;
+input[type="text"]:focus{
+    border: 0.8vmin solid #19FF99;
+    transition:200ms;
 }
 #param_content{
     max-width: 100%;
