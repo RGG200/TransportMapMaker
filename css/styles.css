@@ -46,11 +46,13 @@ input[type="text"]:active{
     height: 20vh;
     font-size: 2vmax;
     display:flex;
+    justify-content: center;
 }
 .head-export{
     height: 10vh;
     font-size: 2vmax;
     display:flex;
+    justify-content: center;
 }
 .line_section{
     position: relative;  
@@ -116,9 +118,6 @@ input[type="text"]:active{
 }
 .return{
     opacity: 0.5;
-    position: absolute;
-    top: 9vh;
-    left: 70vw;
     padding: 15px;
     color: rgb(220, 30, 64);
     width: 100%;
@@ -134,9 +133,6 @@ input[type="text"]:active{
     font-family: 'Noto Sans JP', sans-serif;
 }
 #ln_create{
-    position: absolute;
-    left: 10%;
-    top: 5%;
     padding: 10px;
     z-index: 2;
 }
