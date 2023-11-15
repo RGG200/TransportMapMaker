@@ -72,6 +72,7 @@ input[type="text"]:focus{
   width: 100vw;
 }
 .line_section{
+    margin-bottom: 15vh;
     width: 100%;
     height: auto;
     background: #ADE25D;
@@ -95,6 +96,7 @@ input[type="text"]:focus{
     text-transform: uppercase;
 }
 .line_button{
+    margin-bottom: 15vh;
     font-size: 3vmax;
     padding: 10px;
     font-weight: 600;
