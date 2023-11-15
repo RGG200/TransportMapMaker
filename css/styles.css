@@ -127,6 +127,7 @@ input[type="text"]:active{
     cursor: pointer;
 }
 .return{
+    padding-right: 3vw;
     opacity: 0.5;
     padding: 15px;
     color: rgb(220, 30, 64);
@@ -142,7 +143,7 @@ input[type="text"]:active{
     font-family: 'Noto Sans JP', sans-serif;
 }
 #ln_create{
-    padding: 10px;
+    padding-left: 3vw;
     z-index: 2;
 }
 .menu-buttons{
