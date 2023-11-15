@@ -3,6 +3,12 @@ html body{
     background-color: whitesmoke;
     font-family:'Noto Sans JP', sans-serif;
 }
+.editor-content{
+    width: 100vw;
+    display: grid;
+    justify-content: center;
+    justify-self: center;
+}
 #svg-canvas{
     position: absolute;
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
@@ -20,15 +26,21 @@ input[type="file"] {
     min-height: 100%;
     align-items: center;
 }
-input[type="text"]{
+input[type="text"]{    
+    text-transform: uppercase;
     background-color: white;
-    border-radius: 5px;
-    border: 2px solid #555555;
-    padding: 10px;
+    border-radius: 10px;
+    font-size:  4.5vh;
+    width: 15vw;
+    justify-self: center;
+    border: 4px solid #555555;
+    padding: 4vh;
+    margin-bottom: 2px;
+    max-height: 5vh;
 }
-input[type="text"]:active{
-    border: 2px solid #19FF99;
-    transition:300ms;
+input[type="text"]:focus{
+    border: 4px solid #19FF99;
+    transition:200ms;
 }
 #param_content{
     max-width: 100%;
@@ -43,13 +55,13 @@ input[type="text"]:active{
     text-transform: uppercase;
 }
 .head{
-    height: 20vh;
+    height: 30vh;
     max-width: 100vw;
     display:flex;
     align-items: center;
 }
 .head-export{
-    height: 10vh;
+    height: 30vh;
     max-width:100vw;
     display:flex;
     align-items: center;
@@ -127,9 +139,10 @@ input[type="text"]:active{
     cursor: pointer;
 }
 .return{
-    padding-right: 3vw;
-    opacity: 0.5;
     padding: 15px;
+    max-width: 20vw;
+    padding-right: 4vw;
+    opacity: 0.5;
     color: rgb(220, 30, 64);
     background: transparent;
     transition: 300ms;
@@ -143,8 +156,10 @@ input[type="text"]:active{
     font-family: 'Noto Sans JP', sans-serif;
 }
 #ln_create{
-    padding-left: 3vw;
+    padding-left: 5vw;
+    width: 20vw;
     z-index: 2;
+    max-width: 12.5vw;
 }
 .menu-buttons{
     opacity: 0.5;
@@ -396,9 +411,7 @@ input[type="text"]:active{
   
   /* The container <div> - needed to position the dropdown content */
   .connexion-type {
-    position: relative;
-    top: 25%;
-    left: 12%;
+    margin-top: 4vh;
     width: 100%;
     height: 5%;
     padding: 10px;
@@ -418,8 +431,7 @@ input[type="text"]:active{
       margin: 15px;
    }
   .style-type {
-    position: relative;
-    top: 35%;
+    margin-top: 4vh;    
     padding: 10px;
     width: 100%;
     height: 5%;
