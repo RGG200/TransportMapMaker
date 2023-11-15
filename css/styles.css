@@ -59,7 +59,7 @@ input[type="text"]{
     padding: 15px;
     text-align: center;
     outline: 5px solid #3A5743CC;
-    margin: 0px;
+    margin-left: -5vw;
 }
 .line_name{
     position: relative;
