@@ -72,6 +72,7 @@ input[type="text"]:active{
     transform: scale(0.7);
     padding: 15px;
     text-align: center;
+    align-self: center;
     outline: 5px solid #3A5743CC;
 }
 .line_name{
