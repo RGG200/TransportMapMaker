@@ -5,7 +5,7 @@ html body{
 }
 #svg-canvas{
     position: absolute;
-    background: url('../img/grid.svg');
+    background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas-preview{
     background-color: red;
@@ -44,15 +44,25 @@ input[type="text"]:active{
 }
 .head{
     height: 20vh;
-    font-size: 2vmax;
+    max-width: 100vw;
     display:flex;
-    justify-content: center;
+    align-items: center;
 }
 .head-export{
     height: 10vh;
-    font-size: 2vmax;
+    max-width:100vw;
     display:flex;
-    justify-content: center;
+    align-items: center;
+}
+.head-export h1{
+  padding: 10px;
+  font-size: 2vmax;
+  width: 100vw;
+}
+.head h1{
+  padding: 10px;
+  font-size: 2vmax;
+  width: 100vw;
 }
 .line_section{
     position: relative;  
@@ -120,7 +130,6 @@ input[type="text"]:active{
     opacity: 0.5;
     padding: 15px;
     color: rgb(220, 30, 64);
-    width: 100%;
     background: transparent;
     transition: 300ms;
     text-align: center;
@@ -140,14 +149,14 @@ input[type="text"]:active{
     opacity: 0.5;
     color: rgb(220, 30, 64);
     width: auto;
+    font-size: 4vmax;
     height: auto;
     background: #22222200;
     transition: 300ms;
     text-align: center;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     border: none;
-    font-size: 1vmax;
     font-weight: 300;
     text-decoration: none;
     font-family: 'Noto Sans JP', sans-serif;
@@ -494,4 +503,4 @@ input[type="text"]:active{
   .dropdown-content a:hover {background-color: #ddd;}
   
   /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-  .show {display:block;} 
+.show {display:block;} 
