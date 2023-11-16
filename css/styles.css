@@ -30,8 +30,8 @@ input[type="text"]{
     background-color: white;
     border-radius: 5px;
     border: 0.8vmin solid #555555;
-    padding: 3min;
-    font-size: 4vmin;
+    padding: 2min;
+    font-size: 2vmin;
 }
 input[type="text"]:focus{
     border: 0.8vmin solid #19FF99;
