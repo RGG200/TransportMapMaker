@@ -32,6 +32,7 @@ input[type="text"]{
     border: 0.8vmin solid #555555;
     padding: 2min;
     font-size: 2vmin;
+    max-width: 50vw;
 }
 input[type="text"]:focus{
     border: 0.8vmin solid #19FF99;
