@@ -554,6 +554,7 @@ const onChange = e => {
         net.width = obj.width;
         net.filename = obj.filename;
         net.height = obj.height;
+        net = obj;
         //modifiying the canvas
         document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
         document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
@@ -567,7 +568,7 @@ const onChange = e => {
         updateCanvas();
         drawStationsList(net, instancesLine);
         drawLinesList(net, instancesLine);
-        e.target.files[0] = null
+        e.target.files[0] = null;
       }
 
       console.log(net);
