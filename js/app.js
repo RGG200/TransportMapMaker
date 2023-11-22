@@ -535,64 +535,43 @@ export_rtm.addEventListener("click", function(){
 
 });
 
+//for import
 const onChange = e => { 
-
+    //create a file var
     var file = e.target.files[0];
-
+    //create a reader to read the file
     var reader = new FileReader();
-
     reader.onload = onReaderLoad;
-
+    //we read the file
     reader.readAsText(file);
 
     function onReaderLoad(e){
 
-      var obj = JSON.parse(file.result);
-
+      var obj = JSON.parse(e.target.result);
       if(obj != undefined){
-
+        //setting the network in accordance to the file contents
         net.lines = obj.lines;
-
         net.width = obj.width;
-
         net.filename = obj.filename;
-
         net.height = obj.height;
-
-        for(var i = 0; i < net.lines.length; i++){
-
-          net.lines[i].stations[i].stationInstance-=1
-
-        }
-
+        //modifiying the canvas
         document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
-
         document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
-
         param_data.filename = net.filename;
-
         param_data.width = net.width;
-
         param_data.height = net.height;            
         param_save.click();
+        //reset variables
         is_any_station_selected = false;
-
         selected_station = undefined;
-
         station_is_being_created = false;
-
         instancesLine = 0;
-
         linePathId = net.lines[instancesLine].linePath.length;
-
+        //update interface
         updateCanvas();
-
         drawStationsList(net, instancesLine);
-
         drawLinesList(net, instancesLine);
-
         e.target.files[0] = null
-
       }
 
       console.log(net);
@@ -600,5 +579,5 @@ const onChange = e => {
     }
 
 }
-
+//check for file selected
 import_rtm.addEventListener("change", onChange);
