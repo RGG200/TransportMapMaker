@@ -575,8 +575,6 @@ const onChange = e => {
       console.log(net);
 
     }
-    e.target.files[0] = null;
-
 }
 //check for file selected
 import_rtm.addEventListener("change", onChange);
