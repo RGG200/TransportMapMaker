@@ -548,6 +548,7 @@ const onChange = e => {
     function onReaderLoad(e){
 
       var obj = JSON.parse(e.target.result);
+      console.log(obj.lines);
       if(obj != undefined){
         //setting the network in accordance to the file contents
         net.lines = obj.lines;
