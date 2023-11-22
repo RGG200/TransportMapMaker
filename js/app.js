@@ -561,6 +561,9 @@ const onChange = e => {
         document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
         document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
         //reset variables
+        for(var i = 0; i < net.lines.length; i++){
+          net.lines[i].stations[i].stationInstance-=1
+        }
         is_any_station_selected = false;
         selected_station = undefined;
         station_is_being_created = false;
