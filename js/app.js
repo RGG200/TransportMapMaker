@@ -557,10 +557,6 @@ const onChange = e => {
         //modifiying the canvas
         document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
         document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
-        param_data.filename = net.filename;
-        param_data.width = net.width;
-        param_data.height = net.height;            
-        param_save.click();
         //reset variables
         is_any_station_selected = false;
         selected_station = undefined;
