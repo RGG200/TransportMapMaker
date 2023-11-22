@@ -289,6 +289,7 @@ canvas.addEventListener('click', function(){
       station_is_being_created = false
       break;
   }
+  console.log(net.lines[instancesLine].linePath);
   if(net.lines[instancesLine].stationInstances > 0){
     drawStationsList(net, instancesLine);
   }
