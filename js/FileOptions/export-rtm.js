@@ -2,7 +2,15 @@
     if(network != null){
         var seen = [];
         var file = new Blob([
-            JSON.stringify(network)], {type: 'application/rtm'});
+            JSON.stringify(network, function(key, val) {
+               if (val != null && typeof val == "object") {
+                    if (seen.indexOf(val) >= 0) {
+                        return;
+                    }
+                    seen.push(val);
+                }
+                return val;
+            })], {type: 'application/rtm'});
         const href = URL.createObjectURL(file);
         const a = Object.assign(document.createElement('a'),
         {

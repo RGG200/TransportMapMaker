@@ -272,9 +272,9 @@ canvas.addEventListener('click', function(){
   switch(is_any_station_selected){
     case true:
       if(isUniqueInLine(instancesLine)){
-        net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances, 20);
+        net.lines[instancesLine].stations[net.lines[instancesLine].stations.length] = new Station(default_fNames[getRandomIntInclusive(0, 8)], default_sNames[getRandomIntInclusive(0, 5)], 'destination', 'a', 'rect', mosX, mosY, net.lines[instancesLine].stationInstances, 20);
         net.lines[instancesLine].linePath[linePathId] = net.lines[instancesLine].stations[net.lines[instancesLine].stationInstances];
-        if(linePathId != net.lines[instancesLine].linePath.length){linePathId = net.lines[instancesLine].linePath.length;}
+        linePathId = net.lines[instancesLine].linePath.length
         net.lines[instancesLine].stationInstances = net.lines[instancesLine].stations.length;
         station_is_being_created = true;
         is_any_station_selected = false;
@@ -569,12 +569,12 @@ const onChange = e => {
         updateCanvas();
         drawStationsList(net, instancesLine);
         drawLinesList(net, instancesLine);
-        e.target.files[0] = null;
       }
 
       console.log(net);
 
     }
+    e.target.files[0] = null;
 
 }
 //check for file selected
