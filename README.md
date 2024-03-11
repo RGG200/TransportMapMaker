@@ -1,3 +1,3 @@
-# Transport map maker
+# Transport Map Maker
 
-- Transport map maker is a tool that allows you to make beautiful transport maps very easely
+- Transport Map Maker is a tool that allows you to make beautiful yet simplistic metro/underground transport system maps very easily.
