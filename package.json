@@ -1,10 +1,11 @@
 {
-  "name": "rgsmmk",
+  "name": "tmm",
   "version": "1.0.0",
   "description": "RG's metro map maker",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/RGG200/RGsMMK#readme",
   "dependencies": {
+    "http": "^0.0.1-security",
     "serv": "^0.2.4"
   }
 }

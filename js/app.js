@@ -425,14 +425,6 @@ ln_save.addEventListener('click', function(){
   updateCanvas();
 });
 
-document.getElementById("param-btn").addEventListener("click", function(){
-  param_data.filename = net.filename;
-  param_data.width = net.width;
-  param_data.height = net.height;
-  document.getElementById("filename").value = param_data.filename;
-  document.getElementById("width").value = param_data.width;
-  document.getElementById("height").value = param_data.height;
-});
 
 document.getElementById("svg-exbtn").addEventListener("click", function(){
   exportSVG(net.filename, net.width, net.height);

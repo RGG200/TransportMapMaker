@@ -15,21 +15,58 @@
     <script src="https://transportmapmaker.duckdns.org/js/app.js" type="module"></script>
     <script src="https://transportmapmaker.duckdns.org/js/options.js"></script>
     <script src="https://transportmapmaker.duckdns.org/js/FileOptions/export.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
     <svg id="svg-canvas" height="8000" width="8000" xmlns="http://www.w3.org/2000/svg">
     </svg>
     <div id="options" onmousemove="resetSVG();">
-      <button id="showr" class="button" onclick="showOptions('buttons'); hideOptions('showr');">Montrer les options</button>
-      <div id="buttons" onmouseleave="showOptions('showr'); hideOptions('buttons')">
-          <a id="exportmap" download="unnamedtrainmap.svg" class="button" onclick="hideOptions('buttons'); hideOptions('hide'); showOptions('export-section'); hideOptions('svg-canvas'); showOptions('showr');">Exporter la carte</a>
-          <label id="" onclick="hideOptions('buttons'); " class="button">Importer une carte (.rtm) <input type="file" id="import" accept="application/rtm, application/plain, .rtm, application/json" /></label>
-          <button id="" onclick="showEditor('buttons', 'st-list'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" href="">Editer une Station</button>
-  
-          <button id="" onclick="showEditor('buttons', 'ln-list'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" href="">Editer une Ligne</button>
-          <button id="param-btn" onclick="showEditor('buttons', 'parameters'); hideOptions('buttons'); hideOptions('hide'); hideOptions('svg-canvas');" class="button" >Paramètres</button>
-          <button id="" onclick="hideOptions('buttons'); showOptions('showr');" class="button" href="">Quitter</button>  
+      <div class="top">
+        <div class="logo">
+            <i class="bx bxl-codepen"></i>
+            <span>TransportMapMaker</span>
         </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul>
+        <li>
+          <a href="#">
+            <i class="bx bx-import"></i>
+            <span>importer</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="showOptions('export-section');hideOptions('svg-canvas'); showOptions('st-list'); hideOptions('svg-canvas'); hideOptions('ln-list'); hideOptions('st-editor'); hideOptions('ln-editor');  hideOptions('parameters'); hideOptions('st-list');">
+            <i class="bx bx-export"></i>
+            <span>exporter</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="showOptions('st-list'); hideOptions('svg-canvas'); hideOptions('ln-list'); hideOptions('st-editor'); hideOptions('ln-editor'); hideOptions('parameters'); hideOptions('export-section');"><i class="bx bx-circle">            
+          </i>
+            <span>stations</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="showOptions('ln-list'); hideOptions('svg-canvas'); hideOptions('st-list'); hideOptions('st-editor'); hideOptions('ln-editor'); hideOptions('parameters'); hideOptions('export-section');">
+            <i class="bx bx-outline"></i>
+            <span>lignes</span>          
+          </a>
+        </li>
+        <li>
+          <a href="#" onclick="showOptions('parameters');hideOptions('svg-canvas'); hideOptions('st-list'); hideOptions('st-editor'); hideOptions('ln-editor'); hideOptions('ln-list'); hideOptions('export-section'); "><i class="bx bx-cog"></i>
+            <span>options</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <section id="st-list" onmouseenter="">
+    <script>
+      let btn = document.querySelector("#btn");
+      let sidebar = document.querySelector("#options")
+      btn.onclick = function(){
+        sidebar.classList.toggle('active');
+      }
+    </script>
+    <div class="main-content">
+      <section id="st-list" onmouseenter="">
         <div class="head">
             <h1 class="main-title">Liste des station</h1>
             <button class="return" onclick="hideOptions('st-list'); showOptions('svg-canvas'); showOptions('showr');">
@@ -38,101 +75,102 @@
             </button>
         </div>
         <div id="content" class="content"></div>
-    </section>
-    <section id="st-editor">
+      </section>
+      <section id="st-editor">
+          <div class="head">
+              <h1 class="main-title">Modifier une station</h1>
+              <button class="return" onclick="hideOptions('st-editor'); showOptions('st-list');">
+                <span class="return-obj"> ‹ </span> 
+                <span> RETOUR</span> 
+              </button>
+          </div>
+          <div class="editor-content">
+              <input id="first" class="stname" type="text" placeholder="Nom principal">
+              <input id="second" class="stname" type="text" placeholder="Nom secondaire">
+              <input id="xPos" class="stname" type="text" placeholder="Position X">
+              <input id="yPos" class="stname" type="text" placeholder="Position Y">
+              <div class="dropdowns">
+                  <div class="connexion-type">
+                      <label for="connexion-types">Connexion Type</label>
+                      <select name="" id="connexion-types" class="dropdownContent">
+                          <option id="a" value="a" onclick="hideOptions('myDropdown');">Round A</option>
+                          <option id="b" value="b" onclick="hideOptions('myDropdown');">Round B</option>
+                          <option id="c" value="c" onclick="hideOptions('myDropdown');">Curve A</option>
+                          <option id="d" value="d" onclick="hideOptions('myDropdown');">Curve B</option>
+                          <option id="e" value="e" onclick="hideOptions('myDropdown');">Butt A</option>
+                          <option id="f" value="f" onclick="hideOptions('myDropdown');">Butt B</option>
+                          <option id="g" value="g" onclick="hideOptions('myDropdown');">Straight line</option>
+                    </select>
+                  </div>
+                <div class="style-type">
+                    <label for="style-types"> Style Type </label>
+                    <select name="" id="style-types" class="dropdownContent">
+                        <option id="a" value="rect" onclick="hideOptions('myDropdown');">Rectangle</option>
+                        <option id="b" value="circle" onclick="hideOptions('myDropdown');">Circle</option>
+                    </select>
+                </div>  
+          </div>
+          <a id="delete" class="menu-buttons" onclick="hideOptions('st-editor'); showOptions('st-list');"> Supprimer </a>
+          <a id="save" class="menu-buttons"> Sauvegarder </a>
+      </section>
+      <section id="ln-editor">
         <div class="head">
-            <h1 class="main-title">Modifier une station</h1>
-            <button class="return" onclick="hideOptions('st-editor'); showOptions('st-list');">
-              <span class="return-obj"> ‹ </span> 
-              <span> RETOUR</span> 
-            </button>
+          <h1 class="main-title">Editer une Ligne</h1>
+          <button class="return" onclick="hideOptions('ln-editor'); showOptions('ln-list');">
+            <span class="return-obj"> « </span> 
+            <span> RETOUR</span> 
+          </button>
         </div>
-        <div class="editor-content">
-            <input id="first" class="stname" type="text" placeholder="Nom principal">
-            <input id="second" class="stname" type="text" placeholder="Nom secondaire">
-            <input id="xPos" class="stname" type="text" placeholder="Position X">
-            <input id="yPos" class="stname" type="text" placeholder="Position Y">
-            <div class="dropdowns">
-                <div class="connexion-type">
-                    <label for="connexion-types">Connexion Type</label>
-                    <select name="" id="connexion-types" class="dropdownContent">
-                        <option id="a" value="a" onclick="hideOptions('myDropdown');">Round A</option>
-                        <option id="b" value="b" onclick="hideOptions('myDropdown');">Round B</option>
-                        <option id="c" value="c" onclick="hideOptions('myDropdown');">Curve A</option>
-                        <option id="d" value="d" onclick="hideOptions('myDropdown');">Curve B</option>
-                        <option id="e" value="e" onclick="hideOptions('myDropdown');">Butt A</option>
-                        <option id="f" value="f" onclick="hideOptions('myDropdown');">Butt B</option>
-                        <option id="g" value="g" onclick="hideOptions('myDropdown');">Straight line</option>
-                   </select>
-                </div>
-               <div class="style-type">
-                   <label for="style-types"> Style Type </label>
-                   <select name="" id="style-types" class="dropdownContent">
-                       <option id="a" value="rect" onclick="hideOptions('myDropdown');">Rectangle</option>
-                       <option id="b" value="circle" onclick="hideOptions('myDropdown');">Circle</option>
-                   </select>
-               </div>  
+        <input id="name" class="lnname" type="text" placeholder="Nom">
+        <input id="thicness" class="lnname" type="text" inputmode="numeric" pattern="[0-9]" placeholder="eppaisseur">
+        <input id="color" class="lame" type="color">
+        <div class="slidecontainer">
+            <p>Nombre de pointillés</p>
+            <input type="text" min="0" max="20" value="0" class="dasharrayslider" id="myRange">
         </div>
-        <a id="delete" class="menu-buttons" onclick="hideOptions('st-editor'); showOptions('st-list');"> Supprimer </a>
-        <a id="save" class="menu-buttons"> Sauvegarder </a>
+        <a id="ln_delete" class="menu-buttons" onclick="hideOptions('ln-editor'); showOptions('ln-list');"> Supprimer </a>
+        <a id="ln_save" class="menu-buttons"> Sauvegarder </a>
+      </section>
+      <section id="ln-list">
+        <div class="head">
+          <button id="ln_create" class="menu-buttons"> + </button>
+          <h1 class="main-title">Liste des Lignes</h1>
+          <button class="return" onclick="hideOptions('ln-list'); showOptions('svg-canvas'); showOptions('showr')">
+            <span class="return-obj"> « </span> 
+            <span> RETOUR </span> 
+          </button>
+        </div>
+        <div id="ln_content" class="content"></div>
     </section>
-    <section id="ln-editor">
+    <section id="export-section">
+      <section id="ex_content">
+        <div class="head-export">
+          <h1 class="main-title">Exporter la carte</h1>
+          <button class="return" onclick="hideOptions('export-section'); showOptions('svg-canvas'); showOptions('showr'); resetSVG();"> <span class="return-obj"> « </span> <span> RETOUR</span> </button>    
+        </div>
+        <div id="export-box">
+          <button class="menu-buttons" id="svg-exbtn" onclick="">Exporter comme SVG</button>
+          <button class="menu-buttons" id="png-exbtn" onclick="">Exporter comme PNG</button>
+          <button id="export-rtm" class="menu-buttons">Exporter en RTM</button>
+        </div>
+      </div>
+    </section>
+    </section>
+    <section id="parameters">
       <div class="head">
-        <h1 class="main-title">Editer une Ligne</h1>
-        <button class="return" onclick="hideOptions('ln-editor'); showOptions('ln-list');">
+        <h1 class="main-title">Paramètres du projet</h1>
+        <button class="return" onclick="hideOptions('parameters'); showOptions('svg-canvas'); showOptions('showr');">
           <span class="return-obj"> « </span> 
           <span> RETOUR</span> 
         </button>
       </div>
-      <input id="name" class="lnname" type="text" placeholder="Nom">
-      <input id="thicness" class="lnname" type="text" inputmode="numeric" pattern="[0-9]" placeholder="eppaisseur">
-      <input id="color" class="lame" type="color">
-      <div class="slidecontainer">
-          <p>Nombre de pointillés</p>
-          <input type="text" min="0" max="20" value="0" class="dasharrayslider" id="myRange">
+      <div id="param-content" class="content">
+        <input type="text" class="stname" name="height" id="height" inputmode="numeric" pattern="[0-9]" placeholder="hauteur de dessin">
+        <input type="text" class="stname" name="width" id="width" inputmode="numeric" pattern="[0-9]" placeholder="largeur de dessin">
+        <input type="text" class="stname" name="filename" id="filename" placeholder="Nom du projet">
+        <a id="param-save" class="menu-buttons"> Sauvegarder </a>
       </div>
-      <a id="ln_delete" class="menu-buttons" onclick="hideOptions('ln-editor'); showOptions('ln-list');"> Supprimer </a>
-      <a id="ln_save" class="menu-buttons"> Sauvegarder </a>
     </section>
-    <section id="ln-list">
-      <div class="head">
-        <button id="ln_create" class="menu-buttons"> + </button>
-        <h1 class="main-title">Liste des Lignes</h1>
-        <button class="return" onclick="hideOptions('ln-list'); showOptions('svg-canvas'); showOptions('showr')">
-          <span class="return-obj"> « </span> 
-          <span> RETOUR </span> 
-        </button>
-      </div>
-      <div id="ln_content" class="content"></div>
-  </section>
-  <section id="export-section">
-    <section id="ex_content">
-      <div class="head-export">
-        <h1 class="main-title">Exporter la carte</h1>
-        <button class="return" onclick="hideOptions('export-section'); showOptions('svg-canvas'); showOptions('showr'); resetSVG();"> <span class="return-obj"> « </span> <span> RETOUR</span> </button>    
-      </div>
-      <div id="export-box">
-        <button class="menu-buttons" id="svg-exbtn" onclick="">Exporter comme SVG</button>
-        <button class="menu-buttons" id="png-exbtn" onclick="">Exporter comme PNG</button>
-        <button id="export-rtm" class="menu-buttons">Exporter en RTM</button>
-      </div>
-    </div>
-  </section>
-  </section>
-  <section id="parameters">
-    <div class="head">
-      <h1 class="main-title">Paramètres du projet</h1>
-      <button class="return" onclick="hideOptions('parameters'); showOptions('svg-canvas'); showOptions('showr');">
-        <span class="return-obj"> « </span> 
-        <span> RETOUR</span> 
-      </button>
-    </div>
-    <div id="param-content" class="content">
-      <input type="text" class="stname" name="height" id="height" inputmode="numeric" pattern="[0-9]" placeholder="hauteur de dessin">
-      <input type="text" class="stname" name="width" id="width" inputmode="numeric" pattern="[0-9]" placeholder="largeur de dessin">
-      <input type="text" class="stname" name="filename" id="filename" placeholder="Nom du projet">
-      <a id="param-save" class="menu-buttons"> Sauvegarder </a>
-    </div>
-  </section>
+  </div>
 </body>
 </html>

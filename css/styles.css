@@ -1,17 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
-html body{
-    background-color: whitesmoke;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family:'Noto Sans JP', sans-serif;
+}
+
+html body{
+    background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 .editor-content{
     margin-bottom: 25vh;
     display: grid;
     justify-content: center;
-    width: 100vw;
 }
 #svg-canvas{
     position: absolute;
-    background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
+    top: 0em;
+    left: 0em;
+    background: transparent;
 }
 #svg-canvas-preview{
     background-color: red;
@@ -52,25 +59,21 @@ input[type="text"]:focus{
 }
 .head{
     height: 20vh;
-    max-width: 100vw;
     display:flex;
     align-items: center;
 }
 .head-export{
     height: 10vh;
-    max-width:100vw;
     display:flex;
     align-items: center;
 }
 .head-export h1{
   padding: 10px;
   font-size: 2vmax;
-  width: 100vw;
 }
 .head h1{
   padding: 10px;
   font-size: 2vmax;
-  width: 100vw;
 }
 .line_section{
     transform: translateY(-20vh);
@@ -214,40 +217,150 @@ input[type="text"]:focus{
     background: #111111;
 }
 #options{
-    text-decoration: none;
     position: fixed;
-    right: 2px;
-    display: block;
-    bottom: 0px;
-    width: 20.8vmax;
-    max-width: 20.8vmax;
-    height: auto;
-    font-size: 2vh;
-    text-align: center;
-    z-index: 2;
-    transition: 300ms;
-    font-family
-    : 'Noto Sans JP', sans-serif;
+    left:0;
+    top:0;
+    height: 100vh;
+    width: 80px;
+    background-color: #122e17;
+    padding: .4rem .8rem;
+    transition: all 0.5s ease;
 }
-#buttons{
-    display: none;
-    width:100%;
+#options.active ~ .main-content{
+    left:260px;
+    width: calc(100%-260px);
 }
-@keyframes fade-in {
-    from{transform: translateY(100%);}
-    to{transform: translateY(0%);}
+#options.active ~ #st-list{
+    left:260px;
+    width: calc(100%-260px);
 }
-@keyframes fade-out {
-    from{transform: translateY(0%);}
-    to{transform: translateY(100%);}
+#options.active ~ #parameters{
+    left:260px;
+    width: calc(100%-260px);
+}
+#options.active ~ #export-section{
+    left:260px;
+    width: calc(100%-260px);
 }
 
-#showr{
-    width: 100%; 
+#options.active ~ #st-list{
+    left:260px;
+    width: calc(100%-260px);
 }
-#hide{
-    display: none;
+#options.active ~ #st-editor{
+    left:260px;
+    width: calc(100%-260px);
 }
+#options.active ~ #ln-list{
+    left:260px;
+    width: calc(100%-260px);
+}
+#options.active ~ #ln-editor{
+    left:260px;
+    width: calc(100%-260px);
+}
+#options ~ #st-list{
+    left:80px;
+    width: calc(100%-80px);
+}
+#options~ #st-editor{
+    left:80px;
+    width: calc(100%-80px);
+}
+#options~ #ln-list{
+    left:80px;
+    width: calc(100%-80px);
+}
+#options ~ #ln-editor{
+    left:80px;
+    width: calc(100%-80px);
+}
+#options ~ #parameters{
+    left:80px;
+    width: calc(100%-80px);
+}
+#options ~ #export-section{
+    left:80px;
+    width: calc(100%-80px);
+}
+
+#options.active{
+    width: 260px;
+}
+
+#options #btn{
+    position: absolute;
+    color: #FFF;
+    top:0.4rem;
+    left:50%;
+    font-size: 1.2rem;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+#options.active #btn{
+    transform: translateX(-90%);
+    left:90%;
+}
+#options .top .logo{
+    color: white;
+    display: flex;
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    pointer-events: none;
+    opacity: 0;
+}
+#options.active .top .logo{
+    opacity: 1;
+}
+.top .logo i{
+    font-size: 2rem;
+    margin-right: 5px;
+}
+#options ul li{
+    position: relative;
+    list-style-type: none;
+    height: 70px;
+    width: 90%;
+    margin: 0.2rem auto;
+    line-height: 50px;
+}
+
+#options ul li a{
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    /* height: 100%; */
+    border-radius: 0.8rem;
+    font-size: 1rem;
+}
+#options.active ul li a{
+    width: 200px;
+}
+#options ul li a span{
+    opacity: 0;
+}
+
+#options.active ul li a span{
+    opacity: 1;
+}
+
+#options ul li a i{
+    min-width: 50px;
+    text-align: center;
+    height: 60px;
+    border-radius: 12px;
+    line-height: 60px;
+}
+
+#options ul li a:hover{
+    background-color: white;
+    color:  #122e17;
+}
+
+
 .title-station{
     display: block;
     width: 100%;
@@ -255,42 +368,31 @@ input[type="text"]:focus{
     font-size: 1vmax;
 }
 #st-list{
-    position: absolute;
-    top:-5vh;
-    left:0%;
     overflow-x: hidden;
     z-index: 2;
-    background-color: #FFFFCC;
-    width: 100vw;
+    background-color: #010101;
     min-height: 110vh;
     display: none;
 }
 .main-title{
     text-align: center;
     padding: 5vh;
+    width: 100%;
+    color: white;
 }
 #st-editor{
-    position: absolute;
-    top:-5vh;
-    left:0%;
     overflow-x: hidden;
     overflow-y: hidden;
-    position: absolute;
     z-index: 3;
-    background-color: #FFFFCC;
-    width: 100vw;
+    background-color: #010101;
     min-height: 110vh;
     display: none;
     justify-content: center;
 }
-#ln-list{
-    position: absolute;
-    left: 0%;
-    top: -5%;
+#ln-list{    
     z-index: 3;
     overflow-x: hidden;
-    background-color: #FFFFCC;
-    width: 100vw;
+    background-color: #010101;
     min-height: 110vh;
     justify-content: center;
     display: none;
@@ -300,42 +402,29 @@ input[type="text"]:focus{
   overflow-x: hidden;
 }
 #ln-editor{
-    position: absolute;
-    top: -5%;
-    left: 0%;
     z-index: 2;
-    background-color: #FFFFCC;
+    background-color: #010101;
     overflow-x: hidden;
     overflow-y: hidden;
-    width: 100vw;
     min-height: 110vh;
     display: none;
     justify-content: center;
 }
 #export-section{
-    position: absolute;
-    top: -5%;
-    left: -2.5%;
     z-index: 3;
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #FFFFCC;
-    min-width: 103%;
     min-height: 125%;
-    max-width: 105%;
     max-height: 105%;
     display: none;
     justify-content: center;
 }
 #parameters{
-    position: absolute;
-    top: -5%;
-    left: -2.5%;
     z-index: 3;
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #FFFFCC;
-    min-width: 100%;
     min-height: 125vh;
     display: none;
     justify-content: center;
@@ -418,7 +507,7 @@ input[type="text"]:focus{
       
       text-align: center;
       margin: 15px;
-      
+      color: white;      
    }
   .style-type label{
       text-align: center;
@@ -431,6 +520,9 @@ input[type="text"]:focus{
     font-size: 1em;
     border-radius: 1em;
     display: block;
+  }
+  .style-type label{
+    color: white;
   }
   #save{
     text-decoration: none;

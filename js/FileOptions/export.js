@@ -26,5 +26,5 @@ function exportJPG(){
   svgExport.downloadJpeg(document.getElementById('svg-canvas'), 'transport-map', {width: 2000, height: 2000});
 }
 function resetSVG(){
-  document.getElementById('svg-canvas').style.background = 'url("../img/grid.svg")';
+  document.getElementById('svg-canvas').style.background = 'transparent';
 }
