@@ -96,7 +96,7 @@ document.getElementById('height').value = net.height;
 
 export function updateDisplay(event) {
 
-  mosX = Math.round((event.pageX-90)/20)*20; // make it so that the stuff goes in a grid
+  mosX = Math.round((event.pageX-50)/20)*20; // make it so that the stuff goes in a grid
 
   mosY = Math.round((event.pageY-10)/20)*20;
 
