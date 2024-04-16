@@ -1,1 +1,1 @@
-var locales = ['en'];
+let locales = ['en'];

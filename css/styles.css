@@ -9,16 +9,12 @@
 html body{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
-.editor-content{
-    margin-bottom: 25vh;
-    display: grid;
-    justify-content: center;
-}
 #svg-canvas{
     position: absolute;
     top: 0em;
-    left: 0em;
+    left: 80px;
     background: transparent;
+    border: 3px solid #2e1217;
 }
 #svg-canvas-preview{
     background-color: red;
@@ -27,194 +23,11 @@ html body{
 input[type="file"] {
     display: none;
 }
-#ln_content{
-    max-width: 100%;
-    display: block;
-    min-height: 100%;
-    align-items: center;
-}
-input[type="text"]{
-    background-color: white;
-    border-radius: 5px;
-    border: 0.8vmin solid #555555;
-    padding: 3vmin;
-    font-size: 4vmin;
-    max-width: 50vw;
-}
-input[type="text"]:focus{
-    border: 0.8vmin solid #19FF99;
-    transition:200ms;
-}
-#param_content{
-    max-width: 100%;
-    display: block;
-    min-height: 100%;
-    align-items: center;
-}
 .stationNames{
     font-family: 'Noto Sans JP', sans-serif;
     text-anchor: middle;
     width: 100%;
     text-transform: uppercase;
-}
-.head{
-    height: 20vh;
-    display:flex;
-    align-items: center;
-}
-.head-export{
-    height: 10vh;
-    display:flex;
-    align-items: center;
-}
-.head-export h1{
-  padding: 10px;
-  font-size: 2vmax;
-}
-.head h1{
-  padding: 10px;
-  font-size: 2vmax;
-}
-.line_section{
-    transform: translateY(-20vh);
-    width: 100%;
-    height: auto;
-    background: #ADE25D;
-    border-radius: 1em;
-    transform: scale(0.7);
-    padding: 15px;
-    text-align: center;
-    align-self: center;
-    outline: 5px solid #3A5743CC;
-}
-.line_name{
-    position: relative;
-    font-size: 6vmax;
-    font-weight: 600;
-    color: #FFF;
-    display: block;
-    min-width: 100%;
-    border-radius: 0.1em;
-    min-height: 10%;
-    margin-bottom: 0.5em;
-    text-transform: uppercase;
-}
-.line_button{
-    transform: translateY(-15vh);
-    font-size: 3vmax;
-    padding: 10px;
-    font-weight: 600;
-    margin-left: 0%;
-    min-height: 10%;
-    text-align: center;
-    display: block;
-    color: white;
-    opacity: 0.3;
-    transition: 300ms;
-}
-.line_button:hover{
-    opacity: 1.0;
-    transition: 0.3s;
-}
-.line_button:active{
-    opacity: 1.0;
-    color: white;
-}
-.station_instance{
-    position: relative;
-    margin: auto;
-    font-size: 2vmax;
-    margin-bottom: 10px;
-    width: 50%;
-    display: block;
-    border: none;
-    outline: none;
-    transition: 300ms;
-    display: block;
-    text-transform: uppercase;
-}
-.station_instance:hover{
-    transition: 300ms;
-    color: #0055FF;
-    cursor: pointer;
-}
-.return{
-    padding-right: 3vw;
-    opacity: 0.5;
-    padding: 15px;
-    color: rgb(220, 30, 64);
-    background: transparent;
-    transition: 300ms;
-    text-align: center;
-    display: inline-flex;
-    border: none;
-    font-size: 1.5vmax;
-    line-height: 15px;
-    font-weight: 300;
-    text-decoration: none;
-    font-family: 'Noto Sans JP', sans-serif;
-}
-#ln_create{
-    padding-left: 3vw;
-    z-index: 2;
-}
-.menu-buttons{
-    opacity: 0.5;
-    color: rgb(220, 30, 64);
-    width: auto;
-    font-size: 4vmax;
-    height: auto;
-    background: #22222200;
-    transition: 300ms;
-    text-align: center;
-    padding: 15px;
-    display: flex;
-    border: none;
-    font-weight: 300;
-    text-decoration: none;
-    font-family: 'Noto Sans JP', sans-serif;
-}
-.return:hover{
-    opacity: 1;
-    transition: 300ms;
-}
-.menu-buttons:hover{
-    opacity: 1;
-    cursor: pointer;
-    transition: 300ms;
-}
-.return-obj{
-    transform: scaleX(0.7);
-    position: relative;
-    bottom: 30%;
-    font-size: 2vmax;
-    margin-right: 0.25%;
-}
-
-.button{
-    padding: 1em;
-    width: 100%;
-    max-width: 100%;
-    background-color: #AACC33;
-    color: whitesmoke;
-    transition: 300ms;
-    display: flex;
-    border: 0px solid transparent;
-    font-size: 1vmax;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Noto Sans JP', sans-serif;
-}
-.button:active{
-    border-style: outset;
-    width: 100%;
-    background: whitesmoke;
-}
-.button:hover{
-    color: #AACC33;
-    transition: 400ms;
-    display: flex;
-    background: #111111;
 }
 #options{
     position: fixed;
@@ -222,66 +35,9 @@ input[type="text"]:focus{
     top:0;
     height: 100vh;
     width: 80px;
-    background-color: #122e17;
+    background-color: #4C5454;
     padding: .4rem .8rem;
     transition: all 0.5s ease;
-}
-#options.active ~ .main-content{
-    left:260px;
-    width: calc(100%-260px);
-}
-#options.active ~ #st-list{
-    left:260px;
-    width: calc(100%-260px);
-}
-#options.active ~ #parameters{
-    left:260px;
-    width: calc(100%-260px);
-}
-#options.active ~ #export-section{
-    left:260px;
-    width: calc(100%-260px);
-}
-
-#options.active ~ #st-list{
-    left:260px;
-    width: calc(100%-260px);
-}
-#options.active ~ #st-editor{
-    left:260px;
-    width: calc(100%-260px);
-}
-#options.active ~ #ln-list{
-    left:260px;
-    width: calc(100%-260px);
-}
-#options.active ~ #ln-editor{
-    left:260px;
-    width: calc(100%-260px);
-}
-#options ~ #st-list{
-    left:80px;
-    width: calc(100%-80px);
-}
-#options~ #st-editor{
-    left:80px;
-    width: calc(100%-80px);
-}
-#options~ #ln-list{
-    left:80px;
-    width: calc(100%-80px);
-}
-#options ~ #ln-editor{
-    left:80px;
-    width: calc(100%-80px);
-}
-#options ~ #parameters{
-    left:80px;
-    width: calc(100%-80px);
-}
-#options ~ #export-section{
-    left:80px;
-    width: calc(100%-80px);
 }
 
 #options.active{
@@ -341,14 +97,17 @@ input[type="text"]:focus{
 }
 #options ul li a span{
     opacity: 0;
+    pointer-events: none;
 }
 
 #options.active ul li a span{
     opacity: 1;
+    pointer-events: all;
 }
 
 #options ul li a i{
     min-width: 50px;
+    pointer-events: none;
     text-align: center;
     height: 60px;
     border-radius: 12px;
@@ -367,238 +126,225 @@ input[type="text"]:focus{
     text-align: center;
     font-size: 1vmax;
 }
-#st-list{
-    overflow-x: hidden;
-    z-index: 2;
-    background-color: #010101;
-    min-height: 110vh;
-    display: none;
+#options ~ .settings{
+    position: fixed;
+    left: 80px;;
 }
-.main-title{
-    text-align: center;
-    padding: 5vh;
+#options ~ .st-list{
+    position: fixed;
+    left: 80px;
+}
+#options ~ .st-editor{
+    position: fixed;
+    left: 80px;
+}
+#options ~ .ln-list{
+    position: fixed;
+    left: 80px;
+}
+#options ~ .ln-editor{
+    position: fixed;
+    left: 80px;
+}
+#options ~ .export{
+    position: fixed;
+    left: 80px;
+}
+
+#options.active ~ .settings{
+    position: fixed;
+    left: 260px;
+}
+#options.active ~ .st-list{
+    position: fixed;
+    left: 260px;
+}
+#options.active ~ .st-editor{
+    position: fixed;
+    left: 260px;
+}
+#options.active ~ .ln-list{
+    position: fixed;
+    left: 260px;
+}
+#options.active ~ .ln-editor{
+    position: fixed;
+    left: 260px;
+}
+#options.active ~ .export{
+    position: fixed;
+    left: 260px;
+}
+
+.settings{
+    height: 100%;
+    max-width: 50%;
+    background-color: #111111;
+}
+.st-list{
+    height: 100%;
+    max-width: 50%;
+    background-color: #111111;
+}
+.ln-list{
+    max-width: 50%;
+    height: 100%;
+    background-color: #111111;
+}
+.st-editor{
+    height: 100%;
+    max-width: 50%;
+    background-color: #111111;
+}
+.ln-editor{
+    height: 100%;
+    max-width: 50%;
+    background-color: #111111;
+}
+.export{
+    height: 100%;
+    max-width: 50%;
+    background-color: #111111;
+}
+.bubble{
+    height: 100%;
+    padding: 50px;
+}
+.bubble .top{
     width: 100%;
+    padding: 15px;
+    align-items: center;
+    text-align: center;
     color: white;
 }
-#st-editor{
-    overflow-x: hidden;
-    overflow-y: hidden;
-    z-index: 3;
-    background-color: #010101;
-    min-height: 110vh;
-    display: none;
-    justify-content: center;
+.bubble .top h3{
+    padding: 5px;
+    font-size: 2rem;
 }
-#ln-list{    
-    z-index: 3;
-    overflow-x: hidden;
-    background-color: #010101;
-    min-height: 110vh;
-    justify-content: center;
-    display: none;
-}
-.content{ 
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-#ln-editor{
-    z-index: 2;
-    background-color: #010101;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    min-height: 110vh;
-    display: none;
-    justify-content: center;
-}
-#export-section{
-    z-index: 3;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-color: #FFFFCC;
-    min-height: 125%;
-    max-height: 105%;
-    display: none;
-    justify-content: center;
-}
-#parameters{
-    z-index: 3;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-color: #FFFFCC;
-    min-height: 125vh;
-    display: none;
-    justify-content: center;
-}
-#param-content{
+.create{
+    text-decoration: none;
+    background-color: rgb(6, 124, 69);
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 3px;
+    border-radius: 5px;
+    border: rgb(142, 245, 214) 2px solid;
     width: 100%;
-
 }
-#export-section div{
-    display: inline-flex;
-    min-height: 100%;
-}
-#export-box{
+.bubble .content{
+    padding: 15px;
     width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    justify-items: center;
 }
-#export-box button{
-    margin-top: 6.5%;
-    padding: 1%;
-    font-size: 5vh;
-    color: #0055FF;
-}
-#export-box button:hover{
-    opacity: 0.5;
-    background: transparent;
-}
-
-#preview{
-    position: relative;
-}
-.slidecontainer{
-    position: relative;
-    top: 0vh;
-    left: 10vw;
+.bubble .content input{
+    width: 80%;
+    line-height: 15px;
+    background-color: black;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
     padding: 5px;
 }
-.lame{
-    position: relative;
-    top: 20%;
-    margin: auto;
-    margin-top: 2em;
-    margin-bottom: 2em;
-    width: 80%;
-    display: block;
-    height: 100px;
-    outline: none;
+.st-editor .bubble .content input{
+    text-transform: uppercase;
 }
-.dropdowns{
-    display: block;
+.bubble .bottom{
     width: 100%;
-}
- /* Dropdown Button */
- .dropbtn {
-    background-color: white;
-    color: gray;
-    padding: 16px;
-    width: 200px;
+    padding: 25px;
     text-align: center;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .connexion-type {
-    margin-top: 5px;
-    width: 100%;
-    height: 5%;
-    padding: 10px;
-    font-size: 1em;
-    border-radius: 1em;
-    display: block;
-  }
-
-  .connexion-type label{
-      
-      text-align: center;
-      margin: 15px;
-      color: white;      
-   }
-  .style-type label{
-      text-align: center;
-      margin: 15px;
-   }
-  .style-type {
-    margin-top: 5px;
-    padding: 10px;    width: 100%;
-    height: 5%;
-    font-size: 1em;
-    border-radius: 1em;
-    display: block;
-  }
-  .style-type label{
-    color: white;
-  }
-  #save{
-    text-decoration: none;
-    position: fixed;
-    top: 85vh;
-    right: 10vw;
-    color: forestgreen;
-    font-size: 2vmax;
-  }
-
-  #save:active{
-    background-color: transparent;
-    color: greenyellow;
-  }
-  #param-save{
-    text-decoration: none;
-    position: fixed;
-    top: 85vh;
-    right: 10vw;
-    color: forestgreen;
-    font-size: 2vmax;
-  }
-
-  #param-save:active{
-    background-color: transparent;
-    color: greenyellow;
-  }
-  #ln_save{
-    text-decoration: none;
-    position: fixed;
-    top: 85vh;
-    right: 10vw;
-    color: forestgreen;
-    font-size: 2vmax;
-  }
-  #ln_save:active{
-    background-color: transparent;
-    color: greenyellow;
-  }
-  #delete{
-    text-decoration: none;
-    position: fixed;
-    top: 85vh;
-    left: 10vw;
-    font-size: 2vmax;
-  }
-  
-  #delete:active{
-    background-color: transparent;
-    color: orangered;
-  }
-  #ln_delete{
-    text-decoration: none;
-    position: fixed;
-    top: 85vh;
-    left: 10vw;
-    font-size: 2vmax;
-  }
-  #ln_delete:active{
-    background-color: transparent;
-    color: orangered;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
-    background-color: #FFFFCC;
-    outline: none;
-    height: 100%;
-
 }
-  
-  /* Links inside the dropdown */
+.bubble .bottom button{
+    font-size: 1.2rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+.save{
+    color: rgb(93, 237, 115);
+    padding: 5px;
+    cursor: pointer;
+}
+.delete{
+    color: rgb(237, 105, 93);
+    padding: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.line_section{
+    padding: 15px;
+    min-height: 100px;
+    background-color: white;
+    border: 2px solid navy;
+    border-radius: 1em;
+    display: grid;
+    justify-items: center;
+}
+.line_name{
+    width: 100%;
+    padding: 5px;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    border-radius: 2px;
+    text-transform: uppercase;
+}
+.station_instance{
+    border-radius: 2px;
+    width: 50%;
+    text-align: center;
+    color: wheat;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+}
+#ln-content{
+    display: grid;
+    margin-top: 10px;
+    justify-items: center;
+}
+.line_button{
+    width: 100%;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    width: 100%;
+    text-transform: uppercase;
+}
+.export .content{
+    display: grid;
+}
+.exportf{
+    text-decoration: none;
+    background-color: rgb(6, 124, 69);
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 3px;
+    border-radius: 5px;
+    border: rgb(20, 220, 160) 2px solid;
+    width: 100%;
+}
+.bubble .top .back:hover{
+    color: white;
+    transition: 200ms;
+}
+.bubble .top .create:hover{
+    color: white;
+    transition: 200ms;
+}
+.exportf:hover{
+    color:  rgb(6, 124, 69);
+    background-color: white;
 
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;} 
+    transition: 200ms;
+}

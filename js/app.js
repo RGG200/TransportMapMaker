@@ -10,7 +10,7 @@ import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLi
 
 export let net = new Network([], 8000, 8000, "transportmap"); //initial network
 
-
+const save = document.getElementById('save');
 
 let mosX; // mouse position on the canvas
 
@@ -24,21 +24,21 @@ let selected_station = undefined;
 
 let station_is_being_created = false;
 
-const ln_save = document.getElementById('ln_save');
+const ln_save = document.getElementById('ln-save');
 
-const ln_delete = document.getElementById('ln_delete');
+const ln_delete = document.getElementById('ln-delete');
 
-const param_save = document.getElementById("param-save");
+const settings_save = document.getElementById("settings-save");
 
 const deleter = document.getElementById('delete');
 
-const st_list = document.getElementById('st-list');
+const st_list = document.getElementsByClassName('st-list')[0];
 
-const ln_list = document.getElementById('ln-list');
+const ln_list = document.getElementsByClassName('ln-list')[0];
 
-const export_rtm = document.getElementById("export-rtm");
+const export_rtm = document.getElementById("export-file");
 
-const import_rtm = document.getElementById("import");
+const import_rtm = document.getElementById("import-rtm");
 
 const connexion_types = document.getElementById("connexion-types");
 
@@ -90,11 +90,13 @@ let param_data ={
 
 }
 
-
+document.getElementById('filename').value = net.filename;
+document.getElementById('width').value = net.width;
+document.getElementById('height').value = net.height;
 
 export function updateDisplay(event) {
 
-  mosX = Math.round((event.pageX-10)/20)*20; // make it so that the stuff goes in a grid
+  mosX = Math.round((event.pageX-90)/20)*20; // make it so that the stuff goes in a grid
 
   mosY = Math.round((event.pageY-10)/20)*20;
 
@@ -326,6 +328,7 @@ const ln_buttonPressed = e => {
 
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
+  console.log(id_selected_station_on_editor);
   id_selected_line_on_editor = e.target.parentNode.id;
   data.fName = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].fName;
   data.sName = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].sName;
@@ -338,7 +341,6 @@ const buttonPressed = e => {
   document.getElementById('yPos').value = data.coords[1];  
 }
 
-const save = document.getElementById('save');
 function updateCanvas(){
   const canvas = document.getElementById('svg-canvas');
   canvas.innerHTML = "";
@@ -426,15 +428,14 @@ ln_save.addEventListener('click', function(){
 });
 
 
-document.getElementById("svg-exbtn").addEventListener("click", function(){
+document.getElementById("svg").addEventListener("click", function(){
   exportSVG(net.filename, net.width, net.height);
 });
 
-document.getElementById("png-exbtn").addEventListener("click", function(){
+document.getElementById("png").addEventListener("click", function(){
   exportPNG(net.filename, net.width, net.height);
 });
-
-param_save.addEventListener("click", function(){
+settings_save.addEventListener("click", function(){
   net.filename = document.getElementById("filename").value;
   net.width = document.getElementById("width").value;
   net.height = document.getElementById("height").value;
@@ -448,7 +449,7 @@ deleter.addEventListener('click', function(){
 
   console.log(net)
 
-  var new_linePath = net.lines[id_selected_line_on_editor].linePath.filter(station => station.stationInstance != id_selected_station_on_editor);
+  let new_linePath = net.lines[id_selected_line_on_editor].linePath.filter(station => station.stationInstance != id_selected_station_on_editor);
 
   net.lines[id_selected_line_on_editor].linePath = new_linePath;
 
@@ -530,17 +531,17 @@ export_rtm.addEventListener("click", function(){
 
 //for import
 const onChange = e => { 
-    //create a file var
-    var file = e.target.files[0];
+    //create a file let
+    let file = e.target.files[0];
     //create a reader to read the file
-    var reader = new FileReader();
+    let reader = new FileReader();
     reader.onload = onReaderLoad;
     //we read the file
     reader.readAsText(file);
 
     function onReaderLoad(e){
 
-      var obj = JSON.parse(e.target.result);
+      let obj = JSON.parse(e.target.result);
       console.log(obj.lines);
       if(obj != undefined){
         //setting the network in accordance to the file contents
@@ -549,11 +550,14 @@ const onChange = e => {
         net.filename = obj.filename;
         net.height = obj.height;
         net = obj;
-        //modifiying the canvas
+        document.getElementById('filename').value = net.filename;
+        document.getElementById('width').value = net.width;
+        document.getElementById('height').value = net.height;
+                //modifiying the canvas
         document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
         document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
         //reset variables
-        for(var i = 0; i < net.lines.length; i++){
+        for(let i = 0; i < net.lines.length; i++){
           net.lines[i].stations[i].stationInstance-=1
         }
         is_any_station_selected = false;
