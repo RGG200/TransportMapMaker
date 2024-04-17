@@ -275,26 +275,20 @@ input[type="file"] {
 }
 .save{
     text-decoration: none;
-    background-color: rgb(93, 237, 115);
     padding: 10px;
     color: white;
     text-align: center;
     font-size: 2rem;
     margin-bottom: 3px;
-    border-radius: 5px;
-    border: rgb(102, 245, 124) 2px solid;
     width: 70px;
 }
 .delete{
-    background-color: rgb(237, 105, 93);
     text-decoration: none;
     padding: 10px;
     color: white;
     text-align: center;
     font-size: 2rem;
     margin-left: 3px;
-    border-radius: 5px;
-    border: rgb(242, 125, 110) 2px solid;
     width: 70px;
 }
 #content{
@@ -386,11 +380,9 @@ input[type="file"] {
 }
 .save:hover{
     color: rgb(93, 237, 115);
-    background-color: white;
     transition: 200ms;
 }
 .delete:hover{
-    background-color: white;
     color: rgb(237, 105, 93);
     transition: 200ms;
 }
