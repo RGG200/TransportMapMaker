@@ -324,7 +324,6 @@ const ln_buttonPressed = e => {
   document.getElementById('name').value = ln_data.name;
   document.getElementById('color').value = ln_data.color;
   document.getElementById('thicness').value = ln_data.thicness;
-  drawLinesList(net, instancesLine);
 }
 
 const buttonPressed = e => {
@@ -339,7 +338,6 @@ const buttonPressed = e => {
   document.getElementById('second').value = data.sName;
   document.getElementById('xPos').value = data.coords[0];
   document.getElementById('yPos').value = data.coords[1];  
-  drawStationsList(net, instancesLine);
 }
 
 function updateCanvas(){
@@ -394,7 +392,6 @@ function updateCanvas(){
 }
 
 save.addEventListener('click', function(){
-  updateCanvas();
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].fName = document.getElementById('first').value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].sName = document.getElementById('second').value;
   net.lines[id_selected_line_on_editor].stations[id_selected_station_on_editor].xPos = document.getElementById('xPos').value;
