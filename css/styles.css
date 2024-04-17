@@ -10,13 +10,12 @@ html body{
     position:absolute;
     left: -2.25px;
     top: -2.25px;
-    background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas{
     position: absolute;
     top: 0em;
     left: 80px;
-    background: transparent;
+    background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas-preview{
     background-color: red;

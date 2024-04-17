@@ -30,5 +30,5 @@ function exportJPG(){
   resetSVG();
 }
 function resetSVG(){
-  document.getElementById('svg-canvas').style.background = 'transparent';
+  document.getElementById('svg-canvas').style.background = "url('https://transportmapmaker.duckdns.org/img/grid.svg')";
 }
