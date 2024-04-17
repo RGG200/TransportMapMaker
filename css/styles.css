@@ -271,26 +271,20 @@ input[type="file"] {
 }
 .save{
     text-decoration: none;
-    background-color: rgb(93, 237, 115);
-    padding: 10px;
     color: white;
+    padding: 10px;
     text-align: center;
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 3px;
-    border-radius: 5px;
-    border: rgb(102, 245, 124) 2px solid;
     width: 70px;
 }
 .delete{
-    background-color: rgb(237, 105, 93);
+    color: white;
     text-decoration: none;
     padding: 10px;
-    color: white;
     text-align: center;
-    font-size: 2rem;
-    margin-left: 3px;
-    border-radius: 5px;
-    border: rgb(242, 125, 110) 2px solid;
+    font-size: 4rem;
+    margin-left: 15%;
     width: 70px;
 }
 #content{
@@ -334,12 +328,15 @@ input[type="file"] {
 }
 .station_instance:hover{
     opacity: 1;
+    transition: 200ms;
 }
 .line_button:hover{
     opacity: 1;
+    transition: 200ms;
 }
 .line_name:hover{
     opacity: 1;
+    transition: 200ms;
 }
 #ln-content{
     display: grid;
@@ -382,11 +379,9 @@ input[type="file"] {
 }
 .save:hover{
     color: rgb(93, 237, 115);
-    background-color: white;
     transition: 200ms;
 }
 .delete:hover{
-    background-color: white;
     color: rgb(237, 105, 93);
     transition: 200ms;
 }
