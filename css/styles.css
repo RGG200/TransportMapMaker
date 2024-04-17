@@ -317,6 +317,7 @@ input[type="file"] {
     margin-bottom: 5px;
     border-radius: 2px;
     text-transform: uppercase;
+    border: 2px solid transparent;
 }
 .station_instance{
     border-radius: 2px;
@@ -327,6 +328,7 @@ input[type="file"] {
     color: wheat;
     margin-bottom: 2px;
     text-transform: uppercase;
+    border: 2px solid transparent;
 }
 #ln-content{
     display: grid;
@@ -345,6 +347,7 @@ input[type="file"] {
     width: 100%;
     height: 80px;
     text-transform: uppercase;
+    border: 2px solid transparent;
 }
 .export .content{
     display: grid;
