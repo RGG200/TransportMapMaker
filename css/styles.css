@@ -279,7 +279,7 @@ input[type="file"] {
     margin: 3px;
     border-radius: 5px;
     border: rgb(142, 245, 214) 2px solid;
-    width: 100px;
+    width: 50px;
 }
 .delete{
     background-color: rgb(237, 105, 93);
@@ -290,8 +290,8 @@ input[type="file"] {
     font-size: 1.6rem;
     margin: 3px;
     border-radius: 5px;
-    border: rgb(142, 245, 214) 2px solid;
-    width: 100px;
+    border: rgb(242, 125, 110) 2px solid;
+    width: 50px;
 }
 #content{
     overflow-y: auto;
@@ -341,7 +341,7 @@ input[type="file"] {
     margin-bottom: 5px;
     border-radius: 4px;
     width: 100%;
-    height: 100px;
+    height: 80px;
     text-transform: uppercase;
 }
 .export .content{
