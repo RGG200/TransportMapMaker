@@ -270,15 +270,28 @@ input[type="file"] {
     border: none;
 }
 .save{
-    color: rgb(93, 237, 115);
-    padding: 5px;
-    cursor: pointer;
+    text-decoration: none;
+    background-color: rgb(93, 237, 115);
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 3px;
+    border-radius: 5px;
+    border: rgb(142, 245, 214) 2px solid;
+    width: 100px;
 }
 .delete{
-    color: rgb(237, 105, 93);
-    padding: 5px;
-    cursor: pointer;
-    font-size: 1.2rem;
+    background-color: rgb(237, 105, 93);
+    text-decoration: none;
+    padding: 15px;
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 3px;
+    border-radius: 5px;
+    border: rgb(142, 245, 214) 2px solid;
+    width: 100px;
 }
 #content{
     overflow-y: auto;
@@ -351,6 +364,14 @@ input[type="file"] {
     transition: 200ms;
 }
 .bubble .top .create:hover{
+    color: white;
+    transition: 200ms;
+}
+.save:hover{
+    color: white;
+    transition: 200ms;
+}
+.delete:hover{
     color: white;
     transition: 200ms;
 }
