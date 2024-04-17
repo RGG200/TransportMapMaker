@@ -327,7 +327,6 @@ export function drawStationsList(network, instancesLine){
         let lineText = document.createElement('a');
         lineText.innerHTML = network.lines[i].name;
         lineText.setAttributeNS(null, 'class', 'line_name');
-        lineElement.style.background = "#FFF";
         lineElement.style.borderColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'id', i);
