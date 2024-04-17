@@ -364,6 +364,7 @@ input[type="file"] {
     width: 100%;
 }
 .create:hover{
+    color: rgb(6, 124, 69);
     background-color: white;
     transition: 200ms;
 }
