@@ -80,7 +80,9 @@ let ln_data = {
 
   color: '',
 
-  thicness: 0
+  thicness: 0,
+
+  dasharray: 0
 
 };
 
@@ -321,9 +323,11 @@ const ln_buttonPressed = e => {
   ln_data.name = net.lines[id_selected_line_on_editor].name;
   ln_data.color = net.lines[id_selected_line_on_editor].color;
   ln_data.thicness = net.lines[id_selected_line_on_editor].lineThicness;
+  ln_data.dasharray = net.lines[id_selected_line_on_editor].dasharray;
   document.getElementById('name').value = ln_data.name;
   document.getElementById('color').value = ln_data.color;
   document.getElementById('thicness').value = ln_data.thicness;
+  document.getElementById('dasharray').value = ln_data.dasharray;
 }
 
 const buttonPressed = e => {
