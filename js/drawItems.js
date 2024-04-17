@@ -331,7 +331,8 @@ export function drawStationsList(network, instancesLine){
         lineElement.style.outlineColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'id', i);
-        lineText.style.backgroundColor = network.lines[i].color;
+        lineText.style.color = network.lines[i].color;
+        lineText.style.outlineColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'class', 'line_section');
         lineText.style.webkitTextStroke = "black";
         lineElement.appendChild(lineText);
@@ -342,8 +343,8 @@ export function drawStationsList(network, instancesLine){
             stationButton.innerText = network.lines[i].stations[j].fName;
             stationButton.setAttributeNS(null, 'id', j);
             stationButton.setAttributeNS(null, 'class', 'station_instance');
-            stationButton.style.color = "white";
-            stationButton.style.backgroundColor = network.lines[i].color;
+            stationButton.style.color = network.lines[i].color;
+            stationButton.style.outlineColor = network.lines[i].color;
             stationButton.style.borderRadius = "0.1em";
             stationButton.style.padding = "0.2em";
             stationButton.setAttributeNS(null, 'onclick', "showOptions('st-editor'); hideOptions('st-list')");
@@ -360,7 +361,7 @@ export function drawLinesList(network, instancesLine){
         lineText.setAttributeNS(null, 'class', 'line_button');
         lineText.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'onclick', "showOptions('ln-editor'); hideOptions('ln-list');");
-        lineText.style.background = network.lines[i].color;
+        lineText.style.color = network.lines[i].color;
         lineText.style.outlineColor = network.lines[i].color;
         lineText.style.borderRadius = "0.2em";
         lineText.style.width = "100%";
