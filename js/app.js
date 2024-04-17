@@ -48,7 +48,7 @@ let id_selected_station_on_editor = 0;
 
 let id_selected_line_on_editor = 0;
 
-const dasharray = document.getElementsByClassName('dasharrayslider')[0]
+const dasharray = document.getElementsByClassName('dasharray')[0]
 
 let ln_create = document.getElementById("ln_create");
 
