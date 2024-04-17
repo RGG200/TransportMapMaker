@@ -70,7 +70,7 @@
     <div class="st-list" style="display: none;">
       <div class="bubble">
         <div class="top">
-          <h3>Liste des Stations </h3>
+          <h3> Stations </h3>
         </div>
         <div class="content" id="content">
         </div>
@@ -79,7 +79,7 @@
     <div class="st-editor" style="display: none;">
       <div class="bubble">
         <div class="top">
-          <h3> Modifier une station </h3>
+          <h3> Modifier </h3>
         </div>
         <div class="content">
           <input type="text" name="" id="first" placeholder="Nom primaire">
@@ -108,7 +108,7 @@
         </div>
         <div class="bottom">
           <button class="save" id="save"> Sauvegarder </button>
-          <a id="delete" class="delete" onclick="hideOptions('st-editor'); showOptions('st-list');"> Supprimer </a>
+          <a id="delete" class="delete" onclick="hideOptions('st-editor'); showOptions('st-list');"> <i class='bx bx-trash'></i> </a>
         </div>  
       </div>
       
@@ -116,7 +116,7 @@
     <div class="ln-list" style="display: none;">
       <div class="bubble">
         <div class="top">
-          <h3> Liste des Lignes </h3>
+          <h3> Lignes </h3>
         </div>
         <div class="content" id="ln-content">
         </div>
@@ -128,7 +128,7 @@
     <div class="ln-editor" style="display: none;">
       <div class="bubble">
         <div class="top">
-          <h3> Modifier une Ligne </h3>
+          <h3> Modifier </h3>
         </div>
         <div class="content">
           <input type="text" name="" id="name" placeholder="Nom de la ligne">
@@ -137,7 +137,7 @@
         </div>
         <div class="bottom">
           <button class="save" id="ln-save"> Sauvegarder </button>
-          <a id="ln-delete" class="delete" onclick="hideOptions('st-editor'); showOptions('st-list');"> Supprimer </a>
+          <a id="ln-delete" class="delete" onclick="hideOptions('ln-editor'); showOptions('ln-list');"> <i class='bx bx-trash'></i> </a>
         </div>  
       </div>      
     </div>
@@ -147,9 +147,9 @@
           <h3>Exporter l'image </h3>
         </div>
         <div class="content">
-          <a href="" class="exportf" id="export-file">Exporter en .rtm</a>
-          <a href="" class="exportf" id="png">Exporter en .png</a>
-          <a href="" class="exportf" id="svg">Exporter en .svg</a>
+          <a href="#" class="exportf" id="export-file">Exporter en .rtm</a>
+          <a href="#" class="exportf" id="png">Exporter en .png</a>
+          <a href="#" class="exportf" id="svg">Exporter en .svg</a>
         </div>
       </div>      
     </div>
