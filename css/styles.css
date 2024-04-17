@@ -272,26 +272,26 @@ input[type="file"] {
 .save{
     text-decoration: none;
     background-color: rgb(93, 237, 115);
-    padding: 15px;
+    padding: 10px;
     color: white;
     text-align: center;
-    font-size: 1.6rem;
-    margin: 3px;
+    font-size: 2rem;
+    margin-bottom: 3px;
     border-radius: 5px;
-    border: rgb(142, 245, 214) 2px solid;
-    width: 50px;
+    border: rgb(102, 245, 124) 2px solid;
+    width: 70px;
 }
 .delete{
     background-color: rgb(237, 105, 93);
     text-decoration: none;
-    padding: 15px;
+    padding: 10px;
     color: white;
     text-align: center;
-    font-size: 1.6rem;
-    margin: 3px;
+    font-size: 2rem;
+    margin-left: 3px;
     border-radius: 5px;
     border: rgb(242, 125, 110) 2px solid;
-    width: 50px;
+    width: 70px;
 }
 #content{
     overflow-y: auto;
