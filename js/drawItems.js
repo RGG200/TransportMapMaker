@@ -345,7 +345,7 @@ export function drawStationsList(network, instancesLine){
             stationButton.setAttributeNS(null, 'class', 'station_instance');
             stationButton.style.color = network.lines[i].color;
             stationButton.style.borderColor = network.lines[i].color;
-            stationButton.style.borderRadius = "0.1em";
+            stationButton.style.borderRadius = "0.3em";
             stationButton.style.padding = "0.2em";
             stationButton.setAttributeNS(null, 'onclick', "showOptions('st-editor'); hideOptions('st-list')");
             lineElement.appendChild(stationButton);
