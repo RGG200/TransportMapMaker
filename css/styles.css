@@ -17,7 +17,6 @@ html body{
     top: 0em;
     left: 80px;
     background: transparent;
-    border: 3px solid #2e1217;
 }
 #svg-canvas-preview{
     background-color: red;
