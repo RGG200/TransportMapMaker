@@ -359,25 +359,20 @@ input[type="file"] {
     border: rgb(20, 220, 160) 2px solid;
     width: 100%;
 }
-.bubble .top .back:hover{
-    color: white;
-    transition: 200ms;
-}
 .bubble .top .create:hover{
-    color: white;
+    background-color: white;
     transition: 200ms;
 }
 .save:hover{
-    color: white;
+    background-color: white;
     transition: 200ms;
 }
 .delete:hover{
-    color: white;
+    background-color: white;
     transition: 200ms;
 }
 .exportf:hover{
     color:  rgb(6, 124, 69);
     background-color: white;
-
     transition: 200ms;
 }
