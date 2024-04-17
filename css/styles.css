@@ -100,12 +100,12 @@ input[type="file"] {
     width: 200px;
 }
 #options ul li a span{
-    opacity: 0;
+    display: none;
     pointer-events: none;
 }
 
 #options.active ul li a span{
-    opacity: 1;
+    display: block;
     pointer-events: all;
 }
 
