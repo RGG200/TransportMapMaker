@@ -182,31 +182,37 @@ input[type="file"] {
     height: 100%;
     max-width: calc(100%-80px);
     background-color: #111111;
+    overflow-y: auto;
 }
 .st-list{
     height: 100%;
     max-width: calc(100%-80px);
     background-color: #111111;
+    overflow-y: auto;
 }
 .ln-list{
     max-width: calc(100%-80px);
     height: 100%;
     background-color: #111111;
+    overflow-y: auto;
 }
 .st-editor{
     height: 100%;
     max-width: calc(100%-80px);
     background-color: #111111;
+    overflow-y: auto;
 }
 .ln-editor{
     height: 100%;
     max-width: calc(100%-80px);
     background-color: #111111;
+    overflow-y: auto;
 }
 .export{
     height: 100%;
     max-width: calc(100%-80px);
     background-color: #111111;
+    overflow-y: auto;
 }
 .bubble{
     height: 100%;
