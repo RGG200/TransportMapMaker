@@ -305,13 +305,13 @@ canvas.addEventListener('click', function(){
 
 
 st_list.addEventListener("mouseenter", function(){
-  for (let button of buttonGroup) {
+  for (const button of buttonGroup) {
     button.addEventListener("click", buttonPressed, true);  
   }
 });
 
 ln_list.addEventListener("mouseenter", function(){
-  for (let button of ln_buttonGroup) {
+  for (const button of ln_buttonGroup) {
     button.addEventListener("click", ln_buttonPressed, true);  
   }
 });
@@ -324,11 +324,11 @@ const ln_buttonPressed = e => {
   document.getElementById('name').value = ln_data.name;
   document.getElementById('color').value = ln_data.color;
   document.getElementById('thicness').value = ln_data.thicness;
+  drawLinesList(net, instancesLine);
 }
 
 const buttonPressed = e => {
   id_selected_station_on_editor = e.target.id; // Get ID of Clicked Element
-  console.log(id_selected_station_on_editor);
   id_selected_line_on_editor = e.target.parentNode.id;
   data.fName = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].fName;
   data.sName = net.lines[e.target.parentNode.id].stations[id_selected_station_on_editor].sName;
@@ -339,6 +339,7 @@ const buttonPressed = e => {
   document.getElementById('second').value = data.sName;
   document.getElementById('xPos').value = data.coords[0];
   document.getElementById('yPos').value = data.coords[1];  
+  drawStationsList(net, instancesLine);
 }
 
 function updateCanvas(){
@@ -422,9 +423,9 @@ ln_save.addEventListener('click', function(){
   net.lines[id_selected_line_on_editor].color = document.getElementById('color').value;
   net.lines[id_selected_line_on_editor].lineThicness = document.getElementById('thicness').value;
   net.lines[id_selected_line_on_editor].dasharray = dasharray.value;
+  updateCanvas();
   drawLinesList(net, instancesLine);
   drawStationsList(net, instancesLine);
-  updateCanvas();
 });
 
 
