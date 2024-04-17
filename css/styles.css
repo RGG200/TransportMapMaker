@@ -270,7 +270,8 @@ input[type="file"] {
     border: none;
 }
 .save{
-    text-decoration: none;
+    outline: none;
+    border: none;
     background-color: rgb(93, 237, 115);
     padding: 15px;
     color: white;
