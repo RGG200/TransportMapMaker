@@ -7,6 +7,9 @@
 }
 
 html body{
+    position:absolute;
+    left: -3px;
+    top: -3px;
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas{
