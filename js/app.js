@@ -427,14 +427,6 @@ ln_save.addEventListener('click', function(){
   drawStationsList(net, instancesLine);
 });
 
-
-document.getElementById("svg").addEventListener("click", function(){
-  exportSVG(net.filename, net.width, net.height);
-});
-
-document.getElementById("png").addEventListener("click", function(){
-  exportPNG(net.filename, net.width, net.height);
-});
 settings_save.addEventListener("click", function(){
   net.filename = document.getElementById("filename").value;
   net.width = document.getElementById("width").value;
@@ -443,7 +435,13 @@ settings_save.addEventListener("click", function(){
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
 });
 
+document.getElementById("svg").addEventListener("click", function(){
+  exportSVG(net.filename, net.width, net.height);
+});
 
+document.getElementById("png").addEventListener("click", function(){
+  exportPNG(net.filename, net.width, net.height);
+});
 
 deleter.addEventListener('click', function(){
 
