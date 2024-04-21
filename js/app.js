@@ -433,15 +433,14 @@ settings_save.addEventListener("click", function(){
   net.height = document.getElementById("height").value;
   document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
+  document.getElementById("svg").addEventListener("click", function(){
+    exportSVG(net.filename, net.width, net.height);
+  });
+  document.getElementById("png").addEventListener("click", function(){
+    exportPNG(net.filename, net.width, net.height);
+  });
 });
 
-document.getElementById("svg").addEventListener("click", function(){
-  exportSVG(net.filename, net.width, net.height);
-});
-
-document.getElementById("png").addEventListener("click", function(){
-  exportPNG(net.filename, net.width, net.height);
-});
 
 deleter.addEventListener('click', function(){
 
@@ -547,6 +546,12 @@ const onChange = e => {
         net.width = obj.width;
         net.filename = obj.filename;
         net.height = obj.height;
+        document.getElementById("svg").addEventListener("click", function(){
+          exportSVG(net.filename, net.width, net.height);
+        });
+        document.getElementById("png").addEventListener("click", function(){
+          exportPNG(net.filename, net.width, net.height);
+        });
         net = obj;
         document.getElementById('filename').value = net.filename;
         document.getElementById('width').value = net.width;
