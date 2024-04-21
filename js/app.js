@@ -526,6 +526,12 @@ export_rtm.addEventListener("click", function(){
 
 });
 
+document.getElementById("svg").addEventListener("click", function(){
+  exportSVG(net.filename, net.width, net.height);
+});
+document.getElementById("png").addEventListener("click", function(){
+  exportPNG(net.filename, net.width, net.height);
+});
 //for import
 const onChange = e => { 
     //create a file let
@@ -546,12 +552,6 @@ const onChange = e => {
         net.width = obj.width;
         net.filename = obj.filename;
         net.height = obj.height;
-        document.getElementById("svg").addEventListener("click", function(){
-          exportSVG(net.filename, net.width, net.height);
-        });
-        document.getElementById("png").addEventListener("click", function(){
-          exportPNG(net.filename, net.width, net.height);
-        });
         net = obj;
         document.getElementById('filename').value = net.filename;
         document.getElementById('width').value = net.width;
