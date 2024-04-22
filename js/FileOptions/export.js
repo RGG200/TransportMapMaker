@@ -1,16 +1,12 @@
 function exportSVG(name, w, h){
     document.getElementById('svg-canvas').style.background = 'white';
-    svgExport.downloadSvg(document.getElementById('svg-canvas'), name, {
-        width: w,
-        height: h
-    });
+    svgExport.downloadSvg(document.querySelector('#svg-canvas'), name);
 }
 function exportPNG(name, w, h){
   document.getElementById('svg-canvas').style.background = '#ffffff';
-      svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
-        width: w,
-        height: h
-    });
+  let ww = w*10;
+  let hh = h*10;
+  svgExport.downloadPng(document.querySelector('#svg-canvas'), name, {width: ww, height: hh);
 }
 function exportJPG(){
   document.getElementById('svg-canvas').style.background = 'white';
