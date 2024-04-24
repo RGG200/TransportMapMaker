@@ -90,10 +90,6 @@ let param_data ={
 
 }
 
-document.getElementById('filename').value = net.filename;
-document.getElementById('width').value = net.width;
-document.getElementById('height').value = net.height;
-
 export function updateDisplay(event) {
 
   mosX = Math.round((event.pageX-90)/20)*20; // make it so that the stuff goes in a grid
