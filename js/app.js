@@ -90,6 +90,10 @@ let param_data ={
 
 }
 
+document.getElementById('filename').value = net.filename;
+document.getElementById('width').value = net.width;
+document.getElementById('height').value = net.height;
+
 export function updateDisplay(event) {
 
   mosX = Math.round((event.pageX-90)/20)*20; // make it so that the stuff goes in a grid
@@ -429,12 +433,6 @@ settings_save.addEventListener("click", function(){
   net.height = document.getElementById("height").value;
   document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
-  document.getElementById("svg").addEventListener("click", function(){
-    exportSVG(net.filename, net.width, net.height);
-  });
-  document.getElementById("png").addEventListener("click", function(){
-    exportPNG(net.filename, net.width, net.height);
-  });
 });
 
 
