@@ -181,38 +181,44 @@ input[type="file"] {
 .settings{
     height: 100%;
     max-width: calc(100%-80px);
-    background-color: #111111;
+    background-color: #4C5454;
     overflow-y: auto;
+    border-left: 2px #3B4343 solid;
 }
 .st-list{
     height: 100%;
     max-width: calc(100%-80px);
-    background-color: #111111;
+    background-color: #4C5454;
     overflow-y: auto;
+    border-left: 2px #3B4343 solid;
 }
 .ln-list{
     max-width: calc(100%-80px);
     height: 100%;
-    background-color: #111111;
+    background-color: #4C5454;
     overflow-y: auto;
+    border-left: 2px #3B4343 solid;
 }
 .st-editor{
     height: 100%;
     max-width: calc(100%-80px);
-    background-color: #111111;
+    background-color: #4C5454;
     overflow-y: auto;
+    border-left: 2px #3B4343 solid;
 }
 .ln-editor{
     height: 100%;
     max-width: calc(100%-80px);
-    background-color: #111111;
+    background-color: #4C5454;
     overflow-y: auto;
+    border-left: 2px #3B4343 solid;
 }
 .export{
     height: 100%;
     max-width: calc(100%-80px);
-    background-color: #111111;
+    background-color: #4C5454;
     overflow-y: auto;
+    border-left: 2px #3B4343 solid;
 }
 .bubble{
     height: 100%;
