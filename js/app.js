@@ -518,14 +518,14 @@ export_rtm.addEventListener("click", function(){
 
   exportRTM(net, "Être ou ne pas être? telle est la question");
 
-}, false);
+});
 
 document.getElementById("svg").addEventListener("click", function(){
   exportSVG(net.filename, net.width, net.height);
-}, false);
+});
 document.getElementById("png").addEventListener("click", function(){
   exportPNG(net.filename, net.width, net.height);
-}, false);
+});
 //for import
 const onChange = e => { 
     //create a file let
