@@ -431,6 +431,7 @@ settings_save.addEventListener("click", function(){
   net.filename = document.getElementById("filename").value;
   net.width = document.getElementById("width").value;
   net.height = document.getElementById("height").value;
+  window.alert(net.width);
   document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
 });
