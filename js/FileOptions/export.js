@@ -9,7 +9,7 @@ function exportPNG(name, wd, hg){
   document.getElementById('svg-canvas').style.background = '#ffffff';
       svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
         useCSS: true,
-        scale: 1,
+        scale: -5,
         width: document.getElementById('svg-canvas').style.width,
         height: document.getElementById('svg-canvas').style.height,
     });
