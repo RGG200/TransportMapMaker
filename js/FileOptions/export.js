@@ -22,13 +22,13 @@ function exportPNG(name, wd, hg){
     ctx.drawImage(img, 0, 0);
     DOMURL.revokeObjectURL(url);
     var png_img = canvas.toDataURL("image/png");
+    var a = document.createElement('a');
+    a.href = png_img;
+    a.download = name + '.png';
+    a.click();
   }
 
   img.src = url;
-  var a = document.createElement('a');
-  a.href = url
-  a.download = name;
-  a.click();
 }
 function exportJPG(){
   document.getElementById('svg-canvas').style.background = 'white';
