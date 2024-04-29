@@ -26,7 +26,8 @@ function exportPNG(name, wd, hg){
 
   img.src = url;
   var a = document.createElement('a');
-  a.download = img;
+  a.href = url
+  a.download = name;
   a.click();
 }
 function exportJPG(){
