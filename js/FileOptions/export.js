@@ -6,29 +6,11 @@ function exportSVG(name, wd, hg){
     });
 }
 function exportPNG(name, wd, hg){
-  document.getElementById('svg-canvas').style.background = '#ffffff00'; 
-  var canvas = document.getElementById('canvas');
-  var ctx = canvas.getContext('2d');
-
-  var data = document.getElementById('svg-canvas').outerHTML.toString();
-
-  var DOMURL = window.URL || window.webkitURL || window;
-
-  var img = new Image();
-  var svg = new Blob([data], {type: 'image/svg+xml'});
-  var url = DOMURL.createObjectURL(svg);
-
-  img.onload = function () {
-    ctx.drawImage(img, 0, 0);
-    DOMURL.revokeObjectURL(url);
-    var png_img = canvas.toDataURL("image/png");
-    var a = document.createElement('a');
-    a.href = png_img;
-    a.download = name + '.png';
-    a.click();
-  }
-
-  img.src = url;
+    document.getElementById('svg-canvas').style.background = '#ffffff00';
+    svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
+        width: wd,
+        height: hg
+    });
 }
 function exportJPG(){
   document.getElementById('svg-canvas').style.background = 'white';
