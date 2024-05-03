@@ -1,10 +1,17 @@
 function exportSVG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
-    svgExport.downloadSvg(document.getElementById('svg-canvas'), name);
+    svgExport.downloadSvg(document.getElementById('svg-canvas'), name, {
+        width: wd,
+        height: hg
+    });
 }
 function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
-    svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {width: document.getElementById('svg-canvas').style.width/10, height: document.getElementById('svg-canvas').style.height/10,});
+    svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
+        width: wd,
+        height: hg,
+        useCSS: false
+    });
 }
 function exportJPG(){
   document.getElementById('svg-canvas').style.background = 'white';
