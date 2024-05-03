@@ -30,6 +30,7 @@ input[type="file"] {
     font-family: 'Noto Sans JP', sans-serif;
     text-anchor: middle;
     width: 100%;
+    font-weight: 700;
     text-transform: uppercase;
 }
 #options{
