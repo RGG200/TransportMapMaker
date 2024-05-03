@@ -98,7 +98,7 @@ export function updateDisplay(event) {
 
   mosX = Math.round((event.pageX-80)/20)*20; // make it so that the stuff goes in a grid
 
-  mosY = Math.round((event.pageY-10)/20)*20;
+  mosY = Math.round((event.pageY)/20)*20;
 
 };
 
