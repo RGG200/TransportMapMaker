@@ -10,7 +10,7 @@ function exportPNG(name, wd, hg){
     svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
         width: wd,
         height: hg,
-        useCSS: false
+        useCSS: true,
     });
 }
 function exportJPG(){
