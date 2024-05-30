@@ -7,6 +7,8 @@ export function exportSVG(name, wd, hg){
 }
 export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
+    alert(wd)
+    height(hg)
     svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
         width: wd,
         height: hg,
