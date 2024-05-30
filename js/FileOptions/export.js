@@ -6,6 +6,7 @@ export function exportSVG(name, wd, hg){
         width: wde,
         height: hge
     });
+    document.getElementById('svg-canvas').style.background = 'url("../img/grid.svg")';
 }
 export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
@@ -15,6 +16,7 @@ export function exportPNG(name, wd, hg){
         width: wde,
         height: hge,
     });
+    document.getElementById('svg-canvas').style.background = 'url("../img/grid.svg")';
 }
 function exportJPG(){
   document.getElementById('svg-canvas').style.background = 'white';
