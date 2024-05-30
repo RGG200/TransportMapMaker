@@ -90,13 +90,6 @@ let param_data ={
 
 }
 
-document.getElementById("svg").addEventListener("click", function(){
-  exportSVG(net.filename, net.width, net.height);
-});
-document.getElementById("png").addEventListener("click", function(){
-  exportPNG(net.filename, net.width, net.height);
-});
-
 document.getElementById('filename').value = net.filename;
 document.getElementById('width').value = net.width;
 document.getElementById('height').value = net.height;
