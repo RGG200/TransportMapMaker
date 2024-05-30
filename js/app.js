@@ -1,6 +1,6 @@
 let instancesLine = 0; // selected line
 
-import { exportRTM } from './FileOptions/export-rtm.js';
+import { exportRTM, exportSVG, exportPNG } from './FileOptions/export-rtm.js';
 
 import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList, drawExchange} from './drawItems.js';
 
@@ -523,6 +523,17 @@ export_rtm.addEventListener("click", function(){
 
 });
 
+document.getElementById("png").addEventListener("click", function(){
+
+  exportPNG(net.filename, net.width, net.height);
+
+});
+
+document.getElementById("svg").addEventListener("click", function(){
+
+  exportSVG(net.filename, net.width, net.height);
+
+});
 //for import
 const onChange = e => { 
     //create a file let
