@@ -58,7 +58,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '18');
                 first_name.setAttributeNS(null, 'font-weight', '700');
-                first_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;text-transform: uppercase;");
+                first_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
                 second_name.setAttributeNS(null, 'x', posX);
@@ -66,7 +66,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
                 second_name.setAttributeNS(null, 'font-weight', '700');
-                second_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;text-transform: uppercase;");
+                second_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
                 document.getElementById( 'svg-canvas' ).appendChild( second_name );
             }else if(style == 'circle'){
                 let circle = document.createElementNS( svgns, style);
@@ -90,6 +90,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '18');
                 first_name.setAttributeNS(null, 'font-weight', '700');
+                first_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
                 second_name.setAttributeNS(null, 'x', posX);
@@ -97,6 +98,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
                 second_name.setAttributeNS(null, 'font-weight', '700');
+                second_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
                 document.getElementById( 'svg-canvas' ).appendChild( second_name );
             }
             break;
@@ -126,6 +128,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
                 first_name.setAttributeNS(null, 'font-weight', '700');
+                first_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
                 second_name.setAttributeNS(null, 'x', posX);
@@ -133,6 +136,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
                 second_name.setAttributeNS(null, 'font-weight', '700');
+                second_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
                 document.getElementById( 'svg-canvas' ).appendChild( second_name );
             }else if(style == 'circle'){
                 let circle = document.createElementNS( svgns, style);
@@ -154,6 +158,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 first_name.setAttributeNS(null, 'class', 'stationNames');
                 first_name.setAttributeNS(null, 'font-size', '16');
                 first_name.setAttributeNS(null, 'font-weight', '700');
+                first_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
                 document.getElementById( 'svg-canvas' ).appendChild( first_name );
                 second_name.innerHTML = sName;
                 second_name.setAttributeNS(null, 'x', posX);
@@ -161,6 +166,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
                 second_name.setAttributeNS(null, 'class', 'stationNames');
                 second_name.setAttributeNS(null, 'font-size', '12');
                 second_name.setAttributeNS(null, 'font-weight', '700');
+                second_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
                 document.getElementById( 'svg-canvas' ).appendChild( second_name );
             }
             break;
@@ -193,6 +199,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     first_name.setAttributeNS(null, 'font-size', '16');
     exchangeArray[0].height = 20*exchangeArray.length;
     first_name.setAttributeNS(null, 'font-weight', '700');
+    first_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
     document.getElementById( 'svg-canvas' ).appendChild( first_name );
     second_name.innerHTML = exchangeArray[0].sName;
     second_name.setAttributeNS(null, 'x', posX);
@@ -200,6 +207,7 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
     second_name.setAttributeNS(null, 'class', 'stationNames');
     second_name.setAttributeNS(null, 'font-size', '12');
     second_name.setAttributeNS(null, 'font-weight', '700');
+    second_name.setAttributeNS(null, 'style', "font-family: 'Noto Sans JP', sans-serif;text-anchor: middle;width: 100%;font-weight: 700;");
     document.getElementById( 'svg-canvas' ).appendChild( second_name );
     for(const exPoint of exchangeArray){
         exchangeArray[exchangeArray.indexOf(exPoint)].height = 20*exchangeArray.length;
