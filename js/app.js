@@ -440,8 +440,9 @@ settings_save.addEventListener("click", function(){
   net.height = document.getElementById("height").value;
   document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
-  document.getElementById("png").setAttributeNS(null,"onclick", "exportPNG(net.filename, net.width, net.height);");
-  document.getElementById("svg").setAttributeNS(null,"onclick", "exportSVG(net.filename, net.width, net.height);");
+  document.getElementById("svg").setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height})`);
+  document.getElementById("png").setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height})`);
+  document.getElementById("export-file").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
 });
 
 
