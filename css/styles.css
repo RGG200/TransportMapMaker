@@ -31,7 +31,6 @@ input[type="file"] {
     text-anchor: middle;
     width: 100%;
     font-weight: 700;
-    text-transform: uppercase;
 }
 #options{
     position: fixed;
@@ -267,9 +266,6 @@ input[type="file"] {
     text-align: center;
     font-size: 1.2rem;
     padding: 5px;
-}
-.st-editor .bubble .content input{
-    text-transform: uppercase;
 }
 .bubble .bottom{
     width: 100%;
