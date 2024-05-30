@@ -90,6 +90,13 @@ let param_data ={
 
 }
 
+document.getElementById("svg").addEventListener("click", function(){
+  exportSVG(net.filename, net.width, net.height);
+});
+document.getElementById("png").addEventListener("click", function(){
+  exportPNG(net.filename, net.width, net.height);
+});
+
 document.getElementById('filename').value = net.filename;
 document.getElementById('width').value = net.width;
 document.getElementById('height').value = net.height;
@@ -433,6 +440,8 @@ settings_save.addEventListener("click", function(){
   net.height = document.getElementById("height").value;
   document.getElementById("svg-canvas").setAttributeNS(null, "width", net.width);
   document.getElementById("svg-canvas").setAttributeNS(null, "height", net.height);
+  document.getElementById("png").setAttributeNS(null,"onclick", "exportPNG(net.filename, net.width, net.height);");
+  document.getElementById("svg").setAttributeNS(null,"onclick", "exportSVG(net.filename, net.width, net.height);");
 });
 
 
@@ -520,12 +529,6 @@ export_rtm.addEventListener("click", function(){
 
 });
 
-document.getElementById("svg").addEventListener("click", function(){
-  exportSVG(net.filename, net.width, net.height);
-});
-document.getElementById("png").addEventListener("click", function(){
-  exportPNG(net.filename, net.width, net.height);
-});
 //for import
 const onChange = e => { 
     //create a file let
