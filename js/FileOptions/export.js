@@ -1,11 +1,11 @@
-function exportSVG(name, wd, hg){
+export function exportSVG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
     svgExport.downloadSvg(document.getElementById('svg-canvas'), name, {
         width: wd,
         height: hg
     });
 }
-function exportPNG(name, wd, hg){
+export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
     svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
         width: wd,
