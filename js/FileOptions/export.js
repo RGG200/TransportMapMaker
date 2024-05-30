@@ -1,15 +1,15 @@
 export function exportSVG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
     svgExport.downloadSvg(document.getElementById('svg-canvas'), name, {
-        width: wd,
-        height: hg
+        width: 2000,
+        height: 2000
     });
 }
 export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
     svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
-        width: wd,
-        height: hg,
+        width: 2000,
+        height: 2000,
         useCSS: true,
     });
 }
