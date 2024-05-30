@@ -524,17 +524,6 @@ export_rtm.addEventListener("click", function(){
 
 });
 
-document.getElementById("png").addEventListener("click", function(){
-
-  exportPNG(net.filename, net.width, net.height);
-
-});
-
-document.getElementById("svg").addEventListener("click", function(){
-
-  exportSVG(net.filename, net.width, net.height);
-
-});
 //for import
 const onChange = e => { 
     //create a file let
