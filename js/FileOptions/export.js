@@ -1,16 +1,19 @@
 export function exportSVG(name, wd, hg){
+    let wde = parseint(wd)
+    let hge = parseint(hg)
     document.getElementById('svg-canvas').style.background = '#ffffff00';
     svgExport.downloadSvg(document.getElementById('svg-canvas'), name, {
-        width: wd,
-        height: hg
+        width: wde,
+        height: hge
     });
 }
 export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
-    alert(wd)
+    let wde = parseint(wd)
+    let hge = parseint(hg)
     svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
-        width: wd,
-        height: hg,
+        width: wde,
+        height: hge,
         useCSS: true,
     });
 }
