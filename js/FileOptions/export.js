@@ -1,6 +1,6 @@
 export function exportSVG(name, wd, hg){
-    let wde = parseInt(wd)
-    let hge = parseInt(hg)
+    let wde = parseInt(wd)*2
+    let hge = parseInt(hg)*2
     document.getElementById('svg-canvas').style.background = '#ffffff00';
     svgExport.downloadSvg(document.getElementById('svg-canvas'), name, {
         width: wde,
@@ -9,8 +9,8 @@ export function exportSVG(name, wd, hg){
 }
 export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
-    let wde = parseInt(wd)
-    let hge = parseInt(hg)
+    let wde = parseInt(wd)*2
+    let hge = parseInt(hg)*2
     svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
         width: wde,
         height: hge,
