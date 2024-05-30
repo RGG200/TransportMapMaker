@@ -190,6 +190,9 @@ export function updateDisplay(event) {
   }
 
 
+document.getElementById("svg").setAttributeNS(null, "onclick", `exportSVG(${net.filename}, ${net.width}, ${net.height})`);
+document.getElementById("png").setAttributeNS(null, "onclick", `exportPNG(${net.filename}, ${net.width}, ${net.height})`);
+document.getElementById("export-file").setAttributeNS(null, "onclick", `exportRTM(${net}, ${net.filename});`);
 
   function isConnected(stationID, lineID) {
 
