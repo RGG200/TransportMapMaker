@@ -302,7 +302,17 @@ canvas.addEventListener('click', function(){
 
 
 
+document.getElementById("svg").addEventListener("click", function(){
+  this.setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
+  document.getElementById("png").setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
+  document.getElementById("export-file").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
+});
 
+document.getElementById("png").addEventListener("click", function(){
+  document.getElementById('svg').setAttributeNS(null, "onclick", `exportSVG("${net.filename}", ${net.width}, ${net.height});`);
+  this.setAttributeNS(null, "onclick", `exportPNG("${net.filename}", ${net.width}, ${net.height});`);
+  document.getElementById("export-file").setAttributeNS(null, "onclick", `exportRTM(${net}, "ooo");`);
+});
 
 
 st_list.addEventListener("mouseenter", function(){
