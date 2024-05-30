@@ -1,6 +1,7 @@
 let instancesLine = 0; // selected line
 
-import { exportRTM, exportSVG, exportPNG } from './FileOptions/export-rtm.js';
+import { exportRTM } from './FileOptions/export-rtm.js';
+import { exportSVG, exportPNG } from './FileOptions/export.js';
 
 import { Station, Network, Line, drawLine, drawStation, drawStationsList, drawLinesList, drawExchange} from './drawItems.js';
 
