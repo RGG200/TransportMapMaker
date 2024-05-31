@@ -1,1 +1,1 @@
-let locales = ['en'];
+let locales = ['en', 'fr', 'es'];

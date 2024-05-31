@@ -38,6 +38,7 @@ input[type="file"] {
     top:0;
     height: 100vh;
     overflow-y: auto;
+    overflow-x: hidden;
     width: 80px;
     background-color: #4C5454;
     padding: .4rem .8rem;
