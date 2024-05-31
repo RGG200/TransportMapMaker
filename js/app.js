@@ -521,13 +521,6 @@ ln_delete.addEventListener("click", function(){
 }, true);
 
 
-
-export_rtm.addEventListener("click", function(){
-
-  exportRTM(net, "Être ou ne pas être? telle est la question");
-
-});
-
 //for import
 const onChange = e => { 
     //create a file let
@@ -573,3 +566,6 @@ const onChange = e => {
 }
 //check for file selected
 import_rtm.addEventListener("change", onChange);
+export_rtm.addEventListener("click", function(){
+  exportRTM(net, "Être ou ne pas être? telle est la question");
+});
