@@ -2,7 +2,7 @@
     if(network != null){
         var seen = [];
         var file = new Blob([
-            JSON.stringify(network)], {type: 'application/rtm'});
+            JSON.stringify(network)], {type: 'application/json'});
         const href = URL.createObjectURL(file);
         const a = Object.assign(document.createElement('a'),
         {
