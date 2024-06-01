@@ -220,8 +220,8 @@ export function drawStation(fName,sName, style, type, posX, posY, lineColor, ins
         exchangeDrawable.setAttributeNS( null,'height','10');
         exchangeDrawable.setAttributeNS( null,'rx', '50');
         exchangeDrawable.setAttributeNS( null,'ry','50');
-        exchangeDrawable.setAttributeNS( null,'fill', exPoint.line_parent.color);
-        exchangeDrawable.innerHTML = exPoint.line_parent.id;
+        exchangeDrawable.setAttributeNS( null,'fill', exPoint.color);
+        exchangeDrawable.innerHTML = exPoint.id;
         document.getElementById( 'svg-canvas' ).appendChild( exchangeDrawable );
     }
   }
