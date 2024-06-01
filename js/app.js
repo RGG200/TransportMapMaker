@@ -375,6 +375,8 @@ function updateCanvas(){
         element.type = "exchange";
         exArray[exID] = element;
         coArray[exID] = net.lines[j].color;
+        element.color = net.lines[j].color;
+        element.id = net.lines[j].id;
         line_instances[exID] = j;
         exID++;
         is_any_station_selected = false
