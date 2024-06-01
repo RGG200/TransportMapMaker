@@ -393,7 +393,7 @@ function updateCanvas(){
     let exArray_station = exArray.filter(exStation => exStation.xPos == exArray[k].xPos && exStation.yPos == exArray[k].yPos);
     let coArray_station = [];
     for(let l = 0; l < exArray_station.length; l++){
-      coArray_station = coArray.filter(color => color == exArray_station[l].line_parent.color);  
+      coArray_station = coArray.filter(color => color == exArray_station[l].color);  
     }
     drawExchange(exArray_station, coArray_station);
   }
