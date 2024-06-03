@@ -6,10 +6,6 @@ export function exportSVG(name, wd, hg){
         width: wde,
         height: hge
     });
-    resetSVG();
-}
-function resetSVG(){
-  document.getElementById('svg-canvas').style.background = 'url("../img/grid.svg")';
 }
 export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
