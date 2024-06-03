@@ -4,8 +4,9 @@ export function exportSVG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
     svgExport.downloadSvg(document.getElementById('svg-canvas'), name, {
         width: wde,
-        height: hge
+        height: hge,
     });
+    document.getElementById('svg-canvas').style.background
 }
 export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
