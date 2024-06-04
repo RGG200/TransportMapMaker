@@ -6,7 +6,7 @@ export function exportSVG(name, wd, hg){
         width: wde,
         height: hge,
     });
-    document.getElementById('svg-canvas').style.background
+    resetCanvas();
 }
 export function exportPNG(name, wd, hg){
     document.getElementById('svg-canvas').style.background = '#ffffff00';
@@ -21,4 +21,10 @@ export function exportPNG(name, wd, hg){
 function exportJPG(){
   document.getElementById('svg-canvas').style.background = 'white';
   svgExport.downloadJpeg(document.getElementById('svg-canvas'), 'transport-map', {width: 2000, height: 2000});
+}
+
+async function resetCanvas(){
+
+    setTimeout(() => document.getElementById('svg-canvas').style.background = 'url("../img/grid.svg")', 1000);
+
 }
