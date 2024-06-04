@@ -227,7 +227,7 @@ export function updateDisplay(event) {
       for(const station of line.stations){
         if(Math.abs(station.yPos-net.lines[lineID].stations[stationID].yPos) <= station.height/2 && net.lines.indexOf(line) != lineID){
           if(Math.abs(station.xPos-net.lines[lineID].stations[stationID].xPos) <= 10){
-            //net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;
+            net.lines[lineID].stations[stationID].xPos = station.xPos;net.lines[lineID].stations[stationID].yPos = station.yPos;
             return false;
           }
         }
