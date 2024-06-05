@@ -18,6 +18,10 @@ html body{
     top: 0em;
     left: 80px;
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow-x: auto;
+    overflox-y: auto;
 }
 #svg-canvas-preview{
     background-color: red;
