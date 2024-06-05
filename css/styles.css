@@ -34,9 +34,9 @@ input[type="file"] {
 }
 #options{
     position: fixed;
-    left:0px;
-    top:0px;
-    height: 100vh;
+    left:0;
+    top:0;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     width: 80px;
