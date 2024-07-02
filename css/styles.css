@@ -10,10 +10,10 @@
 #canvas{
     position: absolute;
     top: -2.25px;
-    left: 77.75px;
-    width: calc(1980px-80px);
+    left: 80px;
+    max-width: calc(100vw-80px);
     height: 100vh;
-    background-color: red;
+    background-color: #111111;
     padding: 10px;
     overflow-x: auto;
     overflow-y: auto;
