@@ -10,6 +10,8 @@
 #canvas{
     width: calc(100vw-80px);
     height: 100vh;
+    background-color: red;
+    padding: 10px;
     overflow-x: auto;
     overflow-y: auto;
 }
