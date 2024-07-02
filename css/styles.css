@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
 *{
-    padding: 0;
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family:'Lato', sans-serif;
+}
+
+#canvas{
+    width: calc(100vw-80px);
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 #svg-canvas{
     position: absolute;
     top: -2.25px;
-    left: 82.5px;
-    
+    left: 77.75px;
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas-preview{
@@ -29,7 +36,7 @@ input[type="file"] {
     position: fixed;
     left:0;
     top:0;
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     width: 80px;
