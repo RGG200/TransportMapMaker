@@ -5,17 +5,11 @@
     margin: 0;
     font-family:'Lato', sans-serif;
 }
-
-
-html body{
-    position:absolute;
-    left: -2.25px;
-    top: -2.25px;
-}
 #svg-canvas{
     position: absolute;
-    top: 0em;
-    left: 80px;
+    top: -2.25px;
+    left: 82.5px;
+    
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas-preview{
