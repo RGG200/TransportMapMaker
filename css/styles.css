@@ -8,6 +8,9 @@
 }
 
 #canvas{
+    position: absolute;
+    top: -2.25px;
+    left: 77.75px;
     width: calc(100vw-80px);
     height: 100vh;
     background-color: red;
@@ -16,9 +19,6 @@
     overflow-y: auto;
 }
 #svg-canvas{
-    position: absolute;
-    top: -2.25px;
-    left: 77.75px;
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas-preview{
