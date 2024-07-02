@@ -41,9 +41,9 @@ input[type="file"] {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    width: 240px;
+    width: 320px;
     background-color: #4C5454;
-    padding: 1.2rem 2.4rem;
+    padding: 1.6rem 3.2rem;
     transition: all 0.5s ease;
 }
 
@@ -54,10 +54,10 @@ input[type="file"] {
 #options #btn{
     position: absolute;
     color: #FFF;
-    top:0.4rem;
+    top:1.6rem;
     left:50%;
-    font-size: 3.6rem;
-    line-height: 50px;
+    font-size: 4.8rem;
+    line-height: 200px;
     transform: translateX(-50%);
     cursor: pointer;
 }
@@ -68,7 +68,7 @@ input[type="file"] {
 #options .top .logo{
     color: white;
     display: flex;
-    height: 150px;
+    height: 200px;
     width: 100%;
     align-items: center;
     pointer-events: none;
@@ -78,15 +78,15 @@ input[type="file"] {
     opacity: 1;
 }
 .top .logo i{
-    font-size: 6rem;
-    margin-right: 5px;
+    font-size: 8rem;
+    margin-right: 20px;
 }
 #options ul li{
     position: relative;
     list-style-type: none;
-    height: 210px;
+    height: 280px;
     width: 90%;
-    margin: 0.6rem auto;
+    margin: 2.4rem auto;
     line-height: 150px;
 }
 
@@ -96,8 +96,8 @@ input[type="file"] {
     align-items: center;
     text-decoration: none;
     /* height: 100%; */
-    border-radius: 0.8rem;
-    font-size: 3rem;
+    border-radius: 3.2rem;
+    font-size: 4rem;
 }
 #options.active ul li a{
     width: 500px;
@@ -113,12 +113,12 @@ input[type="file"] {
 }
 
 #options ul li a i{
-    min-width: 50px;
+    min-width: 200px;
     pointer-events: none;
     text-align: center;
-    height: 180px;
-    border-radius: 12px;
-    line-height: 180px;
+    height: 720px;
+    border-radius: 48px;
+    line-height: 720px;
 }
 
 #options ul li a:hover{
