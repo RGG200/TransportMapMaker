@@ -15,10 +15,12 @@
     max-height: 100℅;
     background-color: #111111;
     padding: 10px;
+    filter: invert(1);
     overflow-x: auto;
     overflow-y: auto;
 }
 #svg-canvas{
+    transform: scale(4.0,4.0);
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas-preview{
