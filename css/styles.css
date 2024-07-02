@@ -10,7 +10,7 @@
 #canvas{
     position: absolute;
     top: -2.25px;
-    left: 80px;
+    left: 320px;
     max-width: calc(100℅-80px);
     max-height: 100℅;
     background-color: #111111;
@@ -41,14 +41,14 @@ input[type="file"] {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    width: 320px;
+    width: 160px;
     background-color: #4C5454;
-    padding: .4rem .8rem;
+    padding: .8rem 1.6rem;
     transition: all 0.5s ease;
 }
 
 #options.active{
-    width: 260px;
+    width: 500px;
 }
 
 #options #btn{
@@ -56,7 +56,7 @@ input[type="file"] {
     color: #FFF;
     top:0.4rem;
     left:50%;
-    font-size: 4.8rem;
+    font-size: 2.4rem;
     line-height: 50px;
     transform: translateX(-50%);
     cursor: pointer;
@@ -78,7 +78,7 @@ input[type="file"] {
     opacity: 1;
 }
 .top .logo i{
-    font-size: 2rem;
+    font-size: 4rem;
     margin-right: 5px;
 }
 #options ul li{
