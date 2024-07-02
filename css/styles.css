@@ -13,9 +13,6 @@
     left: 320px;
     max-width: calc(100℅-80px);
     max-height: 100℅;
-    background-color: #111111;
-    padding: 10px;
-    filter: invert(1);
     overflow-x: auto;
     overflow-y: auto;
 }
@@ -86,7 +83,7 @@ input[type="file"] {
 #options ul li{
     position: relative;
     list-style-type: none;
-    height: 280px;
+    height: 160px;
     width: 90%;
     margin: 2.4rem auto;
     line-height: 150px;
@@ -118,9 +115,9 @@ input[type="file"] {
     min-width: 200px;
     pointer-events: none;
     text-align: center;
-    height: 720px;
+    height: 180px;
     border-radius: 48px;
-    line-height: 720px;
+    line-height: 180px;
 }
 
 #options ul li a:hover{
