@@ -1,23 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family:'Lato', sans-serif;
 }
-#canvas{
-    position: absolute;
+
+
+html body{
+    position:absolute;
+    left: -2.25px;
     top: -2.25px;
-    left: 320px;
-    max-width: calc(25℅-80px);
-    max-height: 25℅;
-    transform: scale(4.0,4.0)
-    overflow-x: auto;
-    overflow-y: auto;
+    max-width: 100vw;
+    max-height: 100vh;
 }
 #svg-canvas{
+    position: absolute;
+    top: 0em;
+    left: 80px;
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
 #svg-canvas-preview{
@@ -40,23 +41,23 @@ input[type="file"] {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    width: 320px;
+    width: 80px;
     background-color: #4C5454;
-    padding: 1.6rem 3.2rem;
+    padding: .4rem .8rem;
     transition: all 0.5s ease;
 }
 
 #options.active{
-    width: 500px;
+    width: 260px;
 }
 
 #options #btn{
     position: absolute;
     color: #FFF;
-    top:1.6rem;
+    top:0.4rem;
     left:50%;
-    font-size: 4.8rem;
-    line-height: 200px;
+    font-size: 1.2rem;
+    line-height: 50px;
     transform: translateX(-50%);
     cursor: pointer;
 }
@@ -67,7 +68,7 @@ input[type="file"] {
 #options .top .logo{
     color: white;
     display: flex;
-    height: 200px;
+    height: 50px;
     width: 100%;
     align-items: center;
     pointer-events: none;
@@ -77,16 +78,16 @@ input[type="file"] {
     opacity: 1;
 }
 .top .logo i{
-    font-size: 8rem;
-    margin-right: 20px;
+    font-size: 2rem;
+    margin-right: 5px;
 }
 #options ul li{
     position: relative;
     list-style-type: none;
-    height: 160px;
+    height: 70px;
     width: 90%;
-    margin: 2.4rem auto;
-    line-height: 150px;
+    margin: 0.2rem auto;
+    line-height: 50px;
 }
 
 #options ul li a{
@@ -95,11 +96,11 @@ input[type="file"] {
     align-items: center;
     text-decoration: none;
     /* height: 100%; */
-    border-radius: 3.2rem;
-    font-size: 4rem;
+    border-radius: 0.8rem;
+    font-size: 1rem;
 }
 #options.active ul li a{
-    width: 500px;
+    width: 200px;
 }
 #options ul li a span{
     display: none;
@@ -112,12 +113,12 @@ input[type="file"] {
 }
 
 #options ul li a i{
-    min-width: 200px;
+    min-width: 50px;
     pointer-events: none;
     text-align: center;
-    height: 180px;
-    border-radius: 48px;
-    line-height: 180px;
+    height: 60px;
+    border-radius: 12px;
+    line-height: 60px;
 }
 
 #options ul li a:hover{
