@@ -19,7 +19,7 @@ html body{
     position: absolute;
     top: 0em;
     left: 80px;
-    max-width: calc(50vw-80px);
+    max-width: 1vw;
     max-height: 50vh;
     overflow-x: auto;
     overflow-y: auto;
