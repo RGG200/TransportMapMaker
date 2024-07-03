@@ -101,7 +101,7 @@ export function updateDisplay(event) {
 
   mosY = Math.round((event.pageY)/20)*20;
 
-}
+};
 
   let previous_instancesLine = 1;
 
