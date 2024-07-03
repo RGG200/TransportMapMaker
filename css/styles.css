@@ -19,7 +19,7 @@ html body{
     position: absolute;
     top: 0em;
     left: 80px;
-    max-width: 100vw;
+    max-width: calc(100vw-80px);
     max-height: 100vh;
     overflow-x: auto;
     overflow-y: auto;
@@ -44,8 +44,8 @@ input[type="file"] {
     position: fixed;
     left:0;
     top:0;
-    max-height: 100%;
-    height: 100%;
+    max-height: 100vh;
+    height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     width: 80px;
