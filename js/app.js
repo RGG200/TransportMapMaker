@@ -96,7 +96,7 @@ document.getElementById('width').value = net.width;
 document.getElementById('height').value = net.height;
 
 export function updateDisplay(event) {
-  var rect = document.getElementbyId('canvas').getBoundingClientRect(); 
+  var rect = document.getElementById('canvas').getBoundingClientRect(); 
   mosX = Math.round((event.pageX-80)/20)*20; // make it so that the stuff goes in a grid
 
   mosY = Math.round((event.pageY)/20)*20;
