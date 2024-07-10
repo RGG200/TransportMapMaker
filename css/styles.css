@@ -14,15 +14,13 @@ html body{
     top: -2.25px;
     max-width: 100%;
     max-height: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 #canvas{
     position: absolute;
     top: 0em;
     left: 80px;
-    max-width: 92vw;
-    max-height: 100vh;
-    overflow-x: auto;
-    overflow-y: auto;
 }
 #svg-canvas{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
