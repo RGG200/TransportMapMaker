@@ -129,7 +129,12 @@ input[type="file"] {
     text-align: center;
     font-size: 1vmax;
 }
-#options ul .logo:hover{
+
+#options ul .logo a{
+    pointer-events: none;
+}
+
+#options ul .logo a:hover{
     background: black;
 }
 
