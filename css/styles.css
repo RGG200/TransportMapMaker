@@ -352,8 +352,8 @@ input[type="file"] {
 @media only screen and (max-width: 720px){
     #options{
         bottom: 0;
-        min-width: 100vw;
-        width: 125vw;
+        min-width: 90vw;
+        width: 100vw;
         height: 5rem;
         overflow-x: auto;
     }
