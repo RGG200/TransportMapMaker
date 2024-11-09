@@ -144,52 +144,52 @@ input[type="file"] {
 }
 #options ~ .settings{
     position: fixed;
-    left: calc(calc(20vw + 20vh) / 2);
+    left: 5rem;
 }
 #options ~ .st-list{
     position: fixed;
-    left: calc(calc(20vw + 20vh) / 2);
+    left: 5rem;
 }
 #options ~ .st-editor{
     position: fixed;
-    left: calc(calc(20vw + 20vh) / 2);
+    left: 5rem;
 }
 #options ~ .ln-list{
     position: fixed;
-    left: calc(calc(20vw + 20vh) / 2);
+    left: 5rem;
 }
 #options ~ .ln-editor{
     position: fixed;
-    left: calc(calc(20vw + 20vh) / 2);
+    left: 5rem;
 }
 #options ~ .export{
     position: fixed;
-    left: calc(calc(20vw + 20vh) / 2);
+    left: 5rem;
 }
 
 #options.active ~ .settings{
     position: fixed;
-    left: calc(calc(60vw + 60vh) / 2);
+    left: 15rem;
 }
 #options.active ~ .st-list{
     position: fixed;
-    left: calc(calc(60vw + 60vh) / 2);
+    left: 15rem;
 }
 #options.active ~ .st-editor{
     position: fixed;
-    left: calc(calc(60vw + 60vh) / 2);
+    left: 15rem;
 }
 #options.active ~ .ln-list{
     position: fixed;
-    left: calc(calc(60vw + 60vh) / 2);
+    left: 15rem;
 }
 #options.active ~ .ln-editor{
     position: fixed;
-    left: calc(calc(60vw + 60vh) / 2);
+    left: 15rem;
 }
 #options.active ~ .export{
     position: fixed;
-    left: calc(calc(60vw + 60vh) / 2);
+    left: 15rem;
 }
 
 .settings{
