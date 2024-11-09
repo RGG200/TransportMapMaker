@@ -35,6 +35,8 @@ input[type="file"] {
 }
 #options{
     position: fixed;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 5rem;
     background-color: #4C5454;
@@ -51,12 +53,15 @@ input[type="file"] {
     color: #FFF;
     top: .3rem;
     left:50%;
-    font-size: 3rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 800;
     line-height: .6rem;
     transform: translateX(-50%);
     cursor: pointer;
 }
 #options.active #btn{
+    margin-top: 0.6rem;
     transform: translateX(-90%);
     left:90%;
 }
@@ -65,6 +70,7 @@ input[type="file"] {
     display: flex;
     height: 0.7rem;
     width: 100%;
+    margin-top: 1.5rem;
     align-items: center;
     pointer-events: none;
     opacity: 0;
@@ -73,25 +79,28 @@ input[type="file"] {
     opacity: 1;
 }
 .top .logo i{
-    font-size: 3rem;
-    margin-right: 0.1rem;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-right: 0.5rem;
 }
 .logo span{
-    font-size: 1rem;
+    font-size: 0.75rem;
 }
 #options ul{
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 #options ul li{
-    width: 100%
+    width: 100%;
 }
 
 #options ul li a{
+    color: white;
     display: flex;
     align-items: center;
     height: 5rem;
@@ -99,7 +108,7 @@ input[type="file"] {
     text-decoration: none;
 }
 #options.active ul li a{
-    width: calc(( 30vw + 30vh ) / 2);
+    width: 15rem;
 }
 #options ul li a span{
     display: none;
@@ -113,7 +122,9 @@ input[type="file"] {
 
 #options ul li a i{
     min-width: 2rem;
-    margin: 0 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0 1rem;
 }
 
 #options ul li a:hover{
