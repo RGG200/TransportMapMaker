@@ -42,9 +42,6 @@ input[type="file"] {
     transition: width 200ms ease;
 }
 
-#options:hover{
-    width: 12rem;
-}
 #options .top{
     padding: 1.2rem;
     padding-left: 1.4rem;
@@ -408,7 +405,7 @@ input[type="file"] {
 @media only screen and (max-width: 720px){
     #options{
         bottom: 0;
-        width: 100vw;
+        min-width: 100vw;
         height: 5rem;
     }
     .logo{
@@ -426,7 +423,7 @@ input[type="file"] {
     #options ul li a:hover{
         width: 5rem;
     }
-    #options ul li a span{
+    #options:hover ul li a span{
         display: none;
     }
     #options:hover span{
