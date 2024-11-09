@@ -108,6 +108,7 @@ input[type="file"] {
 }
 #options ul li a span{
     display: none;
+    margin-left: 0.5rem;
     pointer-events: none;
 }
 
