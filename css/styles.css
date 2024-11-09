@@ -63,7 +63,7 @@ input[type="file"] {
 
 #options ul .logo i{
     transform: rotate(0deg);
-    transition: 200ms;
+    transition: transform 200ms;
 }
 
 #options:hover ul .logo i{
