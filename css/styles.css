@@ -423,8 +423,11 @@ input[type="file"] {
     main{
         margin: 0;
     }
-    #options:hover{
-        width: 12rem;
+    #options ul li a:hover{
+        width: 5rem;
+    }
+    #options ul li a span{
+        display: none;
     }
     #options:hover span{
         display: inline;
