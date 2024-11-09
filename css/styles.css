@@ -137,52 +137,64 @@ input[type="file"] {
 
 #options ~ .settings{
     position: fixed;
-    right: calc(100%-5rem);
+    left: calc(100%-5rem);
+    top: 0px;
 }
 #options ~ .st-list{
     position: fixed;
-    right: calc(100%-5rem);
+    left: calc(100%-5rem);
+    top: 0px;
 }
 #options ~ .st-editor{
     position: fixed;
-    right: calc(100%-5rem);
+    left: calc(100%-5rem);
+    top: 0px;
 }
 #options ~ .ln-list{
     position: fixed;
-    right: calc(100%-5rem);
+    left: calc(100%-5rem);
+    top: 0px;
 }
 #options ~ .ln-editor{
     position: fixed;
-    right: calc(100%-5rem);
+    left: calc(100%-5rem);
+    top: 0px;
 }
 #options ~ .export{
     position: fixed;
-    right: calc(100%-5rem);
+    left: calc(100%-5rem);
+    top: 0px;
 }
 
 #options:hover ~ .settings{
     position: fixed;
-    right: calc(100%-12rem);
+    left: calc(100%-12rem);
+    top: 0px;
 }
 #options:hover ~ .st-list{
     position: fixed;
-    right: calc(100%-12rem);
+    left: calc(100%-12rem);
+    top: 0px;
 }
 #options:hover ~ .st-editor{
     position: fixed;
-    right: calc(100%-12rem);
+    left: calc(100%-12rem);
+    top: 0px;
 }
 #options:hover ~ .ln-list{
     position: fixed;
-    right: calc(100%-12rem);
+    left: calc(100%-12rem);
+    top: 0px;
 }
 #options:hover ~ .ln-editor{
     position: fixed;
-    right: calc(100%-12rem);
+    left: calc(100%-12rem);
+    top: 0px;
 }
 #options:hover ~ .export{
     position: fixed;
-    right: calc(100%-12rem);
+    left: calc(100%-12rem);
+    top: 0px;
 }
 
 .settings{
