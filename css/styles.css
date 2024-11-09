@@ -355,6 +355,7 @@ input[type="file"] {
         min-width: 100vw;
         width: 125vw;
         height: 5rem;
+        overflow-x: auto;
     }
     .logo{
         display: none;
@@ -422,6 +423,7 @@ input[type="file"] {
         top: 0;
         width: 5rem;
         height: 100vh;
+        overflow-y: auto;
     }
     #options ul{
         flex-direction: column;
