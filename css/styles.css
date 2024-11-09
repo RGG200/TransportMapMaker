@@ -13,9 +13,6 @@
 
 
 html body{
-    position:absolute;
-    left: -2.25px;
-    top: -2.25px;
 }
 #svg-canvas{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
@@ -74,7 +71,7 @@ input[type="file"] {
 }
 
 #options:hover ul .logo span{
-    display: block;
+    display: none;
     pointer-events: all;
 }
 
@@ -110,7 +107,7 @@ input[type="file"] {
 }
 
 #options:hover ul li a span{
-    display: block;
+    display: none;
 }
 
 #options ul li a i{
@@ -135,40 +132,9 @@ input[type="file"] {
     background: black;
 }
 
-#options:hover ~ .settings{
-    position: fixed;
-    left: calc(100%-12rem);
-    top: 0px;
-}
-#options:hover ~ .st-list{
-    position: fixed;
-    left: calc(100%-12rem);
-    top: 0px;
-}
-#options:hover ~ .st-editor{
-    position: fixed;
-    left: calc(100%-12rem);
-    top: 0px;
-}
-#options:hover ~ .ln-list{
-    position: fixed;
-    left: calc(100%-12rem);
-    top: 0px;
-}
-#options:hover ~ .ln-editor{
-    position: fixed;
-    left: calc(100%-12rem);
-    top: 0px;
-}
-#options:hover ~ .export{
-    position: fixed;
-    left: calc(100%-12rem);
-    top: 0px;
-}
-
 .settings{
     height: 100%;
-    max-width: calc(100% - 5rem);
+    max-width: 40rem;
     background-color: #4C5454;
     overflow-y: auto;
     border-left: 2px #3B4343 solid;
@@ -467,27 +433,27 @@ input[type="file"] {
     }
     #options ~ .st-list{
         position: fixed;
-        left: calc(100%-5rem);
+        left: 5rem;
         top: 0px;
     }
     #options ~ .st-editor{
         position: fixed;
-        left: calc(100%-5rem);
+        left: 5rem;
         top: 0px;
     }
     #options ~ .ln-list{
         position: fixed;
-        left: calc(100%-5rem);
+        left: 5rem;
         top: 0px;
     }
     #options ~ .ln-editor{
         position: fixed;
-        left: calc(100%-5rem);
+        left: 5rem;
         top: 0px;
     }
     #options ~ .export{
         position: fixed;
-        left: calc(100%-5rem);
+        left: 5rem;
         top: 0px;
     }
 }
