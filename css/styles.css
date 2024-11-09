@@ -137,52 +137,52 @@ input[type="file"] {
 
 #options ~ .settings{
     position: fixed;
-    left: 5rem;
+    left: calc(100%-5rem);
 }
 #options ~ .st-list{
     position: fixed;
-    left: 5rem;
+    left: calc(100%-5rem);
 }
 #options ~ .st-editor{
     position: fixed;
-    left: 5rem;
+    left: calc(100%-5rem);
 }
 #options ~ .ln-list{
     position: fixed;
-    left: 5rem;
+    left: calc(100%-5rem);
 }
 #options ~ .ln-editor{
     position: fixed;
-    left: 5rem;
+    left: calc(100%-5rem);
 }
 #options ~ .export{
     position: fixed;
-    left: 5rem;
+    left: calc(100%-5rem);
 }
 
 #options:hover ~ .settings{
     position: fixed;
-    left: 15rem;
+    left: calc(100%-12rem);
 }
 #options:hover ~ .st-list{
     position: fixed;
-    left: 15rem;
+    left: calc(100%-12rem);
 }
 #options:hover ~ .st-editor{
     position: fixed;
-    left: 15rem;
+    left: calc(100%-12rem);
 }
 #options:hover ~ .ln-list{
     position: fixed;
-    left: 15rem;
+    left: calc(100%-12rem);
 }
 #options:hover ~ .ln-editor{
     position: fixed;
-    left: 15rem;
+    left: calc(100%-12rem);
 }
 #options:hover ~ .export{
     position: fixed;
-    left: 15rem;
+    left: calc(100%-12rem);
 }
 
 .settings{
