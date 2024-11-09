@@ -12,16 +12,11 @@ html body{
     position:absolute;
     left: -2.25px;
     top: -2.25px;
-    max-width: 100vw;
-    max-height: 100vh;
-    overflow-x: auto;
-    overflow-y: auto;
 }
 #canvas{
     position: absolute;
     top: 0em;
     left: 80px;
-    max-height: 100vh;
     overflow-y: auto;
 }
 #svg-canvas{
@@ -48,7 +43,7 @@ input[type="file"] {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    width: 80px;
+    width: 10vh;
     background-color: #4C5454;
     padding: .4rem .8rem;
     transition: all 0.5s ease;
