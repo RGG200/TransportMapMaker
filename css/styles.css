@@ -14,7 +14,7 @@ html body{
     top: -2.25px;
 }
 #canvas{
-    margin-left: 80px;    
+    margin-left: calc(calc(20vw + 20vh) / 2);    
 }
 #svg-canvas{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
@@ -54,8 +54,8 @@ input[type="file"] {
     color: #FFF;
     top: calc(( 3vw + 3vh ) / 2);
     left:50%;
-    font-size: calc(( 7.5vw + 7.5vh ) / 2);
-    line-height: 50px;
+    font-size: calc(( 5.5vw + 5.5vh ) / 2);
+    line-height: calc(( 5.5vw + 5.5vh ) / 2);
     transform: translateX(-50%);
     cursor: pointer;
 }
@@ -76,17 +76,18 @@ input[type="file"] {
     opacity: 1;
 }
 .top .logo i{
-    font-size: calc(( 7.5vw + 7.5vh ) / 2);
+    font-size: calc(( 5.5vw + 5.5vh ) / 2);
     margin-right: calc(( 4vw + 4vh ) / 2);
 }
 .logo span{
-    font-size: calc(( 3vw + 3vh ) / 2);
+    font-size: calc(( 2vw + 2vh ) / 2);
 }
 #options ul li{
     position: relative;
     list-style-type: none;
     height: calc(( 10vw + 10vh ) / 2);
     width: 90%;
+    align-content: center;
     margin: calc(( 5vw + 5vh ) / 2) auto;
     line-height: calc(( 10vw + 10vh ) / 2);
 }
@@ -95,11 +96,10 @@ input[type="file"] {
     color: white;
     display: flex;
     align-items: center;
-    margin-left: calc( 2vw + 2vh );
     text-decoration: none;
     /* height: 100%; */
-    border-radius: 0.8rem;
-    font-size: calc(( 7.5vw + 7.5vh ) / 2);
+    border-radius: 2.0rem;
+    font-size: calc(( 5.5vw + 5.5vh ) / 2);
 }
 #options.active ul li a{
     width: calc(( 30vw + 30vh ) / 2);
@@ -118,7 +118,7 @@ input[type="file"] {
     min-width: 50px;
     pointer-events: none;
     text-align: center;
-    height: calc(( 7vw + 7vh ) / 2);
+    height: calc(( 7.5vw + 7.5vh ) / 2);
     border-radius: 12px;
     margin-right: calc(( 7.5vw + 7.5vh ) / 2);
     line-height: calc(( 7vw + 7vh ) / 2);
@@ -138,52 +138,52 @@ input[type="file"] {
 }
 #options ~ .settings{
     position: fixed;
-    left: 80px;;
+    left: calc(calc(20vw + 20vh) / 2);
 }
 #options ~ .st-list{
     position: fixed;
-    left: 80px;
+    left: calc(calc(20vw + 20vh) / 2);
 }
 #options ~ .st-editor{
     position: fixed;
-    left: 80px;
+    left: calc(calc(20vw + 20vh) / 2);
 }
 #options ~ .ln-list{
     position: fixed;
-    left: 80px;
+    left: calc(calc(20vw + 20vh) / 2);
 }
 #options ~ .ln-editor{
     position: fixed;
-    left: 80px;
+    left: calc(calc(20vw + 20vh) / 2);
 }
 #options ~ .export{
     position: fixed;
-    left: 80px;
+    left: calc(calc(20vw + 20vh) / 2);
 }
 
 #options.active ~ .settings{
     position: fixed;
-    left: 260px;
+    left: calc(calc(60vw + 60vh) / 2);
 }
 #options.active ~ .st-list{
     position: fixed;
-    left: 260px;
+    left: calc(calc(60vw + 60vh) / 2);
 }
 #options.active ~ .st-editor{
     position: fixed;
-    left: 260px;
+    left: calc(calc(60vw + 60vh) / 2);
 }
 #options.active ~ .ln-list{
     position: fixed;
-    left: 260px;
+    left: calc(calc(60vw + 60vh) / 2);
 }
 #options.active ~ .ln-editor{
     position: fixed;
-    left: 260px;
+    left: calc(calc(60vw + 60vh) / 2);
 }
 #options.active ~ .export{
     position: fixed;
-    left: 260px;
+    left: calc(calc(60vw + 60vh) / 2);
 }
 
 .settings{
