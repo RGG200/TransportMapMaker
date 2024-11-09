@@ -39,47 +39,32 @@ input[type="file"] {
 #options{
     position: fixed;
     top: 0;
-    left: 0;
     height: 100vh;
     width: 5rem;
-    background-color: #4C5454;
-    padding: .4rem .8rem;
-    transition: all 0.5s ease;
+    background-color: black;
+    transition: width 200ms ease;
 }
 
-#options.active{
-    width: 15rem;
+#options:hover{
+    width: 12rem;
+}
+#options .top{
+    padding: 1.2rem;
+    padding-left: 1.4rem;
 }
 
-#options #btn{
-    position: absolute;
-    color: #FFF;
-    top: .3rem;
-    left:50%;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: 800;
-    line-height: .6rem;
-    transform: translateX(-50%);
-    cursor: pointer;
-}
-#options.active #btn{
-    margin-top: 0.6rem;
-    transform: translateX(-90%);
-    left:90%;
-}
 #options .top .logo{
     color: white;
     display: flex;
-    height: 0.7rem;
+    height: 1.4rem;
     width: 100%;
-    margin-top: 1.5rem;
     align-items: center;
     pointer-events: none;
-    opacity: 0;
-}
-#options.active .top .logo{
     opacity: 1;
+}
+#options:hover .top .logo{
+    opacity: 1;
+    transition: 200ms;
 }
 .top .logo i{
     font-size: 2rem;
@@ -88,13 +73,19 @@ input[type="file"] {
 }
 .logo span{
     font-size: 0.75rem;
+    opacity: 0;
+}
+#options:hover .top .logo span{
+    font-size: 0.75rem;
+    opacity: 1;
 }
 #options ul{
     list-style: none;
     padding: 0;
     margin: 0;
-    margin-top: 1.5rem;
+    width: 100%;
     display: flex;
+    background: black;
     flex-direction: column;
     align-items: center;
 }
@@ -103,36 +94,32 @@ input[type="file"] {
 }
 
 #options ul li a{
-    color: white;
     display: flex;
     align-items: center;
     height: 5rem;
-    color: grayscale;
+    color: wheat;
     text-decoration: none;
 }
-#options.active ul li a{
-    width: 15rem;
+#options ul li a:hover{
+    background: #05F5;
+    transition: 200ms;
+}
+#options:hover ul li a{
 }
 #options ul li a span{
     display: none;
     pointer-events: none;
 }
 
-#options.active ul li a span{
+#options:hover ul li a span{
     display: block;
     pointer-events: all;
 }
 
 #options ul li a i{
-    min-width: 2rem;
     font-size: 1.5rem;
     font-weight: 800;
-    margin: 0 1rem;
-}
-
-#options ul li a:hover{
-    color:  #CC3366;
-    transition: 300ms;
+    margin: 0 1.6rem;
 }
 
 
@@ -167,27 +154,27 @@ input[type="file"] {
     left: 5rem;
 }
 
-#options.active ~ .settings{
+#options:hover ~ .settings{
     position: fixed;
     left: 15rem;
 }
-#options.active ~ .st-list{
+#options:hover ~ .st-list{
     position: fixed;
     left: 15rem;
 }
-#options.active ~ .st-editor{
+#options:hover ~ .st-editor{
     position: fixed;
     left: 15rem;
 }
-#options.active ~ .ln-list{
+#options:hover ~ .ln-list{
     position: fixed;
     left: 15rem;
 }
-#options.active ~ .ln-editor{
+#options:hover ~ .ln-editor{
     position: fixed;
     left: 15rem;
 }
-#options.active ~ .export{
+#options:hover ~ .export{
     position: fixed;
     left: 15rem;
 }
