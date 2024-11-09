@@ -412,6 +412,36 @@ input[type="file"] {
         display: inline;
         transition: 200ms;
     }
+    #options ~ .settings{
+        position: fixed;
+        bottom: 5rem;
+        left: 0px;
+    }
+    #options ~ .st-list{
+        position: fixed;
+        left: calc(100%-5rem);
+        top: 0px;
+    }
+    #options ~ .st-editor{
+        position: fixed;
+        left: calc(100%-5rem);
+        top: 0px;
+    }
+    #options ~ .ln-list{
+        position: fixed;
+        left: calc(100%-5rem);
+        top: 0px;
+    }
+    #options ~ .ln-editor{
+        position: fixed;
+        left: calc(100%-5rem);
+        top: 0px;
+    }
+    #options ~ .export{
+        position: fixed;
+        left: calc(100%-5rem);
+        top: 0px;
+    }
 }
 
 @media only screen and (min-width: 720px){
@@ -432,7 +462,7 @@ input[type="file"] {
     }
     #options ~ .settings{
         position: fixed;
-        left: calc(100%-5rem);
+        left: 5rem;
         top: 0px;
     }
     #options ~ .st-list{
