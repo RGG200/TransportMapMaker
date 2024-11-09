@@ -129,6 +129,10 @@ input[type="file"] {
     text-align: center;
     font-size: 1vmax;
 }
+#options ul .logo:hover{
+    background: black;
+}
+
 #options ~ .settings{
     position: fixed;
     left: 5rem;
