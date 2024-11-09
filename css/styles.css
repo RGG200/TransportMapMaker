@@ -133,8 +133,6 @@ input[type="file"] {
 }
 
 .settings{
-    height: 100vh;
-    max-width: 40rem;
     background-color: #4C5454;
     overflow-y: auto;
     border-left: 2px #3B4343 solid;
@@ -415,6 +413,30 @@ input[type="file"] {
         max-width: 100vw;
         overflow-x: auto;
     }
+    .settings{
+         width: 100vw;
+         max-height: 40rem;
+    }
+    .st-list{
+         width: 100vw;
+         max-height: 40rem;
+    }
+    .st-editor{
+         width: 100vw;
+         max-height: 40rem;
+    }
+    .ln-list{
+         width: 100vw;
+         max-height: 40rem;
+    }
+    .ln-editor{
+         width: 100vw;
+         max-height: 40rem;
+    }
+   .export{
+         width: 100vw;
+         max-height: 40rem;
+    }
 }
 
 @media only screen and (min-width: 720px){
@@ -467,4 +489,28 @@ input[type="file"] {
         max-width: calc( 100vw - 5rem );
         overflow-y: auto;
     }
+    .settings{
+         height: 100vh;
+         max-width: 40rem;
+    }
+    .st-list{
+         height: 100vh;
+         max-width: 40rem;
+    }
+    .st-editor{
+         height: 100vh;
+         max-width: 40rem;
+    }
+    .ln-list{
+         height: 100vh;
+         max-width: 40rem;
+    }
+    .ln-editor{
+         height: 100vh;
+         max-width: 40rem;
+    }
+   .export{
+         height: 100vh;
+         max-width: 40rem;
+    }     
 }
