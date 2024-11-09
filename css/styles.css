@@ -423,9 +423,6 @@ input[type="file"] {
         width: 5rem;
         height: 100vh;
     }
-    #options:hover{
-        width: 12rem;
-    }
     #options ul{
         flex-direction: column;
     }
