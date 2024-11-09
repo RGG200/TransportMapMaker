@@ -133,44 +133,44 @@ input[type="file"] {
 }
 
 .settings{
-    background-color: #4C5454;
+    background-color: black;
     overflow-y: auto;
-    border-left: 2px #3B4343 solid;
+    border-left: 2px #000000 solid;
 }
 .st-list{
     height: 100vh;
     max-width: calc(100% - 5rem);
-    background-color: #4C5454;
+    background-color: black;
     overflow-y: auto;
-    border-left: 2px #3B4343 solid;
+    border-left: 2px #000000 solid;
 }
 .ln-list{
     max-width: calc(100% - 5rem);
     height: 100vh;
-    background-color: #4C5454;
+    background-color: #000000;
     overflow-y: auto;
-    border-left: 2px #3B4343 solid;
+    border-left: 2px #000000 solid;
 }
 .st-editor{
     height: 100vh;
     max-width: calc(100% - 5rem);
-    background-color: #4C5454;
+    background-color: #000000;
     overflow-y: auto;
-    border-left: 2px #3B4343 solid;
+    border-left: 2px #000000 solid;
 }
 .ln-editor{
     height: 100vh;
     max-width: calc(100% - 5rem);
-    background-color: #4C5454;
+    background-color: #000000;
     overflow-y: auto;
-    border-left: 2px #3B4343 solid;
+    border-left: 2px #000000 solid;
 }
 .export{
     height: 100vh;
     max-width: calc(100% - 5rem);
-    background-color: #4C5454;
+    background-color: #000000;
     overflow-y: auto;
-    border-left: 2px #3B4343 solid;
+    border-left: 2px #000000 solid;
 }
 .bubble{
     height: 100%;
