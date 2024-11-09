@@ -38,9 +38,6 @@ input[type="file"] {
 }
 #options{
     position: fixed;
-    top: 0;
-    height: 100vh;
-    width: 5rem;
     background-color: black;
     transition: width 200ms ease;
 }
@@ -53,32 +50,38 @@ input[type="file"] {
     padding-left: 1.4rem;
 }
 
-#options .top .logo{
+#options .ul .logo{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
     color: white;
-    display: flex;
-    height: 1.4rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
     width: 100%;
-    align-items: center;
+}
+
+#options ul .logo i{
+    transform: rotate(0deg);
+    transition: transform 200ms;
+}
+
+#options:hover ul .logo i{
+    transition: rotate(-180deg);
+}
+
+#options ul .logo span{
+    display: none;
+    margin-left: 0.5rem;
     pointer-events: none;
-    opacity: 1;
 }
-#options:hover .top .logo{
-    opacity: 1;
-    transition: 200ms;
+
+#options:hover ul .logo span{
+    display: block;
+    pointer-events: all;
 }
-.top .logo i{
-    font-size: 2rem;
-    font-weight: 800;
-    margin-right: 0.5rem;
-}
-.logo span{
-    font-size: 0.75rem;
-    opacity: 0;
-}
-#options:hover .top .logo span{
-    font-size: 0.75rem;
-    opacity: 1;
-}
+
+
 #options ul{
     list-style: none;
     padding: 0;
@@ -86,7 +89,6 @@ input[type="file"] {
     width: 100%;
     display: flex;
     background: black;
-    flex-direction: column;
     align-items: center;
 }
 #options ul li{
@@ -104,8 +106,6 @@ input[type="file"] {
     background: #05F5;
     transition: 200ms;
 }
-#options:hover ul li a{
-}
 #options ul li a span{
     display: none;
     margin-left: 0.5rem;
@@ -114,7 +114,6 @@ input[type="file"] {
 
 #options:hover ul li a span{
     display: block;
-    pointer-events: all;
 }
 
 #options ul li a i{
@@ -395,4 +394,49 @@ input[type="file"] {
     color:  rgb(6, 124, 69);
     background-color: white;
     transition: 200ms;
+}
+
+@media only screen and (max-width: 720px){
+    #options{
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+    }
+    .logo{
+        display: none;
+    }
+    #options ul{
+        flex-direction: row;
+    }
+    #options ul li{
+        justify-content: center;
+    }
+    main{
+        margin: 0;
+    }
+    #options:hover{
+        width: 12rem;
+    }
+    #options:hover span{
+        display: inline;
+        transition: 200ms;
+    }
+}
+
+@media only screen and (min-width: 720px){
+    #options{
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
+    #options:hover{
+        width: 12rem;
+    }
+    #options ul{
+        flex-direction: column;
+    }
+    #options:hover span{
+        display: inline;
+        transition: 200ms;
+    }
 }
