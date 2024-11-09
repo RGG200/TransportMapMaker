@@ -20,6 +20,9 @@ html body{
 #svg-canvas{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
+#canvas{
+    margin-left: 80px;
+}
 #svg-canvas-preview{
     background-color: red;
 
