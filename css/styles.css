@@ -21,6 +21,7 @@ html body{
 }
 #canvas{
     margin-left: 80px;
+    max-height: 600px;
 }
 #svg-canvas-preview{
     background-color: red;
