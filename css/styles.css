@@ -72,7 +72,7 @@ input[type="file"] {
 
 #options ul .logo span{
     display: none;
-    margin-left: 0.5rem;
+    font-size: 1rem;
     pointer-events: none;
 }
 
