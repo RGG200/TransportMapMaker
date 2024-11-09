@@ -7,14 +7,15 @@
     font-family:'Lato', sans-serif;
 }
 
+::root{
+  font-size: 16px;
+}
+
 
 html body{
     position:absolute;
     left: -2.25px;
     top: -2.25px;
-}
-#canvas{
-    margin-left: calc(calc(20vw + 20vh) / 2);    
 }
 #svg-canvas{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
@@ -34,28 +35,24 @@ input[type="file"] {
 }
 #options{
     position: fixed;
-    left:0;
-    top:0;
-    min-height: 5000vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-    width: calc(calc(20vw + 20vh) / 2);
+    height: 100vh;
+    width: 5rem;
     background-color: #4C5454;
     padding: .4rem .8rem;
     transition: all 0.5s ease;
 }
 
 #options.active{
-    width: calc(( 60vw + 60vh ) / 2);
+    width: 15rem;
 }
 
 #options #btn{
     position: absolute;
     color: #FFF;
-    top: calc(( 3vw + 3vh ) / 2);
+    top: .3rem;
     left:50%;
-    font-size: calc(( 5.5vw + 5.5vh ) / 2);
-    line-height: calc(( 5.5vw + 5.5vh ) / 2);
+    font-size: 3rem;
+    line-height: .6rem;
     transform: translateX(-50%);
     cursor: pointer;
 }
@@ -66,7 +63,7 @@ input[type="file"] {
 #options .top .logo{
     color: white;
     display: flex;
-    height: calc(( 10vw + 10vh ) / 2);
+    height: 0.7rem;
     width: 100%;
     align-items: center;
     pointer-events: none;
@@ -76,11 +73,17 @@ input[type="file"] {
     opacity: 1;
 }
 .top .logo i{
-    font-size: calc(( 5.5vw + 5.5vh ) / 2);
-    margin-right: calc(( 4vw + 4vh ) / 2);
+    font-size: 3rem;
+    margin-right: 0.1rem;
 }
 .logo span{
-    font-size: calc(( 2vw + 2vh ) / 2);
+    font-size: 1rem;
+}
+#options ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
 }
 #options ul li{
     position: relative;
