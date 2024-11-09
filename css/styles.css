@@ -419,23 +419,23 @@ input[type="file"] {
     }
     .st-list{
          width: 100vw;
-         height: calc(100vh - 5rem);
+         max-height: calc(100vh - 5rem);
     }
     .st-editor{
          width: 100vw;
-         height: calc(100vh - 5rem);
+         max-height: calc(100vh - 5rem);
     }
     .ln-list{
          width: 100vw;
-         height: calc(100vh - 5rem);
+         max-height: calc(100vh - 5rem);
     }
     .ln-editor{
          width: 100vw;
-         height: calc(100vh - 5rem);
+         max-height: calc(100vh - 5rem);
     }
    .export{
          width: 100vw;
-         height: calc(100vh - 5rem);
+         max-height: calc(100vh - 5rem);
     }
 }
 
