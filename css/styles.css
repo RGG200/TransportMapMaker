@@ -406,6 +406,7 @@ input[type="file"] {
     #options{
         bottom: 0;
         min-width: 100vw;
+        width: 125vw;
         height: 5rem;
     }
     .logo{
