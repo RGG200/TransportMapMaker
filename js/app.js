@@ -96,12 +96,13 @@ document.getElementById('width').value = net.width;
 document.getElementById('height').value = net.height;
 
 export function updateDisplay(event) {
-  if window.innerWidth > 720{
+  let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  if (vw > 720){
     var rect = document.getElementById('canvas').getBoundingClientRect(); 
     mosX = Math.round((event.pageX-80+document.getElementById('canvas').scrollLeft-rect.left)/20)*20; // make it so that the stuff goes in a grid
     mosY = Math.round((event.pageY+document.getElementById('canvas').scrollTop-rect.top)/20)*20;
   }
-  if window.innerWidth <= 720{
+  if (vw <= 720){
     var rect = document.getElementById('canvas').getBoundingClientRect(); 
     mosX = Math.round((event.pageX)/20)*20; // make it so that the stuff goes in a grid
     mosY = Math.round((event.pageY)/20)*20;
