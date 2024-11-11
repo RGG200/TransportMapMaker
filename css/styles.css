@@ -195,7 +195,7 @@ input[type="file"] {
     justify-items: center;
 }
 .bubble .content input{
-    width: 25%;
+    width: 7rem;
     line-height: 15px;
     background-color: black;
     margin-bottom: 1rem;
@@ -248,7 +248,7 @@ input[type="file"] {
 .line_section{
     padding: 15px;
     overflow-y: auto;
-    width: 40%;
+    width: 12.5rem;
     height: 200px;
     display: grid;
     justify-items: center;
@@ -303,7 +303,7 @@ input[type="file"] {
     font-size: 4rem;
     margin-bottom: 5px;
     border-radius: 0.1rem;
-    width: 30%;
+    width: 10rem;
     height: 5rem;
     text-transform: uppercase;
     border: 2px solid transparent;
