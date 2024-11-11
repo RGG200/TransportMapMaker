@@ -311,7 +311,8 @@ input[type="file"] {
     font-size: 1.6rem;
     margin: 0.2rem;
     border-radius: 5px;
-    width: 40%;
+    min-width: 4%;
+    transition: 200ms;
 }
 .create:hover{
     color: rgb(6, 124, 69);
