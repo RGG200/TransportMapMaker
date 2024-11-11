@@ -248,7 +248,7 @@ input[type="file"] {
 .line_section{
     padding: 15px;
     overflow-y: auto;
-    width: calc(calc(25vw + 25vh) / 2;
+    width: calc(calc(25vw + 25vh) / 2);
     height: 200px;
     display: grid;
     justify-items: center;
