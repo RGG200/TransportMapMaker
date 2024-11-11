@@ -373,7 +373,7 @@ export function drawLinesList(network, instancesLine){
         lineText.style.color = network.lines[i].color;
         lineText.style.borderColor = network.lines[i].color;
         lineText.style.borderRadius = "0.2em";
-        lineText.style.width = "100%";
+        lineText.style.minWidth = "10%";
         lineText.style.transform = "scale(0.8)";
         lineText.style.textTransform = "uppercase";
         ln_list.appendChild(lineText);
