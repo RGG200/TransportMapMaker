@@ -243,13 +243,13 @@ input[type="file"] {
 }
 #content{
     overflow-y: auto;
-    height: 500px;
+    height: 20rem;
 }
 .line_section{
     padding: 15px;
     overflow-y: auto;
     width: calc(calc(25vw + 25vh) / 2);
-    height: 200px;
+    height: 10rem;
     display: grid;
     justify-items: center;
     opacity: 0.7;
@@ -413,12 +413,12 @@ input[type="file"] {
     }
     .st-list{
          width: 100vw;
-         height: calc(100vh - 5rem);
+         max-height: calc(100vh - 5rem);
          overflow-y: auto;
     }
     .st-editor{
          width: 100vw;
-         height: calc(100vh - 5rem);
+         max-height: calc(100vh - 5rem);
          overflow-y: auto;
     }
     .ln-list{
