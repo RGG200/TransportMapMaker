@@ -370,7 +370,12 @@ export function drawLinesList(network, instancesLine){
         lineText.setAttributeNS(null, 'class', 'line_button');
         lineText.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'onclick', "showOptions('ln-editor'); hideOptions('ln-list');");
-        lineText.style.color = network.lines[i].color;
+        if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
+            lineText.style.color = network.lines[i].color;
+        }
+        else{
+            lineText.style.color = network.lines[i].color;
+        }
         lineText.style.borderColor = network.lines[i].color;
         lineText.style.borderRadius = "0.2em";
         lineText.style.minWidth = "10%";
