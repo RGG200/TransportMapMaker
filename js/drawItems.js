@@ -374,7 +374,7 @@ export function drawLinesList(network, instancesLine){
             lineText.style.color = network.lines[i].color;
         }
         else{
-            lineText.style.color = network.lines[i].color;
+            lineText.style.color = "white";
         }
         lineText.style.borderColor = network.lines[i].color;
         lineText.style.borderRadius = "0.2em";
