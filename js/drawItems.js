@@ -340,8 +340,18 @@ export function drawStationsList(network, instancesLine){
         lineElement.style.borderColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'id', i);
-        lineText.style.color = network.lines[i].color;
-        lineText.style.borderColor = network.lines[i].color;
+        if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
+            lineText.style.color = network.lines[i].color;
+        }
+        else{
+            lineText.style.color = "white";
+        }
+        if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
+            lineText.style.borderColor = network.lines[i].color;
+        }
+        else{
+            lineText.style.borderColor = "white";
+        }
         lineElement.setAttributeNS(null, 'class', 'line_section');
         lineText.style.webkitTextStroke = "black";
         lineElement.appendChild(lineText);
