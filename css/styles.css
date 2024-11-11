@@ -248,7 +248,7 @@ input[type="file"] {
 .line_section{
     padding: 15px;
     overflow-y: auto;
-    width: 12.5rem;
+    width: calc(calc(25vw + 25vh) / 2;
     height: 200px;
     display: grid;
     justify-items: center;
@@ -303,7 +303,7 @@ input[type="file"] {
     font-size: 4rem;
     margin-bottom: 5px;
     border-radius: 0.1rem;
-    width: 10rem;
+    width: calc(calc(25vw + 25vh) / 2);
     height: 5rem;
     text-transform: uppercase;
     border: 2px solid transparent;
@@ -415,18 +415,22 @@ input[type="file"] {
     .st-list{
          width: 100vw;
          height: calc(100vh - 5rem);
+         overflow-y: auto;
     }
     .st-editor{
          width: 100vw;
          height: calc(100vh - 5rem);
+         overflow-y: auto;
     }
     .ln-list{
          width: 100vw;
          height: calc(100vh - 5rem);
+         overflow-y: auto;
     }
     .ln-editor{
          width: 100vw;
          height: calc(100vh - 5rem);
+         overflow-y: auto;
     }
    .export{
          width: 100vw;
