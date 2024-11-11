@@ -293,7 +293,7 @@ input[type="file"] {
     display: grid;
     margin-top: 10px;
     justify-items: center;
-    height: 15rem;
+    min-height: 5rem;
     overflow-y: auto;
 }
 .line_button{
