@@ -58,6 +58,9 @@ input[type="file"] {
 #options ul .logo i{
     transform: rotate(0deg);
     transition: transform 200ms;
+    color: #7733FFFF;
+    font-size: 2rem;
+    margin: auto;
 }
 
 #options:hover ul .logo i{
