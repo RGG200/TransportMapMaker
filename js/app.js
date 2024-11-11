@@ -115,7 +115,7 @@ export function updateDisplay(event) {
 
   let default_sNames = ['sous-bois', 'le-haut', 'centre', 'porte', 'le-pecq', 'préfécture']; // défault complementary names
 
-  let colors = ['#CCCCFF', '#FF0000', "#0000FF", '#9900CC', '#FFAA00', '#0F0F00', '#AAAA00', '#00FF00', '#CCCC00', '#000000', "#B47F6A", "#AB4A3A"]; // Line colors
+  let colors = ['#CCCCFF', '#FF0000', "#0000FF", '#9900CC', '#FFAA00', '#0F0FF0', '#AAAA00', '#00FF00', '#CCCC00', '#000000', "#B47F6A", "#AB4A3A"]; // Line colors
 
   function getRandomIntInclusive(min, max) {
 
