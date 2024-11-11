@@ -303,7 +303,6 @@ input[type="file"] {
     font-size: 4rem;
     margin-bottom: 5px;
     border-radius: 0.1rem;
-    width: calc(calc(25vw + 25vh) / 2);
     height: 5rem;
     text-transform: uppercase;
     border: 2px solid transparent;
