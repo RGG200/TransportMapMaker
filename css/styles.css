@@ -432,6 +432,7 @@ select option{
     .settings{
          width: 100vw;
          height: calc(100vh - 5rem);
+         overflow-y: auto;
     }
     .st-list{
          width: 100vw;
@@ -456,6 +457,7 @@ select option{
    .export{
          width: 100vw;
          height: calc(100vh - 5rem);
+         overflow-y: auto;
     }
 }
 
