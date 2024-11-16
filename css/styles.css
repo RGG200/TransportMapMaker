@@ -514,26 +514,32 @@ select option{
     .settings{
          height: 100vh;
          width: calc(100vw - 5rem);
+         overflow-y: auto;
     }
     .st-list{
          height: 100vh;
          width: calc(100vw - 5rem);
+         overflow-y: auto;
     }
     .st-editor{
          height: 100vh;
          width: calc(100vw - 5rem);
+         overflow-y: auto;
     }
     .ln-list{
          height: 100vh;
          width: calc(100vw - 5rem);
+         overflow-y: auto;
     }
     .ln-editor{
          height: 100vh;
          width: calc(100vw - 5rem);
+         overflow-y: auto;
     }
    .export{
          height: 100vh;
          width: calc(100vw - 5rem);
+         overflow-y: auto;
     }     
 }
 
