@@ -37,9 +37,7 @@ input[type="file"] {
     position: fixed;
     background-color: #3168D8;
     transition: width 200ms ease;
-    z-index: 999;
 }
-
 
 
 #options .ul .logo{
@@ -55,7 +53,7 @@ input[type="file"] {
 
 #options ul .logo i{
     transform: rotate(0deg);
-    transition: transform 200ms;
+    transition: 200ms;
     color: #7900FF;
     font-size: 2rem;
     margin: auto;
@@ -93,6 +91,7 @@ input[type="file"] {
     display: flex;
     align-items: center;
     height: 5rem;
+    width: 100%;
     color: #FFFFFFd8;
     text-decoration: none;
 }
@@ -200,7 +199,7 @@ input[type="file"] {
 }
 .bubble .content input{
     width: 15rem;
-    line-height: 2rem;
+    line-height: 1rem;
     background-color: transparent;
     margin: 0.1rem;
     height: 4rem;
@@ -377,7 +376,6 @@ select option{
 @media only screen and (max-width: 720px){
     #options{
         bottom: 0;
-        min-width: 90vw;
         width: 100vw;
         height: 5rem;
         overflow-x: auto;
@@ -387,15 +385,6 @@ select option{
     }
     #options ul{
         flex-direction: row;
-    }
-    #options ul li{
-        justify-content: center;
-    }
-    main{
-        margin: 0;
-    }
-    #options ul li a:hover{
-        width: 5rem;
     }
     #options:hover ul li a span{
         display: none;
@@ -411,32 +400,32 @@ select option{
     }
     #options ~ .st-list{
         position: fixed;
-        left: calc(100%-5rem);
-        top: 0px;
+        bottom: 5rem;
+        left: 0px;
     }
     #options ~ .st-editor{
         position: fixed;
-        left: calc(100%-5rem);
-        top: 0px;
+        bottom: 5rem;
+        left: 0px;
     }
     #options ~ .ln-list{
         position: fixed;
-        left: calc(100%-5rem);
-        top: 0px;
+        bottom: 5rem;
+        left: 0px;
     }
     #options ~ .ln-editor{
         position: fixed;
-        left: calc(100%-5rem);
-        top: 0px;
+        bottom: 5rem;
+        left: 0px;
     }
     #options ~ .export{
         position: fixed;
-        left: calc(100%-5rem);
-        top: 0px;
+        bottom: 5rem;
+        left: 0px;
     }
     #canvas{
-        margin-bottom: 80px;
-        max-height: calc(100vh - 80px);
+        margin-bottom: 5rem;
+        max-height: calc(100vh - 5rem);
         max-width: 100vw;
         overflow-x: auto;
     }
