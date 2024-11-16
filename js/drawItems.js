@@ -340,18 +340,8 @@ export function drawStationsList(network, instancesLine){
         lineElement.style.borderColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'id', i);
-        if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
-            lineText.style.color = network.lines[i].color;
-        }
-        else{
-            lineText.style.color = "white";
-        }
-        if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
-            lineText.style.borderColor = network.lines[i].color;
-        }
-        else{
-            lineText.style.borderColor = "white";
-        }
+        lineText.style.color = network.lines[i].color;
+        lineText.style.borderColor = network.lines[i].color;
         lineElement.setAttributeNS(null, 'class', 'line_section');
         lineText.style.webkitTextStroke = "black";
         lineElement.appendChild(lineText);
@@ -362,18 +352,8 @@ export function drawStationsList(network, instancesLine){
             stationButton.innerText = network.lines[i].stations[j].fName;
             stationButton.setAttributeNS(null, 'id', j);
             stationButton.setAttributeNS(null, 'class', 'station_instance');
-            if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
-                stationButton.style.color = network.lines[i].color;
-            }
-            else{
-                stationButton.style.color = "white";
-            }
-            if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
-                stationButton.style.borderColor = network.lines[i].color;
-            }
-            else{
-                stationButton.style.borderColor = "white";
-            }
+            stationButton.style.color = network.lines[i].color;
+            stationButton.style.borderColor = network.lines[i].color;
             stationButton.style.borderRadius = "0.3em";
             stationButton.style.padding = "0.2em";
             stationButton.setAttributeNS(null, 'onclick', "showOptions('st-editor'); hideOptions('st-list')");
@@ -390,18 +370,8 @@ export function drawLinesList(network, instancesLine){
         lineText.setAttributeNS(null, 'class', 'line_button');
         lineText.setAttributeNS(null, 'id', i);
         lineText.setAttributeNS(null, 'onclick', "showOptions('ln-editor'); hideOptions('ln-list');");
-        if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
-            lineText.style.color = network.lines[i].color;
-        }
-        else{
-            lineText.style.color = "white";
-        }
-        if ( network.lines[i].color != "#000000" && network.lines[i].color != "black"){
-            lineText.style.borderColor = network.lines[i].color;
-        }
-        else{
-            lineText.style.borderColor = "white";
-        }
+        lineText.style.color = network.lines[i].color;
+        lineText.style.borderColor = network.lines[i].color;
         lineText.style.borderRadius = "0.2em";
         lineText.style.minWidth = "10%";
         lineText.style.transform = "scale(0.8)";
