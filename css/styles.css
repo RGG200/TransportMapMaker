@@ -37,7 +37,9 @@ input[type="file"] {
     position: fixed;
     background-color: #3168D8;
     transition: width 200ms ease;
+    z-index: 999;
 }
+
 
 
 #options .ul .logo{
