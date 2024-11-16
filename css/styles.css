@@ -436,12 +436,12 @@ select option{
     }
     .st-list{
          width: 100vw;
-         max-height: calc(100vh - 5rem);
+         height: calc(100vh - 5rem);
          overflow-y: auto;
     }
     .st-editor{
          width: 100vw;
-         max-height: calc(100vh - 5rem);
+         height: calc(100vh - 5rem);
          overflow-y: auto;
     }
     .ln-list{
