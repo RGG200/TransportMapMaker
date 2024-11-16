@@ -352,7 +352,11 @@ input[type="file"] {
 .dropdown{
     padding: 0.2rem;
     display: flex;
+    flex-direction: column;
     color: #FFFFFFDD;
+}
+.dropdown span{
+    padding: .4rem;
 }
 
 select{
