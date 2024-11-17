@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+/** Global **/
 *{
     margin: 0;
     padding: 0;
@@ -16,23 +17,23 @@ html body{
     top: -2.25px;
     left: -2.25px;
 }
+
+/** Canvas **/
 #svg-canvas{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
 }
-
+/** Unused **/
 #svg-canvas-preview{
     background-color: red;
 
 }
+
+/** Sidebar **/
+
 input[type="file"] {
     display: none;
 }
-.stationNames{
-    font-family: 'Noto Sans JP', sans-serif;
-    text-anchor: middle;
-    width: 100%;
-    font-weight: 700;
-}
+
 #options{
     position: fixed;
     background-color: #3168D8;
@@ -114,6 +115,17 @@ input[type="file"] {
     margin: auto;
 }
 
+/** UI and Path display **/
+.stationNames{
+    font-family: 'Noto Sans JP', sans-serif;
+    text-anchor: middle;
+    width: 100%;
+    font-weight: 700;
+}
+
+path{
+  stroke-linecap: round;
+}
 
 .title-station{
     display: block;
@@ -383,6 +395,8 @@ select{
 select option{
     color: black;
 }
+
+/** Responsive design **/
 @media only screen and (max-width: 720px){
     #options{
         bottom: 0;
