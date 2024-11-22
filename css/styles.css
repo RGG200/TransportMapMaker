@@ -19,8 +19,9 @@ html body{
 }
 
 /** Canvas **/
-#svg-canvas{
+#svg-grid{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
+    opacity: 0.5
 }
 /** Unused **/
 #svg-canvas-preview{
