@@ -295,7 +295,7 @@ path{
     border-radius: 15px;
     width: 80%;
     height: 2rem;
-    overflow-y: auto;
+    overflow-x: auto;
     text-align: center;
     margin-bottom: 2px;
     text-transform: uppercase;
