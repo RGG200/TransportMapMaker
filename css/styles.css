@@ -21,9 +21,10 @@ html body{
 /** Canvas **/
 #svg-grid{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
-    opacity: 0.5;
-    position: fixed;
-    top: 0;
+    opacity: 1;
+    position: absolute;
+    z-index: -1;
+    left: 0;
 }
 
 /** Sidebar **/
