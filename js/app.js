@@ -87,7 +87,7 @@ let ln_data = {
 
 let param_data ={
 
-  filename: '',  width: 0, height: 0, background:''
+  filename: '',  width: 0, height: 0
 
 }
 
