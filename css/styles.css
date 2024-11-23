@@ -19,8 +19,13 @@ html body{
 }
 
 /** Canvas **/
-#canvas{
+#svg-canvas{
     background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
+}
+/** Unused **/
+#svg-canvas-preview{
+    background-color: red;
+
 }
 
 /** Sidebar **/
