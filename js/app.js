@@ -245,9 +245,13 @@ export function updateDisplay(event) {
 
 const canvas = document.getElementById('svg-canvas');
 
+// Pour la souris
+
 canvas.addEventListener('mouseenter', updateDisplay, false);
 
 canvas.addEventListener("mousemove", updateDisplay, false);
+
+canvas.addEventListener("scroll", updateDisplay, false);
 
 canvas.addEventListener('click', function(){
 
