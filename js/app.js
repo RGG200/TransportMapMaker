@@ -113,20 +113,6 @@ export function updateDisplay(event) {
     mosY = Math.round((event.clientY+document.getElementById('canvas').scrollTop-rect.top)/20)*20;
   }
 };
-export function scrollUpdateDisplay(event) {
-  let vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-
-  if (vw > 720){
-    var rect = document.getElementById('canvas').getBoundingClientRect(); 
-    mosX = Math.round((MosPosX+document.getElementById('canvas').scrollLeft-rect.left)/20)*20; // make it so that the stuff goes in a grid
-    mosY = Math.round((MosPosY+document.getElementById('canvas').scrollTop-rect.top)/20)*20;
-  }
-  if (vw <= 720){
-    var rect = document.getElementById('canvas').getBoundingClientRect(); 
-    mosX = Math.round((MosPosX+document.getElementById('canvas').scrollLeft-rect.left)/20)*20; // make it so that the stuff goes in a grid
-    mosY = Math.round((MosPosX+document.getElementById('canvas').scrollTop-rect.top)/20)*20;
-  }
-};
 
   let previous_instancesLine = 1;
 
@@ -270,7 +256,7 @@ canvas.addEventListener('mouseenter', updateDisplay, false);
 
 canvas.addEventListener("mousemove", updateDisplay, false);
 
-canvas.addEventListener("scroll", scrollUpdateDisplay, false);
+canvas.addEventListener("click", UpdateDisplay, false);
 
 canvas.addEventListener('click', function(){
 
