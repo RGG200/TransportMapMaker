@@ -256,7 +256,7 @@ canvas.addEventListener('mouseenter', updateDisplay, false);
 
 canvas.addEventListener("mousemove", updateDisplay, false);
 
-canvas.addEventListener("click", UpdateDisplay, false);
+canvas.addEventListener("click", updateDisplay, false);
 
 canvas.addEventListener('click', function(){
 
