@@ -20,7 +20,7 @@ html body{
 
 /** Canvas **/
 #svg-canvas{
-    background: url('https://transportmapmaker.duckdns.org/img/grid.svg');
+    background: url('../img/grid.svg');
 }
 /** Unused **/
 #svg-canvas-preview{
