@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/RGG200/RGsMMK#readme",
   "dependencies": {
+    "canvg": "^4.0.3",
     "http": "^0.0.1-security",
     "serv": "^0.2.4"
   }
