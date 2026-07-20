@@ -23,6 +23,7 @@
   "dependencies": {
     "canvg": "^4.0.3",
     "http": "^0.0.1-security",
-    "serv": "^0.2.4"
+    "serv": "^0.2.4",
+    "svg-exportjs-browser": "^2.1.0"
   }
 }
