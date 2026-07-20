@@ -4,7 +4,7 @@ import { Canvg } from "canvg";
 export function exportSVG(name, wd, hg){
     let wde = parseInt(wd)
     let hge = parseInt(hg)
-    document.getElementById('svg-canvas').style.background = '#ffffff00';
+    document.getElementById('svg-canvas').style.background = '#ffffffff';
     svgExport.downloadSvg(document.getElementById('svg-canvas'), name, {
         width: wde,
         height: hge,
@@ -12,7 +12,7 @@ export function exportSVG(name, wd, hg){
     resetCanvas();
 }
 export function exportPNG(name, wd, hg){
-    document.getElementById('svg-canvas').style.background = '#ffffff00';
+    document.getElementById('svg-canvas').style.background = '#ffffffff';
     let wde = parseInt(wd)*2
     let hge = parseInt(hg)*2
     svgExport.downloadPng(document.getElementById('svg-canvas').outerHTML.toString(), name, {
