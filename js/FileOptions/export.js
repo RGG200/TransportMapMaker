@@ -1,4 +1,4 @@
-import * as svgExport from "path/to/the/file/svg-export.esm.min.js";
+import * as svgExport from "https://cdn.jsdelivr.net/npm/svg-exportjs-browser@latest/dist/esm/svg-export.esm.min.js";
 
 export function exportSVG(name, wd, hg){
     let wde = parseInt(wd)
