@@ -1,5 +1,5 @@
+import { Canvg } from "canvg";
 import * as svgExport from "https://cdn.jsdelivr.net/npm/svg-exportjs-browser@latest/dist/esm/svg-export.esm.min.js";
-import { Canvg } from "canvg"
 
 export function exportSVG(name, wd, hg){
     let wde = parseInt(wd)
