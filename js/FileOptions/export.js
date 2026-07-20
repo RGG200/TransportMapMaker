@@ -1,3 +1,5 @@
+import * as svgExport from "path/to/the/file/svg-export.esm.min.js";
+
 export function exportSVG(name, wd, hg){
     let wde = parseInt(wd)
     let hge = parseInt(hg)
