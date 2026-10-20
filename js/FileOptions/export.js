@@ -1,4 +1,4 @@
-import svgExportjsBrowser as svgExport from 'https://cdn.jsdelivr.net/npm/svg-exportjs-browser@2.1.0/+esm'
+import * as svgExport from 'https://cdn.jsdelivr.net/npm/svg-exportjs-browser@2.1.0/+esm'
 import { Canvg } from "canvg";
 
 export function exportSVG(name, wd, hg){
